@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 ////////////////////////////////////////////////////////////////////////////////
-// Team Members:
+// Team Members: Rusty Rinehart
 // Overall percent effort of each team meber: 
 // 
 // ECE369A - Computer Architecture
