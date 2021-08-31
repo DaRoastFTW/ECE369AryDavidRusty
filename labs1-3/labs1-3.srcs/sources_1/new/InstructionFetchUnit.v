@@ -2,7 +2,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 // Team Members: Rusty Rinehart
-// Overall percent effort of each team meber: 
+// Overall percent effort of each team member: 
 // 
 // ECE369A - Computer Architecture
 // Laboratory 3 (PostLab)
