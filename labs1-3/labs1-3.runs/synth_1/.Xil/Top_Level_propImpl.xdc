@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/anath/Documents/GitHub/ECE369AryDavidRusty/labs1-3/labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc rfile:../../../labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/rrine/VivadoProjects/labs1-3/labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc rfile:../../../labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN E3 [get_ports Clk]
 set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]
@@ -31,7 +31,5 @@ set_property src_info {type:XDC file:1 line:40 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN T11 [get_ports {out7[1]}]
 set_property src_info {type:XDC file:1 line:42 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN L18 [get_ports {out7[0]}]
-set_property src_info {type:XDC file:1 line:46 export:INPUT save:INPUT read:READ} [current_design]
-set_property IOSTANDARD LVCMOS33 [get_ports {Reset}]
 set_property src_info {type:XDC file:1 line:47 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN N17 [get_ports {Reset}]

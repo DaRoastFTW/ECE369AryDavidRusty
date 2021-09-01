@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.2.1 (win64) Build 2729669 Thu Dec  5 04:49:17 MST 2019
-| Date         : Wed Sep  1 15:08:51 2021
-| Host         : ENGR-ECE302PC27 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Wed Sep  1 15:57:16 2021
+| Host         : DELL-TACO-2 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_Level_control_sets_placed.rpt
 | Design       : Top_Level
 | Device       : xc7a100t
@@ -60,7 +60,7 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              20 |            5 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              34 |            8 |
+| No           | Yes                   | No                     |              34 |           10 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
@@ -73,9 +73,9 @@ Table of Contents
 +----------------+---------------+------------------+------------------+----------------+
 |  Clock Signal  | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +----------------+---------------+------------------+------------------+----------------+
-|  CD/I2         |               | Rst_IBUF         |                2 |              7 |
+|  CD/I2         |               | Reset_IBUF       |                2 |              7 |
 |  Clk_IBUF_BUFG |               |                  |                5 |             20 |
-|  Clk_IBUF_BUFG |               | Rst_IBUF         |                6 |             27 |
+|  Clk_IBUF_BUFG |               | Reset_IBUF       |                8 |             27 |
 +----------------+---------------+------------------+------------------+----------------+
 
 
