@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Wed Sep  1 14:01:41 2021
+# Process ID: 5004
+# Current directory: C:/Users/anath/Documents/GitHub/ECE369AryDavidRusty/labs1-3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9332 C:\Users\anath\Documents\GitHub\ECE369AryDavidRusty\labs1-3\labs1-3.xpr
+# Log file: C:/Users/anath/Documents/GitHub/ECE369AryDavidRusty/labs1-3/vivado.log
+# Journal file: C:/Users/anath/Documents/GitHub/ECE369AryDavidRusty/labs1-3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/anath/Documents/GitHub/ECE369AryDavidRusty/labs1-3/labs1-3.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source InstructionFetchUnit_tb.tcl
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+close_sim
