@@ -22,8 +22,8 @@
 
 module Top_Level_tb();
 
-    reg Clk, Rst;
-    Top_Level tl(.Clk(Clk), .Rst(Rst));
+    reg Clk, Reset;
+    Top_Level tl(.Clk(Clk), .Reset(Reset));
     
     initial begin
 		Clk <= 1'b0;
@@ -31,9 +31,9 @@ module Top_Level_tb();
 	end
 	
 	initial begin
-	   Rst <= 1'b1;
+	   Reset <= 1'b1;
 	   @(posedge Clk)
-	   Rst <= 1'b0;
+	   Reset <= 1'b0;
 	   @(posedge Clk);
        @(posedge Clk);
 	   @(posedge Clk);
