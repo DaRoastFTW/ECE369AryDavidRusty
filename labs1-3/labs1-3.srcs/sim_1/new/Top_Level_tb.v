@@ -23,7 +23,7 @@
 module Top_Level_tb();
 
     reg Clk, Rst;
-    Top_Level(.Clk(Clk), .Rst(Rst));
+    Top_Level tl(.Clk(Clk), .Rst(Rst));
     
     initial begin
 		Clk <= 1'b0;

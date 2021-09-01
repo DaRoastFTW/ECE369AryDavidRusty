@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module ClkDiv(Clk, Rst, ClkOut);
    input Clk, Rst;
    output reg ClkOut;

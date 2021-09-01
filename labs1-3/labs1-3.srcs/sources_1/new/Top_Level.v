@@ -29,7 +29,7 @@ module Top_Level(Clk, Rst, Instruction, out7, en_out);
     output [7:0] en_out;
     
     
-    ClkDiv(Clk, Rst, ClkOut);
-    InstructionFetchUnit(Instruction, Rst, ClkOut);
-    Two4DigitDisplay(Clk, Instruction[15:0], Instruction[31:16], out7, en_out);
+    ClkDiv CD(Clk, Rst, ClkOut);
+    InstructionFetchUnit IFU(Instruction, Rst, ClkOut);
+    Two4DigitDisplay TDD(Clk, Instruction[15:0], Instruction[31:16], out7, en_out);
 endmodule
