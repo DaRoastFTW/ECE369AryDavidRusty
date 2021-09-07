@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
 ////////////////////////////////////////////////////////////////////////////////
-// Team Members: Rusty Rinehart
+// Team Members: Rusty Rinehart, Ary Nath, David Mazi
 // Overall percent effort of each team member: 
-// 
+// Rusty: 33.33%, Ary: 33.33%, David: 33.33%
 // ECE369A - Computer Architecture
 // Laboratory 3 (PostLab)
 // Module - InstructionFetchUnit.v
