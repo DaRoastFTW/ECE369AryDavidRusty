@@ -37,7 +37,7 @@
 // which generates a continuous clock pulse into the module.
 ////////////////////////////////////////////////////////////////////////////////
 
-module InstructionFetchUnit(Instruction, Reset, Clk);
+module InstructionFetchUnit(Instruction, Reset, Clk, PCResultOut);
     input Clk, Reset;
     (* mark_debug = "true" *) 
 	output [31:0] Instruction;
@@ -46,12 +46,13 @@ module InstructionFetchUnit(Instruction, Reset, Clk);
     wire [31:0] PCAddResult;
     (* mark_debug = "true" *) 
 	wire [31:0] PCResult;
+	output [31:0] PCResultOut;
     
     ProgramCounter PC(PCAddResult, PCResult, Reset, Clk);
     InstructionMemory IM(PCResult, Instruction);
     PCAdder PCA(PCResult, PCAddResult);
     /* Please fill in the implementation here... */
-	
+	assign PCResultOut = PCResult;
 	//assign debug_Instruction = Instruction;
 	//assign debug_Instruction2 = PCResult;
 endmodule

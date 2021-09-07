@@ -23,6 +23,7 @@
 module Top_Level(Clk, Reset, out7, en_out);
     input Clk, Reset;
     wire [31:0] Instruction;
+    wire [31:0] PCResultOut;
     
     wire ClkOut;
     output [6:0] out7;
@@ -30,6 +31,6 @@ module Top_Level(Clk, Reset, out7, en_out);
     
 	
     ClkDiv CD(Clk, Reset, ClkOut);
-    InstructionFetchUnit IFU(Instruction, Reset, ClkOut);
-    Two4DigitDisplay TDD(Clk, Instruction[15:0], Instruction[31:16], out7, en_out);
+    InstructionFetchUnit IFU(Instruction, Reset, ClkOut, PCResultOut);
+    Two4DigitDisplay TDD(Clk, Instruction[15:0], PCResultOut[15:0], out7, en_out);
 endmodule
