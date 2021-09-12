@@ -104,7 +104,25 @@ done:
 MaxIndex:   
     # Please fill in your implementation for 'MaxIndex' below this line !##########################
     # Your code begins
+#	lw		$t0, 0($a0)  	# max = V[0]
+#	addi	$t1, $0, 1		# i = 1
+#	add		$t3, $0, $0		# maxIndex = 0
 
+# loop:
+#	bge		$t1, $a1, done	# i >= n?
+#	mul		$t2, $t1, 4		# address i
+#	add		$t2, $t2, $a0	# address V[i]
+#	lw		$t2, 0($t2)		# V[i]
+#	ble		$t3, $t2, next	# max < t2?
+#	add		$t0, $t2, $0	# max = V[i]
+#	add		$t3, $t1, $0	# maxIndex = i
+# next:
+#	addi	$t1, $t1, 1		# i = i + 1
+#	j		loop
+# done:
+#	add		$v0, $t3, $0 # return maxIndex
+#	jr		$ra
+	
     # Your code ends
 
     
