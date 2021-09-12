@@ -1,7 +1,7 @@
 # Exercise 2
 #  Max Score: 15 points
 #
-# Students: 
+# Students: Rusty Rinehart, Ary Nath
 #
 # 'count_occurence.a' - count the occurrences of a specific character in string 
 # "str". Indexed addressing is used to access the array elements.
@@ -12,8 +12,12 @@
 #
 # Questions:-
 # 1. Briefly describe the purposes of the registers, $t0, $t1, $t2, and $t3.
+#	$t0 stores an individiual character from the string, str. $t1 is the offset adddress that indexes into the string, str.
+#	$t2 is keeps a count of the number of "char" in "str". $t3 holds the "char" value which in our case is the letter 'e'
+# 	stored as ASCII value 65.
 # 2. Currently, the program is stuck in an infinite loop. Make use of 
 #    breakpoints to locate, and correct the error.
+# 	Corrected by changing "add $t1 $t2 1" to "add $t1, $t1, 1"
 
 	.text
 
@@ -34,7 +38,7 @@ loop:
 
 con:	
 
-    add     $t1, $t2, 1	    # increase indexing register $t1
+    add     $t1, $t1, 1	    # increase indexing register $t1
 	j       loop	       	# continues the loop
 
 strEnd:
