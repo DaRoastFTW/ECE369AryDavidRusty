@@ -2,21 +2,22 @@
 # 'sum_of_array.s' - This program performs the sum of the array
 #  Max Score: 5 points
 #
-# Students: 
+# Students: Rusty Rinehart, Ary Nath
 #
 #
 # Insert your answers below each question:-
 # 1(a) What is the address location of the first element of the array, X.
-#
+#	0x10010004 is the address location of the first element of the array X.
 # 1(b) What is the address location of the last element (element 7) of the array, X.
-#
+#	0x1001000c is the address loication of the last element of the array X.
 # 2.   What are the values at location 'SUM' as the program executes?
-#
+#	The values at location 'SUM' are 0, -2 -6, and 1.
 # 3.   Traverse the program in single-step mode. Write down the intermediate 
 #      values stored in register $s1 as the program progresses.
-#
+#	The values in s1 are 0x00000000, 0xfffffffe, 0xfffffffa, 0x00000001
 # 4.   What is the purpose of register $t0 in this program?
-#
+#	t0 holds the base address for each element in the array and is incremented by 4
+#	each loop iteration to go to the next element.
 #
 #
 .data                   	# Put Global Data here
