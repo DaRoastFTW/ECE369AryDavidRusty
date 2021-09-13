@@ -2,7 +2,7 @@
 # 'sum_of_array.s' - This program performs the sum of the array
 #  Max Score: 5 points
 #
-# Students: Rusty Rinehart, Ary Nath
+# Students: Rusty Rinehart, Ary Nath, David Mazi
 #
 #
 # Insert your answers below each question:-

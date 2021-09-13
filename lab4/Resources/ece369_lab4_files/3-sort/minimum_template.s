@@ -1,7 +1,7 @@
 # Exercise 3
 # Max Score: 30 points
 #
-# Students: Ary Nath, Rusty Rinehart
+# Students: Ary Nath, Rusty Rinehart, David Mazi
 #
 # minimum.s 
 # Finds the index of the smallest element in an integer array

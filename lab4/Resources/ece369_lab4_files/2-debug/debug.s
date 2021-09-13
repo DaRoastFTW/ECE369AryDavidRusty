@@ -1,7 +1,7 @@
 # Exercise 2
 #  Max Score: 15 points
 #
-# Students: Rusty Rinehart, Ary Nath
+# Students: Rusty Rinehart, Ary Nath, David Mazi
 #
 # 'count_occurence.a' - count the occurrences of a specific character in string 
 # "str". Indexed addressing is used to access the array elements.
