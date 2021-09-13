@@ -41,4 +41,7 @@ li	$v0, 0			# Return value
 # What does the tomato function do?   
 # Write your answer HERE:
 # The tomato function handles storing return addresses and decrementing values into the stack in order
-# to support the overall program that recursively adds the values in an array.           
+# to support the overall program that recursively adds the values in an array.    
+
+# Soln: The tomato function creates a two-word space on the stack pointer and subsequently 
+#       stores the value of the $a0 register as it is decremented to zero as well as the corresponding return addresses.       
