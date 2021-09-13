@@ -46,13 +46,16 @@ main:	addi	$sp, $sp, -4	# Make space on stack
 	li	$a0, 8
       li    $a2, 5		
 	jal	test		
-# What is the value of $v0 at this point? (v0)= _ _ _ _ _ _ _ _        #
+# What is the value of $v0 at this point? (v0)= 25        #
 	la	$a1, list1	
 	li	$a0, 13		
 	jal	test		
-# What is the value of $v0 at this point?	(v0) = _ _ _ _ _ _ _ _       #
+# What is the value of $v0 at this point?	(v0) = 34       #
 # What does this code compute? Your answer HERE: _ _ _ _ _ _ _ _ _ _ _ _ #
-
+# 	This code recursively adds all numbers greater than or equal to 5 in the array
+#   for the number of elements given by the value in a0. Since list1 had 9 elements
+#	and since a0 called for 13 elements to be added, it went into the addresses where list2 was stored.
+#	list1 and list2 were placed adjacently in memory.
 return:	
 li	$v0, 0		# Return value
 	lw	$ra, 0($sp)		# Restore return address

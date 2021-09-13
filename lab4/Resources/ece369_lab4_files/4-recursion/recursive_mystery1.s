@@ -38,4 +38,6 @@ li	$v0, 0			# Return value
 	jr 	$ra			# Return
 # Step through this code in your simulator and monitor the register values. 
 # What does the tomato function do?   
-# Write your answer HERE_ _ _ _ _ _ _ _ _ #                
+# Write your answer HERE:
+# The tomato function handles storing return addresses and decrementing values into the stack in order
+# to support the overall program that recursively adds the values in an array.           
