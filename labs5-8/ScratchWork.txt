@@ -1,0 +1,41 @@
+vbsme(int[] frame, int[] window)
+{
+	//Find an algo way to move through the frame in a zig-zag esque pattern (diagonal search pattern) using JUST rows and cols
+	//Calculate the sum of absolute differences (SAD) using a separate function
+		//Find the addresses of of row and col (v0, v1) (don't use v registers until we go to top level function) (store row and col in s_ and s_)
+		//Keep track of a minimum SAD (s_)
+			//Keep track of row and col (this is what we're returning)
+ START IN C CODE!!!!!
+	Be super verbose with comments come the assembly bit
+	(0, 0), (0, 1), (1, 0), (2, 0), (1, 1), (0, 2), (0, 3), (1, 2), (2, 1), (3, 0)
+	Calculate starting and endpoints, Calculate slope between starting and end point,
+	first row of frame and first col of frame should be conditional statements that trigger a move to the right or down respectively
+	Reverse these rules for the back half
+}
+
+vbsmeCalcSAD(int[] frame, int* row, int* col)
+{
+	for (int i = 0; i < 7
+}
+
+//vbsmeActualNumberGenerator(int[] array, int* row, int* col, int sizeofArrays[3])
+
+	//Return the corresponding value in the array at row, col
+	
+Functions:
+
+vbsme(int[] sizeofArrays, int[][] frame, int[][] window) //outputs: x_dimension, y_dimension
+//Move the window through the frame implementing a diagonal search pattern and store the minimum SAD and corresponding coordinates
+//Output of search algorithm will be starting row and col
+vbsmeCalcSAD(int sizeWindow, int row, int col){
+	x=0;
+	for(i=row, i<sieofArrays[2], i++){
+		for(j=col; j<sizeofArrays[3],j++)
+			x = x + abs(window[i][j] - frame[i][j];
+	}
+	if(x<=min-sum-diff){
+		min_sum_diff = x;
+		min_x_coordinate = row;
+		min_y_coordinate = col;
+	}
+}
