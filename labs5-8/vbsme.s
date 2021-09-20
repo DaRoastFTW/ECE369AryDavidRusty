@@ -782,3 +782,30 @@ vbsme:
 
     # insert your code here
    
+	addi $t0, $zero, 1	#t0 represents direction of diagonal (dir). +1 for up and right, and -1 for down and left
+	addi $t1, $zero, 1	#t1 represents current diagonal line (line)
+	#Calculate i + j - k - 1 + 2 which is the number of diagonals - 1
+	lw $s0, 0($a0)	# Load i into s0 which is rows of frame
+	lw $s1, 4($a0)	# Load j into s1 which is cols of frame
+	lw $s2, 8($a0)	# Load k into s2 which is rows of window
+	lw $s3, 12($a0)	# Load l into s3 which is cols of window
+	
+	add $t3, $s0, $s1	# Make t3 to be i + j
+	sub $t3, $t3, $s2	# Make t3 to be i + j - k
+	sub $t3, $t3, $s3	# Make t3 to be i + j - k - l
+	addi $t3, $t3, 2	# Make t3 to be i + j - k - l + 2
+	
+	slt $t4, $t1, $t3	# Make t4 = t1 < t3
+	beq $t4, $zero, end_diagonal	# Jump to end if line is no longer less than i + j - k - 1 + 2
+	
+	
+	
+	
+	
+	
+	
+	
+	end_diagonal:	# Done traversing grid
+	
+	
+	
