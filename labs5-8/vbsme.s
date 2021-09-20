@@ -782,8 +782,8 @@ vbsme:
 
     # insert your code here
    
-	addi $t0, $zero, 1	#t0 represents direction of diagonal (dir). +1 for up and right, and -1 for down and left
-	addi $t1, $zero, 1	#t1 represents current diagonal line (line)
+	addi $s4, $zero, 1	#s4 represents direction of diagonal (dir). +1 for up and right, and -1 for down and left
+	addi $s5, $zero, 1	#s5 represents current diagonal line (line)
 	#Calculate i + j - k - 1 + 2 which is the number of diagonals - 1
 	lw $s0, 0($a0)	# Load i into s0 which is rows of frame
 	lw $s1, 4($a0)	# Load j into s1 which is cols of frame
@@ -796,10 +796,10 @@ vbsme:
 	addi $t3, $t3, 2	# Make t3 to be i + j - k - l + 2
 	
 diagonal_loop:
-	slt $t4, $t1, $t3	# Make t4 = t1 < t3
+	slt $t4, $s5, $t3	# Make t4 = line < t3
 	beq $t4, $zero, end_diagonal	# Jump to end if line is no longer less than i + j - k - 1 + 2
 	
-	sub $t4, $t1, $s0	# b = line - i
+	sub $t4, $s5, $s0	# b = line - i
 	add $t4, $t4, $s2	# b = line - i + k
 	addi $t4, $t4, -1	# b = line - i + k - 1
 	
@@ -811,7 +811,34 @@ start_col_b:			# If jumped to here, then t4 = start_col = b. If stepped here the
 	sub $t5, $t5, $s3	# a = j - start_col - l
 	addi $t5, $t5, 1	# a = j - start_col - l + 1
 
-	slt $t6, $t5, $t1	# t6 = a < line, t6 = 0 if line <= a
+	slt $t6, $t5, $s5	# t6 = a < line, t6 = 0 if line <= a
+	slt $t7, $s0, $s5	# t7 = i < line, t7 = 0 if line <= i
+	or $t6, $t6, $t7	# t6 = t6 | t7, t6 = 0 if both conditions satisfied
+	add $t6, $s5, $zero	# set t6 = count = line
+	beq $t6, $zero, count_end # If first branch condition is satisfied, then leave branches
+	slt $t7, $s5, $t5	# t7 = line < a, t7 = 0 if a <= line
+	slt $t8, $s0, $t5	# t8 = i < a, t8 = 0 if a <= i*j
+	or $t7, $t7, $t8	# t7 = t7 | t8, t7 = 0 if both conditions satisfied
+	add $t6, $t5, $zero	# set t6 = count = a
+	beq $t6, $zero, count_end # If second branch condition is satisfied, then leave branches
+	add $t6, $s0, $zero	# Else condition: set t6 = count = i
+	
+	addi $t5, $zero, 1	# set t5 = 1
+	bne $s4, $t5, negative_dir	# Jump to else condition if dir == -1
+	add $t5, $zero, $zero		# Set t5 = startPos = 0
+	add $t7, $t6, $zero	# set t7 = endPos = 0
+	addi $t8, $zero, 1	# set t8 = iterPos = 1
+	addi $s4, $s4, -2	# Set dir = -1 for the next iteration of diagonal_loop
+	j end_start_end_pos	# Jump to end of else statement
+negative_dir:	
+	addi $t5, $t6, -1	# Set t5 = startPos = count - 1
+	addi $t7, $zero, -1	# Set t7 = endPos = -1
+	addi $t8, $zero, -1	# Set t8 = iterPos = -1
+	addi $s4, $s4, 2	# Set dir = +1 for the next iteration of diagonal_loop
+end_start_end_pos:
+
+count_end:
+
 	
 	
 	
