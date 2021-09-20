@@ -795,16 +795,30 @@ vbsme:
 	sub $t3, $t3, $s3	# Make t3 to be i + j - k - l
 	addi $t3, $t3, 2	# Make t3 to be i + j - k - l + 2
 	
+diagonal_loop:
 	slt $t4, $t1, $t3	# Make t4 = t1 < t3
 	beq $t4, $zero, end_diagonal	# Jump to end if line is no longer less than i + j - k - 1 + 2
 	
+	sub $t4, $t1, $s0	# b = line - i
+	add $t4, $t4, $s2	# b = line - i + k
+	addi $t4, $t4, -1	# b = line - i + k - 1
+	
+	slt $t5, $zero, $t4	# t5 = 0 < b, t5 = 0 when 0 >= b
+	beq $t5, $zero, start_col_b
+	add $t4, $zero, $zero
+start_col_b:			# If jumped to here, then t4 = start_col = b. If stepped here then start_col = 0
+	sub $t5, $s1, $t4	# a = j - start_col
+	sub $t5, $t5, $s3	# a = j - start_col - l
+	addi $t5, $t5, 1	# a = j - start_col - l + 1
+
+	slt $t6, $t5, $t1	# t6 = a < line, t6 = 0 if line <= a
 	
 	
 	
 	
 	
 	
-	
+	j diagonal_loop					# Jump to start of diagonal_loop
 	end_diagonal:	# Done traversing grid
 	
 	
