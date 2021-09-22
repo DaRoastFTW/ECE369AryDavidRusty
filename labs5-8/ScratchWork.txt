@@ -27,7 +27,7 @@ Functions:
 vbsme(int[] sizeofArrays, int[][] frame, int[][] window) //outputs: x_dimension, y_dimension
 //Move the window through the frame implementing a diagonal search pattern and store the minimum SAD and corresponding coordinates
 //Output of search algorithm will be starting row and col
-vbsmeCalcSAD(int sizeWindow, int row, int col){
+vbsmeCalcSAD(int sizeofArrays, int row, int col){
 	x=0;
 	for(i=row, i<sieofArrays[2], i++){
 		for(j=col; j<sizeofArrays[3],j++)
