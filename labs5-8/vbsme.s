@@ -495,9 +495,9 @@ main:
          
     # Start test 1 
     ############################################################
-    la      $a0, asize1     # 1st parameter: address of asize1[0]
-    la      $a1, frame1     # 2nd parameter: address of frame1[0]
-    la      $a2, window1    # 3rd parameter: address of window1[0] 
+    la      $a0, asize0     # 1st parameter: address of asize1[0]
+    la      $a1, frame0     # 2nd parameter: address of frame1[0]
+    la      $a2, window0    # 3rd parameter: address of window1[0] 
    
     jal     vbsme           # call function
     jal     print_result    # print results to console
@@ -781,7 +781,9 @@ vbsme:
     li      $v1, 0
 
     # insert your code here
-   
+	addi $sp, $sp, -4	# Allocate room for $ra on stack
+	sw $ra, 0($sp)	# Store $ra on stack
+	addi $s7, $zero, 32767	#s7 represents current minimum that is initally set to the highest value
 	addi $s4, $zero, 1	#s4 represents direction of diagonal (dir). +1 for up and right, and -1 for down and left
 	addi $s5, $zero, 1	#s5 represents current diagonal line (line)
 	#Calculate i + j - k - 1 + 2 which is the number of diagonals - 1
@@ -804,7 +806,7 @@ vbsme:
 		addi $t4, $t4, -1	# b = line - i + k - 1
 		
 		slt $t5, $zero, $t4	# t5 = 0 < b, t5 = 0 when 0 >= b
-		beq $t5, $zero, start_col_b
+		bne $t5, $zero, start_col_b
 		add $t4, $zero, $zero
 		start_col_b:			# If jumped to here, then t4 = start_col = b. If stepped here then start_col = 0
 			sub $t5, $s1, $t4	# a = j - start_col
@@ -813,7 +815,7 @@ vbsme:
 
 			slt $t6, $t5, $s5	# t6 = a < line, t6 = 0 if line <= a
 			slt $t7, $s0, $s5	# t7 = i < line, t7 = 0 if line <= i
-			or $t6, $t6, $t7	# t6 = t6 | t7, t6 = 0 if both conditions satisfied
+			or $t2, $t6, $t7	# t6 = t6 | t7, t6 = 0 if both conditions satisfied
 			add $t6, $s5, $zero	# set t6 = count = line
 			beq $t6, $zero, count_end # If first branch condition is satisfied, then leave branches
 			slt $t7, $s5, $t5	# t7 = line < a, t7 = 0 if a <= line
@@ -849,7 +851,7 @@ vbsme:
 				sub $t0, $t0, $s6	# Set t0 = row = a - y
 				add $t1, $t4, $s6	# Set t1 = col = start_col + y
 				#EXECUTE SAD ROUTINE HERE: row is in t0 and col is in t1.
-				
+				jal vbsmeCalcSAD	# Jump to SAD subroutine
 				add $s6, $s6, $t8	# Increment y by iterPos
 				j inner_diagonal_loop
 			
@@ -857,6 +859,95 @@ vbsme:
 		addi $s5, $s5, 1	# Increment line by 1
 		j diagonal_loop					# Jump to start of diagonal_loop
 	end_diagonal:	# Done traversing grid
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
+	jr $ra
+	
+vbsmeCalcSAD:
+	addi $sp, $sp, -24
+	sw $t3, 20($sp)
+	sw $t4, 16($sp)
+	sw $t5, 12($sp)
+	sw $t6, 8($sp)
+	sw $t7, 4($sp)
+	sw $ra, 0($sp)
+	add $t6, $0, $0 #t6 is x
+	add $t9, $t0, $0
+
+orange:
+	lw $t3, 8($a0)
+	slt $t3, $t9, $t3
+	beq $t3, $0, red
+	add $t2, $t1, $0
+	jal blue
+	addi $t9, $t9, 1
+	j orange
+
+blue:
+	addi $sp, $sp, -4
+	sw $ra, 0($sp)
+	jal numberGenerator
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
+	sub $t5, $v0, $v1 #Reg1 and Reg2 are provided by Ary
+	#abs $t5, $t5
+	slt $t7, $v0, $v1
+	beq $t7, $zero, after_absolute
+	sub $t5, $v1, $v0
+after_absolute:
+	add $t6, $t6, $t5
+	lw $t4, 12($a0)
+	addi $t2, $t2, 1
+	slt $t4, $t2, $t4
+	bne $t4, $0, blue
+	jr $ra
+
+red:
+	bgt $t6, $s7, end
+	add $s7, $t6, $0
+	add $v0, $t0, $0
+	add $v1, $t1, $0
+
+end:
+	
+	lw $ra, 0($sp)
+	lw $t7, 4($sp)
+	lw $t6, 8($sp)
+	lw $t5, 12($sp)
+	lw $t4, 16($sp)
+	lw $t3, 20($sp)
+	addi $sp, $sp, 24
+	
+	jr $ra
+	
+numberGenerator:
+	#lw $t0, 0($s0) # number of rows in frame
+	#lw $t1, 8($s0) # number of rows in window
+	# At this point: t0 = current row, t1 = current column, t2 = used
+	addi $sp, $sp, -8
+	sw $t3, 4($sp)	# Store t3 in the stack
+	sw $t4, 0($sp)	# Store t4 in stack
+	mul $t3, $s0, $t9 # t3 = asize[0] * row(stored in $t9)
+	add $t3, $t3, $t2 # t3 = asize[0] * row + col(stored in $t2)
+	
+	sll $t3, $t3, 2 # address of asize[0] * row + col
+	
+	mul $t4, $s2, $t9 # t4 = asize[2] * row
+	add $t4, $t4, $t2 # t4 = asize[2] * row + col
+	
+	sll $t4, $t4, 2 # address of asize[2] * row + col
+	
+	add $t3, $t3, $a1 # address of frame[asize[0] * row + col]
+	lw $v0, 0($t3) # load in above to v0
+	
+	add $t4, $t4, $a2 # address of window[asize[2] * row + col]
+	lw $v1, 0($t4) # load in above to v1
+	lw $t3, 4($sp)	# Restore t3
+	lw $t4, 0($sp)	# Restore t4
+	addi $sp, $sp, 8	# Restore stack pointer
+	jr $ra
+	
+	
 	
 	
 	
