@@ -817,12 +817,12 @@ vbsme:
 			slt $t7, $s0, $s5	# t7 = i < line, t7 = 0 if line <= i
 			or $t2, $t6, $t7	# t6 = t6 | t7, t6 = 0 if both conditions satisfied
 			add $t6, $s5, $zero	# set t6 = count = line
-			beq $t6, $zero, count_end # If first branch condition is satisfied, then leave branches
+			beq $t2, $zero, count_end # If first branch condition is satisfied, then leave branches
 			slt $t7, $s5, $t5	# t7 = line < a, t7 = 0 if a <= line
-			slt $t8, $s0, $t5	# t8 = i < a, t8 = 0 if a <= i*j
+			slt $t8, $s0, $t5	# t8 = i < a, t8 = 0 if a <= i
 			or $t7, $t7, $t8	# t7 = t7 | t8, t7 = 0 if both conditions satisfied
 			add $t6, $t5, $zero	# set t6 = count = a
-			beq $t6, $zero, count_end # If second branch condition is satisfied, then leave branches
+			beq $t7, $zero, count_end # If second branch condition is satisfied, then leave branches
 			add $t6, $s0, $zero	# Else condition: set t6 = count = i
 		count_end:	
 
