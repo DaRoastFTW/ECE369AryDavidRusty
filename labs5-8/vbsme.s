@@ -664,6 +664,8 @@ main:
     lw      $ra, 0($sp)         # Restore return address
     addi    $sp, $sp, 4         # Restore stack pointer
     jr      $ra                 # Return
+	
+	j end_program
 
 ################### Print Result ####################################
 print_result:
@@ -864,13 +866,12 @@ vbsme:
 	jr $ra
 	
 vbsmeCalcSAD:
-	addi $sp, $sp, -24
-	sw $t3, 20($sp)
-	sw $t4, 16($sp)
-	sw $t5, 12($sp)
-	sw $t6, 8($sp)
-	sw $t7, 4($sp)
-	sw $ra, 0($sp)
+	addi $sp, $sp, -20
+	sw $t3, 16($sp)
+	sw $t4, 12($sp)
+	sw $t5, 8($sp)
+	sw $t6, 4($sp)
+	sw $t7, 0($sp)
 	add $t6, $0, $0 #t6 is x
 	add $t9, $t0, $0
 
@@ -879,7 +880,11 @@ orange:
 	slt $t3, $t9, $t3
 	beq $t3, $0, red
 	add $t2, $t1, $0
+	addi $sp, $sp, -4
+	sw $ra, 0($sp)
 	jal blue
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
 	addi $t9, $t9, 1
 	j orange
 
@@ -910,13 +915,12 @@ red:
 
 end:
 	
-	lw $ra, 0($sp)
-	lw $t7, 4($sp)
-	lw $t6, 8($sp)
-	lw $t5, 12($sp)
-	lw $t4, 16($sp)
-	lw $t3, 20($sp)
-	addi $sp, $sp, 24
+	lw $t7, 0($sp)
+	lw $t6, 4($sp)
+	lw $t5, 8($sp)
+	lw $t4, 12($sp)
+	lw $t3, 16($sp)
+	addi $sp, $sp, 20
 	
 	jr $ra
 	
@@ -947,7 +951,8 @@ numberGenerator:
 	addi $sp, $sp, 8	# Restore stack pointer
 	jr $ra
 	
-	
+end_program:
+	j end_program
 	
 	
 	
