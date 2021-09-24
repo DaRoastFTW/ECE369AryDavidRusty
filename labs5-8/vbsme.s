@@ -866,12 +866,14 @@ vbsme:
 	jr $ra
 	
 vbsmeCalcSAD:
-	addi $sp, $sp, -20
-	sw $t3, 16($sp)
-	sw $t4, 12($sp)
-	sw $t5, 8($sp)
-	sw $t6, 4($sp)
-	sw $t7, 0($sp)
+	addi $sp, $sp, -28
+	sw $t3, 24($sp)
+	sw $t4, 20($sp)
+	sw $t5, 16($sp)
+	sw $t6, 12($sp)
+	sw $t7, 8($sp)
+	sw $t8, 4($sp);
+	sw $s6, 0($sp);
 	add $t6, $0, $0 #t6 is x
 	add $t9, $t0, $0
 
@@ -914,13 +916,14 @@ red:
 	add $v1, $t1, $0
 
 end:
-	
-	lw $t7, 0($sp)
-	lw $t6, 4($sp)
-	lw $t5, 8($sp)
-	lw $t4, 12($sp)
-	lw $t3, 16($sp)
-	addi $sp, $sp, 20
+	lw $s6, 0($sp);
+	lw $t8, 4($sp);
+	lw $t7, 8($sp)
+	lw $t6, 12($sp)
+	lw $t5, 16($sp)
+	lw $t4, 20($sp)
+	lw $t3, 24($sp)
+	addi $sp, $sp, 28
 	
 	jr $ra
 	
