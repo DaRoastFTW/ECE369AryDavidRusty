@@ -866,28 +866,33 @@ vbsme:
 	jr $ra
 	
 vbsmeCalcSAD:
-	addi $sp, $sp, -28
-	sw $t3, 24($sp)
-	sw $t4, 20($sp)
-	sw $t5, 16($sp)
-	sw $t6, 12($sp)
-	sw $t7, 8($sp)
-	sw $t8, 4($sp);
-	sw $s6, 0($sp);
+	addi $sp, $sp, -36
+	sw $t3, 32($sp)
+	sw $t4, 28($sp)
+	sw $t5, 24($sp)
+	sw $t6, 20($sp)
+	sw $t7, 16($sp)
+	sw $t8, 12($sp)
+	sw $s6, 8($sp)
+   sw $v0, 4($sp)
+   sw $v1, 0($sp)
 	add $t6, $0, $0 #t6 is x
 	add $t9, $t0, $0
+   add $t8, $0, $0 #new line
 
 orange:
 	lw $t3, 8($a0)
-	slt $t3, $t9, $t3
+	slt $t3, $t8, $t3
 	beq $t3, $0, red
 	add $t2, $t1, $0
+   add $s6, $0, $0 #new line
 	addi $sp, $sp, -4
 	sw $ra, 0($sp)
 	jal blue
 	lw $ra, 0($sp)
 	addi $sp, $sp, 4
 	addi $t9, $t9, 1
+   addi $t8, $t8, 1 #new line
 	j orange
 
 blue:
@@ -905,25 +910,28 @@ after_absolute:
 	add $t6, $t6, $t5
 	lw $t4, 12($a0)
 	addi $t2, $t2, 1
-	slt $t4, $t2, $t4
+   addi $s6, $s6, 1 #new line
+	slt $t4, $s6, $t4
 	bne $t4, $0, blue
 	jr $ra
 
 red:
+   lw $v1, 0($sp)
+   lw $v0, 4($sp)
 	bgt $t6, $s7, end
 	add $s7, $t6, $0
 	add $v0, $t0, $0
 	add $v1, $t1, $0
 
 end:
-	lw $s6, 0($sp);
-	lw $t8, 4($sp);
-	lw $t7, 8($sp)
-	lw $t6, 12($sp)
-	lw $t5, 16($sp)
-	lw $t4, 20($sp)
-	lw $t3, 24($sp)
-	addi $sp, $sp, 28
+	lw $s6, 8($sp)
+	lw $t8, 12($sp)
+	lw $t7, 16($sp)
+	lw $t6, 20($sp)
+	lw $t5, 24($sp)
+	lw $t4, 28($sp)
+	lw $t3, 32($sp)
+	addi $sp, $sp, 36
 	
 	jr $ra
 	
@@ -939,8 +947,8 @@ numberGenerator:
 	
 	sll $t3, $t3, 2 # address of asize[0] * row + col
 	
-	mul $t4, $s2, $t9 # t4 = asize[2] * row
-	add $t4, $t4, $t2 # t4 = asize[2] * row + col
+	mul $t4, $s2, $t8 # t4 = asize[2] * row
+	add $t4, $t4, $s6 # t4 = asize[2] * row + col
 	
 	sll $t4, $t4, 2 # address of asize[2] * row + col
 	
