@@ -872,8 +872,8 @@ vbsmeCalcSAD:
 	sw $t5, 16($sp)
 	sw $t6, 12($sp)
 	sw $t7, 8($sp)
-	sw $t8, 4($sp);
-	sw $s6, 0($sp);
+	sw $t8, 4($sp)
+	sw $s6, 0($sp)
 	add $t6, $0, $0 #t6 is x
 	add $t9, $t0, $0
 
@@ -891,11 +891,15 @@ orange:
 	j orange
 
 blue:
-	addi $sp, $sp, -4
+	addi $sp, $sp, -12
+	sw $v0, 8($sp)
+	sw $v1, 4($sp)
 	sw $ra, 0($sp)
 	jal numberGenerator
 	lw $ra, 0($sp)
-	addi $sp, $sp, 4
+	lw $v1, 4($sp)
+	lw $v0, 8($sp)
+	addi $sp, $sp, 12
 	sub $t5, $v0, $v1 #Reg1 and Reg2 are provided by Ary
 	#abs $t5, $t5
 	slt $t7, $v0, $v1
@@ -916,8 +920,8 @@ red:
 	add $v1, $t1, $0
 
 end:
-	lw $s6, 0($sp);
-	lw $t8, 4($sp);
+	lw $s6, 0($sp)
+	lw $t8, 4($sp)
 	lw $t7, 8($sp)
 	lw $t6, 12($sp)
 	lw $t5, 16($sp)
