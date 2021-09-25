@@ -896,10 +896,7 @@ blue:
 	sw $v1, 4($sp)
 	sw $ra, 0($sp)
 	jal numberGenerator
-	lw $ra, 0($sp)
-	lw $v1, 4($sp)
-	lw $v0, 8($sp)
-	addi $sp, $sp, 12
+	
 	sub $t5, $v0, $v1 #Reg1 and Reg2 are provided by Ary
 	#abs $t5, $t5
 	slt $t7, $v0, $v1
@@ -909,6 +906,10 @@ after_absolute:
 	add $t6, $t6, $t5
 	lw $t4, 12($a0)
 	addi $t2, $t2, 1
+	lw $ra, 0($sp)
+	lw $v1, 4($sp)
+	lw $v0, 8($sp)
+	addi $sp, $sp, 12
 	slt $t4, $t2, $t4
 	bne $t4, $0, blue
 	jr $ra
