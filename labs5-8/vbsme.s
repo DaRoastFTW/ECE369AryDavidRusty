@@ -866,6 +866,7 @@ vbsme:
 	jr $ra
 	
 vbsmeCalcSAD:
+<<<<<<< HEAD
 	addi $sp, $sp, -36
 	sw $t3, 32($sp)
 	sw $t4, 28($sp)
@@ -876,6 +877,16 @@ vbsmeCalcSAD:
 	sw $s6, 8($sp)
    sw $v0, 4($sp)
    sw $v1, 0($sp)
+=======
+	addi $sp, $sp, -28
+	sw $t3, 24($sp)
+	sw $t4, 20($sp)
+	sw $t5, 16($sp)
+	sw $t6, 12($sp)
+	sw $t7, 8($sp)
+	sw $t8, 4($sp)
+	sw $s6, 0($sp)
+>>>>>>> 6bc72a6c88a04d7ae97d2769f9c61b2351f89645
 	add $t6, $0, $0 #t6 is x
 	add $t9, $t0, $0
    add $t8, $0, $0 #new line
@@ -896,11 +907,12 @@ orange:
 	j orange
 
 blue:
-	addi $sp, $sp, -4
+	addi $sp, $sp, -12
+	sw $v0, 8($sp)
+	sw $v1, 4($sp)
 	sw $ra, 0($sp)
 	jal numberGenerator
-	lw $ra, 0($sp)
-	addi $sp, $sp, 4
+	
 	sub $t5, $v0, $v1 #Reg1 and Reg2 are provided by Ary
 	#abs $t5, $t5
 	slt $t7, $v0, $v1
@@ -910,8 +922,16 @@ after_absolute:
 	add $t6, $t6, $t5
 	lw $t4, 12($a0)
 	addi $t2, $t2, 1
+<<<<<<< HEAD
    addi $s6, $s6, 1 #new line
 	slt $t4, $s6, $t4
+=======
+	lw $ra, 0($sp)
+	lw $v1, 4($sp)
+	lw $v0, 8($sp)
+	addi $sp, $sp, 12
+	slt $t4, $t2, $t4
+>>>>>>> 6bc72a6c88a04d7ae97d2769f9c61b2351f89645
 	bne $t4, $0, blue
 	jr $ra
 
@@ -924,6 +944,7 @@ red:
 	add $v1, $t1, $0
 
 end:
+<<<<<<< HEAD
 	lw $s6, 8($sp)
 	lw $t8, 12($sp)
 	lw $t7, 16($sp)
@@ -932,6 +953,16 @@ end:
 	lw $t4, 28($sp)
 	lw $t3, 32($sp)
 	addi $sp, $sp, 36
+=======
+	lw $s6, 0($sp)
+	lw $t8, 4($sp)
+	lw $t7, 8($sp)
+	lw $t6, 12($sp)
+	lw $t5, 16($sp)
+	lw $t4, 20($sp)
+	lw $t3, 24($sp)
+	addi $sp, $sp, 28
+>>>>>>> 6bc72a6c88a04d7ae97d2769f9c61b2351f89645
 	
 	jr $ra
 	
