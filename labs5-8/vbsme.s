@@ -1,5 +1,5 @@
-#  Team Members:    
-#  % Effort    :   
+#  Team Members: Rusty Rinehart, Ary Nath, David Mazi:    
+#  % Effort    :   Rusty: 33.333%, Ary: 33.333%, David: 33.333%
 #
 # ECE369A,  
 # 
@@ -495,9 +495,9 @@ main:
          
     # Start test 1 
     ############################################################
-    la      $a0, asize0     # 1st parameter: address of asize1[0]
-    la      $a1, frame0     # 2nd parameter: address of frame1[0]
-    la      $a2, window0    # 3rd parameter: address of window1[0] 
+    la      $a0, asize1     # 1st parameter: address of asize1[0]
+    la      $a1, frame1     # 2nd parameter: address of frame1[0]
+    la      $a2, window1    # 3rd parameter: address of window1[0] 
    
     jal     vbsme           # call function
     jal     print_result    # print results to console
@@ -866,7 +866,6 @@ vbsme:
 	jr $ra
 	
 vbsmeCalcSAD:
-<<<<<<< HEAD
 	addi $sp, $sp, -36
 	sw $t3, 32($sp)
 	sw $t4, 28($sp)
@@ -877,42 +876,31 @@ vbsmeCalcSAD:
 	sw $s6, 8($sp)
    sw $v0, 4($sp)
    sw $v1, 0($sp)
-=======
-	addi $sp, $sp, -28
-	sw $t3, 24($sp)
-	sw $t4, 20($sp)
-	sw $t5, 16($sp)
-	sw $t6, 12($sp)
-	sw $t7, 8($sp)
-	sw $t8, 4($sp)
-	sw $s6, 0($sp)
->>>>>>> 6bc72a6c88a04d7ae97d2769f9c61b2351f89645
 	add $t6, $0, $0 #t6 is x
 	add $t9, $t0, $0
-   add $t8, $0, $0 #new line
+   add $t8, $0, $0 
 
 orange:
 	lw $t3, 8($a0)
 	slt $t3, $t8, $t3
 	beq $t3, $0, red
 	add $t2, $t1, $0
-   add $s6, $0, $0 #new line
+   add $s6, $0, $0 
 	addi $sp, $sp, -4
 	sw $ra, 0($sp)
 	jal blue
 	lw $ra, 0($sp)
 	addi $sp, $sp, 4
 	addi $t9, $t9, 1
-   addi $t8, $t8, 1 #new line
+   addi $t8, $t8, 1 
 	j orange
 
 blue:
-	addi $sp, $sp, -12
-	sw $v0, 8($sp)
-	sw $v1, 4($sp)
+	addi $sp, $sp, -4
 	sw $ra, 0($sp)
 	jal numberGenerator
-	
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
 	sub $t5, $v0, $v1 #Reg1 and Reg2 are provided by Ary
 	#abs $t5, $t5
 	slt $t7, $v0, $v1
@@ -922,16 +910,8 @@ after_absolute:
 	add $t6, $t6, $t5
 	lw $t4, 12($a0)
 	addi $t2, $t2, 1
-<<<<<<< HEAD
-   addi $s6, $s6, 1 #new line
+   addi $s6, $s6, 1 
 	slt $t4, $s6, $t4
-=======
-	lw $ra, 0($sp)
-	lw $v1, 4($sp)
-	lw $v0, 8($sp)
-	addi $sp, $sp, 12
-	slt $t4, $t2, $t4
->>>>>>> 6bc72a6c88a04d7ae97d2769f9c61b2351f89645
 	bne $t4, $0, blue
 	jr $ra
 
@@ -944,7 +924,6 @@ red:
 	add $v1, $t1, $0
 
 end:
-<<<<<<< HEAD
 	lw $s6, 8($sp)
 	lw $t8, 12($sp)
 	lw $t7, 16($sp)
@@ -953,16 +932,6 @@ end:
 	lw $t4, 28($sp)
 	lw $t3, 32($sp)
 	addi $sp, $sp, 36
-=======
-	lw $s6, 0($sp)
-	lw $t8, 4($sp)
-	lw $t7, 8($sp)
-	lw $t6, 12($sp)
-	lw $t5, 16($sp)
-	lw $t4, 20($sp)
-	lw $t3, 24($sp)
-	addi $sp, $sp, 28
->>>>>>> 6bc72a6c88a04d7ae97d2769f9c61b2351f89645
 	
 	jr $ra
 	
@@ -973,20 +942,20 @@ numberGenerator:
 	addi $sp, $sp, -8
 	sw $t3, 4($sp)	# Store t3 in the stack
 	sw $t4, 0($sp)	# Store t4 in stack
-	mul $t3, $s0, $t9 # t3 = asize[0] * row(stored in $t9)
-	add $t3, $t3, $t2 # t3 = asize[0] * row + col(stored in $t2)
+	mul $t3, $s1, $t9 # t3 = asize[1] * row(stored in $t9) 
+	add $t3, $t3, $t2 # t3 = asize[1] * row + col(stored in $t2)
 	
-	sll $t3, $t3, 2 # address of asize[0] * row + col
+	sll $t3, $t3, 2 # address of asize[1] * row + col
 	
-	mul $t4, $s2, $t8 # t4 = asize[2] * row
-	add $t4, $t4, $s6 # t4 = asize[2] * row + col
+	mul $t4, $s3, $t8 # t4 = asize[3] * row 
+	add $t4, $t4, $s6 # t4 = asize[3] * row + col
 	
-	sll $t4, $t4, 2 # address of asize[2] * row + col
+	sll $t4, $t4, 2 # address of asize[3] * row + col
 	
-	add $t3, $t3, $a1 # address of frame[asize[0] * row + col]
+	add $t3, $t3, $a1 # address of frame[asize[1] * row + col]
 	lw $v0, 0($t3) # load in above to v0
 	
-	add $t4, $t4, $a2 # address of window[asize[2] * row + col]
+	add $t4, $t4, $a2 # address of window[asize[3] * row + col]
 	lw $v1, 0($t4) # load in above to v1
 	lw $t3, 4($sp)	# Restore t3
 	lw $t4, 0($sp)	# Restore t4
