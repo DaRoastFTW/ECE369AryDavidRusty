@@ -66,7 +66,7 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
 	   ReadData1 <= RegisterFile[ReadRegister1];
 	   ReadData2 <= RegisterFile[ReadRegister2];
 	   if(RegWrite) begin
-	       @(negedge Clk);
+	       //@(negedge Clk);
 	       RegisterFile[WriteRegister] <= WriteData;
 	   end
 	end
