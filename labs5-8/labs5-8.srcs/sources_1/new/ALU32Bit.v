@@ -41,163 +41,163 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
         6'b000000:	//add
             begin
             end
-        6'b000000:	//addiu
+        6'b000001:	//addiu
             begin
             end
-        6'b000000:	//addu
+        6'b000010:	//addu
             begin
             end
-        6'b000000:	//addi
+        6'b000011:	//addi
             begin
             end
-        6'b000000:	//sub
+        6'b000100:	//sub
             begin
             end
-        6'b000000:	//mul
+        6'b000101:	//mul
             begin
             end
-        6'b000000:	//mult
+        6'b000110:	//mult
             begin
             end
-        6'b000000:	//multu
+        6'b000111:	//multu
             begin
             end
-		6'b000000:	//madd
+		6'b001000:	//madd
             begin
             end
-        6'b000000:	//msub
+        6'b001001:	//msub
             begin
             end
-        6'b000000:	//lw
+        6'b001010:	//lw
             begin
             end
-        6'b000000:	//sw
+        6'b001011:	//sw
             begin
             end
-        6'b000000:	//sb
+        6'b001100:	//sb
             begin
             end
-        6'b000000:	//lh
+        6'b001101:	//lh
             begin
             end
-        6'b000000:	//lb
+        6'b001110:	//lb
             begin
             end
-        6'b000000:	//sh
+        6'b001111:	//sh
             begin
             end
-		6'b000000:	//mthi
+		6'b010000:	//mthi
             begin
             end
-        6'b000000:	//mtlo
+        6'b010001:	//mtlo
             begin
             end
-        6'b000000: //mfhi
+        6'b010010: //mfhi
             begin
             end
-        6'b000000:	//mflo
+        6'b010011:	//mflo
             begin
             end
-        6'b000000: //lui
+        6'b010100: //lui
             begin
             end
-        6'b000000: //bgez
+        6'b010101: //bgez
             begin
             end
-        6'b000000:	//beq
+        6'b010110:	//beq
             begin
             end
-        6'b000000:	//bne
+        6'b010111:	//bne
             begin
             end
-		6'b000000: //bgtz
+		6'b011000: //bgtz
             begin
             end
-        6'b000000: //blez
+        6'b011001: //blez
             begin
             end
-        6'b000000: //bltz
+        6'b011010: //bltz
             begin
             end
-        6'b000000:	//j
+        6'b011011:	//j
             begin
             end
-        6'b000000:	//jr
+        6'b011100:	//jr
             begin
             end
-        6'b000000:	//jal
+        6'b011101:	//jal
             begin
             end
-        6'b000000:	//and
+        6'b011110:	//and
             begin
             end
-        6'b000000:	//andi
+        6'b011111:	//andi
             begin
             end
-		6'b000000:	//or
+		6'b100000:	//or
             begin
             end
-        6'b000000:	//nor
+        6'b100001:	//nor
             begin
             end
-        6'b000000:	//xor
+        6'b100010:	//xor
             begin
             end
-        //6'b000000: //andi
+        //6'b100011: //andi
             //begin
             //end
-        6'b000000:	//ori
+        6'b100100:	//ori
             begin
             end
-        6'b000000:	//xori
+        6'b100101:	//xori
             begin
             end
-        6'b000000:	//seh
+        6'b100110:	//seh
             begin
             end
-        6'b000000:	//sll
+        6'b100111:	//sll
             begin
             end
-		6'b000000:	//srl
+		6'b101000:	//srl
             begin
             end
-        6'b000000:	//sllv
+        6'b101001:	//sllv
             begin
             end
-        6'b000000:	//srlv
+        6'b101010:	//srlv
             begin
             end
-        6'b000000:	//slt
+        6'b101011:	//slt
             begin
             end
-        6'b000000:	//slti
+        6'b101100:	//slti
             begin
             end
-        6'b000000:	//movn
+        6'b101101:	//movn
             begin
             end
-        6'b000000:	//movz
+        6'b101110:	//movz
             begin
             end
-        6'b000000:	//rotrv
+        6'b101111:	//rotrv
             begin
             end
-		6'b000000:	//rotr
+		6'b110000:	//rotr
             begin
             end
-        6'b000000:	//sra
+        6'b110001:	//sra
             begin
             end
-        6'b000000:	//srav
+        6'b110010:	//srav
             begin
             end
-        6'b000000:	//seb
+        6'b110011:	//seb
             begin
             end
-        6'b000000:	//sltiu
+        6'b110100:	//sltiu
             begin
             end
-        6'b000000:	//sltu
+        6'b110101:	//sltu
             begin
             end
         default:
