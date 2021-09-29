@@ -1,0 +1,187 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 15304
+License: Customer
+
+Current time: 	Tue Sep 28 20:44:51 MST 2021
+Time zone: 	Mountain Standard Time (America/Phoenix)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Available disk space: 306 GB
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	rrine
+User home directory: C:/Users/rrine
+User working directory: C:/Users/rrine/VivadoProjects/labs5-8
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/rrine/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/rrine/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/rrine/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/rrine/VivadoProjects/labs5-8/vivado.log
+Vivado journal file location: 	C:/Users/rrine/VivadoProjects/labs5-8/vivado.jou
+Engine tmp dir: 	C:/Users/rrine/VivadoProjects/labs5-8/.Xil/Vivado-15304-DELL-TACO-2
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	159 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 694 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\rrine\VivadoProjects\labs5-8\labs5-8.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'F:/ECE369AryDavidRusty/labs5-8' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 69 MB (+69354kb) [00:00:13]
+// [Engine Memory]: 706 MB (+589163kb) [00:00:13]
+// [GUI Memory]: 81 MB (+9489kb) [00:00:13]
+// [GUI Memory]: 105 MB (+20366kb) [00:00:13]
+// [GUI Memory]: 110 MB (+517kb) [00:00:14]
+// WARNING: HEventQueue.dispatchEvent() is taking  2786 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 728 MB. GUI used memory: 67 MB. Current time: 9/28/21, 8:44:55 PM MST
+// Project name: labs5-8; location: C:/Users/rrine/VivadoProjects/labs5-8; part: xc7a100tcsg324-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 765.098 ; gain = 85.156 
+dismissDialog("Open Project"); // bB (cr)
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (ALU32Bit.v) elapsed time: 0.2s
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALU32Bit (ALU32Bit.v)]", 1, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALU32Bit (ALU32Bit.v)]", 1, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("ALU32Bit.v", 171, 182); // ch (w, cr)
+// Elapsed time: 25 seconds
+selectCodeEditor("ALU32Bit.v", 97, 95); // ch (w, cr)
+// [Engine Memory]: 742 MB (+756kb) [00:01:05]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 57 MB. Current time: 9/28/21, 8:45:53 PM MST
+// Elapsed time: 46 seconds
+selectCodeEditor("ALU32Bit.v", 170, 200); // ch (w, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 57 MB. Current time: 9/28/21, 9:15:54 PM MST
+// WARNING: HEventQueue.dispatchEvent() is taking  19114 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  34570591 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 57 MB. Current time: 9/29/21, 7:06:57 AM MST
+// WARNING: HEventQueue.dispatchEvent() is taking  6661555 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 52 MB. Current time: 9/29/21, 8:58:03 AM MST
+// WARNING: HEventQueue.dispatchEvent() is taking  2707524 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 52 MB. Current time: 9/29/21, 9:46:37 AM MST
+// WARNING: HEventQueue.dispatchEvent() is taking  96390 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1015 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  21819 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1137 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  27167 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1351 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  58400 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1165 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  24597 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1335 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1145 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  37220 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  29087 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1189 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  189532 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 52 MB. Current time: 9/29/21, 10:16:40 AM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 52 MB. Current time: 9/29/21, 10:46:40 AM MST
+// WARNING: HEventQueue.dispatchEvent() is taking  426102 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5839341 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 52 MB. Current time: 9/29/21, 12:38:06 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 52 MB. Current time: 9/29/21, 1:08:10 PM MST
+// WARNING: HEventQueue.dispatchEvent() is taking  32599 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  28889 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  112364 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1211 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  15648 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1207 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  22090 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1047 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  22073 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1355 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  23614 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1128 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  95750 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1355 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 760 MB. GUI used memory: 52 MB. Current time: 9/29/21, 1:38:11 PM MST
+// WARNING: HEventQueue.dispatchEvent() is taking  1020 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  32685 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1262 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  15479 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1037 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  22211 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1203 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  25338 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  21967 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1134 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  37484 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  251182 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1183 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  275249 ms.
+// Elapsed time: 62150 seconds
+selectCodeEditor("ALU32Bit.v", 255, 175); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("ALU32Bit.v", 198, 219); // ch (w, cr)
+// Elapsed time: 23 seconds
+selectCodeEditor("ALU32Bit.v", 489, 148); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE

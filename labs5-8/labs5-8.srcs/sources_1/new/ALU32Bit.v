@@ -32,7 +32,7 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
                                 // you need to adjust the bitwidth as needed
 	input [31:0] A, B;	    // inputs
 
-	output [31:0] ALUResult;	// answer
+	output reg[31:0] ALUResult;	// answer
 	output Zero;	    // Zero=1 if ALUResult == 0
 
     /* Please fill in the implementation here... */
@@ -40,9 +40,11 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
         case(ALUControl)
         6'b000000:	//add
             begin
+                ALUResult <= A + B;
             end
-        6'b000001:	//addiu
+        6'b000001:	//subtract
             begin
+                ALUResult <= A - B;
             end
         6'b000010:	//addu
             begin
