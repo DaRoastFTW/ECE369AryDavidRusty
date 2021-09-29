@@ -28,184 +28,82 @@
 
 module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
 
-	input [5:0] ALUControl; // control bits for ALU operation
+	input [3:0] ALUControl; // control bits for ALU operation
                                 // you need to adjust the bitwidth as needed
 	input [31:0] A, B;	    // inputs
 
 	output reg[31:0] ALUResult;	// answer
-	output Zero;	    // Zero=1 if ALUResult == 0
+	output reg Zero;	    // Zero=1 if ALUResult == 0
 
     /* Please fill in the implementation here... */
     always @ (A, B, ALUControl) begin
+        Zero <= 0;
         case(ALUControl)
-        6'b000000:	//add
+        4'b0000:	//add
             begin
                 ALUResult <= A + B;
             end
-        6'b000001:	//subtract
+        4'b0001:	//subtract
             begin
                 ALUResult <= A - B;
             end
-        6'b000010:	//addu
+        4'b0010:	//multiply
             begin
+                ALUResult <= A * B;
             end
-        6'b000011:	//addi
+        4'b0011:	//and
             begin
+                ALUResult <= A & B;           
             end
-        6'b000100:	//sub
+        4'b0100:	//or
             begin
+                ALUResult <= A | B;
             end
-        6'b000101:	//mul
+        4'b0101:	//Assert on less than
             begin
+                ALUResult <= A < B;
             end
-        6'b000110:	//mult
+        4'b0110:	//Assert on equal
             begin
+                ALUResult <= A == B;
             end
-        6'b000111:	//multu
+        4'b0111:	//Assert on not equal
             begin
+                ALUResult <= A != B;
             end
-		6'b001000:	//madd
+		4'b1000:	//Shift left
             begin
+                ALUResult <= A << B;
             end
-        6'b001001:	//msub
+        4'b1001:	//Shift right
             begin
+                ALUResult <= A >> B;
             end
-        6'b001010:	//lw
+        4'b1010:	//Assert on greater than or equal to zero
             begin
+                if(A >= 0) begin
+                    Zero <= 1;
+                end
+                else begin
+                    Zero <= 0;
+                end
             end
-        6'b001011:	//sw
+        4'b1011:	//nor
             begin
-            end
-        6'b001100:	//sb
-            begin
-            end
-        6'b001101:	//lh
-            begin
-            end
-        6'b001110:	//lb
-            begin
-            end
-        6'b001111:	//sh
-            begin
-            end
-		6'b010000:	//mthi
-            begin
-            end
-        6'b010001:	//mtlo
-            begin
-            end
-        6'b010010: //mfhi
-            begin
-            end
-        6'b010011:	//mflo
-            begin
-            end
-        6'b010100: //lui
-            begin
-            end
-        6'b010101: //bgez
-            begin
-            end
-        6'b010110:	//beq
-            begin
-            end
-        6'b010111:	//bne
-            begin
-            end
-		6'b011000: //bgtz
-            begin
-            end
-        6'b011001: //blez
-            begin
-            end
-        6'b011010: //bltz
-            begin
-            end
-        6'b011011:	//j
-            begin
-            end
-        6'b011100:	//jr
-            begin
-            end
-        6'b011101:	//jal
-            begin
-            end
-        6'b011110:	//and
-            begin
-            end
-        6'b011111:	//andi
-            begin
-            end
-		6'b100000:	//or
-            begin
-            end
-        6'b100001:	//nor
-            begin
-            end
-        6'b100010:	//xor
-            begin
-            end
-        //6'b100011: //andi
-            //begin
-            //end
-        6'b100100:	//ori
-            begin
-            end
-        6'b100101:	//xori
-            begin
-            end
-        6'b100110:	//seh
-            begin
-            end
-        6'b100111:	//sll
-            begin
-            end
-		6'b101000:	//srl
-            begin
-            end
-        6'b101001:	//sllv
-            begin
-            end
-        6'b101010:	//srlv
-            begin
-            end
-        6'b101011:	//slt
-            begin
-            end
-        6'b101100:	//slti
-            begin
-            end
-        6'b101101:	//movn
-            begin
-            end
-        6'b101110:	//movz
-            begin
-            end
-        6'b101111:	//rotrv
-            begin
-            end
-		6'b110000:	//rotr
-            begin
-            end
-        6'b110001:	//sra
-            begin
-            end
-        6'b110010:	//srav
-            begin
-            end
-        6'b110011:	//seb
-            begin
-            end
-        6'b110100:	//sltiu
-            begin
-            end
-        6'b110101:	//sltu
-            begin
+                ALUResult <= ~(A | B);
             end
         default:
             begin
             end 
         endcase
+    end
+    always @(ALUResult) begin
+        if(ALUResult == 0) begin
+            Zero <= 1;
+        end
+        else begin
+            Zero <= 0;
+        end
     end
 endmodule
 
