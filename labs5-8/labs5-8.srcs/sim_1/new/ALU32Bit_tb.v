@@ -45,22 +45,169 @@ module ALU32Bit_tb();
 	#20
 	//and
 	ALUControl <= 5'b00011;
-	A <= 7'b1111000;
-	B <= 7'b0001000;
+	A <= 32'b1111000;
+	B <= 32'b0001000;
 	
 	#20
 	//or
 	ALUControl <= 5'b00100;
-	A <= 7'b0000000;
-	B <= 7'b1111111;
+	A <= 32'b0000000;
+	B <= 32'b1111111;
 	
 	#20
-	//nor
+	//assert on less than
 	ALUControl <= 5'b00101;
-	A <= 7'b0000000;
-	B <= 7'b1111111;
+	A <= -10;
+	B <= -5;
+	#20;
+	A <= -5;
+	B <= -10;
 	
+	#20;
+	//assert on equal
+	ALUControl <= 5'b00110;
+	A <= 22;
+	B <= 22;
+	#20;
+	A <= 21;
+	B <= 20;
 	
+	#20;
+	//assert on not equal
+	ALUControl <= 5'b00111;
+	A <= 22;
+	B <= 22;
+	#20;
+	A <= 21;
+	B <= 20;
+	
+	#20;
+	//Shift Left
+	ALUControl <= 5'b01000;
+	A <= 12;
+	B <= 2;
+	
+	#20;
+	//Shift right
+	ALUControl <= 5'b01001;
+	A <= 12;
+	B <= 2;
+	
+	#20;
+	//sra
+	ALUControl <= 5'b01010;
+	A <= -12;
+	B <= 2;
+	
+	#20;
+	//nor
+	ALUControl <= 5'b01011;
+	A <= 32'b0000000;
+	B <= 32'b1111111;
+	
+	#20;
+	//xor
+	ALUControl <= 5'b01100;
+	A <= 32'b0000001;
+	B <= 32'b1111111;
+	
+	#20;
+	//rotate right
+	ALUControl <= 5'b01101;
+	A <= 32'b0011001;
+	B <= 2;
+	
+	#20;
+	//lui
+	ALUControl <= 5'b01110;
+	A <= 32'b0;
+	B <= 32'b00001111;
+	
+	#20;
+	//bgez
+	ALUControl <= 5'b01111;
+	A <= -5;
+	#20;
+	A <= 5;
+	#20;
+	A <= 0;
+	
+	#20;
+	//bgtz
+	ALUControl <= 5'b10000;
+	A <= -5;
+	#20;
+	A <= 5;
+	#20;
+	A <= 0;
+	
+	#20;
+	//blez
+	ALUControl <= 5'b10001;
+	A <= -5;
+	#20;
+	A <= 5;
+	#20;
+	A <= 0;
+	
+	#20;
+	//bltz
+	ALUControl <= 5'b10010;
+	A <= -5;
+	#20;
+	A <= 5;
+	#20;
+	A <= 0;
+	
+	#20;
+	//sltu
+	ALUControl <= 5'b10011;
+	A <= 50;
+	B <= 75;
+	
+	#20;
+	//sltiu
+	ALUControl <= 5'b10100;
+	A <= 50;
+	B <= 75;
+	
+	#20;
+	//seh
+	ALUControl <= 5'b10101;
+	A <= 0;
+	B <= -32767;
+	
+	#20;
+	//seb
+	ALUControl <= 5'b10110;
+	A <= 0;
+	B <= 127;
+	
+	#20;
+	//sllv
+	ALUControl <= 5'b10111;
+	A <= 10;
+	B <= 2;
+	
+	#20;
+	//srlv
+	ALUControl <= 5'b11000;
+	A <= 10;
+	B <= 2;
+	
+	#20;
+	//srav
+	ALUControl <= 5'b11001;
+	A <= 2;
+	B <= -12;
+	
+	#20;
+	//rotrv
+	ALUControl <= 5'b11010;
+	A <= 3;
+	B <= 32'b11110000;
+	
+	#20;
 	end
 
 
