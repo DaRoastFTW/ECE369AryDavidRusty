@@ -2,7 +2,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 // ECE369 - Computer Architecture
-// 
+// Rusty Rinehart, Ary Nath, David Mazi
 // Module - ALU32Bit.v
 // Description - 32-Bit wide arithmetic logic unit (ALU).
 //
@@ -28,7 +28,7 @@
 
 module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
 
-	input [3:0] ALUControl; // control bits for ALU operation
+	input [4:0] ALUControl; // control bits for ALU operation
                                 // you need to adjust the bitwidth as needed
 	input [31:0] A, B;	    // inputs
 
@@ -37,64 +37,119 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
 
     /* Please fill in the implementation here... */
     always @ (A, B, ALUControl) begin
-        Zero <= 0;
         case(ALUControl)
-        4'b0000:	//add
+        5'b00000:	//add
             begin
                 ALUResult <= A + B;
             end
-        4'b0001:	//subtract
+        5'b00001:	//subtract
             begin
                 ALUResult <= A - B;
             end
-        4'b0010:	//multiply
+        5'b00010:	//multiply
             begin
                 ALUResult <= A * B;
             end
-        4'b0011:	//and
+        5'b00011:	//and
             begin
                 ALUResult <= A & B;           
             end
-        4'b0100:	//or
+        5'b00100:	//or
             begin
                 ALUResult <= A | B;
             end
-        4'b0101:	//Assert on less than
+        5'b00101:	//Assert on less than
             begin
-                ALUResult <= A < B;
+                ALUResult <= $signed(A) < $signed(B);
             end
-        4'b0110:	//Assert on equal
+        5'b00110:	//Assert on equal
             begin
                 ALUResult <= A == B;
             end
-        4'b0111:	//Assert on not equal
+        5'b00111:	//Assert on not equal
             begin
                 ALUResult <= A != B;
             end
-		4'b1000:	//Shift left
+		5'b01000:	//Shift left
             begin
                 ALUResult <= A << B;
             end
-        4'b1001:	//Shift right
+        5'b01001:	//Shift right
             begin
                 ALUResult <= A >> B;
             end
-        4'b1010:	//Assert on greater than or equal to zero
+        5'b01010:	//sra
             begin
-                if(A >= 0) begin
-                    Zero <= 1;
-                end
-                else begin
-                    Zero <= 0;
-                end
+                ALUResult <= $signed(A) >>> B;
             end
-        4'b1011:	//nor
+        5'b01011:	//nor
             begin
                 ALUResult <= ~(A | B);
             end
-        default:
+        5'b01100:    //xor
             begin
-            end 
+                ALUResult <= A ^ B;
+            end
+        5'b01101:   //rotate right
+            begin
+                ALUResult <= (A >> B) | (A << (32 - B));
+            end
+        5'b01110:   //lui
+            begin
+                ALUResult <= B << 16;
+            end
+        5'b01111:   //bgez
+            begin
+                ALUResult <= $signed(A) < 0;
+            end
+        5'b10000:   //bgtz
+            begin
+                ALUResult <= ($signed(A) <= 0);
+            end
+        5'b10001:   //blez
+            begin
+                ALUResult <= $signed(A) > 0;
+            end
+        5'b10010:   //bltz
+            begin
+                ALUResult <= $signed(A) >= 0;
+            end
+        5'b10011:   //sltu
+            begin
+                ALUResult <= A < B;
+            end
+        5'b10100:   //sltiu
+            begin
+                ALUResult <= A < {16'd0, B[15:0]};
+            end
+        5'b10101:   //seh
+            begin
+                ALUResult <= {{16{B[15]}}, B[15:0]};
+            end
+        5'b10110:   //seb
+            begin
+                ALUResult <= {{24{B[7]}}, B[7:0]};
+            end
+        5'b10111:   //sllv
+            begin
+                ALUResult <= B << A;
+            end
+        5'b11000:   //srlv
+            begin
+                ALUResult <= B >> A;
+            end
+        5'b11001:   //srav
+            begin
+                ALUResult <= $signed(B) >>> A;
+            end
+        5'b11010:   //rotrv
+            begin
+                ALUResult <= (B >> A) | (B << (32 - A));
+            end
+        default:
+        begin
+            ALUResult <= 32'd0;
+        end
         endcase
     end
     always @(ALUResult) begin
