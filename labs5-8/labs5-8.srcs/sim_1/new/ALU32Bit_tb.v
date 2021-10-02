@@ -186,14 +186,14 @@ module ALU32Bit_tb();
 	#20;
 	//sllv
 	ALUControl <= 5'b10111;
-	A <= 10;
-	B <= 2;
+	A <= 2;
+	B <= 10;
 	
 	#20;
 	//srlv
 	ALUControl <= 5'b11000;
-	A <= 10;
-	B <= 2;
+	A <= 2;
+	B <= 12;
 	
 	#20;
 	//srav
@@ -205,7 +205,7 @@ module ALU32Bit_tb();
 	//rotrv
 	ALUControl <= 5'b11010;
 	A <= 3;
-	B <= 32'b11110000;
+	B <= 32'b11110001;
 	
 	#20;
 	end
