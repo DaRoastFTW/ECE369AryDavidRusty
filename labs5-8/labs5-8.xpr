@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.xpr">
+<Project Version="7" Minor="44" Path="C:/Users/aryna/ECE369AryDavidRusty/labs5-8/labs5-8.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="a53a9eaacc4944029d9715047f1e6ea0"/>
@@ -90,6 +90,14 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/SignExtension.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/HiLoReg.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>

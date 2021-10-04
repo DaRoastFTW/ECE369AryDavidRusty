@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Oct  4 13:35:55 2021
+# Process ID: 18084
+# Current directory: C:/Users/rrine/VivadoProjects/labs5-8
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22136 C:\Users\rrine\VivadoProjects\labs5-8\labs5-8.xpr
+# Log file: C:/Users/rrine/VivadoProjects/labs5-8/vivado.log
+# Journal file: C:/Users/rrine/VivadoProjects/labs5-8\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.xpr
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top RegisterFile_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top DataMemory_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source DataMemory_tb.tcl
+launch_simulation -mode post-synthesis -type functional
+source DataMemory_tb.tcl
+close_sim
+close_sim
