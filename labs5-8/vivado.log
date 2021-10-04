@@ -173,3 +173,8 @@ launch_simulation: Time (s): cpu = 00:00:40 ; elapsed = 00:00:24 . Memory (MB): 
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 close_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1929.551 ; gain = 8.109
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1929.551 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  4 13:47:41 2021...

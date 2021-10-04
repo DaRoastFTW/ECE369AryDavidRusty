@@ -31,3 +31,4 @@ source DataMemory_tb.tcl
 launch_simulation -mode post-synthesis -type functional
 source DataMemory_tb.tcl
 close_sim
+close_sim
