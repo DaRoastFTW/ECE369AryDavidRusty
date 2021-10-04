@@ -27,7 +27,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
-
+    //Hi and Lo registers go into ALU
 	input [4:0] ALUControl; // control bits for ALU operation
                                 // you need to adjust the bitwidth as needed
 	input [31:0] A, B;	    // inputs

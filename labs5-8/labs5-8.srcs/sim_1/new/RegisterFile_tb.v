@@ -61,6 +61,9 @@ module RegisterFile_tb();
 	WriteData <= 64;
 	WriteRegister <= 5'd1;
 	@(posedge Clk);
+    ReadRegister1 <= 5'd0;
+	ReadRegister2 <= 5'd1;
+    @(posedge Clk);
     /* Please fill in the implementation here... */
 	
 	end
