@@ -47,7 +47,7 @@ module DataMemory(Address, WriteData, Clk, MemWrite, MemRead, ReadData);
 
     reg [31:0] Memory [0:1023];  //DataMemory with 1024 32-bit elements
     // Read data that is not clocked
-    always @(MemRead) begin
+    always @(MemRead, Address) begin
         if(MemRead) begin
             ReadData <= Memory[Address[11:2]];
         end
