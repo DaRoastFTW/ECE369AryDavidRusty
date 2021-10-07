@@ -31,7 +31,7 @@ reg [7:0] memory [0:15]; // 8 bit memory with 16 entries
 
 initial
 begin
-$readmemh("Instructions.txt", memory);
+$readmemh("C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.srcs/sim_1/new/Instructions.txt", memory);
 Address <= 1;
 #100;
 
