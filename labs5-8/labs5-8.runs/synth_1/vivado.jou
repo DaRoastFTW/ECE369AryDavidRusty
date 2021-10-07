@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Sun Oct  3 13:57:08 2021
-# Process ID: 9956
+# Start of session at: Thu Oct  7 13:41:57 2021
+# Process ID: 24596
 # Current directory: C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.runs/synth_1
 # Command line: vivado.exe -log ALU32Bit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ALU32Bit.tcl
 # Log file: C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.runs/synth_1/ALU32Bit.vds

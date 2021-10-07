@@ -38,7 +38,8 @@ Controller control(.Instruction(Instruction), .RegWrite(RegWrite),
 
 initial
 begin
-$readmemh("C:/Users/rrine/VivadoProjects/labs5-8/Instructions.txt", memory);
+//$readmemh("C:/Users/rrine/VivadoProjects/labs5-8/Instructions.txt", memory);
+$readmemh("../../../../Instructions.txt", memory);
 for(i = 0; i < 504; i = i + 1) begin
     Instruction <= memory[i];
     #10;

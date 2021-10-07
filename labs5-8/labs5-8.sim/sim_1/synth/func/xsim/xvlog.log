@@ -1,7 +1,7 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.sim/sim_1/synth/func/xsim/DataMemory_tb_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.sim/sim_1/synth/func/xsim/Controller_tb_func_synth.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU32Bit
 INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.srcs/sources_1/new/DataMemory.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataMemory
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.srcs/sim_1/new/DataMemory_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DataMemory_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/labs5-8/labs5-8.srcs/sim_1/new/Controller_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller_tb
