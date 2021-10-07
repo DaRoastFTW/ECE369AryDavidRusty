@@ -20,16 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Controller(opcode, funct, RegWrite, RegDst, ALUOp, ALUSrc, Branch,
+module Controller(Instruction, RegWrite, RegDst, ALUOp, ALUSrc, Branch,
 MemWrite, MemRead, MemtoReg, HiLoControl);
-	input [5:0] opcode;
-	input [5:0] funct;
+	input [31:0] Instruction;
 	output reg RegWrite, RegDst, ALUSrc, Branch, MemWrite, MemRead, MemtoReg;
 	output reg [4:0] HiLoControl; //placeholder until file is figured out
 	output reg [4:0] ALUOp; //based on ALU32Bit file
-	
-	always@(opcode, funct)
+	reg [5:0] opcode;
+	reg [5:0] funct;
+	always@(*)
 	begin
+	    opcode <= Instruction[31:26];
+	    funct <= Instruction[5:0];
 		case(opcode)
 			6'b000000:
 			 begin
@@ -231,17 +233,29 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					end
 
 					6'b000000:
-					//sll
 					begin
-					RegWrite <= 1;
-					RegDst <= 1;
-					ALUOp <= 5'b01000;
-					ALUSrc <= 0;
-					Branch <= 0;
-					MemWrite <= 0;
-					MemRead <= 0;
-					MemtoReg <= 1;
-					HiLoControl <= 0;
+					   if(Instruction[25:6] == 20'b00000000000000000000) begin    //nop
+					       RegWrite <= 0;
+					       RegDst <= 0;
+					       ALUOp <= 5'b00000;
+					       ALUSrc <= 0;
+					       Branch <= 0;
+					       MemWrite <= 0;
+					       MemRead <= 0;
+					       MemtoReg <= 0;
+					       HiLoControl <= 0;
+					   end
+					   else begin  //sll
+					       RegWrite <= 1;
+					       RegDst <= 1;
+					       ALUOp <= 5'b01000;
+					       ALUSrc <= 0;
+					       Branch <= 0;
+					       MemWrite <= 0;
+					       MemRead <= 0;
+					       MemtoReg <= 1;
+					       HiLoControl <= 0;
+					   end
 					end
 
 					6'b000010:
