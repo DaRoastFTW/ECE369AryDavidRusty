@@ -58,17 +58,22 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
             begin
                 ALUResult <= A | B;
             end
-        5'b00101:	//Assert on less than
+        5'b00101:   //Set ALUResult to rs
             begin
-                ALUResult <= $signed(A) < $signed(B);
+                ALUResult <= A;
             end
-        5'b00110:	//Assert on equal
+        5'b00110:   //Set ALUResult to 0 if branches aren't equal
             begin
-                ALUResult <= A == B;
+                if(A != B) begin
+                    ALUResult <= 0;
+                end
+                else begin
+                    ALUResult <= 1;
+                end
             end
-        5'b00111:	//Assert on not equal
+        5'b00111:   //slt
             begin
-                ALUResult <= A != B;
+                ALUResult <= ($signed(A) < $signed(B));
             end
 		5'b01000:	//Shift left
             begin
@@ -100,7 +105,7 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
             end
         5'b01111:   //bgez
             begin
-                ALUResult <= $signed(A) < 0;
+                ALUResult <= ($signed(A) < 0);
             end
         5'b10000:   //bgtz
             begin
@@ -108,11 +113,11 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
             end
         5'b10001:   //blez
             begin
-                ALUResult <= $signed(A) > 0;
+                ALUResult <= ($signed(A) > 0);
             end
         5'b10010:   //bltz
             begin
-                ALUResult <= $signed(A) >= 0;
+                ALUResult <= ($signed(A) >= 0);
             end
         5'b10011:   //sltu
             begin
@@ -145,6 +150,14 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
         5'b11010:   //rotrv
             begin
                 ALUResult <= (B >> A) | (B << (32 - A));
+            end
+        5'b11011:   //Set ALUResult to zero if rt != 0
+            begin
+                ALUResult <= ~B;
+            end
+        5'b11100:   //Set ALUResult to zero if rt == 0
+            begin
+                ALUResult <= B;
             end
         default:
         begin
