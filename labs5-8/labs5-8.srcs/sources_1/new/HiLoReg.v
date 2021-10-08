@@ -20,21 +20,23 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HiLoReg(Clk, Hi, Lo, ALUResult, HiLoControl);
+module HiLoReg(Clk, ALUResult, HiLoControl, HiLoOutput);
 
 input Clk;
-input [31:0] Hi;
-input [31:0] Lo;
-input [31:0] ALUResult;
-input [2:0] HiLoControl;
+input [63:0] ALUResult;
+input [4:0] HiLoControl;
+output reg [31:0] HiLoOutput;
 
 reg [31:0] HiReg;
 reg [31:0] LoReg;
 
+//Note: Will need to modify the multiply options to use HiLo
+//And might have to create a 64 bit reg placeholder value in the ALU for HiLo usage
+
 always @(posedge Clk)
     begin
     case(HiLoControl)
-    3'b000:
+    5'b000000:
     begin
         //Do nothing
     end
