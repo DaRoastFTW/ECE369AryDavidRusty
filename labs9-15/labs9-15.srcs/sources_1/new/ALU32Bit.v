@@ -26,7 +26,7 @@
 //   operations needed to support. 
 ////////////////////////////////////////////////////////////////////////////////
 
-module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
+module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64);
     //Hi and Lo registers go into ALU
 	input [4:0] ALUControl; // control bits for ALU operation
                                 // you need to adjust the bitwidth as needed
@@ -34,6 +34,10 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
 
 	output reg[31:0] ALUResult;	// answer
 	output reg Zero;	    // Zero=1 if ALUResult == 0
+	
+	//For HiLoReg
+	output reg [63:0] ALUResult64;
+	input [31:0] HiLoOutput;
 
     /* Please fill in the implementation here... */
     always @ (A, B, ALUControl) begin
@@ -48,7 +52,8 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
             end
         5'b00010:	//multiply
             begin
-                ALUResult <= A * B;
+                ALUResult64 <= A * B;
+				ALUResult <= ALUResult64[31:0];
             end
         5'b00011:	//and
             begin
@@ -159,6 +164,14 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
             begin
                 ALUResult <= B;
             end
+		5'b11101: //mthi & mtlo
+			begin
+			ALUResult64 <= A;
+			end
+		5'b11110: //mfhi & mflo
+			begin
+			ALUResult <= HiLoOutput;
+			end
         default:
         begin
             ALUResult <= 32'd0;

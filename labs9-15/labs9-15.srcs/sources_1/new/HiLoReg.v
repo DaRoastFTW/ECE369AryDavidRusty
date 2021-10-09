@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HiLoReg(Clk, ALUResult, HiLoControl, HiLoOutput);
+module HiLoReg(Clk, ALUResult64, HiLoControl, HiLoOutput);
 
 input Clk;
-input [63:0] ALUResult;
-input [4:0] HiLoControl;
+input [63:0] ALUResult64;
+input [3:0] HiLoControl;
 output reg [31:0] HiLoOutput;
 
 reg [31:0] HiReg;
@@ -36,10 +36,51 @@ reg [31:0] LoReg;
 always @(posedge Clk)
     begin
     case(HiLoControl)
-    5'b000000:
+    4'b0000: //Do nothing
     begin
         //Do nothing
     end
+	
+	4'b0001: //mult
+	begin
+	{HiReg, LoReg} <= $signed(ALUResult64);
+	end
+	
+	4'b0010: //multu
+	begin
+	{HiReg, LoReg} <= ALUResult64;
+	end
+	
+	4'b0011: //madd
+	begin
+	{HiReg, LoReg} <= {HiReg, LoReg} + ALUResult64;
+	end
+	
+	4'b0100: //msub
+	begin
+	{HiReg, LoReg} <= {HiReg, LoReg} - ALUResult64;
+	end
+	
+	4'b0101: //mthi
+	begin
+	HiReg <= ALUResult64[31:0];
+	end
+	
+	4'b0110: //mtlo
+	begin
+	LoReg <= ALUResult64[31:0];
+	end
+	
+	4'b0111: //mfhi
+	begin
+	HiLoOutput <= HiReg;
+	end
+	
+	4'b1000: //mflo
+	begin
+	HiLoOutput <= LoReg;
+	end
+	
     
     default:
     begin

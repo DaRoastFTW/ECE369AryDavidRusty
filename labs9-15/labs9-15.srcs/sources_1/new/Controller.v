@@ -24,7 +24,7 @@ module Controller(Instruction, RegWrite, RegDst, ALUOp, ALUSrc, Branch,
 MemWrite, MemRead, MemtoReg, HiLoControl);
 	input [31:0] Instruction;
 	output reg RegWrite, RegDst, ALUSrc, Branch, MemWrite, MemRead, MemtoReg;
-	output reg [4:0] HiLoControl; //placeholder until file is figured out
+	output reg [3:0] HiLoControl; 
 	output reg [4:0] ALUOp; //based on ALU32Bit file
 	reg [5:0] opcode;
 	reg [5:0] funct;
@@ -83,13 +83,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					begin
 					RegWrite <= 0;
 					//RegDst <= ;
-					ALUOp <= 00010;
+					ALUOp <= 5'b00010;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
 					MemRead <= 0;
 					MemtoReg <= 1;
-					HiLoControl <= 0;
+					HiLoControl <= 4'b0001;
 					end
 
 					6'b011001:
@@ -97,13 +97,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					begin
 					RegWrite <= 0;
 					//RegDst <= ;
-					ALUOp <= 00010;
+					ALUOp <= 5'b00010;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
 					MemRead <= 0;
 					MemtoReg <= 1;
-					HiLoControl <= 0;
+					HiLoControl <= 4'b0010;
 					end
 
 					6'b010001:
@@ -111,13 +111,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					begin
 					RegWrite <= 0;
 					//RegDst <= ;
-					ALUOp <= 5'b00000; //Todo: Set ALUResult to rs;
+					ALUOp <= 5'b11101; //Set ALUResult to rs;
 					//ALUSrc <= ;
 					Branch <= 0;
 					MemWrite <= 0;
 					MemRead <= 0;
 					//MemtoReg <= ;
-					HiLoControl <= 5'b00000;//Set Hi to ALUResult;
+					HiLoControl <= 4'b0101;//Set Hi to ALUResult;
 					end
 
 					6'b010011:
@@ -125,13 +125,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					begin
 					RegWrite <= 0;
 					//RegDst <= ;
-					ALUOp <= //Set ALUResult to rs;
+					ALUOp <= 5'b11101; //Set ALUResult to rs;
 					//ALUSrc <= ;
 					Branch <= 0;
 					MemWrite <= 0;
 					MemRead <= 0;
 					//MemtoReg <= ;
-					HiLoControl <= 5'b00000;//Set Lo to ALUResult;
+					HiLoControl <= 4'b0110; //Set Lo to ALUResult;
 					end
 
 					6'b010000:
@@ -139,13 +139,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					//ALUOp <= ;
+					ALUOp <= 5'b11110;
 					//ALUSrc <= ;
 					Branch <= 0;
 					MemWrite <= 0;
 					MemRead <= 0;
 					//MemtoReg <= ;
-					HiLoControl <= 5'b00000;//Set rd = Hi;
+					HiLoControl <= 4'b0111;//Set rd = Hi;
 					end
 
 					6'b010010:
@@ -153,13 +153,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					//ALUOp <= ;
+					ALUOp <= 5'b11110;
 					//ALUSrc <= ;
 					Branch <= 0;
 					MemWrite <= 0;
 					MemRead <= 0;
 					//MemtoReg <= ;
-					HiLoControl <= 5'b00000;//Set rd = Lo;
+					HiLoControl <= 4'b1000;//Set rd = Lo;
 					end
 
 					6'b001000:
@@ -478,7 +478,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
    				 MemRead <= 0;
    				 MemWrite <= 0;
    				 MemtoReg <= 1;
-   				 HiLoControl <= 5'b00000; //TODO: Finish when HiLo is configed
+   				 HiLoControl <= 4'b0011; 
    				 ALUOp <= 5'b00010;
    				 end
    			 6'b000100: //msub
@@ -490,7 +490,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
    				 MemRead <= 0;
    				 MemWrite <= 0;
    				 MemtoReg <= 1;
-   				 HiLoControl <= 5'b00000; //TODO: Finish when HiLo is configed
+   				 HiLoControl <= 4'b0100; 
    				 ALUOp <= 5'b00010;
    				 end
    			 default:
