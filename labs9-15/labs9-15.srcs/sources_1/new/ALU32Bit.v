@@ -34,6 +34,8 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
 
 	output reg[31:0] ALUResult;	// answer
 	output reg Zero;	    // Zero=1 if ALUResult == 0
+	
+	reg [63:0] ALUResult64;
 
     /* Please fill in the implementation here... */
     always @ (A, B, ALUControl) begin
@@ -48,7 +50,8 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero);
             end
         5'b00010:	//multiply
             begin
-                ALUResult <= A * B;
+                ALUResult64 <= A * B;
+				ALUResult <= ALUResult64[31:0];
             end
         5'b00011:	//and
             begin
