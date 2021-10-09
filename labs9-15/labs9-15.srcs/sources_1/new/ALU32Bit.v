@@ -26,7 +26,7 @@
 //   operations needed to support. 
 ////////////////////////////////////////////////////////////////////////////////
 
-module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64);
+module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64, HiLoOutput);
     //Hi and Lo registers go into ALU
 	input [4:0] ALUControl; // control bits for ALU operation
                                 // you need to adjust the bitwidth as needed
@@ -63,9 +63,9 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64);
             begin
                 ALUResult <= A | B;
             end
-        5'b00101:   //Set ALUResult to rs
+        5'b00101:   //movn
             begin
-                ALUResult <= A;
+                ALUResult <= (B == 0);
             end
         5'b00110:   //Set ALUResult to 0 if branches aren't equal
             begin
@@ -172,6 +172,10 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64);
 			begin
 			ALUResult <= HiLoOutput;
 			end
+		5'b11111: //movz
+		  begin
+		      ALUResult <= (B != 0);
+		  end
         default:
         begin
             ALUResult <= 32'd0;
