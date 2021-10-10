@@ -26,15 +26,17 @@ reg [31:0] Instruction;
 //reg [31:0] memory [0:231];
 reg [5:0] opcode;
 reg [5:0] funct;
-wire RegWrite, RegDst, ALUSrc, Branch, MemWrite, MemRead, MemtoReg;
-wire [4:0] HiLoControl; //placeholder until file is figured out
+wire RegWrite, Branch, MemWrite, MemRead, Jr, Mov;
+wire [1:0] MemtoReg, wordhalfbyte;
+wire [2:0] RegDst, PCSrc, ALUSrc;
+wire [3:0] HiLoControl;
 wire [4:0] ALUOp; //based on ALU32Bit file
 integer i;
 reg [31:0] memory [0:504]; // 8 bit memory with 16 entries
 Controller control(.Instruction(Instruction), .RegWrite(RegWrite),
 .RegDst(RegDst), .ALUOp(ALUOp), .ALUSrc(ALUSrc), .Branch(Branch),
 .MemWrite(MemWrite), .MemRead(MemRead), .MemtoReg(MemtoReg),
-.HiLoControl(HiLoControl));
+.HiLoControl(HiLoControl), .PCSrc(PCSrc), .Jr(Jr), .Mov(Mov), .wordhalfbyte(wordhalfbyte));
 
 initial
 begin
