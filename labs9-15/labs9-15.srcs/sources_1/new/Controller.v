@@ -573,8 +573,8 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 6'b000010: //mul
    				 begin
    				 RegWrite <= 1;
-   				 RegDst <= 0;
-   				 ALUSrc <= 1;
+   				 RegDst <= 1;
+   				 ALUSrc <= 0;
    				 Branch <= 0;
    				 MemRead <= 0;
    				 MemWrite <= 0;
