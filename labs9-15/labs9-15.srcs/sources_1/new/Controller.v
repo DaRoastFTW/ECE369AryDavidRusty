@@ -23,15 +23,21 @@
 module Controller(Instruction, RegWrite, RegDst, ALUOp, ALUSrc, Branch,
 MemWrite, MemRead, MemtoReg, HiLoControl);
 	input [31:0] Instruction;
-	output reg RegWrite, RegDst, ALUSrc, Branch, MemWrite, MemRead, MemtoReg;
+	output reg RegWrite, Branch, MemWrite, MemRead;
+	output reg [1:0] ALUSrc, RegDst, PCSrc, MemtoReg;
 	output reg [3:0] HiLoControl; 
 	output reg [4:0] ALUOp; //based on ALU32Bit file
+	
 	reg [5:0] opcode;
 	reg [5:0] funct;
+	reg rBit;
+	
 	always@(*)
 	begin
 	    opcode <= Instruction[31:26];
 	    funct <= Instruction[5:0];
+		rBit <= Instruction[21];
+		PCSrc <= 0;
 		case(opcode)
 			6'b000000:
 			 begin
@@ -166,7 +172,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					//jr
 					begin
 					RegWrite <= 0;
-					//RegDst <= ;
+					RegDst <= 2;
 					//ALUOp <= ;
 					//ALUSrc <= //Todo Later;
 					Branch <= 0;
@@ -249,7 +255,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					       RegWrite <= 1;
 					       RegDst <= 1;
 					       ALUOp <= 5'b01000;
-					       ALUSrc <= 0;
+					       ALUSrc <= 2;
 					       Branch <= 0;
 					       MemWrite <= 0;
 					       MemRead <= 0;
@@ -259,17 +265,30 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					end
 
 					6'b000010:
-					//srl (Todo Check With rotr)
+					//srl and rotr
 					begin
-					RegWrite <= 1;
-					RegDst <= 1;
-					ALUOp <= 5'b01001;
-					ALUSrc <= 0;
-					Branch <= 0;
-					MemWrite <= 0;
-					MemRead <= 0;
-					MemtoReg <= 1;
-					HiLoControl <= 0;
+					if (rBit == 0) begin //srl
+						RegWrite <= 1;
+						RegDst <= 1;
+						ALUOp <= 5'b01001;
+						ALUSrc <= 2;
+						Branch <= 0;
+						MemWrite <= 0;
+						MemRead <= 0;
+						MemtoReg <= 1;
+						HiLoControl <= 0;
+					end
+					else if (rBit == 1) begin //rotr
+						RegWrite <= 1;
+						RegDst <= 1;
+						ALUOp <= 5'b01101;
+						ALUSrc <= 2;
+						Branch <= 0;
+						MemWrite <= 0;
+						MemRead <= 0;
+						MemtoReg <= 1;
+						HiLoControl <= 0;
+					end
 					end
 
 					6'b000100:
@@ -376,7 +395,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 					RegWrite <= 1;
 					RegDst <= 1;
 					ALUOp <= //Todo Fix Me from ALU;
-					ALUSrc <= 0;
+					ALUSrc <= 2;
 					Branch <= 0;
 					MemWrite <= 0;
 					MemRead <= 0;
@@ -674,6 +693,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl);
 				//MemtoReg <= 0;
 				HiLoControl <= 5'b00000;
 				//ALUOp <= 5'b00000;
+				PCSrc <= 2;
 				end
 			6'b000011:	//jal Todo: Figure out datapath
 				begin
