@@ -70,7 +70,7 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
 	end
 
 	always@(posedge Clk) begin
-	   if (Rst) begin
+	   if (Reset) begin
 			for (i = 0; i < 32; i = i + 1)
 			begin
 			RegisterFile[i] <= 32'b0;
