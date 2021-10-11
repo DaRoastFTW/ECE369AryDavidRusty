@@ -48,11 +48,12 @@
 // to allow for data multiplexing and setup time.
 ////////////////////////////////////////////////////////////////////////////////
 
-module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegWrite, Clk, Rst, ReadData1, ReadData2);
+module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegWrite, Clk, Reset, ReadData1, ReadData2);
 
 	input [4:0] ReadRegister1;
 	input [4:0] ReadRegister2;
 	input RegWrite;
+	input Reset;
 	input Clk;
 	input [31:0] WriteData;
 	input [4:0] WriteRegister;
