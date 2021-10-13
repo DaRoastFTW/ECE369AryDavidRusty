@@ -36,17 +36,15 @@ module TopLevel(Clk, Reset);
     RegIF_ID IF_ID(.Clk(Clk), .Reset(Reset), .PC_4Input(PCAddResult), .PC_4Output(PCAddID), .Inst_input(InstructionIF), .Inst_output(InstructionID));
     //This is the instruction decode
     
-    wire [5:0] ReadRegister1, ReadRegister2, WriteRegister;
-    wire [31:0] WriteData, ReadData1, ReadData2;
+    wire [5:0] ReadRegister1;
+    wire [31:0] WriteDataWB;
     wire RegWriteWB;
-    RegisterFile RegFile(.ReadRegister1(ReadRegister1), .ReadRegister2(ReadRegister2), .WriteRegister(WriteRegister), .WriteData(WriteData), .RegWrite(RegWriteWB), .Clk(Clk), .Reset(Reset), .ReadData1(ReadData1), .ReadData2(ReadData2));
-    wire [31:0] SEout;
-    wire [15:0] SEin;
+    RegisterFile RegFile(.ReadRegister1(ReadRegister1), .ReadRegister2(InstructionID[20:16]), .WriteRegister(RegDstMuxWB), .WriteData(WriteDataWB), .RegWrite(RegWriteWB), .Clk(Clk), .Reset(Reset), .ReadData1(ReadData1ID), .ReadData2(ReadData2ID));
+    wire [31:0] SignExtendID;
     
-    SignExtension SignExt(.in(SEin), .out(SEout));
-    wire [4:0] inzero;
-    wire [31:0] outzero;
-    ZeroExtention ZeroExt(.inzero(inzero), .outzero(outzero));
+    SignExtension SignExt(.in(InstructionID[15:0]), .out(SignExtendID));
+    wire [31:0] ZeroExtendID;
+    ZeroExtention ZeroExt(.inzero(InstructionID[10:6]), .outzero(ZeroExtendID));
     wire jrID;
     wire [31:0]InstructionID;
     Mux32Bit2To1 jrMux_ID(.out(ReadRegister1), .inA(InstructionID[25:21]), .inB(5'd31), .sel(jrControl));
@@ -67,8 +65,7 @@ module TopLevel(Clk, Reset);
     //ID_EX Pipeline Register
     RegID_EX ID_EX(.Clk(Clk), .Reset(Reset), .InstructionIn(InstructionID), .InstructionOut(InstructionEX), .RegWriteIn(RegWriteID), .RegWriteOut(RegWriteEX), .RegDstIn(RegDstID),
 .RegDstOut(RegDstEX), .ALUOpIn(ALUOpID), .ALUOpOut(ALUOpEX), .ALUSrcIn(ALUSrcID), .ALUSrcOut(ALUSrcEX), .BranchIn(BranchID), .BranchOut(BranchEX), .MemWriteIn(MemWriteID), .MemWriteOut(MemWriteEX),
-.MemReadIn(MemReadID), .MemReadOut(MemReadEX), .MemtoRegIn(MemtoRegID), .MemtoRegOut(MemtoRegEX), .HiLoControlIn(HiLoControlID), .HiLoControlOut(HiLoControlEX), .PCSrcIn(PCSrcID), .PCSrcOut(PCSrcEX),
-.JrIn(JrID), .JrOut(JrEX), .MovIn(MovID), .MovOut(MovEX), .wordhalfbyteIn(wordhalfbyteID), .wordhalfbyteOut(wordhalfbyteEX), .PCAddIn(PCAddID), .PCAddOut(PCAddEX), .ReadData1In(ReadData1ID),
+.MemReadIn(MemReadID), .MemReadOut(MemReadEX), .MemtoRegIn(MemtoRegID), .MemtoRegOut(MemtoRegEX), .HiLoControlIn(HiLoControlID), .HiLoControlOut(HiLoControlEX), .JrIn(JrID), .JrOut(JrEX), .MovIn(MovID), .MovOut(MovEX), .wordhalfbyteIn(wordhalfbyteID), .wordhalfbyteOut(wordhalfbyteEX), .PCAddIn(PCAddID), .PCAddOut(PCAddEX), .ReadData1In(ReadData1ID),
 .ReadData1Out(ReadData1EX), .ReadData2In(ReadData2ID), .ReadData2Out(ReadData2EX), .ZeroExtendIn(ZeroExtendID), .ZeroExtendOut(ZeroExtendEX), .SignExtendIn(SignExtendID), .SignExtendOut(SignExtendEX));
     
     wire [31:0] ALUSrcMux, ALUResultEX, HiLoOutput;
@@ -95,11 +92,19 @@ module TopLevel(Clk, Reset);
 .MemReadIn(MemReadEX), .MemReadOut(MemReadMEM), .MemtoRegIn(MemtoRegEX), .MemtoRegOut(MemtoRegMEM), .MovIn(MovEX), .MovOut(MovMEM), .wordhalfbyteIn(wordhalfbyteEX), .wordhalfbyteOut(wordhalfbyteMEM),
  .PCAddIn(PCAddEX), .PCAddOut(PCAddMEM),.ReadData2In(ReadData2EX), .ReadData2Out(ReadData2MEM), .ZeroFlagIn(ZeroEX), .ZeroFlagOut(ZeroMEM), .ALUResultIn(ALUResultEX), .ALUResultOut(ALUResultMEM),
  .RegDstMuxIn(RegDstMuxEX), .RegDstMuxOut(RegDstMuxMEM));
-    DataMemory Data(.Address(Address), .WriteData(WriteData), .Clk(Clk), .Rst(Reset), .MemWrite(MemWrite), .MemRead(MemRead), .ReadData(ReadData), .wordhalfbyte(wordhalfbyte));
-    AndGate And(.andinput1(andinput1), .andinput2(andinput2), .andoutput(andoutput));
-    Mux32Bit2To1 movMux(.out(out), .inA(inA), .inB(inB), .sel(sel));
-    //Pipe Reg 4
-    Mux32Bit3to1 MemToRegMux(.out(out), .inA(inA), .inB(inB), .inC(inC), .sel(sel));
     
+    DataMemory Data(.Address(ALUResultMEM), .WriteData(ReadData2MEM), .Clk(Clk), .Rst(Reset), .MemWrite(MemWriteMEM), .MemRead(MemReadMEM), .ReadData(ReadDataMEM), .wordhalfbyte(wordhalfbyteMEM));
+    wire [1:0] PCSrcMEM;
+    AndGate And(.andinput1(BranchMEM), .andinput2(ZeroMEM), .andoutput(PCSrcMEM));
+    Mux32Bit2To1 movMux(.out(MovMuxOut), .inA(RegWriteMEM), .inB(ZeroMEM), .sel(MovMEM));
+    //Pipe Reg 4
+    
+    RegMEM_WB MEM_WB(.Clk(Clk), .Reset(Reset), .RegWriteIn(MovMuxOut),
+     .RegWriteOut(RegWriteWB), .MemtoRegIn(MemtoRegMEM), .MemtoRegOut(MemtoRegWB),
+      .PCAddIn(PCAddMEM), .PCAddOut(PCAddWB), .ALUResultIn(ALUResultMEM),
+       .ALUResultOut(ALUResultWB), .ReadDataMemIn(ReadDataMem),
+        .ReadDataMemOut(ReadDataMemWB), .RegDstMuxIn(RegDstMuxMEM),
+         .RegDstMuxOut(RegDstMuxWB));
+    Mux32Bit3to1 MemToRegMux(.out(WriteDataWB), .inA(ReadDataMemWB), .inB(ALUResultWB), .inC(PCAddWB), .sel(MemtoRegWB));
     //TODO All components with multiple instantiations will require different input variable names
 endmodule
