@@ -33,7 +33,7 @@ module TopLevel(Clk, Reset);
     ProgramCounter PC(.Address(PCIn), .PCResult(PCResult), .Reset(Reset), .Clk(Clk));
     PCAdder PCAdd(.PCResult(PCResult), .PCAddResult(PCAddResult));
     InstructionMemory IM(.Address(PCResult), .Instruction(InstructionIF));
-    RegIF_ID IF_ID(.Clk(Clk), .Reset(Reset), .PC_4Input(PCAddResult), .PC_4Output(PC_4Output), .Inst_input(InstructionIF), .Inst_output(Inst_output));
+    RegIF_ID IF_ID(.Clk(Clk), .Reset(Reset), .PC_4Input(PCAddResult), .PC_4Output(PCAddID), .Inst_input(InstructionIF), .Inst_output(InstructionID));
     //This is the instruction decode
     
     wire [5:0] ReadRegister1, ReadRegister2, WriteRegister;
@@ -57,13 +57,35 @@ module TopLevel(Clk, Reset);
     Controller Control(.Instruction(InstructionID), .RegWrite(RegWriteID), .RegDst(RegDstID), .ALUOp(ALUOpID), .ALUSrc(ALUSrcID), .Branch(BranchID),
 .MemWrite(MemWriteID), .MemRead(MemReadID), .MemtoReg(MemtoRegID), .HiLoControl(HiLoControlID), .PCSrc(PCSrcID), .Jr(jrID), .Mov(MovID), .wordhalfbyte(wordhalfbyteID));
     //Pipe Reg 2
-    ALU32Bit ALU(.ALUControl(ALUControl), .A(A), .B(B), .ALUResult(ALUResult), .Zero(Zero), .ALUResult64(ALUResult64), .HiLoOutput(HiLoOutput));
-    HiLoReg HiLo(.Clk(Clk), .Rst(Reset), .ALUResult64(ALUResult64), .HiLoControl(HiLoControl), .HiLoOutput(HiLoOutput));
-    Adder Add(.addinput1(addinput1), .addinput2(addinput2), .addoutput(addoutput));
-    ShiftLeft2 Shift(.shiftinput(shiftinput), .shiftoutput(shiftoutput));
-    Mux32Bit2To1 jrMux_EX(.out(out), .inA(inA), .inB(inB), .sel(sel));
-    Mux32Bit3to1 ALUSrcMux(.out(out), .inA(inA), .inB(inB), .inC(inC), .sel(sel));
-    Mux32Bit3to1 RegDstMux(.out(out), .inA(inA), .inB(inB), .inC(inC), .sel(sel));
+    wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX;
+    wire [1:0] MemtoRegEX, wordhalfbyteEX;
+    wire [2:0] RegDstEX, PCSrcEX, ALUSrcEX;
+    wire [3:0] HiLoControlEX;
+    wire [4:0] ALUOpEX;
+    wire [31:0] InstructionEX, ZeroExtendEX, SignExtendEX, PCAddEX, ReadData1EX, ReadData2EX;
+    
+    //ID_EX Pipeline Register
+    RegID_EX ID_EX(.Clk(Clk), .Reset(Reset), .InstructionIn(InstructionID), .InstructionOut(InstructionEX), .RegWriteIn(RegWriteID), .RegWriteOut(RegWriteEX), .RegDstIn(RegDstID),
+.RegDstOut(RegDstEX), .ALUOpIn(ALUOpID), .ALUOpOut(ALUOpEX), .ALUSrcIn(ALUSrcID), .ALUSrcOut(ALUSrcEX), .BranchIn(BranchID), .BranchOut(BranchEX), .MemWriteIn(MemWriteID), .MemWriteOut(MemWriteEX),
+.MemReadIn(MemReadID), .MemReadOut(MemReadEX), .MemtoRegIn(MemtoRegID), .MemtoRegOut(MemtoRegEX), .HiLoControlIn(HiLoControlID), .HiLoControlOut(HiLoControlEX), .PCSrcIn(PCSrcID), .PCSrcOut(PCSrcEX),
+.JrIn(JrID), .JrOut(JrEX), .MovIn(MovID), .MovOut(MovEX), .wordhalfbyteIn(wordhalfbyteID), .wordhalfbyteOut(wordhalfbyteEX), .PCAddIn(PCAddID), .PCAddOut(PCAddEX), .ReadData1In(ReadData1ID),
+.ReadData1Out(ReadData1EX), .ReadData2In(ReadData2ID), .ReadData2Out(ReadData2EX), .ZeroExtendIn(ZeroExtendID), .ZeroExtendOut(ZeroExtendEX), .SignExtendIn(SignExtendID), .SignExtendOut(SignExtendEX));
+    
+    wire [31:0] ALUSrcMux, ALUResultEX, HiLoOutput;
+    wire ZeroEX;
+    wire [63:0] ALUResult64;
+    
+    ALU32Bit ALU(.ALUControl(ALUOpEX), .A(ReadData1EX), .B(ALUSrcMux), .ALUResult(ALUResultEX), .Zero(ZeroEX), .ALUResult64(ALUResult64), .HiLoOutput(HiLoOutput));
+    HiLoReg HiLo(.Clk(Clk), .Rst(Reset), .ALUResult64(ALUResult64), .HiLoControl(HiLoControlEX), .HiLoOutput(HiLoOutput));
+    wire [31:0] ShiftOutEX, AddOutEX;
+    Adder Add(.addinput1(PCAddEX), .addinput2(ShiftOutEX), .addoutput(AddOutEX));
+    ShiftLeft2 Shift(.shiftinput(SignExtendEX), .shiftoutput(ShiftOutEX));
+    wire [31:0] JrMuxOutEX;
+    Mux32Bit2To1 jrMux_EX(.out(JrMuxOutEX), .inA(AddOutEX), .inB(ReadData1EX), .sel(JrEx));
+    
+    Mux32Bit3to1 ALUSrcMuxEX(.out(ALUSrcMux), .inA(ReadData2EX), .inB(SignExtendEX), .inC(ZeroExtendEX), .sel(ALUSrcEX));
+    wire [4:0] RegDstMuxEX;
+    Mux32Bit3to1 RegDstMux(.out(RegDstMuxEX), .inA(InstructionEX[20:16]), .inB(InstructionEX[15:11]), .inC(5'd31), .sel(RegDstEX));
     //Pipe Reg 3
     DataMemory Data(.Address(Address), .WriteData(WriteData), .Clk(Clk), .Rst(Reset), .MemWrite(MemWrite), .MemRead(MemRead), .ReadData(ReadData), .wordhalfbyte(wordhalfbyte));
     AndGate And(.andinput1(andinput1), .andinput2(andinput2), .andoutput(andoutput));
