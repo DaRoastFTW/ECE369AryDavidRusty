@@ -87,6 +87,14 @@ module TopLevel(Clk, Reset);
     wire [4:0] RegDstMuxEX;
     Mux32Bit3to1 RegDstMux(.out(RegDstMuxEX), .inA(InstructionEX[20:16]), .inB(InstructionEX[15:11]), .inC(5'd31), .sel(RegDstEX));
     //Pipe Reg 3
+    wire RegWriteMEM, BranchMEM, MemWriteMEM, MemReadMEM, MovMEM;
+    wire [1:0] MemtoRegMEM, wordhalfbyteMEM;
+    wire [2:0] RegDstMuxOutMEM;
+    wire [31:0] PCAddMEM, ReadData2MEM;
+    RegEX_MEM EX_MEM(.Clk(Clk), .Reset(Reset), .RegWriteIn(RegWriteEX), .RegWriteOut(RegWriteMEM), .BranchIn(BranchEX), .BranchOut(BranchMEM), .MemWriteIn(MemWriteEX), .MemWriteOut(MemWriteMEM),
+.MemReadIn(MemReadEX), .MemReadOut(MemReadMEM), .MemtoRegIn(MemtoRegEX), .MemtoRegOut(MemtoRegMEM), .MovIn(MovEX), .MovOut(MovMEM), .wordhalfbyteIn(wordhalfbyteEX), .wordhalfbyteOut(wordhalfbyteMEM),
+ .PCAddIn(PCAddEX), .PCAddOut(PCAddMEM),.ReadData2In(ReadData2EX), .ReadData2Out(ReadData2MEM), .ZeroFlagIn(ZeroEX), .ZeroFlagOut(ZeroMEM), .ALUResultIn(ALUResultEX), .ALUResultOut(ALUResultMEM),
+ .RegDstMuxIn(RegDstMuxEX), .RegDstMuxOut(RegDstMuxMEM));
     DataMemory Data(.Address(Address), .WriteData(WriteData), .Clk(Clk), .Rst(Reset), .MemWrite(MemWrite), .MemRead(MemRead), .ReadData(ReadData), .wordhalfbyte(wordhalfbyte));
     AndGate And(.andinput1(andinput1), .andinput2(andinput2), .andoutput(andoutput));
     Mux32Bit2To1 movMux(.out(out), .inA(inA), .inB(inB), .sel(sel));
