@@ -2,10 +2,10 @@
 # Vivado v2019.2.1 (64-bit)
 # SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
 # IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
-# Start of session at: Wed Oct 13 14:54:14 2021
-# Process ID: 24204
+# Start of session at: Wed Oct 13 14:40:14 2021
+# Process ID: 37264
 # Current directory: C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent56228 C:\Users\kingd\Documents\GitHub\ECE369AryDavidRusty\labs9-15\labs9-15.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent54588 C:\Users\kingd\Documents\GitHub\ECE369AryDavidRusty\labs9-15\labs9-15.xpr
 # Log file: C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/vivado.log
 # Journal file: C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15\vivado.jou
 #-----------------------------------------------------------
@@ -17,5 +17,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
-open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 933.988 ; gain = 257.930
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 923.859 ; gain = 261.008
 update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 13 14:46:30 2021...

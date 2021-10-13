@@ -21,20 +21,20 @@
 
 
 module RegEX_MEM(Clk, Reset, RegWriteIn, RegWriteOut, BranchIn, BranchOut, MemWriteIn, MemWriteOut,
-MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, ZeroFlagOut, ALUResultIn, ALUResultOut, ReadData2In, ReadData2Out, RegDstMuxIn, RegDstMuxOut);
-    input Clk, Reset;
-    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn;
+MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, ZeroFlagOut, ALUResultIn, ALUResultOut, ReadData2In, ReadData2Out, RegDstMuxIn, RegDstMuxOut, MovIn, MovOut, wordhalfbyteIn, wordhalfbyteOut);
+    input Clk, Reset, MovIn;
+    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, wordhalfbyteIn;
     input [1:0] MemtoRegIn;
     input [4:0] RegDstMuxIn;
     input [31:0] PCAddIn, ReadData2In, ALUResultIn;
     
-    reg RegWrite, Branch, MemWrite, MemRead, ZeroFlag;
-    reg [1:0] MemtoReg;
+    reg RegWrite, Branch, MemWrite, MemRead, ZeroFlag, Mov;
+    reg [1:0] MemtoReg, wordhalfbyte;
     reg [4:0] RegDstMux;
     reg [31:0] PCAdd, ReadData2, ALUResult;
     
-    output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut;
-    output reg [1:0] MemtoRegOut;
+    output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut, MovOut;
+    output reg [1:0] MemtoRegOut, wordhalfbyteOut;
     output reg [4:0] RegDstMuxOut;
     output reg [31:0] PCAddOut, ReadData2Out, ALUResultOut;
     always@(posedge Clk)
@@ -51,6 +51,8 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
             PCAdd <= 0;
             ReadData2 <= 0;
             ALUResult <= 0;
+            Mov <= 0;
+            wordhalfbyte <= 0;
         end
     else
         begin
@@ -64,6 +66,8 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
             PCAddOut <= PCAdd;
             ReadData2Out <= ReadData2;
             ALUResultOut <= ALUResult;
+            MovOut <= Mov;
+            wordhalfbyteOut <= wordhalfbyte;
         end
     end
     
@@ -79,5 +83,7 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
        PCAdd <= PCAddIn;
        ReadData2 <= ReadData2In;
        ALUResult <= ALUResultIn;
+       Mov <= MovIn;
+       wordhalfbyte <= wordhalfbyteIn;
     end
 endmodule
