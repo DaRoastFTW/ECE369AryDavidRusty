@@ -20,23 +20,23 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module RegEX_MEM(Clk, Reset, RegWriteIn, RegWriteOut, BranchIn, BranchOut, MemWriteIn, MemWriteOut,
+module RegEX_MEM(Clk, Reset, RegWriteIn, RegWriteOut, BranchIn, BranchOut, MemWriteIn, MemWriteOut, JrMuxIn, JrMuxOut,
 MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, ZeroFlagOut, ALUResultIn, ALUResultOut, ReadData2In, ReadData2Out, RegDstMuxIn, RegDstMuxOut, MovIn, MovOut, wordhalfbyteIn, wordhalfbyteOut);
     input Clk, Reset, MovIn;
     input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, wordhalfbyteIn;
     input [1:0] MemtoRegIn;
     input [4:0] RegDstMuxIn;
-    input [31:0] PCAddIn, ReadData2In, ALUResultIn;
+    input [31:0] PCAddIn, ReadData2In, ALUResultIn, JrMuxIn;
     
     reg RegWrite, Branch, MemWrite, MemRead, ZeroFlag, Mov;
     reg [1:0] MemtoReg, wordhalfbyte;
     reg [4:0] RegDstMux;
-    reg [31:0] PCAdd, ReadData2, ALUResult;
+    reg [31:0] PCAdd, ReadData2, ALUResult, JrMux;
     
     output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut, MovOut;
     output reg [1:0] MemtoRegOut, wordhalfbyteOut;
     output reg [4:0] RegDstMuxOut;
-    output reg [31:0] PCAddOut, ReadData2Out, ALUResultOut;
+    output reg [31:0] PCAddOut, ReadData2Out, ALUResultOut, JrMuxOut;
     always@(posedge Clk)
     begin
     if (Reset)
@@ -53,6 +53,7 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
             ALUResult <= 0;
             Mov <= 0;
             wordhalfbyte <= 0;
+            JrMux <= 0;
         end
     else
         begin
@@ -68,6 +69,7 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
             ALUResultOut <= ALUResult;
             MovOut <= Mov;
             wordhalfbyteOut <= wordhalfbyte;
+            JrMuxOut <= JrMux;
         end
     end
     
@@ -85,5 +87,6 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
        ALUResult <= ALUResultIn;
        Mov <= MovIn;
        wordhalfbyte <= wordhalfbyteIn;
+       JrMux <= JrMuxIn;
     end
 endmodule

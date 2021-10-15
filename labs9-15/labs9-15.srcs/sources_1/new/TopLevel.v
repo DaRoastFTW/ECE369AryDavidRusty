@@ -24,11 +24,12 @@ module TopLevel(Clk, Reset);
     input Clk, Reset;
     //This is the instruction fetch
     wire [31:0] PCIn, PCAddResult, PCSrcMuxB, PCSrcMuxC, InstructionIF;
-    wire [1:0] PCSrc;
+    wire [1:0] PCSrcMEM;
     wire [27:0] JumpInstruction;
     
     //assign PCSrcMuxC = {PCAddResult[31:28], JumpInstruction};
-    Mux32Bit3to1 PCSrcMux(.out(PCIn), .inA(PCAddResult), .inB(PCSrcMuxB), .inC({PCAddResult[31:28], JumpInstruction}), .sel(PCSrc));
+    wire [31:0] JrMuxOutMEM;
+    Mux32Bit3to1 PCSrcMux(.out(PCIn), .inA(PCAddResult), .inB(JrMuxOutMEM), .inC({PCAddResult[31:28], JumpInstruction}), .sel(PCSrcMEM));
     ShiftLeft2 Shift_jr(.shiftinput(InstructionIF[25:0]), .shiftoutput(JumpInstruction));
     ProgramCounter PC(.Address(PCIn), .PCResult(PCResult), .Reset(Reset), .Clk(Clk));
     PCAdder PCAdd(.PCResult(PCResult), .PCAddResult(PCAddResult));
@@ -45,15 +46,15 @@ module TopLevel(Clk, Reset);
     SignExtension SignExt(.in(InstructionID[15:0]), .out(SignExtendID));
     wire [31:0] ZeroExtendID;
     ZeroExtention ZeroExt(.inzero(InstructionID[10:6]), .outzero(ZeroExtendID));
-    wire jrID;
+    wire JrID;
     wire [31:0]InstructionID;
-    Mux32Bit2To1 jrMux_ID(.out(ReadRegister1), .inA(InstructionID[25:21]), .inB(5'd31), .sel(jrControl));
+    Mux32Bit2To1 jrMux_ID(.out(ReadRegister1), .inA(InstructionID[25:21]), .inB(5'd31), .sel(JrID));
     wire RegDstID, RegWrite, BranchID, MemWriteID, MemReadID, MovID;
     wire [4:0] ALUOpID;
     wire [1:0] ALUSrc, MemtoRegID, PCSrcID, wordhalfbyteID;
     wire [3:0] HiLoControlID;
     Controller Control(.Instruction(InstructionID), .RegWrite(RegWriteID), .RegDst(RegDstID), .ALUOp(ALUOpID), .ALUSrc(ALUSrcID), .Branch(BranchID),
-.MemWrite(MemWriteID), .MemRead(MemReadID), .MemtoReg(MemtoRegID), .HiLoControl(HiLoControlID), .PCSrc(PCSrcID), .Jr(jrID), .Mov(MovID), .wordhalfbyte(wordhalfbyteID));
+.MemWrite(MemWriteID), .MemRead(MemReadID), .MemtoReg(MemtoRegID), .HiLoControl(HiLoControlID), .PCSrc(PCSrcID), .Jr(JrID), .Mov(MovID), .wordhalfbyte(wordhalfbyteID));
     //Pipe Reg 2
     wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX;
     wire [1:0] MemtoRegEX, wordhalfbyteEX;
@@ -77,7 +78,7 @@ module TopLevel(Clk, Reset);
     wire [31:0] ShiftOutEX, AddOutEX;
     Adder Add(.addinput1(PCAddEX), .addinput2(ShiftOutEX), .addoutput(AddOutEX));
     ShiftLeft2 Shift(.shiftinput(SignExtendEX), .shiftoutput(ShiftOutEX));
-    wire [31:0] JrMuxOutEX;
+
     Mux32Bit2To1 jrMux_EX(.out(JrMuxOutEX), .inA(AddOutEX), .inB(ReadData1EX), .sel(JrEx));
     
     Mux32Bit3to1 ALUSrcMuxEX(.out(ALUSrcMux), .inA(ReadData2EX), .inB(SignExtendEX), .inC(ZeroExtendEX), .sel(ALUSrcEX));
@@ -87,11 +88,11 @@ module TopLevel(Clk, Reset);
     wire RegWriteMEM, BranchMEM, MemWriteMEM, MemReadMEM, MovMEM;
     wire [1:0] MemtoRegMEM, wordhalfbyteMEM;
     wire [2:0] RegDstMuxOutMEM;
-    wire [31:0] PCAddMEM, ReadData2MEM;
+    wire [31:0] PCAddMEM, ReadData2MEM, JrMuxOutMEM;
     RegEX_MEM EX_MEM(.Clk(Clk), .Reset(Reset), .RegWriteIn(RegWriteEX), .RegWriteOut(RegWriteMEM), .BranchIn(BranchEX), .BranchOut(BranchMEM), .MemWriteIn(MemWriteEX), .MemWriteOut(MemWriteMEM),
 .MemReadIn(MemReadEX), .MemReadOut(MemReadMEM), .MemtoRegIn(MemtoRegEX), .MemtoRegOut(MemtoRegMEM), .MovIn(MovEX), .MovOut(MovMEM), .wordhalfbyteIn(wordhalfbyteEX), .wordhalfbyteOut(wordhalfbyteMEM),
  .PCAddIn(PCAddEX), .PCAddOut(PCAddMEM),.ReadData2In(ReadData2EX), .ReadData2Out(ReadData2MEM), .ZeroFlagIn(ZeroEX), .ZeroFlagOut(ZeroMEM), .ALUResultIn(ALUResultEX), .ALUResultOut(ALUResultMEM),
- .RegDstMuxIn(RegDstMuxEX), .RegDstMuxOut(RegDstMuxMEM));
+ .RegDstMuxIn(RegDstMuxEX), .RegDstMuxOut(RegDstMuxMEM), .JrMuxIn(JrMuxOutEX), .JrMuxOut(JrMuxOutMEM));
     
     DataMemory Data(.Address(ALUResultMEM), .WriteData(ReadData2MEM), .Clk(Clk), .Rst(Reset), .MemWrite(MemWriteMEM), .MemRead(MemReadMEM), .ReadData(ReadDataMEM), .wordhalfbyte(wordhalfbyteMEM));
     wire [1:0] PCSrcMEM;
@@ -102,7 +103,7 @@ module TopLevel(Clk, Reset);
     RegMEM_WB MEM_WB(.Clk(Clk), .Reset(Reset), .RegWriteIn(MovMuxOut),
      .RegWriteOut(RegWriteWB), .MemtoRegIn(MemtoRegMEM), .MemtoRegOut(MemtoRegWB),
       .PCAddIn(PCAddMEM), .PCAddOut(PCAddWB), .ALUResultIn(ALUResultMEM),
-       .ALUResultOut(ALUResultWB), .ReadDataMemIn(ReadDataMem),
+       .ALUResultOut(ALUResultWB), .ReadDataMemIn(ReadDataMEM),
         .ReadDataMemOut(ReadDataMemWB), .RegDstMuxIn(RegDstMuxMEM),
          .RegDstMuxOut(RegDstMuxWB));
     Mux32Bit3to1 MemToRegMux(.out(WriteDataWB), .inA(ReadDataMemWB), .inB(ALUResultWB), .inC(PCAddWB), .sel(MemtoRegWB));
