@@ -30,23 +30,21 @@ module Mux32Bit3to1(out, inA, inB, inC, sel);
 	input [1:0] sel;
 	
 	always@(sel) begin
-	case(sel)
-		2'b00:
+		if(sel == 2'b00)
 			begin
 			out <= inA;
 			end
-		2'b01:
+		else if(sel == 2'b01)
 			begin
 			out <= inB;
 			end
-		2'b10:
+		else if (sel == 2'b10)
 			begin
 			out <= inC;
 			end
-		default:
+		else
 			begin
 			out <= inA;
 			end
-	endcase
 	end
 endmodule

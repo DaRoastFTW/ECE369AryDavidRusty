@@ -88,7 +88,7 @@ module TopLevel(Clk, Reset);
     wire RegWriteMEM, BranchMEM, MemWriteMEM, MemReadMEM, MovMEM;
     wire [1:0] MemtoRegMEM, wordhalfbyteMEM;
     wire [2:0] RegDstMuxOutMEM;
-    wire [31:0] PCAddMEM, ReadData2MEM, JrMuxOutMEM;
+    wire [31:0] PCAddMEM, ReadData2MEM, JrMuxOutMEM, ALUResultMEM;
     RegEX_MEM EX_MEM(.Clk(Clk), .Reset(Reset), .RegWriteIn(RegWriteEX), .RegWriteOut(RegWriteMEM), .BranchIn(BranchEX), .BranchOut(BranchMEM), .MemWriteIn(MemWriteEX), .MemWriteOut(MemWriteMEM),
 .MemReadIn(MemReadEX), .MemReadOut(MemReadMEM), .MemtoRegIn(MemtoRegEX), .MemtoRegOut(MemtoRegMEM), .MovIn(MovEX), .MovOut(MovMEM), .wordhalfbyteIn(wordhalfbyteEX), .wordhalfbyteOut(wordhalfbyteMEM),
  .PCAddIn(PCAddEX), .PCAddOut(PCAddMEM),.ReadData2In(ReadData2EX), .ReadData2Out(ReadData2MEM), .ZeroFlagIn(ZeroEX), .ZeroFlagOut(ZeroMEM), .ALUResultIn(ALUResultEX), .ALUResultOut(ALUResultMEM),
@@ -99,7 +99,8 @@ module TopLevel(Clk, Reset);
     AndGate And(.andinput1(BranchMEM), .andinput2(ZeroMEM), .andoutput(PCSrcMEM));
     Mux32Bit2To1 movMux(.out(MovMuxOut), .inA(RegWriteMEM), .inB(ZeroMEM), .sel(MovMEM));
     //Pipe Reg 4
-    
+    wire [31:0] ReadDataMemWB, ALUResultWB, PCAddWB;
+    wire [1:0] MemtoRegWB;
     RegMEM_WB MEM_WB(.Clk(Clk), .Reset(Reset), .RegWriteIn(MovMuxOut),
      .RegWriteOut(RegWriteWB), .MemtoRegIn(MemtoRegMEM), .MemtoRegOut(MemtoRegWB),
       .PCAddIn(PCAddMEM), .PCAddOut(PCAddWB), .ALUResultIn(ALUResultMEM),
