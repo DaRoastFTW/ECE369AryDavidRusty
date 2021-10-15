@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TopLevel_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TopLevel_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1094001fs"></ZoomEndTime>
+      <Cursor1Time time="200000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="171"></NameColumnWidth>
+      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
+      <obj_property name="ElementShortName">Clk</obj_property>
+      <obj_property name="ObjectShortName">Clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/IM/Memory" type="array">
+      <obj_property name="ElementShortName">Memory[0:504][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Memory[0:504][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/PC/PCResult" type="array">
+      <obj_property name="ElementShortName">PCResult[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PCResult[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/IM/Instruction" type="array">
+      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/PCAdd/PCAddResult" type="array">
+      <obj_property name="ElementShortName">PCAddResult[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PCAddResult[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/IF_ID/Inst_input" type="array">
+      <obj_property name="ElementShortName">Inst_input[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Inst_input[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/Shift_jr/shiftinput" type="array">
+      <obj_property name="ElementShortName">shiftinput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">shiftinput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/Shift_jr/shiftoutput" type="array">
+      <obj_property name="ElementShortName">shiftoutput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">shiftoutput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/IF_ID/Inst_output" type="array">
+      <obj_property name="ElementShortName">Inst_output[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Inst_output[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/Control/Instruction" type="array">
+      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/Control/Jr" type="logic">
+      <obj_property name="ElementShortName">Jr</obj_property>
+      <obj_property name="ObjectShortName">Jr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/ReadRegister1" type="array">
+      <obj_property name="ElementShortName">ReadRegister1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ReadRegister1[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ReadData1Out" type="array">
+      <obj_property name="ElementShortName">ReadData1Out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ReadData1Out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/SignExtendOut" type="array">
+      <obj_property name="ElementShortName">SignExtendOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SignExtendOut[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ALUSrcOut" type="array">
+      <obj_property name="ElementShortName">ALUSrcOut[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrcOut[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ALUOpOut" type="array">
+      <obj_property name="ElementShortName">ALUOpOut[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOpOut[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/InstructionOut" type="array">
+      <obj_property name="ElementShortName">InstructionOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">InstructionOut[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ALUSrcIn" type="array">
+      <obj_property name="ElementShortName">ALUSrcIn[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrcIn[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/Control/ALUSrc" type="array">
+      <obj_property name="ElementShortName">ALUSrc[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc[2:0]</obj_property>
+   </wvobject>
+</wave_config>

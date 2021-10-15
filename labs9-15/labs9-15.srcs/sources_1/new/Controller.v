@@ -24,8 +24,8 @@ module Controller(Instruction, RegWrite, RegDst, ALUOp, ALUSrc, Branch,
 MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 	input [31:0] Instruction;
 	output reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov;
-	output reg [1:0] MemtoReg, wordhalfbyte;
-	output reg [2:0] RegDst, PCSrc, ALUSrc;
+	output reg [1:0] MemtoReg, wordhalfbyte, ALUSrc;
+	output reg [2:0] RegDst, PCSrc;
 	output reg [3:0] HiLoControl; 
 	output reg [4:0] ALUOp; //based on ALU32Bit file
 	

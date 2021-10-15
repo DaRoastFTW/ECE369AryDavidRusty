@@ -42,16 +42,18 @@ module InstructionMemory(Address, Instruction);
 
     output reg [31:0] Instruction;    // Instruction at memory location Address
     
-    reg [31:0] Memory [0:127];      //Memory with 128 32bit addresses
-    
     /* Please fill in the implementation here */
-    integer i;  //For indexing through Memory in the initialization process
-    initial begin
-        for(i = 0; i < 128; i = i + 1) begin
-            Memory[i] = i * 32'd3;
-        end
-    end
-    
+    integer i;
+    reg [31:0] Memory [0:504]; // 8 bit memory with 16 entries
+
+    initial
+        begin
+            //$readmemh("C:/Users/rrine/VivadoProjects/labs5-8/Instructions.txt", memory);
+            $readmemh("instruction_memory.txt", Memory);
+            for(i = 0; i < 504; i = i + 1) begin
+            Instruction <= Memory[i];
+            end
+        end  
     always @(Address) begin
         Instruction <= Memory[Address[8:2]];
     end

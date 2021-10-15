@@ -23,14 +23,14 @@
 module TopLevel(Clk, Reset);
     input Clk, Reset;
     //This is the instruction fetch
-    wire [31:0] PCIn, PCAddResult, PCSrcMuxB, PCSrcMuxC, InstructionIF;
+    wire [31:0] PCIn, PCAddResult, PCSrcMuxB, PCSrcMuxC, InstructionIF, PCResult;
     wire [1:0] PCSrcMEM;
     wire [27:0] JumpInstruction;
     
     //assign PCSrcMuxC = {PCAddResult[31:28], JumpInstruction};
     wire [31:0] JrMuxOutMEM;
     Mux32Bit3to1 PCSrcMux(.out(PCIn), .inA(PCAddResult), .inB(JrMuxOutMEM), .inC({PCAddResult[31:28], JumpInstruction}), .sel(PCSrcMEM));
-    ShiftLeft2 Shift_jr(.shiftinput(InstructionIF[25:0]), .shiftoutput(JumpInstruction));
+    ShiftLeft2 Shift_jr(.shiftinput({6'b000000, InstructionIF[25:0]}), .shiftoutput(JumpInstruction));
     ProgramCounter PC(.Address(PCIn), .PCResult(PCResult), .Reset(Reset), .Clk(Clk));
     PCAdder PCAdd(.PCResult(PCResult), .PCAddResult(PCAddResult));
     InstructionMemory IM(.Address(PCResult), .Instruction(InstructionIF));
@@ -51,14 +51,14 @@ module TopLevel(Clk, Reset);
     Mux32Bit2To1 jrMux_ID(.out(ReadRegister1), .inA(InstructionID[25:21]), .inB(5'd31), .sel(JrID));
     wire RegDstID, RegWrite, BranchID, MemWriteID, MemReadID, MovID;
     wire [4:0] ALUOpID;
-    wire [1:0] ALUSrc, MemtoRegID, PCSrcID, wordhalfbyteID;
+    wire [1:0] ALUSrcID, MemtoRegID, PCSrcID, wordhalfbyteID;
     wire [3:0] HiLoControlID;
     Controller Control(.Instruction(InstructionID), .RegWrite(RegWriteID), .RegDst(RegDstID), .ALUOp(ALUOpID), .ALUSrc(ALUSrcID), .Branch(BranchID),
 .MemWrite(MemWriteID), .MemRead(MemReadID), .MemtoReg(MemtoRegID), .HiLoControl(HiLoControlID), .PCSrc(PCSrcID), .Jr(JrID), .Mov(MovID), .wordhalfbyte(wordhalfbyteID));
     //Pipe Reg 2
     wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX;
-    wire [1:0] MemtoRegEX, wordhalfbyteEX;
-    wire [2:0] RegDstEX, PCSrcEX, ALUSrcEX;
+    wire [1:0] MemtoRegEX, wordhalfbyteEX, ALUSrcEX;
+    wire [2:0] RegDstEX, PCSrcEX;
     wire [3:0] HiLoControlEX;
     wire [4:0] ALUOpEX;
     wire [31:0] InstructionEX, ZeroExtendEX, SignExtendEX, PCAddEX, ReadData1EX, ReadData2EX;

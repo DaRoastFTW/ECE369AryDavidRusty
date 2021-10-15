@@ -62,6 +62,9 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
 	output reg[31:0] ReadData2;
 	
 	reg[31:0] RegisterFile [0:31];
+	initial begin
+	   RegisterFile[0] <= 32'd0;
+	end
 	
 	integer i;
 	always@(negedge Clk) begin
