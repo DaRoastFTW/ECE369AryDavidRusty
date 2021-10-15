@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1094001fs"></ZoomEndTime>
-      <Cursor1Time time="200000fs"></Cursor1Time>
+      <ZoomStartTime time="9999071666fs"></ZoomStartTime>
+      <ZoomEndTime time="10000185667fs"></ZoomEndTime>
+      <Cursor1Time time="10000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="171"></NameColumnWidth>
-      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="26" />
    <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -72,6 +72,14 @@
       <obj_property name="ElementShortName">ReadRegister1[4:0]</obj_property>
       <obj_property name="ObjectShortName">ReadRegister1[4:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/ReadData1" type="array">
+      <obj_property name="ElementShortName">ReadData1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ReadData1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ReadData1In" type="array">
+      <obj_property name="ElementShortName">ReadData1In[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ReadData1In[31:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ReadData1Out" type="array">
       <obj_property name="ElementShortName">ReadData1Out[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData1Out[31:0]</obj_property>
@@ -82,8 +90,8 @@
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ALUSrcOut" type="array">
-      <obj_property name="ElementShortName">ALUSrcOut[2:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUSrcOut[2:0]</obj_property>
+      <obj_property name="ElementShortName">ALUSrcOut[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrcOut[1:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ALUOpOut" type="array">
       <obj_property name="ElementShortName">ALUOpOut[4:0]</obj_property>
@@ -94,11 +102,28 @@
       <obj_property name="ObjectShortName">InstructionOut[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ALUSrcIn" type="array">
-      <obj_property name="ElementShortName">ALUSrcIn[2:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUSrcIn[2:0]</obj_property>
+      <obj_property name="ElementShortName">ALUSrcIn[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrcIn[1:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/CPU/Control/ALUSrc" type="array">
-      <obj_property name="ElementShortName">ALUSrc[2:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUSrc[2:0]</obj_property>
+      <obj_property name="ElementShortName">ALUSrc[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/A" type="array">
+      <obj_property name="ElementShortName">A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">A[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/B" type="array">
+      <obj_property name="ElementShortName">B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/ALUResult" type="array">
+      <obj_property name="ElementShortName">ALUResult[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUResult[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALUSrcMuxEX/out" type="array">
+      <obj_property name="ElementShortName">out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

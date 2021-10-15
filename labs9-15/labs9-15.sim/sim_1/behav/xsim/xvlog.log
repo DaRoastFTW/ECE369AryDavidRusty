@@ -41,6 +41,7 @@ INFO: [VRFC 10-2458] undeclared symbol InstructionID, assumed default net type w
 INFO: [VRFC 10-2458] undeclared symbol RegDstMuxWB, assumed default net type wire [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:43]
 INFO: [VRFC 10-2458] undeclared symbol ReadData1ID, assumed default net type wire [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:43]
 INFO: [VRFC 10-2458] undeclared symbol ReadData2ID, assumed default net type wire [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:43]
+WARNING: [VRFC 10-2938] 'ReadData1ID' is already implicitly declared on line 43 [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:44]
 WARNING: [VRFC 10-2938] 'InstructionID' is already implicitly declared on line 37 [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:50]
 INFO: [VRFC 10-2458] undeclared symbol RegWriteID, assumed default net type wire [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:56]
 INFO: [VRFC 10-2458] undeclared symbol BranchEX, assumed default net type wire [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:68]

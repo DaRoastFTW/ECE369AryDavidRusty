@@ -41,7 +41,7 @@ module TopLevel(Clk, Reset);
     wire [31:0] WriteDataWB;
     wire RegWriteWB;
     RegisterFile RegFile(.ReadRegister1(ReadRegister1), .ReadRegister2(InstructionID[20:16]), .WriteRegister(RegDstMuxWB), .WriteData(WriteDataWB), .RegWrite(RegWriteWB), .Clk(Clk), .Reset(Reset), .ReadData1(ReadData1ID), .ReadData2(ReadData2ID));
-    wire [31:0] SignExtendID;
+    wire [31:0] SignExtendID, ReadData1ID;
     
     SignExtension SignExt(.in(InstructionID[15:0]), .out(SignExtendID));
     wire [31:0] ZeroExtendID;
