@@ -67,7 +67,7 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
 	end
 	
 	integer i;
-	always@(negedge Clk) begin
+	always@(*) begin
 	   ReadData1 <= RegisterFile[ReadRegister1];
 	   ReadData2 <= RegisterFile[ReadRegister2];
 	end

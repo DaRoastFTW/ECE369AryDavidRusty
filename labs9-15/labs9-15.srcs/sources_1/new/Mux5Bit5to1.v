@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10/10/2021 06:55:54 PM
+// Create Date: 10/15/2021 11:43:44 PM
 // Design Name: 
-// Module Name: AndGate
+// Module Name: Mux5Bit5to1
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,12 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module AndGate(andinput1, andinput2, andoutput);
-    input andinput1, andinput2;
-    output reg andoutput;
-    
-    always@(*)
-    begin
-        andoutput <= andinput1 & andinput2;
-    end
+module Mux5Bit5to1(
+
+    );
 endmodule

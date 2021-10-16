@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="9997631491fs"></ZoomStartTime>
-      <ZoomEndTime time="10002595626fs"></ZoomEndTime>
-      <Cursor1Time time="10000000000fs"></Cursor1Time>
+      <ZoomStartTime time="9147750fs"></ZoomStartTime>
+      <ZoomEndTime time="9461251fs"></ZoomEndTime>
+      <Cursor1Time time="9425750fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="171"></NameColumnWidth>
-      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+      <NameColumnWidth column_width="129"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="31" />
+   <WVObjectSize size="17" />
    <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -35,83 +35,41 @@
    <wvobject fp_name="/TopLevel_tb/CPU/PC/PCResult" type="array">
       <obj_property name="ElementShortName">PCResult[31:0]</obj_property>
       <obj_property name="ObjectShortName">PCResult[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/CPU/IM/Instruction" type="array">
       <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
       <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/PCAdd/PCAddResult" type="array">
-      <obj_property name="ElementShortName">PCAddResult[31:0]</obj_property>
-      <obj_property name="ObjectShortName">PCAddResult[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/IF_ID/Inst_input" type="array">
-      <obj_property name="ElementShortName">Inst_input[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Inst_input[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/Shift_jr/shiftinput" type="array">
-      <obj_property name="ElementShortName">shiftinput[31:0]</obj_property>
-      <obj_property name="ObjectShortName">shiftinput[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/Shift_jr/shiftoutput" type="array">
-      <obj_property name="ElementShortName">shiftoutput[31:0]</obj_property>
-      <obj_property name="ObjectShortName">shiftoutput[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/IF_ID/Inst_output" type="array">
-      <obj_property name="ElementShortName">Inst_output[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Inst_output[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/Control/Instruction" type="array">
-      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/Control/Jr" type="logic">
-      <obj_property name="ElementShortName">Jr</obj_property>
-      <obj_property name="ObjectShortName">Jr</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/ReadRegister1" type="array">
-      <obj_property name="ElementShortName">ReadRegister1[4:0]</obj_property>
-      <obj_property name="ObjectShortName">ReadRegister1[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/ReadData1" type="array">
-      <obj_property name="ElementShortName">ReadData1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ReadData1[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ReadData1In" type="array">
-      <obj_property name="ElementShortName">ReadData1In[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ReadData1In[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ReadData1Out" type="array">
-      <obj_property name="ElementShortName">ReadData1Out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ReadData1Out[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/SignExtendOut" type="array">
-      <obj_property name="ElementShortName">SignExtendOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SignExtendOut[31:0]</obj_property>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[8]" type="array">
+      <obj_property name="ElementShortName">[8][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[8][31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ALUSrcOut" type="array">
-      <obj_property name="ElementShortName">ALUSrcOut[1:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUSrcOut[1:0]</obj_property>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[9]" type="array">
+      <obj_property name="ElementShortName">[9][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ALUOpOut" type="array">
-      <obj_property name="ElementShortName">ALUOpOut[4:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUOpOut[4:0]</obj_property>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[10]" type="array">
+      <obj_property name="ElementShortName">[10][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/InstructionOut" type="array">
-      <obj_property name="ElementShortName">InstructionOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">InstructionOut[31:0]</obj_property>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[11]" type="array">
+      <obj_property name="ElementShortName">[11][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ID_EX/ALUSrcIn" type="array">
-      <obj_property name="ElementShortName">ALUSrcIn[1:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUSrcIn[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/Control/ALUSrc" type="array">
-      <obj_property name="ElementShortName">ALUSrc[1:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUSrc[1:0]</obj_property>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[12]" type="array">
+      <obj_property name="ElementShortName">[12][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/CPU/ALU/A" type="array">
       <obj_property name="ElementShortName">A[31:0]</obj_property>
       <obj_property name="ObjectShortName">A[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/CPU/ALU/B" type="array">
       <obj_property name="ElementShortName">B[31:0]</obj_property>
@@ -121,34 +79,24 @@
    <wvobject fp_name="/TopLevel_tb/CPU/ALU/ALUResult" type="array">
       <obj_property name="ElementShortName">ALUResult[31:0]</obj_property>
       <obj_property name="ObjectShortName">ALUResult[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ALUSrcMuxEX/out" type="array">
-      <obj_property name="ElementShortName">out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">out[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/ALUResult64" type="array">
+      <obj_property name="ElementShortName">ALUResult64[63:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUResult64[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/EX_MEM/ALUResultIn" type="array">
-      <obj_property name="ElementShortName">ALUResultIn[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUResultIn[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/EX_MEM/ALUResultOut" type="array">
-      <obj_property name="ElementShortName">ALUResultOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUResultOut[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/MEM_WB/ALUResultIn" type="array">
-      <obj_property name="ElementShortName">ALUResultIn[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUResultIn[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/MemToRegMux/out" type="array">
-      <obj_property name="ElementShortName">out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">out[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/MemToRegMux/sel" type="array">
-      <obj_property name="ElementShortName">sel[1:0]</obj_property>
-      <obj_property name="ObjectShortName">sel[1:0]</obj_property>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/ALUControl" type="array">
+      <obj_property name="ElementShortName">ALUControl[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUControl[4:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/HiLo/HiReg" type="array">
+      <obj_property name="ElementShortName">HiReg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HiReg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/HiLo/LoReg" type="array">
+      <obj_property name="ElementShortName">LoReg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">LoReg[31:0]</obj_property>
    </wvobject>
 </wave_config>

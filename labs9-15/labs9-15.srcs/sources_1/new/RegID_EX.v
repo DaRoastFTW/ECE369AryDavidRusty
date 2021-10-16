@@ -26,8 +26,7 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, HiLoControlIn, HiLoControlOut, J
 ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtendIn, SignExtendOut);
     input Clk, Reset;
     input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn;
-    input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn;
-    input [2:0] RegDstIn;
+    input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn, RegDstIn;
     input [3:0] HiLoControlIn;
     input [4:0] ALUOpIn;
     input [31:0] InstructionIn, ZeroExtendIn, SignExtendIn, PCAddIn, ReadData1In, ReadData2In;
