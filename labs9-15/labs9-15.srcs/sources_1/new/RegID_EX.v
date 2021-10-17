@@ -31,13 +31,7 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
     input [5:0] ALUOpIn;
     input [31:0] InstructionIn, ZeroExtendIn, SignExtendIn, PCAddIn, ReadData1In, ReadData2In;
 
-    reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov, Jump;
-    reg [1:0] MemtoReg, wordhalfbyte, ALUSrc;
-    reg [1:0] RegDst;
-    reg [3:0] HiLoControl;
-    reg [5:0] ALUOp;
-    reg [31:0] Instruction, ZeroExtend, SignExtend, PCAdd, ReadData1, ReadData2;
-    
+  
     output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut;
     output reg [1:0] MemtoRegOut, wordhalfbyteOut, ALUSrcOut;
     output reg [1:0] RegDstOut;
@@ -48,69 +42,47 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
     begin
     if (Reset)
         begin
-            RegWrite <= 1'b0;
-            Branch <= 1'b0;
-            MemWrite <= 1'b0;
-            MemRead <= 1'b0;
-            Jr <= 1'b0;
-            Mov <= 1'b0;
-            MemtoReg <= 2'b00;
-            wordhalfbyte <= 2'b00;
-            RegDst <= 2'b00;
-            ALUSrc <= 2'b00;
-            HiLoControl <= 4'd0;
-            ALUOp <= 6'd0;
-            Instruction <= 32'd0;
-            ZeroExtend <= 32'd0;
-            SignExtend <= 32'd0;
-            PCAdd <= 32'd0;
-            ReadData1 <= 32'd0;
-            ReadData2 <= 32'd0;
-            Jump <= 1'b0;
+            RegWriteOut <= 1'b0;
+            BranchOut <= 1'b0;
+            MemWriteOut <= 1'b0;
+            MemReadOut <= 1'b0;
+            JrOut <= 1'b0;
+            MovOut <= 1'b0;
+            MemtoRegOut <= 2'b00;
+            wordhalfbyteOut <= 2'b00;
+            RegDstOut <= 2'b00;
+            ALUSrcOut <= 2'b00;
+            HiLoControlOut <= 4'd0;
+            ALUOpOut <= 6'd0;
+            InstructionOut <= 32'd0;
+            ZeroExtendOut <= 32'd0;
+            SignExtendOut <= 32'd0;
+            PCAddOut <= 32'd0;
+            ReadData1Out <= 32'd0;
+            ReadData2Out <= 32'd0;
+            JumpOut <= 1'b0;
         end
     else
         begin
-            RegWriteOut <= RegWrite;
-            BranchOut <= Branch;
-            MemWriteOut <= MemWrite;
-            MemReadOut <= MemRead;
-            JrOut <= Jr;
-            MovOut <= Mov;
-            MemtoRegOut <= MemtoReg;
-            wordhalfbyteOut <= wordhalfbyte;
-            RegDstOut <= RegDst;
-            ALUSrcOut <= ALUSrc;
-            HiLoControlOut <= HiLoControl;
-            ALUOpOut <= ALUOp;
-            InstructionOut <= Instruction;
-            ZeroExtendOut <= ZeroExtend;
-            SignExtendOut <= SignExtend;
-            PCAddOut <= PCAdd;
-            ReadData1Out <= ReadData1;
-            ReadData2Out <= ReadData2;
-            JumpOut <= Jump;
+            RegWriteOut <= RegWriteIn;
+            BranchOut <= BranchIn;
+            MemWriteOut <= MemWriteIn;
+            MemReadOut <= MemReadIn;
+            JrOut <= JrIn;
+            MovOut <= MovIn;
+            MemtoRegOut <= MemtoRegIn;
+            wordhalfbyteOut <= wordhalfbyteIn;
+            RegDstOut <= RegDstIn;
+            ALUSrcOut <= ALUSrcIn;
+            HiLoControlOut <= HiLoControlIn;
+            ALUOpOut <= ALUOpIn;
+            InstructionOut <= InstructionIn;
+            ZeroExtendOut <= ZeroExtendIn;
+            SignExtendOut <= SignExtendIn;
+            PCAddOut <= PCAddIn;
+            ReadData1Out <= ReadData1In;
+            ReadData2Out <= ReadData2In;
+            JumpOut <= JumpIn;
         end
-    end
-    always@(negedge Clk)
-    begin
-        RegWrite <= RegWriteIn;
-        Branch <= BranchIn;
-        MemWrite <= MemWriteIn;
-        MemRead <= MemReadIn;
-        Jr <= JrIn;
-        Mov <= MovIn;
-        MemtoReg <= MemtoRegIn;
-        wordhalfbyte <= wordhalfbyteIn;
-        RegDst <= RegDstIn;
-        ALUSrc <= ALUSrcIn;
-        HiLoControl <= HiLoControlIn;
-        ALUOp <= ALUOpIn;
-        Instruction <= InstructionIn;
-        ZeroExtend <= ZeroExtendIn;
-        SignExtend <= SignExtendIn;
-        PCAdd <= PCAddIn;
-        ReadData1 <= ReadData1In;
-        ReadData2 <= ReadData2In;
-        Jump <= JumpIn;
     end
 endmodule

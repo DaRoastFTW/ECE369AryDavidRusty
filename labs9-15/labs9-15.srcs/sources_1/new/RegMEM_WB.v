@@ -26,12 +26,7 @@ module RegMEM_WB(Clk, Reset, RegWriteIn, RegWriteOut, MemtoRegIn, MemtoRegOut, P
     input [1:0] MemtoRegIn;
     input [4:0] RegDstMuxIn;
     input [31:0] PCAddIn, ReadDataMemIn, ALUResultIn;
-    
-    reg RegWrite;
-    reg [1:0] MemtoReg;
-    reg [4:0] RegDstMux;
-    reg [31:0] PCAdd, ReadDataMem, ALUResult;
-    
+
     output reg RegWriteOut;
     output reg [1:0] MemtoRegOut;
     output reg [4:0] RegDstMuxOut;
@@ -40,31 +35,21 @@ module RegMEM_WB(Clk, Reset, RegWriteIn, RegWriteOut, MemtoRegIn, MemtoRegOut, P
     begin
     if (Reset)
         begin
-            RegWrite <= 0;
-            MemtoReg <= 0;
-            RegDstMux <= 0;
-            PCAdd <= 0;
-            ReadDataMem <= 0;
-            ALUResult <= 0;
+            RegWriteOut <= 0;
+            MemtoRegOut <= 0;
+            RegDstMuxOut <= 0;
+            PCAddOut <= 0;
+            ReadDataMemOut <= 0;
+            ALUResultOut <= 0;
         end
     else
         begin
-            RegWriteOut <= RegWrite;
-            MemtoRegOut <=  MemtoReg;
-            RegDstMuxOut <= RegDstMux;
-            PCAddOut <= PCAdd;
-            ReadDataMemOut <= ReadDataMem;
-            ALUResultOut <= ALUResult;
+            RegWriteOut <= RegWriteIn;
+            MemtoRegOut <=  MemtoRegIn;
+            RegDstMuxOut <= RegDstMuxIn;
+            PCAddOut <= PCAddIn;
+            ReadDataMemOut <= ReadDataMemIn;
+            ALUResultOut <= ALUResultIn;
         end
-    end
-    
-    always@(negedge Clk)
-    begin
-       RegWrite <= RegWriteIn;
-       MemtoReg <=  MemtoRegIn;
-       RegDstMux <= RegDstMuxIn;
-       PCAdd <= PCAddIn;
-       ReadDataMem <= ReadDataMemIn;
-       ALUResult <= ALUResultIn;
     end
 endmodule

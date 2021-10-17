@@ -1,24 +1,7 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/10/2021 04:25:44 PM
-// Design Name: 
-// Module Name: TopLevel
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
+///ECE 369: Labs 9-15
+/// Rusty Rinehart- 33% Effort, Ary Nath- 33% Effort, David Mazi- 33% Effor
+///
 
 module TopLevel(Clk, Reset);
     input Clk, Reset;

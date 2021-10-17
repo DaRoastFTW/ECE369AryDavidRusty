@@ -25,24 +25,17 @@ module RegIF_ID(Clk, Reset, PC_4Input, PC_4Output, Inst_input, Inst_output);
     input [31:0] PC_4Input, Inst_input;
     output reg [31:0] PC_4Output, Inst_output;
     
-    reg [31:0] PC_4, Inst;
     always@(posedge Clk)
     begin
     if (Reset)
         begin
-        PC_4 <= 32'd0;
-        Inst <= 32'd0;
+        PC_4Output <= 32'd0;
+        Inst_output <= 32'd0;
         end
     else
         begin
-        PC_4Output <= PC_4;
-        Inst_output <= Inst;
+        PC_4Output <= PC_4Input;
+        Inst_output <= Inst_input;
         end
-    end
-    
-    always@(negedge Clk)
-    begin
-        PC_4 <= PC_4Input;
-        Inst <= Inst_input;
     end
 endmodule
