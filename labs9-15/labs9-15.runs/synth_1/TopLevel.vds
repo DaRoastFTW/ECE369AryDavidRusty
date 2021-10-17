@@ -1,0 +1,1197 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Oct 16 23:12:52 2021
+# Process ID: 21568
+# Current directory: F:/ECE369AryDavidRusty/labs9-15/labs9-15.runs/synth_1
+# Command line: vivado.exe -log TopLevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TopLevel.tcl
+# Log file: F:/ECE369AryDavidRusty/labs9-15/labs9-15.runs/synth_1/TopLevel.vds
+# Journal file: F:/ECE369AryDavidRusty/labs9-15/labs9-15.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source TopLevel.tcl -notrace
+Command: synth_design -top TopLevel -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22496 
+WARNING: [Synth 8-1958] event expressions must result in a singular type [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:53]
+WARNING: [Synth 8-992] JumpMEM is already implicitly declared earlier [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:92]
+WARNING: [Synth 8-992] ReadDataMEM is already implicitly declared earlier [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:107]
+WARNING: [Synth 8-992] RegDstMuxWB is already implicitly declared earlier [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:109]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 576.148 ; gain = 247.258
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'TopLevel' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:23]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:26]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:27]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:44]
+INFO: [Synth 8-6157] synthesizing module 'Mux32Bit3to1' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Mux32Bit3to1' (1#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ShifterID' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ShifterID' (2#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (3#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v:27]
+INFO: [Synth 8-6157] synthesizing module 'PCAdder' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'PCAdder' (4#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v:22]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:39]
+INFO: [Synth 8-3876] $readmem data file 'F:/ECE369AryDavidRusty/labs9-15/instruction_memory.mem' is read successfully [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (5#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:39]
+INFO: [Synth 8-6157] synthesizing module 'RegIF_ID' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegIF_ID' (6#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (7#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v:51]
+INFO: [Synth 8-6157] synthesizing module 'SignExtension' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'SignExtension' (8#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v:8]
+INFO: [Synth 8-6157] synthesizing module 'ZeroExtention' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ZeroExtention' (9#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Mux5Bit2To1' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit2To1.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Mux5Bit2To1' (10#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit2To1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Controller' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-226] default block is never used [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v:400]
+INFO: [Synth 8-6155] done synthesizing module 'Controller' (11#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegID_EX' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegID_EX' (12#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU32Bit' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'ALU32Bit' (13#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:29]
+INFO: [Synth 8-6157] synthesizing module 'HiLoReg' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'HiLoReg' (14#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Adder' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Adder' (15#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ShiftLeft2' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ShiftLeft2' (16#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Mux32Bit2To1' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Mux32Bit2To1' (17#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Mux5Bit3to1' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Mux5Bit3to1' (18#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegEX_MEM' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegEX_MEM' (19#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (20#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:38]
+INFO: [Synth 8-6157] synthesizing module 'AndGate' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'AndGate' (21#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Mux1Bit2To1' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Mux1Bit2To1' (22#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'RegMEM_WB' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegMEM_WB' (23#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v:23]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PC'. This will prevent further optimization [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:36]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IM'. This will prevent further optimization [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:38]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PCAdd'. This will prevent further optimization [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:37]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'HiLo'. This will prevent further optimization [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:81]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'MemToRegMux'. This will prevent further optimization [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:118]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RegFile'. This will prevent further optimization [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'TopLevel' (24#1) [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:23]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[31]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[30]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[29]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[28]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[27]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[26]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[25]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[24]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[23]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[22]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[21]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[20]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[19]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[18]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[17]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[16]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[15]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[14]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[13]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[12]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[31]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[30]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[29]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[28]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[27]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[26]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[25]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[24]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[23]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[22]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[21]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[20]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[19]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[18]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[17]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[16]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[15]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[14]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[13]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[12]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[1]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1055.199 ; gain = 726.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1055.199 ; gain = 726.309
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 1055.199 ; gain = 726.309
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-5546] ROM "Memory" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ALUOp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ALUOp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "MemWrite" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "MemRead" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "HiLoControl" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "HiLoControl" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PCSrc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Jr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Mov" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wordhalfbyte" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Jump" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:57]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:09 ; elapsed = 00:03:29 . Memory (MB): peak = 1711.559 ; gain = 1382.668
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------+------------+----------+
+|      |RTL Partition            |Replication |Instances |
++------+-------------------------+------------+----------+
+|1     |muxpart__6174_DataMemory |           1|     32736|
+|2     |DataMemory__GB1          |           1|      4745|
+|3     |muxpart__6175_DataMemory |           1|     32736|
+|4     |DataMemory__GB3          |           1|     20485|
+|5     |muxpart__6176_DataMemory |           1|     32736|
+|6     |DataMemory__GB5          |           1|     36078|
+|7     |DataMemory__GB6          |           1|     33346|
+|8     |DataMemory__GB7          |           1|      9997|
+|9     |DataMemory__GB8          |           1|     33795|
+|10    |DataMemory__GB9          |           1|      9868|
+|11    |DataMemory__GB10         |           1|     11290|
+|12    |DataMemory__GB11         |           1|     31225|
+|13    |DataMemory__GB12         |           1|      8003|
+|14    |DataMemory__GB13         |           1|     10925|
+|15    |DataMemory__GB14         |           1|     17960|
+|16    |DataMemory__GB15         |           1|     31465|
+|17    |DataMemory__GB16         |           1|     18736|
+|18    |DataMemory__GB17         |           1|     16252|
+|19    |DataMemory__GB18         |           1|     19388|
+|20    |DataMemory__GB19         |           1|     25263|
+|21    |DataMemory__GB20         |           1|     21140|
+|22    |DataMemory__GB21         |           1|     15401|
+|23    |DataMemory__GB22         |           1|     20180|
+|24    |DataMemory__GB23         |           1|     23447|
+|25    |DataMemory__GB24         |           1|     33065|
+|26    |DataMemory__GB25         |           1|     27465|
+|27    |DataMemory__GB26         |           1|     20420|
+|28    |DataMemory__GB27         |           1|     23635|
+|29    |DataMemory__GB28         |           1|     27477|
+|30    |DataMemory__GB29         |           1|     38594|
+|31    |DataMemory__GB30         |           1|     11371|
+|32    |DataMemory__GB31         |           1|     14148|
+|33    |DataMemory__GB32         |           1|     18767|
+|34    |DataMemory__GB33         |           1|     39828|
+|35    |DataMemory__GB34         |           1|     11953|
+|36    |DataMemory__GB35         |           1|     13388|
+|37    |DataMemory__GB36         |           1|     20888|
+|38    |DataMemory__GB37         |           1|     34853|
+|39    |DataMemory__GB38         |           1|      9559|
+|40    |DataMemory__GB39         |           1|     10915|
+|41    |DataMemory__GB40         |           1|     15774|
+|42    |DataMemory__GB41         |           1|     38807|
+|43    |DataMemory__GB42         |           1|     34548|
+|44    |DataMemory__GB43         |           1|      9764|
+|45    |DataMemory__GB44         |           1|     15734|
+|46    |DataMemory__GB45         |           1|     16071|
+|47    |DataMemory__GB46         |           1|     21196|
+|48    |DataMemory__GB47         |           1|     38814|
+|49    |DataMemory__GB48         |           1|     11770|
+|50    |DataMemory__GB49         |           1|     13205|
+|51    |DataMemory__GB50         |           1|     17878|
+|52    |DataMemory__GB51         |           1|     22519|
+|53    |DataMemory__GB52         |           1|     34677|
+|54    |DataMemory__GB53         |           1|     36425|
+|55    |DataMemory__GB54         |           1|     18205|
+|56    |DataMemory__GB55         |           1|     15350|
+|57    |DataMemory__GB56         |           1|     22053|
+|58    |DataMemory__GB57         |           1|     31221|
+|59    |DataMemory__GB58         |           1|     34127|
+|60    |DataMemory__GB59         |           1|     10850|
+|61    |DataMemory__GB60         |           1|     11579|
+|62    |DataMemory__GB61         |           1|     16124|
+|63    |DataMemory__GB62         |           1|     19259|
+|64    |DataMemory__GB63         |           1|     25696|
+|65    |DataMemory__GB64         |           1|     34524|
+|66    |DataMemory__GB65         |           1|      8806|
+|67    |DataMemory__GB66         |           1|     12413|
+|68    |DataMemory__GB67         |           1|     36230|
+|69    |DataMemory__GB68         |           1|      9346|
+|70    |DataMemory__GB69         |           1|     17532|
+|71    |DataMemory__GB70         |           1|     21813|
+|72    |DataMemory__GB71         |           1|     25478|
+|73    |DataMemory__GB72         |           1|     33336|
+|74    |DataMemory__GB73         |           1|      9299|
+|75    |TopLevel__GC0            |           1|     14822|
++------+-------------------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 2     
+	   3 Input     64 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 5     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1077  
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 15    
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---Muxes : 
+	  34 Input     64 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1029  
+	   2 Input     32 Bit        Muxes := 2080  
+	 426 Input     32 Bit        Muxes := 1     
+	  32 Input     32 Bit        Muxes := 1     
+	  10 Input     32 Bit        Muxes := 1     
+	  25 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 4     
+	   3 Input      5 Bit        Muxes := 1     
+	  34 Input      5 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	  25 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	  25 Input      2 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	  10 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1026  
+	   2 Input      1 Bit        Muxes := 5158  
+	  25 Input      1 Bit        Muxes := 12    
+	   3 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module DataMemory 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1024  
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1025  
+	   2 Input     32 Bit        Muxes := 2079  
+	   4 Input      1 Bit        Muxes := 1024  
+	   2 Input      1 Bit        Muxes := 5120  
+Module Mux32Bit3to1__1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module ProgramCounter 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module PCAdder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module InstructionMemory 
+Detailed RTL Component Info : 
++---Muxes : 
+	 426 Input     32 Bit        Muxes := 1     
+Module RegIF_ID 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+Module RegisterFile 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 32    
+Module Mux5Bit2To1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module Controller 
+Detailed RTL Component Info : 
++---Muxes : 
+	  25 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 3     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	  25 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	  25 Input      2 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	  25 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+Module RegID_EX 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 7     
+Module ALU32Bit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Multipliers : 
+	                32x32  Multipliers := 1     
++---Muxes : 
+	  34 Input     64 Bit        Muxes := 1     
+	  32 Input     32 Bit        Muxes := 1     
+	  34 Input      5 Bit        Muxes := 1     
+Module HiLoReg 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     64 Bit       Adders := 1     
+	   2 Input     64 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 5     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	  10 Input     32 Bit        Muxes := 1     
+	  10 Input      2 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 3     
+Module Adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module Mux32Bit2To1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Mux32Bit3to1__2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module Mux5Bit3to1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      5 Bit        Muxes := 1     
+Module RegEX_MEM 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
+Module Mux1Bit2To1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module RegMEM_WB 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module Mux32Bit3to1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:183]
+DSP Report: Generating DSP ALUResult0, operation Mode is: A*B.
+DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
+DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
+DSP Report: Generating DSP ALUResult0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
+DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
+DSP Report: Generating DSP ALUResult0, operation Mode is: A*B.
+DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
+DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
+DSP Report: Generating DSP ALUResult0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
+DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
+DSP Report: Generating DSP ALUResult640, operation Mode is: A*B.
+DSP Report: operator ALUResult640 is absorbed into DSP ALUResult640.
+DSP Report: operator ALUResult640 is absorbed into DSP ALUResult640.
+DSP Report: Generating DSP ALUResult640, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator ALUResult640 is absorbed into DSP ALUResult640.
+DSP Report: operator ALUResult640 is absorbed into DSP ALUResult640.
+DSP Report: Generating DSP ALUResult640, operation Mode is: A*B.
+DSP Report: operator ALUResult640 is absorbed into DSP ALUResult640.
+DSP Report: operator ALUResult640 is absorbed into DSP ALUResult640.
+DSP Report: Generating DSP ALUResult640, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator ALUResult640 is absorbed into DSP ALUResult640.
+DSP Report: operator ALUResult640 is absorbed into DSP ALUResult640.
+WARNING: [Synth 8-3936] Found unconnected internal register 'ID_EX/InstructionOut_reg' and it is trimmed from '32' to '21' bits. [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:85]
+INFO: [Synth 8-5546] ROM "Control/HiLoControl" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[31]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[30]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[29]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[28]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[27]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[26]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[25]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[24]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[23]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[22]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[21]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[20]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[19]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[18]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[17]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[16]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[15]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[14]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[13]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[12]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[11]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[1]
+WARNING: [Synth 8-3331] design InstructionMemory has unconnected port Address[0]
+INFO: [Synth 8-3886] merging instance 'MEM_WB/RegDstMuxOut_reg[0]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/RegDstMuxOut_reg[1]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/RegDstMuxOut_reg[2]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/RegDstMuxOut_reg[3]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/RegDstMuxOut_reg[4]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[0]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[1]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[2]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[3]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[4]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[5]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[6]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[7]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[8]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[9]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[10]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[11]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[12]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[13]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[14]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[15]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[16]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[17]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[18]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[19]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[20]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[21]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[22]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[23]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[24]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[25]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[26]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[27]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[28]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[29]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[30]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ReadDataMemOut_reg[31]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[0]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[1]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[2]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[3]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[4]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[5]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[6]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[7]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[8]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[9]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[10]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[11]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[12]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[13]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[14]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[15]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[16]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[17]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[18]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[19]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[20]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[21]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[22]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[23]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[24]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[25]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[26]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[27]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[28]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[29]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[30]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/ALUResultOut_reg[31]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[0]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[1]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[2]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[3]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[4]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[5]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[6]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[7]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[8]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[9]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[10]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[11]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[12]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[13]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[14]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[15]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[16]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[17]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[18]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[19]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[20]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[21]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[22]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[23]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[24]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[25]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[26]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[27]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[28]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[29]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MEM_WB/PCAddOut_reg[30]' (FDE) to 'EX_MEM/wordhalfbyteOut_reg[0]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EX_MEM/MemWriteOut_reg )
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[31]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[30]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[29]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[28]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[27]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[26]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[25]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[24]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[23]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[22]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[21]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[20]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[19]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[18]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[17]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[16]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[15]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[14]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[13]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[12]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[11]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[10]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[9]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[8]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[7]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[6]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[5]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[4]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[3]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[2]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[1]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/PC_4_reg[0]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:33]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[31]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[30]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[29]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[28]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[27]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[26]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[25]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[24]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[23]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[22]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[21]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[20]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[19]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[18]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[17]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[16]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[15]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'IF_ID/Inst_reg[14]__0/Q' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:63]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:51]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:59]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:59]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:62]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:60]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:60]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:52]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:53]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:54]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:57]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:57]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:61]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:61]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:61]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:61]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:55]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:56]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:58]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:58]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:66]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:66]
+INFO: [Common 17-14] Message 'Synth 8-6858' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-6858' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:11:37 ; elapsed = 00:12:01 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU32Bit    | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------+------------+----------+
+|      |RTL Partition            |Replication |Instances |
++------+-------------------------+------------+----------+
+|1     |muxpart__6174_DataMemory |           1|     32736|
+|2     |DataMemory__GB1          |           1|       661|
+|3     |muxpart__6175_DataMemory |           1|     32736|
+|4     |DataMemory__GB3          |           1|      1291|
+|5     |muxpart__6176_DataMemory |           1|     32736|
+|6     |DataMemory__GB5          |           1|      7747|
+|7     |DataMemory__GB6          |           1|      8540|
+|8     |DataMemory__GB7          |           1|       907|
+|9     |DataMemory__GB8          |           1|      7191|
+|10    |DataMemory__GB9          |           1|       458|
+|11    |DataMemory__GB10         |           1|       536|
+|12    |DataMemory__GB11         |           1|      6289|
+|13    |DataMemory__GB12         |           1|       739|
+|14    |DataMemory__GB13         |           1|       522|
+|15    |DataMemory__GB14         |           1|      5331|
+|16    |DataMemory__GB15         |           1|      6699|
+|17    |DataMemory__GB16         |           1|       957|
+|18    |DataMemory__GB17         |           1|      4961|
+|19    |DataMemory__GB18         |           1|      1923|
+|20    |DataMemory__GB19         |           1|      5724|
+|21    |DataMemory__GB20         |           1|      5555|
+|22    |DataMemory__GB21         |           1|      3027|
+|23    |DataMemory__GB22         |           1|      5232|
+|24    |DataMemory__GB23         |           1|      5553|
+|25    |DataMemory__GB24         |           1|      8486|
+|26    |DataMemory__GB25         |           1|      7318|
+|27    |DataMemory__GB26         |           1|      6343|
+|28    |DataMemory__GB27         |           1|      6651|
+|29    |DataMemory__GB28         |           1|      7047|
+|30    |DataMemory__GB29         |           1|      8608|
+|31    |DataMemory__GB30         |           1|       830|
+|32    |DataMemory__GB31         |           1|      1102|
+|33    |DataMemory__GB32         |           1|      1187|
+|34    |DataMemory__GB33         |           1|      8444|
+|35    |DataMemory__GB34         |           1|       789|
+|36    |DataMemory__GB35         |           1|       887|
+|37    |DataMemory__GB36         |           1|      1620|
+|38    |DataMemory__GB37         |           1|      7398|
+|39    |DataMemory__GB38         |           1|      2096|
+|40    |DataMemory__GB39         |           1|       726|
+|41    |DataMemory__GB40         |           1|      3955|
+|42    |DataMemory__GB41         |           1|     10535|
+|43    |DataMemory__GB42         |           1|      8405|
+|44    |DataMemory__GB43         |           1|       629|
+|45    |DataMemory__GB44         |           1|      1124|
+|46    |DataMemory__GB45         |           1|      1201|
+|47    |DataMemory__GB46         |           1|      5715|
+|48    |DataMemory__GB47         |           1|      8746|
+|49    |DataMemory__GB48         |           1|       706|
+|50    |DataMemory__GB49         |           1|       783|
+|51    |DataMemory__GB50         |           1|      1390|
+|52    |DataMemory__GB51         |           1|      4579|
+|53    |DataMemory__GB52         |           1|      7115|
+|54    |DataMemory__GB53         |           1|      8056|
+|55    |DataMemory__GB54         |           1|      4948|
+|56    |DataMemory__GB55         |           1|       850|
+|57    |DataMemory__GB56         |           1|      5580|
+|58    |DataMemory__GB57         |           1|      7142|
+|59    |DataMemory__GB58         |           1|      9488|
+|60    |DataMemory__GB59         |           1|       987|
+|61    |DataMemory__GB60         |           1|       785|
+|62    |DataMemory__GB61         |           1|      1055|
+|63    |DataMemory__GB62         |           1|      1321|
+|64    |DataMemory__GB63         |           1|      5389|
+|65    |DataMemory__GB64         |           1|      7849|
+|66    |DataMemory__GB65         |           1|       620|
+|67    |DataMemory__GB66         |           1|       957|
+|68    |DataMemory__GB67         |           1|      6416|
+|69    |DataMemory__GB68         |           1|      1092|
+|70    |DataMemory__GB69         |           1|       783|
+|71    |DataMemory__GB70         |           1|      4893|
+|72    |DataMemory__GB71         |           1|      6943|
+|73    |DataMemory__GB72         |           1|      6648|
+|74    |DataMemory__GB73         |           1|      1930|
+|75    |TopLevel__GC0            |           1|      2206|
++------+-------------------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:11:42 ; elapsed = 00:12:07 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------+------------+----------+
+|      |RTL Partition            |Replication |Instances |
++------+-------------------------+------------+----------+
+|1     |muxpart__6174_DataMemory |           1|     32736|
+|2     |DataMemory__GB1          |           1|       661|
+|3     |muxpart__6175_DataMemory |           1|     32736|
+|4     |DataMemory__GB3          |           1|      1291|
+|5     |muxpart__6176_DataMemory |           1|     32736|
+|6     |DataMemory__GB5          |           1|      7747|
+|7     |DataMemory__GB6          |           1|      8540|
+|8     |DataMemory__GB7          |           1|       907|
+|9     |DataMemory__GB8          |           1|      7191|
+|10    |DataMemory__GB9          |           1|       458|
+|11    |DataMemory__GB10         |           1|       536|
+|12    |DataMemory__GB11         |           1|      6289|
+|13    |DataMemory__GB12         |           1|       739|
+|14    |DataMemory__GB13         |           1|       522|
+|15    |DataMemory__GB14         |           1|      5331|
+|16    |DataMemory__GB15         |           1|      6699|
+|17    |DataMemory__GB16         |           1|       957|
+|18    |DataMemory__GB17         |           1|      4961|
+|19    |DataMemory__GB18         |           1|      1923|
+|20    |DataMemory__GB19         |           1|      5724|
+|21    |DataMemory__GB20         |           1|      5555|
+|22    |DataMemory__GB21         |           1|      3027|
+|23    |DataMemory__GB22         |           1|      5232|
+|24    |DataMemory__GB23         |           1|      5553|
+|25    |DataMemory__GB24         |           1|      8486|
+|26    |DataMemory__GB25         |           1|      7318|
+|27    |DataMemory__GB26         |           1|      6343|
+|28    |DataMemory__GB27         |           1|      6651|
+|29    |DataMemory__GB28         |           1|      7047|
+|30    |DataMemory__GB29         |           1|      8608|
+|31    |DataMemory__GB30         |           1|       830|
+|32    |DataMemory__GB31         |           1|      1102|
+|33    |DataMemory__GB32         |           1|      1187|
+|34    |DataMemory__GB33         |           1|      8444|
+|35    |DataMemory__GB34         |           1|       789|
+|36    |DataMemory__GB35         |           1|       887|
+|37    |DataMemory__GB36         |           1|      1620|
+|38    |DataMemory__GB37         |           1|      7398|
+|39    |DataMemory__GB38         |           1|      2096|
+|40    |DataMemory__GB39         |           1|       726|
+|41    |DataMemory__GB40         |           1|      3955|
+|42    |DataMemory__GB41         |           1|     10535|
+|43    |DataMemory__GB42         |           1|      8405|
+|44    |DataMemory__GB43         |           1|       629|
+|45    |DataMemory__GB44         |           1|      1124|
+|46    |DataMemory__GB45         |           1|      1201|
+|47    |DataMemory__GB46         |           1|      5715|
+|48    |DataMemory__GB47         |           1|      8746|
+|49    |DataMemory__GB48         |           1|       706|
+|50    |DataMemory__GB49         |           1|       783|
+|51    |DataMemory__GB50         |           1|      1390|
+|52    |DataMemory__GB51         |           1|      4579|
+|53    |DataMemory__GB52         |           1|      7115|
+|54    |DataMemory__GB53         |           1|      8056|
+|55    |DataMemory__GB54         |           1|      4948|
+|56    |DataMemory__GB55         |           1|       850|
+|57    |DataMemory__GB56         |           1|      5580|
+|58    |DataMemory__GB57         |           1|      7142|
+|59    |DataMemory__GB58         |           1|      9488|
+|60    |DataMemory__GB59         |           1|       987|
+|61    |DataMemory__GB60         |           1|       785|
+|62    |DataMemory__GB61         |           1|      1055|
+|63    |DataMemory__GB62         |           1|      1321|
+|64    |DataMemory__GB63         |           1|      5389|
+|65    |DataMemory__GB64         |           1|      7849|
+|66    |DataMemory__GB65         |           1|       620|
+|67    |DataMemory__GB66         |           1|       957|
+|68    |DataMemory__GB67         |           1|      6416|
+|69    |DataMemory__GB68         |           1|      1092|
+|70    |DataMemory__GB69         |           1|       783|
+|71    |DataMemory__GB70         |           1|      4893|
+|72    |DataMemory__GB71         |           1|      6943|
+|73    |DataMemory__GB72         |           1|      6648|
+|74    |DataMemory__GB73         |           1|      1930|
+|75    |TopLevel__GC0            |           1|      2206|
++------+-------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:12:35 ; elapsed = 00:13:01 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------+------------+----------+
+|      |RTL Partition            |Replication |Instances |
++------+-------------------------+------------+----------+
+|1     |muxpart__6174_DataMemory |           1|     15264|
+|2     |DataMemory__GB1          |           1|       285|
+|3     |muxpart__6175_DataMemory |           1|     15264|
+|4     |DataMemory__GB3          |           1|       595|
+|5     |muxpart__6176_DataMemory |           1|     15264|
+|6     |DataMemory__GB5          |           1|      3304|
+|7     |DataMemory__GB6          |           1|      4016|
+|8     |DataMemory__GB7          |           1|       571|
+|9     |DataMemory__GB8          |           1|      3046|
+|10    |DataMemory__GB9          |           1|       304|
+|11    |DataMemory__GB10         |           1|       356|
+|12    |DataMemory__GB11         |           1|      2368|
+|13    |DataMemory__GB12         |           1|       423|
+|14    |DataMemory__GB13         |           1|       315|
+|15    |DataMemory__GB14         |           1|      2327|
+|16    |DataMemory__GB15         |           1|      2354|
+|17    |DataMemory__GB16         |           1|       594|
+|18    |DataMemory__GB17         |           1|      1896|
+|19    |DataMemory__GB18         |           1|      1318|
+|20    |DataMemory__GB19         |           1|      2285|
+|21    |DataMemory__GB20         |           1|      2086|
+|22    |DataMemory__GB21         |           1|      1208|
+|23    |DataMemory__GB22         |           1|      2346|
+|24    |DataMemory__GB23         |           1|      2683|
+|25    |DataMemory__GB24         |           1|      2920|
+|26    |DataMemory__GB25         |           1|      3073|
+|27    |DataMemory__GB26         |           1|      2993|
+|28    |DataMemory__GB27         |           1|      3420|
+|29    |DataMemory__GB28         |           1|      2803|
+|30    |DataMemory__GB29         |           1|      3560|
+|31    |DataMemory__GB30         |           1|       387|
+|32    |DataMemory__GB31         |           1|       551|
+|33    |DataMemory__GB32         |           1|       562|
+|34    |DataMemory__GB33         |           1|      3431|
+|35    |DataMemory__GB34         |           1|       343|
+|36    |DataMemory__GB35         |           1|       420|
+|37    |DataMemory__GB36         |           1|       697|
+|38    |DataMemory__GB37         |           1|      2789|
+|39    |DataMemory__GB38         |           1|       816|
+|40    |DataMemory__GB39         |           1|       525|
+|41    |DataMemory__GB40         |           1|      1667|
+|42    |DataMemory__GB41         |           1|      4317|
+|43    |DataMemory__GB42         |           1|      3522|
+|44    |DataMemory__GB43         |           1|       285|
+|45    |DataMemory__GB44         |           1|       574|
+|46    |DataMemory__GB45         |           1|       609|
+|47    |DataMemory__GB46         |           1|      2501|
+|48    |DataMemory__GB47         |           1|      3830|
+|49    |DataMemory__GB48         |           1|       311|
+|50    |DataMemory__GB49         |           1|       363|
+|51    |DataMemory__GB50         |           1|       626|
+|52    |DataMemory__GB51         |           1|      2000|
+|53    |DataMemory__GB52         |           1|      2987|
+|54    |DataMemory__GB53         |           1|      3071|
+|55    |DataMemory__GB54         |           1|      1953|
+|56    |DataMemory__GB55         |           1|       462|
+|57    |DataMemory__GB56         |           1|      2213|
+|58    |DataMemory__GB57         |           1|      2949|
+|59    |DataMemory__GB58         |           1|      4010|
+|60    |DataMemory__GB59         |           1|       456|
+|61    |DataMemory__GB60         |           1|       358|
+|62    |DataMemory__GB61         |           1|       491|
+|63    |DataMemory__GB62         |           1|       592|
+|64    |DataMemory__GB63         |           1|      2350|
+|65    |DataMemory__GB64         |           1|      3349|
+|66    |DataMemory__GB65         |           1|       269|
+|67    |DataMemory__GB66         |           1|       436|
+|68    |DataMemory__GB67         |           1|      2286|
+|69    |DataMemory__GB68         |           1|       572|
+|70    |DataMemory__GB69         |           1|       561|
+|71    |DataMemory__GB70         |           1|      2091|
+|72    |DataMemory__GB71         |           1|      2924|
+|73    |DataMemory__GB72         |           1|      2703|
+|74    |DataMemory__GB73         |           1|       268|
+|75    |TopLevel__GC0            |           1|       491|
++------+-------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:12:47 ; elapsed = 00:13:13 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:12:47 ; elapsed = 00:13:13 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:12:47 ; elapsed = 00:13:13 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:12:47 ; elapsed = 00:13:13 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:12:47 ; elapsed = 00:13:13 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:12:47 ; elapsed = 00:13:13 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    40|
+|3     |LUT1   |     1|
+|4     |LUT2   |   128|
+|5     |LUT4   |     2|
+|6     |LUT5   |    96|
+|7     |LUT6   |    32|
+|8     |MUXF7  |    32|
+|9     |FDCE   |    32|
+|10    |FDRE   |   128|
+|11    |IBUF   |     2|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------+---------------+------+
+|      |Instance      |Module         |Cells |
++------+--------------+---------------+------+
+|1     |top           |               |   494|
+|2     |  PC          |ProgramCounter |    32|
+|3     |  PCAdd       |PCAdder        |     9|
+|4     |  HiLo        |HiLoReg        |   418|
+|5     |  MemToRegMux |Mux32Bit3to1   |    32|
++------+--------------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:12:47 ; elapsed = 00:13:13 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 200 critical warnings and 70 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:12:47 ; elapsed = 00:13:14 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+Synthesis Optimization Complete : Time (s): cpu = 00:12:47 ; elapsed = 00:13:14 . Memory (MB): peak = 1742.027 ; gain = 1413.137
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1742.027 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 72 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1742.027 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+191 Infos, 70 Warnings, 200 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:12:54 ; elapsed = 00:13:22 . Memory (MB): peak = 1742.027 ; gain = 1437.980
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1742.027 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'F:/ECE369AryDavidRusty/labs9-15/labs9-15.runs/synth_1/TopLevel.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file TopLevel_utilization_synth.rpt -pb TopLevel_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 16 23:26:19 2021...

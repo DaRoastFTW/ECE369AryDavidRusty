@@ -60,6 +60,7 @@ always @(posedge Clk)
 	4'b0010: //multu
 	begin
 	{HiReg, LoReg} <= ALUResult64;
+	HiLoOutput <= LoReg;
 	end
 	
 	4'b0011: //madd

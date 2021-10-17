@@ -50,7 +50,7 @@ module DataMemory(Address, WriteData, Clk, Rst, MemWrite, MemRead, ReadData, wor
 
     reg [31:0] Memory [0:1023];  //DataMemory with 1024 32-bit elements
     // Read data that is not clocked
-    always @(MemRead, Address) begin
+    always @(MemRead, Address, wordhalfbyte, Memory) begin
         if(MemRead) begin
 			case(wordhalfbyte)
 			2'b00:

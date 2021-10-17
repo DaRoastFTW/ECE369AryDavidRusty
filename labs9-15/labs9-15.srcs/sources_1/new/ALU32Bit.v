@@ -28,7 +28,7 @@
 
 module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64, HiLoOutput);
     //Hi and Lo registers go into ALU
-	input [4:0] ALUControl; // control bits for ALU operation
+	input [5:0] ALUControl; // control bits for ALU operation
                                 // you need to adjust the bitwidth as needed
 	input [31:0] A, B;	    // inputs
 
@@ -40,156 +40,161 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64, HiLoOutput);
 	input [31:0] HiLoOutput;
 
     /* Please fill in the implementation here... */
-    always @ (A, B, ALUControl) begin
-        ALUResult <= 0;
-        ALUResult64 <= 0;
+    always @ (A, B, ALUControl, HiLoOutput) begin
+        ALUResult = 0;
+        ALUResult64 = 0;
         case(ALUControl)
-        5'b00000:	//add
+        6'b000000:	//add
             begin
-                ALUResult <= A + B;
+                ALUResult = A + B;
             end
-        5'b00001:	//subtract
+        6'b000001:	//subtract
             begin
-                ALUResult <= A - B;
+                ALUResult = A - B;
             end
-        5'b00010:	//multiply
+        6'b000010:	//multiply
             begin
                 ALUResult64 = $signed(A) * $signed(B);
 				ALUResult = ALUResult64[31:0];
             end
-        5'b00011:	//and
+        6'b000011:	//and
             begin
-                ALUResult <= A & B;           
+                ALUResult = A & B;           
             end
-        5'b00100:	//or
+        6'b000100:	//or
             begin
-                ALUResult <= A | B;
+                ALUResult = A | B;
             end
-        5'b00101:   //movn
+        6'b000101:   //movn
             begin
-                ALUResult <= (B == 0);
+                ALUResult = (B == 0);
             end
-        5'b00110:   //Set ALUResult to 0 if branches aren't equal
+        6'b000110:   //Set ALUResult to 0 if branches aren't equal
             begin
                 if(A != B) begin
-                    ALUResult <= 0;
+                    ALUResult = 0;
                 end
                 else begin
-                    ALUResult <= 1;
+                    ALUResult = 1;
                 end
             end
-        5'b00111:   //slt
+        6'b000111:   //slt
             begin
-                ALUResult <= ($signed(A) < $signed(B));
+                ALUResult = ($signed(A) < $signed(B));
             end
-		5'b01000:	//Shift left
+		6'b001000:	//Shift left
             begin
-                ALUResult <= A << B;
+                ALUResult = A << B;
             end
-        5'b01001:	//Shift right
+        6'b001001:	//Shift right
             begin
-                ALUResult <= A >> B;
+                ALUResult = A >> B;
             end
-        5'b01010:	//sra
+        6'b001010:	//sra
             begin
-                ALUResult <= $signed(A) >>> B;
+                ALUResult = $signed(A) >>> B;
             end
-        5'b01011:	//nor
+        6'b001011:	//nor
             begin
-                ALUResult <= ~(A | B);
+                ALUResult = ~(A | B);
             end
-        5'b01100:    //xor
+        6'b001100:    //xor
             begin
-                ALUResult <= A ^ B;
+                ALUResult = A ^ B;
             end
-        5'b01101:   //rotate right
+        6'b001101:   //rotate right
             begin
-                ALUResult <= (A >> B) | (A << (32 - B));
+                ALUResult = (A >> B) | (A << (32 - B));
             end
-        5'b01110:   //lui
+        6'b001110:   //lui
             begin
-                ALUResult <= B << 16;
+                ALUResult = B << 16;
             end
-        5'b01111:   //bgez
+        6'b001111:   //bgez
             begin
-                ALUResult <= ($signed(A) < 0);
+                ALUResult = ($signed(A) < 0);
             end
-        5'b10000:   //bgtz
+        6'b010000:   //bgtz
             begin
-                ALUResult <= ($signed(A) <= 0);
+                ALUResult = ($signed(A) <= 0);
             end
-        5'b10001:   //blez
+        6'b010001:   //blez
             begin
-                ALUResult <= ($signed(A) > 0);
+                ALUResult = ($signed(A) > 0);
             end
-        5'b10010:   //bltz
+        6'b010010:   //bltz
             begin
-                ALUResult <= ($signed(A) >= 0);
+                ALUResult = ($signed(A) >= 0);
             end
-        5'b10011:   //sltu
+        6'b010011:   //sltu
             begin
-                ALUResult <= A < B;
+                ALUResult = A < B;
             end
-        5'b10100:   //sltiu
+        6'b010100:   //sltiu
             begin
-                ALUResult <= A < {16'd0, B[15:0]};
+                ALUResult = A < {16'd0, B[15:0]};
             end
-        5'b10101:   //seh
+        6'b010101:   //seh
             begin
-                ALUResult <= {{16{B[15]}}, B[15:0]};
+                ALUResult = {{16{B[15]}}, B[15:0]};
             end
-        5'b10110:   //seb
+        6'b010110:   //seb
             begin
-                ALUResult <= {{24{B[7]}}, B[7:0]};
+                ALUResult = {{24{B[7]}}, B[7:0]};
             end
-        5'b10111:   //sllv
+        6'b010111:   //sllv
             begin
-                ALUResult <= B << A;
+                ALUResult = B << A;
             end
-        5'b11000:   //srlv
+        6'b011000:   //srlv
             begin
-                ALUResult <= B >> A;
+                ALUResult = B >> A;
             end
-        5'b11001:   //srav
+        6'b011001:   //srav
             begin
-                ALUResult <= $signed(B) >>> A;
+                ALUResult = $signed(B) >>> A;
             end
-        5'b11010:   //rotrv
+        6'b011010:   //rotrv
             begin
-                ALUResult <= (B >> A) | (B << (32 - A));
+                ALUResult = (B >> A) | (B << (32 - A));
             end
-        5'b11011:   //Set ALUResult to zero if rt != 0
+        6'b011011:   //Set ALUResult to zero if rt != 0
             begin
-                ALUResult <= ~B;
+                ALUResult = ~B;
             end
-        5'b11100:   //Set ALUResult to zero if rt == 0
+        6'b011100:   //Set ALUResult to zero if rt == 0
             begin
-                ALUResult <= B;
+                ALUResult = B;
             end
-		5'b11101: //mthi & mtlo
+		6'b011101: //mthi & mtlo
 			begin
-			ALUResult64 <= A;
+			ALUResult64 = A;
 			end
-		5'b11110: //mfhi & mflo
+		6'b011110: //mfhi & mflo
 			begin
-			ALUResult <= HiLoOutput;
+			ALUResult = HiLoOutput;
 			end
-		5'b11111: //movz
+		6'b011111: //movz
 		  begin
-		      ALUResult <= (B != 0);
+		      ALUResult = (B != 0);
+		  end
+		6'b100000: //multu
+		  begin
+			ALUResult64 = A * B;
+			ALUResult = HiLoOutput;
 		  end
         default:
         begin
-            ALUResult <= 32'd0;
+            ALUResult = 32'd0;
         end
         endcase
     end
     always @(ALUResult) begin
         if(ALUResult == 0) begin
-            Zero <= 1;
+            Zero = 1;
         end
         else begin
-            Zero <= 0;
+            Zero = 0;
         end
     end
 endmodule

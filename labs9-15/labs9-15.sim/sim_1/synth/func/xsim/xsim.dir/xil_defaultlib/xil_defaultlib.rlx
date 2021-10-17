@@ -2,5 +2,5 @@
 2019.2
 Nov  6 2019
 21:57:16
-C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.sim/sim_1/synth/func/xsim/InstructionMemory_tb_func_synth.v,1634439722,verilog,,C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/InstructionMemory_tb.v,,InstructionMemory;glbl,,,,,,,,
-C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/InstructionMemory_tb.v,1633825902,verilog,,,,InstructionMemory_tb,,,,,,,,
+F:/ECE369AryDavidRusty/labs9-15/labs9-15.sim/sim_1/synth/func/xsim/TopLevel_tb_func_synth.v,1634452190,verilog,,F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v,,HiLoReg;Mux32Bit3to1;PCAdder;ProgramCounter;TopLevel;glbl,,,,,,,,
+F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v,1634353836,verilog,,,,TopLevel_tb,,,,,,,,

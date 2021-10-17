@@ -28,21 +28,21 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
     input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn, JumpIn;
     input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn, RegDstIn;
     input [3:0] HiLoControlIn;
-    input [4:0] ALUOpIn;
+    input [5:0] ALUOpIn;
     input [31:0] InstructionIn, ZeroExtendIn, SignExtendIn, PCAddIn, ReadData1In, ReadData2In;
 
     reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov, Jump;
     reg [1:0] MemtoReg, wordhalfbyte, ALUSrc;
     reg [1:0] RegDst;
     reg [3:0] HiLoControl;
-    reg [4:0] ALUOp;
+    reg [5:0] ALUOp;
     reg [31:0] Instruction, ZeroExtend, SignExtend, PCAdd, ReadData1, ReadData2;
     
     output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut;
     output reg [1:0] MemtoRegOut, wordhalfbyteOut, ALUSrcOut;
     output reg [1:0] RegDstOut;
     output reg [3:0] HiLoControlOut;
-    output reg [4:0] ALUOpOut;
+    output reg [5:0] ALUOpOut;
     output reg [31:0] InstructionOut, ZeroExtendOut, SignExtendOut, PCAddOut, ReadData1Out, ReadData2Out;
     always@(posedge Clk)
     begin
@@ -59,7 +59,7 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
             RegDst <= 2'b00;
             ALUSrc <= 2'b00;
             HiLoControl <= 4'd0;
-            ALUOp <= 5'd0;
+            ALUOp <= 6'd0;
             Instruction <= 32'd0;
             ZeroExtend <= 32'd0;
             SignExtend <= 32'd0;

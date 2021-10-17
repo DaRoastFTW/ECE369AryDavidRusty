@@ -15,7 +15,7 @@ module Mux1Bit2To1(out, inA, inB, sel);
     input inB;
     input sel;
 
-    always@(sel) begin
+    always@(*) begin
         if(sel) begin
             out <= inB;
         end

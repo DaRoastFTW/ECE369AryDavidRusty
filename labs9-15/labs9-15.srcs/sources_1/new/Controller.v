@@ -25,9 +25,9 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 	input [31:0] Instruction;
 	output reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov, Jump;
 	output reg [1:0] MemtoReg, wordhalfbyte, ALUSrc;
-	output reg [2:0] RegDst, PCSrc;
+	output reg [1:0] RegDst, PCSrc;
 	output reg [3:0] HiLoControl; 
-	output reg [4:0] ALUOp; //based on ALU32Bit file
+	output reg [5:0] ALUOp; //based on ALU32Bit file
 	
 	reg [5:0] opcode;
 	reg [5:0] funct;
@@ -61,7 +61,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b00000;
+					ALUOp <= 6'b000000;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -79,7 +79,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b00000;
+					ALUOp <= 6'b000000;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -97,7 +97,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b00001;
+					ALUOp <= 6'b000001;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -115,7 +115,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 0;
 					//RegDst <= ;
-					ALUOp <= 5'b00010;
+					ALUOp <= 6'b000010;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -133,7 +133,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 0;
 					//RegDst <= ;
-					ALUOp <= 5'b00010;
+					ALUOp <= 6'b100000;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -151,7 +151,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 0;
 					//RegDst <= ;
-					ALUOp <= 5'b11101; //Set ALUResult to rs;
+					ALUOp <= 6'b011101; //Set ALUResult to rs;
 					//ALUSrc <= ;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -169,7 +169,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 0;
 					//RegDst <= ;
-					ALUOp <= 5'b11101; //Set ALUResult to rs;
+					ALUOp <= 6'b011101; //Set ALUResult to rs;
 					//ALUSrc <= ;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -187,7 +187,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b11110;
+					ALUOp <= 6'b011110;
 					//ALUSrc <= ;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -205,7 +205,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b11110;
+					ALUOp <= 6'b011110;
 					//ALUSrc <= ;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -241,7 +241,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b00011;
+					ALUOp <= 6'b000011;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -259,7 +259,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b00100;
+					ALUOp <= 6'b000100;
 					ALUSrc <= 1;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -277,7 +277,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b01011;
+					ALUOp <= 6'b001011;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -295,7 +295,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b01100;
+					ALUOp <= 6'b001100;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -313,7 +313,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					   if(Instruction[25:6] == 20'b00000000000000000000) begin    //nop
 					       RegWrite <= 0;
 					       RegDst <= 0;
-					       ALUOp <= 5'b00000;
+					       ALUOp <= 6'b000000;
 					       ALUSrc <= 0;
 					       Branch <= 0;
 					       MemWrite <= 0;
@@ -328,7 +328,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					   else begin  //sll
 					       RegWrite <= 1;
 					       RegDst <= 1;
-					       ALUOp <= 5'b01000;
+					       ALUOp <= 6'b001000;
 					       ALUSrc <= 2;
 					       Branch <= 0;
 					       MemWrite <= 0;
@@ -342,13 +342,12 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					   end
 					end
 
-					6'b000010:
-					//srl and rotr
+					6'b000010: //srl and rotr
 					begin
 					if (rBit == 0) begin //srl
 						RegWrite <= 1;
 						RegDst <= 1;
-						ALUOp <= 5'b01001;
+						ALUOp <= 6'b001001;
 						ALUSrc <= 2;
 						Branch <= 0;
 						MemWrite <= 0;
@@ -363,7 +362,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					else if (rBit == 1) begin //rotr
 						RegWrite <= 1;
 						RegDst <= 1;
-						ALUOp <= 5'b01101;
+						ALUOp <= 6'b001101;
 						ALUSrc <= 2;
 						Branch <= 0;
 						MemWrite <= 0;
@@ -382,7 +381,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b10111;
+					ALUOp <= 6'b010111;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -398,19 +397,56 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					6'b000110:
 					//srlv
 					begin
-					RegWrite <= 1;
-					RegDst <= 1;
-					ALUOp <= 5'b11000;
-					ALUSrc <= 0;
-					Branch <= 0;
-					MemWrite <= 0;
-					MemRead <= 0;
-					MemtoReg <= 1;
-					HiLoControl <= 0;
-					Jr <= 0;
-				    Mov <= 0;
-				    wordhalfbyte <= 0;
-				    Jump <= 0;
+					case(Instruction[6])
+						1'b0: //srlv
+						begin
+							RegWrite <= 1;
+							RegDst <= 1;
+							ALUOp <= 6'b011000;
+							ALUSrc <= 0;
+							Branch <= 0;
+							MemWrite <= 0;
+							MemRead <= 0;
+							MemtoReg <= 1;
+							HiLoControl <= 0;
+							Jr <= 0;
+							Mov <= 0;
+							wordhalfbyte <= 0;
+							Jump <= 0;
+						end
+						1'b1: //rotrv
+						begin
+							RegWrite <= 1;
+							RegDst <= 1;
+							ALUOp <= 6'b011010;
+							ALUSrc <= 0;
+							Branch <= 0;
+							MemWrite <= 0;
+							MemRead <= 0;
+							MemtoReg <= 1;
+							HiLoControl <= 0;
+							Jr <= 0;
+							Mov <= 0;
+							wordhalfbyte <= 0;
+							Jump <= 0;
+						end
+					default
+						begin
+							RegWrite <= 0;
+							RegDst <= 0;
+							ALUOp <= 0;
+							ALUSrc <= 0;
+							Branch <= 0;
+							MemWrite <= 0;
+							MemRead <= 0;
+							MemtoReg <= 0;
+							HiLoControl <= 0;
+							Jr <= 0;
+							Mov <= 0;
+							wordhalfbyte <= 0;
+							Jump <= 0;
+						end
+					endcase
 					end
 
 					6'b101010:
@@ -418,7 +454,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b00111;
+					ALUOp <= 6'b000111;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -436,7 +472,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					//RegWrite <=;
 					RegDst <= 1;
-					ALUOp <= 5'b00101;//Set ALUResult to 0 if rt != 0;
+					ALUOp <= 6'b000101;//Set ALUResult to 0 if rt != 0;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -454,7 +490,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					//RegWrite <= //Todo Fix Me;
 					RegDst <= 1;
-					ALUOp <= 5'b11111;//Set ALUResult to 0 if rt == 0;
+					ALUOp <= 6'b011111;//Set ALUResult to 0 if rt == 0;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -467,48 +503,12 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					Jump <= 0;
 					end
 
-					6'b000110:
-					//rotrv
-					begin
-					RegWrite <= 1;
-					RegDst <= 1;
-					ALUOp <= 5'b11010;
-					ALUSrc <= 0;
-					Branch <= 0;
-					MemWrite <= 0;
-					MemRead <= 0;
-					MemtoReg <= 1;
-					HiLoControl <= 0;
-					Jr <= 0;
-					Mov <= 0;
-					wordhalfbyte <= 0;
-					Jump <= 0;
-					end
-
-					6'b000010:
-					//rotr (Todo Check With srl)
-					begin
-					RegWrite <= 1;
-					RegDst <= 1;
-					ALUOp <= 5'b01101;
-					ALUSrc <= 0;
-					Branch <= 0;
-					MemWrite <= 0;
-					MemRead <= 0;
-					MemtoReg <= 1;
-					HiLoControl <= 0;
-					Jr <= 0;
-					Mov <= 0;
-					wordhalfbyte <= 0;
-					Jump <= 0;
-					end
-
 					6'b000011:
 					//sra
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b01010;
+					ALUOp <= 6'b001010;
 					ALUSrc <= 2;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -526,7 +526,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b11001;
+					ALUOp <= 6'b011001;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -544,7 +544,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					begin
 					RegWrite <= 1;
 					RegDst <= 1;
-					ALUOp <= 5'b10011;
+					ALUOp <= 6'b010011;
 					ALUSrc <= 0;
 					Branch <= 0;
 					MemWrite <= 0;
@@ -576,23 +576,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 				endcase
 
 			end
-   		 6'b000001:
-   			 begin
-   			 RegWrite <= 0;
-   			 RegDst <= 0;
-   			 ALUSrc <= 0;
-   			 Branch <= 0;
-   			 MemRead <= 0;
-   			 MemWrite <= 0;
-   			 MemtoReg <= 0;
-   			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00000;
-   			 Jr <= 0;
-			 Mov <= 0;
-			 wordhalfbyte <= 0;
-			 Jump <= 0;
-   			 end
-   		 6'b001001: //addiu
+			6'b001001: //addiu
    			 begin
    			 RegWrite <= 1;
    			 RegDst <= 0;
@@ -602,13 +586,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 MemtoReg <= 1;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00000;
+   			 ALUOp <= 6'b000000;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
 			 Jump <= 0;
    			 end
-   		 6'b001000: //addi
+			6'b001000: //addi
    			 begin
    			 RegWrite <= 1;
    			 RegDst <= 0;
@@ -618,13 +602,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 MemtoReg <= 1;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00000;
+   			 ALUOp <= 6'b000000;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
 			 Jump <= 0;
    			 end
-   		 6'b011100: //multiply series of operations
+			6'b011100: //multiply series of operations
    			 begin
    			 case(funct)
    			 6'b000010: //mul
@@ -637,7 +621,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    				 MemWrite <= 0;
    				 MemtoReg <= 1;
    				 HiLoControl <= 5'b00000;
-   				 ALUOp <= 5'b00010;
+   				 ALUOp <= 6'b000010;
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
@@ -653,7 +637,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    				 MemWrite <= 0;
    				 MemtoReg <= 1;
    				 HiLoControl <= 4'b0011; 
-   				 ALUOp <= 5'b00010;
+   				 ALUOp <= 6'b000010;
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
@@ -669,7 +653,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    				 MemWrite <= 0;
    				 MemtoReg <= 1;
    				 HiLoControl <= 4'b0100; 
-   				 ALUOp <= 5'b00010;
+   				 ALUOp <= 6'b000010;
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
@@ -693,7 +677,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 end
    			 endcase
    			 end
-   		 6'b100011: //lw
+			6'b100011: //lw
    			 begin
    			 RegWrite <= 1;
    			 RegDst <= 0;
@@ -703,13 +687,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00000;
+   			 ALUOp <= 6'b000000;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
 			 Jump <= 0;
    			 end
-   		 6'b101011: //sw
+			6'b101011: //sw
    			 begin
    			 RegWrite <= 0;
    			 //RegDst <= 0;
@@ -719,13 +703,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 1;
    			 //MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00000;
+   			 ALUOp <= 6'b000000;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
 			 Jump <= 0;
    			 end
-   		 6'b101000: //sb
+			6'b101000: //sb
    			 begin
    			 RegWrite <= 0;
    			 //RegDst <= 0;
@@ -735,13 +719,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 1;
    			 //MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00000;
+   			 ALUOp <= 6'b000000;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 2;
 			 Jump <= 0;
    			 end
-   		 6'b100001: //lh
+			6'b100001: //lh
    			 begin
    			 RegWrite <= 1;
    			 RegDst <= 0;
@@ -751,13 +735,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00000;
+   			 ALUOp <= 6'b000000;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 1;
 			 Jump <= 0;
    			 end
-   		 6'b100000: //lb
+			6'b100000: //lb
    			 begin
    			 RegWrite <= 1;
    			 RegDst <= 0;
@@ -767,13 +751,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00000;
+   			 ALUOp <= 6'b000000;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 2;
 			 Jump <= 0;
    			 end
-   		 6'b101001: //sh
+			6'b101001: //sh
    			 begin
    			 RegWrite <= 0;
    			 //RegDst <= 0;
@@ -783,13 +767,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 1;
    			 //MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00000;
+   			 ALUOp <= 6'b000000;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 1;
 			 Jump <= 0;
    			 end
-   		 6'b001111: //lui
+			6'b001111: //lui
    			 begin
    			 RegWrite <= 1;
    			 RegDst <= 0;
@@ -799,13 +783,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 MemtoReg <= 1;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b01110;
+   			 ALUOp <= 6'b001110;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
 			 Jump <= 0;
    			 end
-   		 6'b000001: //____ to zero
+			6'b000001: //____ to zero
    			 begin
    			 case(funct)
    			 5'b00001: //bgez
@@ -818,7 +802,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    				 MemWrite <= 0;
    				 //MemtoReg <= 0;
    				 HiLoControl <= 5'b00000;
-   				 ALUOp <= 5'b01111;
+   				 ALUOp <= 6'b001111;
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
@@ -834,7 +818,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    				 MemWrite <= 0;
    				 //MemtoReg <= 0;
    				 HiLoControl <= 5'b00000;
-   				 ALUOp <= 5'b10010;
+   				 ALUOp <= 6'b010010;
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
@@ -858,7 +842,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    				 end
    			 endcase
    			 end
-   		 6'b000100: //beq
+			6'b000100: //beq
    			 begin
    			 RegWrite <= 0;
    			 //RegDst <= 0;
@@ -868,13 +852,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 //MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00001;
+   			 ALUOp <= 6'b000001;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
 			 Jump <= 0;
    			 end
-   		 6'b000101: //bne
+			6'b000101: //bne
    			 begin
    			 RegWrite <= 0;
    			 //RegDst <= 0;
@@ -884,13 +868,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 //MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b00110;
+   			 ALUOp <= 6'b000110;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
 			 Jump <= 0;
    			 end
-   		 6'b000111: //bgtz
+			6'b000111: //bgtz
    			 begin
    			 RegWrite <= 0;
    			 //RegDst <= 0;
@@ -900,13 +884,13 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 //MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b10000;
+   			 ALUOp <= 6'b010000;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
 			 Jump <= 0;
    			 end
-   		 6'b000110: //blez
+			6'b000110: //blez
    			 begin
    			 RegWrite <= 0;
    			 //RegDst <= 0;
@@ -916,7 +900,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 MemWrite <= 0;
    			 //MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;
-   			 ALUOp <= 5'b10001;
+   			 ALUOp <= 6'b010001;
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
@@ -924,7 +908,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 end		
 	
 			6'b000010:	//j
-				begin
+			begin
 				RegWrite <= 0;
 				//RegDst <= 0;
 				//ALUSrc <= 0;
@@ -933,7 +917,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 				MemRead <= 0;
 				//MemtoReg <= 0;
 				HiLoControl <= 5'b00000;
-				//ALUOp <= 5'b00000;
+				//ALUOp <= 6'b000000;
 				PCSrc <= 2;
 				Jr <= 0;
 			    Mov <= 0;
@@ -941,7 +925,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 			    Jump <= 1;
 				end
 			6'b000011:	//jal
-				begin
+			begin
 				RegWrite <= 1;
 				RegDst <= 2;
 				ALUSrc <= 0;
@@ -950,14 +934,14 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 				MemRead <= 0;
 				MemtoReg <= 2;
 				HiLoControl <= 5'b00000;
-				ALUOp <= 5'b00000;
+				ALUOp <= 6'b000000;
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
 			    Jump <= 1;
 				end
 			6'b001100:	//andi
-				begin
+			begin
 				RegWrite <= 1;
 				RegDst <= 0;
 				ALUSrc <= 1;
@@ -966,14 +950,14 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 				MemRead <= 0;
 				MemtoReg <= 1;
 				HiLoControl <= 5'b00000;
-				ALUOp <= 5'b00011;
+				ALUOp <= 6'b000011;
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
 			    Jump <= 0;
 				end
 			6'b001101:	//ori
-				begin
+			begin
 				RegWrite <= 1;
 				RegDst <= 0;
 				ALUSrc <= 1;
@@ -982,14 +966,14 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 				MemRead <= 0;
 				MemtoReg <= 1;
 				HiLoControl <= 5'b00000;
-				ALUOp <= 5'b00100;
+				ALUOp <= 6'b000100;
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
 			    Jump <= 0;
 				end
 			6'b001110:	//xori
-				begin
+			begin
 				RegWrite <= 1;
 				RegDst <= 0;
 				ALUSrc <= 1;
@@ -998,30 +982,67 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 				MemRead <= 0;
 				MemtoReg <= 1;
 				HiLoControl <= 5'b00000;
-				ALUOp <= 5'b01100;
+				ALUOp <= 6'b001100;
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
 			    Jump <= 0;
 				end
 			6'b011111:	//seh
-				begin
-				RegWrite <= 1;
-				RegDst <= 1;
-				ALUSrc <= 0;
-				Branch <= 0;
-				MemWrite <= 0;
-				MemRead <= 0;
-				MemtoReg <= 1;
-				HiLoControl <= 5'b00000;
-				ALUOp <= 5'b10101;
-				Jr <= 0;
-			    Mov <= 0;
-			    wordhalfbyte <= 0;
-			    Jump <= 0;
-				end
+			begin
+				case(Instruction[10:6])
+				5'b11000: //seh
+					begin
+					RegWrite <= 1;
+					RegDst <= 1;
+					ALUSrc <= 0;
+					Branch <= 0;
+					MemWrite <= 0;
+					MemRead <= 0;
+					MemtoReg <= 1;
+					HiLoControl <= 5'b00000;
+					ALUOp <= 6'b010101;
+					Jr <= 0;
+					Mov <= 0;
+					wordhalfbyte <= 0;
+					Jump <= 0;
+					end
+				5'b10000: //seb
+					begin
+					RegWrite <= 1;
+					RegDst <= 1;
+					ALUSrc <= 0;
+					Branch <= 0;
+					MemWrite <= 0;
+					MemRead <= 0;
+					MemtoReg <= 1;
+					HiLoControl <= 5'b00000;
+					ALUOp <= 6'b010110;
+					Jr <= 0;
+					Mov <= 0;
+					wordhalfbyte <= 0;
+					Jump <= 0;
+					end
+				default
+					begin
+					RegWrite <= 0;
+					RegDst <= 0;
+					ALUOp <= 0;
+					ALUSrc <= 0;
+					Branch <= 0;
+					MemWrite <= 0;
+					MemRead <= 0;
+					MemtoReg <= 0;
+					HiLoControl <= 0;
+					Jr <= 0;
+					Mov <= 0;
+					wordhalfbyte <= 0;
+					Jump <= 0;
+					end
+				endcase
+			end
 			6'b001010:	//slti
-				begin
+			begin
 				RegWrite <= 1;
 				RegDst <= 0;
 				ALUSrc <= 1;
@@ -1030,30 +1051,14 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 				MemRead <= 0;
 				MemtoReg <= 1;
 				HiLoControl <= 5'b00000;
-				ALUOp <= 5'b10011;
-				Jr <= 0;
-			    Mov <= 0;
-			    wordhalfbyte <= 0;
-			    Jump <= 0;
-				end
-			6'b011111:	//seb
-				begin
-				RegWrite <= 1;
-				RegDst <= 1;
-				ALUSrc <= 0;
-				Branch <= 0;
-				MemWrite <= 0;
-				MemRead <= 0;
-				MemtoReg <= 1;
-				HiLoControl <= 5'b00000;
-				ALUOp <= 5'b10110;
+				ALUOp <= 6'b010011;
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
 			    Jump <= 0;
 				end
 			6'b001011:	//sltiu
-				begin
+			begin
 				RegWrite <= 1;
 				RegDst <= 0;
 				ALUSrc <= 1;
@@ -1062,14 +1067,14 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 				MemRead <= 0;
 				MemtoReg <= 1;
 				HiLoControl <= 5'b00000;
-				ALUOp <= 5'b10011;
+				ALUOp <= 6'b010011;
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
 			    Jump <= 0;
 				end
 			default:
-				begin
+			begin
                     RegWrite <= 0;
                      RegDst <= 0;
                      ALUOp <= 0;

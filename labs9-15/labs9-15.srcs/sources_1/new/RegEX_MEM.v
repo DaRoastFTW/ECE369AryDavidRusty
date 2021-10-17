@@ -24,8 +24,8 @@ module RegEX_MEM(Clk, Reset, RegWriteIn, RegWriteOut, BranchIn, BranchOut, MemWr
 MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, ZeroFlagOut, ALUResultIn, ALUResultOut,
  ReadData2In, ReadData2Out, RegDstMuxIn, RegDstMuxOut, MovIn, MovOut, wordhalfbyteIn, wordhalfbyteOut, JumpIn, JumpOut);
     input Clk, Reset, MovIn;
-    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, wordhalfbyteIn, JumpIn;
-    input [1:0] MemtoRegIn;
+    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, JumpIn;
+    input [1:0] wordhalfbyteIn, MemtoRegIn;
     input [4:0] RegDstMuxIn;
     input [31:0] PCAddIn, ReadData2In, ALUResultIn, JrMuxIn;
     
