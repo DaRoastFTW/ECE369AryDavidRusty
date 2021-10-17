@@ -49,13 +49,13 @@ module InstructionMemory(Address, Instruction);
     initial
         begin
             //$readmemh("C:/Users/rrine/VivadoProjects/labs5-8/Instructions.txt", memory);
-            $readmemh("instruction_memory.txt", Memory);
-            for(i = 0; i < 504; i = i + 1) begin
-            Instruction <= Memory[i];
-            end
+            $readmemh("C:/Users/aryna/ECE369AryDavidRusty/labs9-15/instruction_memory.mem", Memory);
+            //for(i = 0; i < 1023; i = i + 1) begin
+            //Instruction <= Memory[i];
+            //end
         end  
     always @(Address) begin
-        Instruction <= Memory[Address[8:2]];
+        Instruction <= Memory[Address[11:2]];
     end
 
 endmodule

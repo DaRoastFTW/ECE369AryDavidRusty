@@ -1,48 +1,14 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 9c5279a65e9a4669a1fad790fe8f278f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TopLevel_tb_behav xil_defaultlib.TopLevel_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 9c5279a65e9a4669a1fad790fe8f278f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot InstructionMemory_tb_behav xil_defaultlib.InstructionMemory_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 28 differs from formal bit length 32 for port 'shiftoutput' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:33]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'PC_4Output' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:38]
-WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'ReadRegister1' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:44]
-WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'out' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:52]
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 3 for port 'RegDst' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:57]
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 3 for port 'PCSrc' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:58]
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 3 for port 'RegDstOut' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:68]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'PCAddIn' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:69]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:82]
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'wordhalfbyteIn' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:93]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'JrMuxIn' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:95]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'andinput1' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:99]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'out' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:86]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out' [C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:100]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.Mux32Bit3to1
-Compiling module xil_defaultlib.ShiftLeft2
-Compiling module xil_defaultlib.ProgramCounter
-Compiling module xil_defaultlib.PCAdder
 Compiling module xil_defaultlib.InstructionMemory
-Compiling module xil_defaultlib.RegIF_ID
-Compiling module xil_defaultlib.RegisterFile
-Compiling module xil_defaultlib.SignExtension
-Compiling module xil_defaultlib.ZeroExtention
-Compiling module xil_defaultlib.Mux5Bit2To1
-Compiling module xil_defaultlib.Controller
-Compiling module xil_defaultlib.RegID_EX
-Compiling module xil_defaultlib.ALU32Bit
-Compiling module xil_defaultlib.HiLoReg
-Compiling module xil_defaultlib.Adder
-Compiling module xil_defaultlib.Mux32Bit2To1
-Compiling module xil_defaultlib.RegEX_MEM
-Compiling module xil_defaultlib.DataMemory
-Compiling module xil_defaultlib.AndGate
-Compiling module xil_defaultlib.RegMEM_WB
-Compiling module xil_defaultlib.TopLevel
-Compiling module xil_defaultlib.TopLevel_tb
+Compiling module xil_defaultlib.InstructionMemory_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot TopLevel_tb_behav
+Built simulation snapshot InstructionMemory_tb_behav
