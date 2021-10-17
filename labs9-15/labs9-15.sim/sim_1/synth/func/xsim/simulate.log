@@ -1,8 +1,2 @@
 Vivado Simulator 2019.2
 Time resolution is 1 ps
-sel=0, out=00000001
-sel=1, out=00000002
-sel=2, out=00000003
-sel=0, out=00000001
-sel=1, out=00000002
-sel=2, out=00000003

@@ -21,9 +21,9 @@
 
 
 module Controller(Instruction, RegWrite, RegDst, ALUOp, ALUSrc, Branch,
-MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
+MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 	input [31:0] Instruction;
-	output reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov;
+	output reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov, Jump;
 	output reg [1:0] MemtoReg, wordhalfbyte, ALUSrc;
 	output reg [2:0] RegDst, PCSrc;
 	output reg [3:0] HiLoControl; 
@@ -39,6 +39,19 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 	    funct <= Instruction[5:0];
 		rBit <= Instruction[21];
 		PCSrc <= 0;
+		RegWrite <= 0;
+        RegDst <= 0;
+        ALUOp <= 0;
+        ALUSrc <= 0;
+        Branch <= 0;
+        MemWrite <= 0;
+        MemRead <= 0;
+        MemtoReg <= 0;
+        HiLoControl <= 0;
+        Jr <= 0;
+        Mov <= 0;
+        wordhalfbyte <= 0;
+        Jump <= 0;
 		case(opcode)
 			6'b000000:
 			 begin
@@ -58,6 +71,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b100001:
@@ -75,6 +89,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b100010:
@@ -92,6 +107,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b011000:
@@ -109,6 +125,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b011001:
@@ -126,6 +143,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b010001:
@@ -143,6 +161,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b010011:
@@ -160,6 +179,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b010000:
@@ -177,6 +197,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b010010:
@@ -194,6 +215,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b001000:
@@ -211,6 +233,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 1;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b100100:
@@ -228,6 +251,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b100101:
@@ -245,6 +269,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b100111:
@@ -262,6 +287,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b100110:
@@ -279,6 +305,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b000000:
@@ -296,6 +323,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					       Jr <= 0;
 					       Mov <= 0;
 					       wordhalfbyte <= 0;
+					       Jump <= 0;
 					   end
 					   else begin  //sll
 					       RegWrite <= 1;
@@ -310,6 +338,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					       Jr <= 0;
 					       Mov <= 0;
 					       wordhalfbyte <= 0;
+					       Jump <= 0;
 					   end
 					end
 
@@ -329,6 +358,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 						Jr <= 0;
 					    Mov <= 0;
 					    wordhalfbyte <= 0;
+					    Jump <= 0;
 					end
 					else if (rBit == 1) begin //rotr
 						RegWrite <= 1;
@@ -343,6 +373,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 						Jr <= 0;
 					    Mov <= 0;
 					    wordhalfbyte <= 0;
+					    Jump <= 0;
 					end
 					end
 
@@ -361,6 +392,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b000110:
@@ -378,6 +410,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 				    Mov <= 0;
 				    wordhalfbyte <= 0;
+				    Jump <= 0;
 					end
 
 					6'b101010:
@@ -395,6 +428,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b001011:
@@ -412,6 +446,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 1;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b001010:
@@ -429,6 +464,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 1;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b000110:
@@ -446,6 +482,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b000010:
@@ -463,6 +500,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b000011:
@@ -480,6 +518,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b000111:
@@ -497,6 +536,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					6'b101011:
@@ -514,10 +554,24 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 					Jr <= 0;
 					Mov <= 0;
 					wordhalfbyte <= 0;
+					Jump <= 0;
 					end
 
 					default:
 					begin
+					    RegWrite <= 0;
+                        RegDst <= 0;
+                        ALUOp <= 0;
+                        ALUSrc <= 0;
+                        Branch <= 0;
+                        MemWrite <= 0;
+                        MemRead <= 0;
+                        MemtoReg <= 0;
+                        HiLoControl <= 0;
+                        Jr <= 0;
+                        Mov <= 0;
+                        wordhalfbyte <= 0;
+                        Jump <= 0;
 					end
 				endcase
 
@@ -536,6 +590,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end
    		 6'b001001: //addiu
    			 begin
@@ -551,6 +606,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end
    		 6'b001000: //addi
    			 begin
@@ -566,6 +622,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end
    		 6'b011100: //multiply series of operations
    			 begin
@@ -584,6 +641,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
+			     Jump <= 0;
    				 end
    			 6'b000000: //madd
    				 begin
@@ -599,6 +657,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
+			     Jump <= 0;
    				 end
    			 6'b000100: //msub
    				 begin
@@ -614,9 +673,23 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
+			     Jump <= 0;
    				 end
    			 default:
    			 begin
+                 RegWrite <= 0;
+                 RegDst <= 0;
+                 ALUOp <= 0;
+                 ALUSrc <= 0;
+                 Branch <= 0;
+                 MemWrite <= 0;
+                 MemRead <= 0;
+                 MemtoReg <= 0;
+                 HiLoControl <= 0;
+                 Jr <= 0;
+                 Mov <= 0;
+                 wordhalfbyte <= 0;
+                 Jump <= 0;
    			 end
    			 endcase
    			 end
@@ -634,6 +707,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end
    		 6'b101011: //sw
    			 begin
@@ -649,6 +723,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end
    		 6'b101000: //sb
    			 begin
@@ -664,6 +739,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 2;
+			 Jump <= 0;
    			 end
    		 6'b100001: //lh
    			 begin
@@ -679,6 +755,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 1;
+			 Jump <= 0;
    			 end
    		 6'b100000: //lb
    			 begin
@@ -694,6 +771,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 2;
+			 Jump <= 0;
    			 end
    		 6'b101001: //sh
    			 begin
@@ -709,6 +787,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 1;
+			 Jump <= 0;
    			 end
    		 6'b001111: //lui
    			 begin
@@ -724,6 +803,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end
    		 6'b000001: //____ to zero
    			 begin
@@ -742,6 +822,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
+			     Jump <= 0;
    				 end
    			 5'b00000: //bltz
    				 begin
@@ -757,9 +838,23 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    				 Jr <= 0;
 			     Mov <= 0;
 			     wordhalfbyte <= 0;
+			     Jump <= 0;
    				 end
    			 default:
    				 begin
+   				     RegWrite <= 0;
+                     RegDst <= 0;
+                     ALUOp <= 0;
+                     ALUSrc <= 0;
+                     Branch <= 0;
+                     MemWrite <= 0;
+                     MemRead <= 0;
+                     MemtoReg <= 0;
+                     HiLoControl <= 0;
+                     Jr <= 0;
+                     Mov <= 0;
+                     wordhalfbyte <= 0;
+                     Jump <= 0;
    				 end
    			 endcase
    			 end
@@ -777,6 +872,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end
    		 6'b000101: //bne
    			 begin
@@ -792,6 +888,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end
    		 6'b000111: //bgtz
    			 begin
@@ -807,6 +904,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end
    		 6'b000110: //blez
    			 begin
@@ -822,6 +920,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
    			 Jr <= 0;
 			 Mov <= 0;
 			 wordhalfbyte <= 0;
+			 Jump <= 0;
    			 end		
 	
 			6'b000010:	//j
@@ -839,6 +938,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
+			    Jump <= 1;
 				end
 			6'b000011:	//jal
 				begin
@@ -854,6 +954,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
+			    Jump <= 1;
 				end
 			6'b001100:	//andi
 				begin
@@ -869,6 +970,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
+			    Jump <= 0;
 				end
 			6'b001101:	//ori
 				begin
@@ -884,6 +986,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
+			    Jump <= 0;
 				end
 			6'b001110:	//xori
 				begin
@@ -899,6 +1002,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
+			    Jump <= 0;
 				end
 			6'b011111:	//seh
 				begin
@@ -914,6 +1018,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
+			    Jump <= 0;
 				end
 			6'b001010:	//slti
 				begin
@@ -929,6 +1034,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
+			    Jump <= 0;
 				end
 			6'b011111:	//seb
 				begin
@@ -944,6 +1050,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
+			    Jump <= 0;
 				end
 			6'b001011:	//sltiu
 				begin
@@ -959,9 +1066,23 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte);
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;
+			    Jump <= 0;
 				end
 			default:
 				begin
+                    RegWrite <= 0;
+                     RegDst <= 0;
+                     ALUOp <= 0;
+                     ALUSrc <= 0;
+                     Branch <= 0;
+                     MemWrite <= 0;
+                     MemRead <= 0;
+                     MemtoReg <= 0;
+                     HiLoControl <= 0;
+                     Jr <= 0;
+                     Mov <= 0;
+                     wordhalfbyte <= 0;
+                     Jump <= 0;
 				end
 		endcase
 	end

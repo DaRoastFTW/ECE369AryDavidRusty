@@ -41,6 +41,8 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64, HiLoOutput);
 
     /* Please fill in the implementation here... */
     always @ (A, B, ALUControl) begin
+        ALUResult <= 0;
+        ALUResult64 <= 0;
         case(ALUControl)
         5'b00000:	//add
             begin

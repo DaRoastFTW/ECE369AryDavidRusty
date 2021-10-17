@@ -23,24 +23,24 @@
 module RegID_EX(Clk, Reset, InstructionIn, InstructionOut, RegWriteIn, RegWriteOut, RegDstIn,
 RegDstOut, ALUOpIn, ALUOpOut, ALUSrcIn, ALUSrcOut, BranchIn, BranchOut, MemWriteIn, MemWriteOut,
 MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, HiLoControlIn, HiLoControlOut, JrIn, JrOut, MovIn, MovOut, wordhalfbyteIn, wordhalfbyteOut, PCAddIn, PCAddOut, ReadData1In,
-ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtendIn, SignExtendOut);
+ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtendIn, SignExtendOut, JumpIn, JumpOut);
     input Clk, Reset;
-    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn;
+    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn, JumpIn;
     input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn, RegDstIn;
     input [3:0] HiLoControlIn;
     input [4:0] ALUOpIn;
     input [31:0] InstructionIn, ZeroExtendIn, SignExtendIn, PCAddIn, ReadData1In, ReadData2In;
 
-    reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov;
+    reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov, Jump;
     reg [1:0] MemtoReg, wordhalfbyte, ALUSrc;
-    reg [2:0] RegDst;
+    reg [1:0] RegDst;
     reg [3:0] HiLoControl;
     reg [4:0] ALUOp;
     reg [31:0] Instruction, ZeroExtend, SignExtend, PCAdd, ReadData1, ReadData2;
     
-    output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut;
+    output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut;
     output reg [1:0] MemtoRegOut, wordhalfbyteOut, ALUSrcOut;
-    output reg [2:0] RegDstOut;
+    output reg [1:0] RegDstOut;
     output reg [3:0] HiLoControlOut;
     output reg [4:0] ALUOpOut;
     output reg [31:0] InstructionOut, ZeroExtendOut, SignExtendOut, PCAddOut, ReadData1Out, ReadData2Out;
@@ -48,24 +48,25 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
     begin
     if (Reset)
         begin
-            RegWrite <= 0;
-            Branch <= 0;
-            MemWrite <= 0;
-            MemRead <= 0;
-            Jr <= 0;
-            Mov <= 0;
-            MemtoReg <= 0;
-            wordhalfbyte <= 0;
-            RegDst <= 0;
-            ALUSrc <= 0;
-            HiLoControl <= 0;
-            ALUOp <= 0;
-            Instruction <= 0;
-            ZeroExtend <= 0;
-            SignExtend <= 0;
-            PCAdd <= 0;
-            ReadData1 <= 0;
-            ReadData2 <= 0;
+            RegWrite <= 1'b0;
+            Branch <= 1'b0;
+            MemWrite <= 1'b0;
+            MemRead <= 1'b0;
+            Jr <= 1'b0;
+            Mov <= 1'b0;
+            MemtoReg <= 2'b00;
+            wordhalfbyte <= 2'b00;
+            RegDst <= 2'b00;
+            ALUSrc <= 2'b00;
+            HiLoControl <= 4'd0;
+            ALUOp <= 5'd0;
+            Instruction <= 32'd0;
+            ZeroExtend <= 32'd0;
+            SignExtend <= 32'd0;
+            PCAdd <= 32'd0;
+            ReadData1 <= 32'd0;
+            ReadData2 <= 32'd0;
+            Jump <= 1'b0;
         end
     else
         begin
@@ -87,6 +88,7 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
             PCAddOut <= PCAdd;
             ReadData1Out <= ReadData1;
             ReadData2Out <= ReadData2;
+            JumpOut <= Jump;
         end
     end
     always@(negedge Clk)
@@ -109,5 +111,6 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
         PCAdd <= PCAddIn;
         ReadData1 <= ReadData1In;
         ReadData2 <= ReadData2In;
+        Jump <= JumpIn;
     end
 endmodule

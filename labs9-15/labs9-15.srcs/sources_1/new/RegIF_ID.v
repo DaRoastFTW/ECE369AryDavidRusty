@@ -30,8 +30,8 @@ module RegIF_ID(Clk, Reset, PC_4Input, PC_4Output, Inst_input, Inst_output);
     begin
     if (Reset)
         begin
-        PC_4 <= 0;
-        Inst <= 0;
+        PC_4 <= 32'd0;
+        Inst <= 32'd0;
         end
     else
         begin

@@ -21,19 +21,20 @@
 
 
 module RegEX_MEM(Clk, Reset, RegWriteIn, RegWriteOut, BranchIn, BranchOut, MemWriteIn, MemWriteOut, JrMuxIn, JrMuxOut,
-MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, ZeroFlagOut, ALUResultIn, ALUResultOut, ReadData2In, ReadData2Out, RegDstMuxIn, RegDstMuxOut, MovIn, MovOut, wordhalfbyteIn, wordhalfbyteOut);
+MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, ZeroFlagOut, ALUResultIn, ALUResultOut,
+ ReadData2In, ReadData2Out, RegDstMuxIn, RegDstMuxOut, MovIn, MovOut, wordhalfbyteIn, wordhalfbyteOut, JumpIn, JumpOut);
     input Clk, Reset, MovIn;
-    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, wordhalfbyteIn;
+    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, wordhalfbyteIn, JumpIn;
     input [1:0] MemtoRegIn;
     input [4:0] RegDstMuxIn;
     input [31:0] PCAddIn, ReadData2In, ALUResultIn, JrMuxIn;
     
-    reg RegWrite, Branch, MemWrite, MemRead, ZeroFlag, Mov;
+    reg RegWrite, Branch, MemWrite, MemRead, ZeroFlag, Mov, Jump;
     reg [1:0] MemtoReg, wordhalfbyte;
     reg [4:0] RegDstMux;
     reg [31:0] PCAdd, ReadData2, ALUResult, JrMux;
     
-    output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut, MovOut;
+    output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut, MovOut, JumpOut;
     output reg [1:0] MemtoRegOut, wordhalfbyteOut;
     output reg [4:0] RegDstMuxOut;
     output reg [31:0] PCAddOut, ReadData2Out, ALUResultOut, JrMuxOut;
@@ -54,6 +55,7 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
             Mov <= 0;
             wordhalfbyte <= 0;
             JrMux <= 0;
+            Jump <= 0;
         end
     else
         begin
@@ -70,6 +72,7 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
             MovOut <= Mov;
             wordhalfbyteOut <= wordhalfbyte;
             JrMuxOut <= JrMux;
+            JumpOut <= Jump;
         end
     end
     
@@ -88,5 +91,6 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
        Mov <= MovIn;
        wordhalfbyte <= wordhalfbyteIn;
        JrMux <= JrMuxIn;
+       Jump <= JumpIn;
     end
 endmodule
