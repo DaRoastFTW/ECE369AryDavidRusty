@@ -20,12 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HiLoReg(Clk, Rst, ALUResult64, HiLoControl, HiLoOutput);
+module HiLoReg(Clk, Rst, ALUResult64, HiLoControl, HiLoOutput, Hi_Debug, Lo_Debug);
 
 input Clk, Rst;
 input [63:0] ALUResult64;
 input [3:0] HiLoControl;
 output reg [31:0] HiLoOutput;
+
+output reg [31:0] Hi_Debug, Lo_Debug;
 
 reg [31:0] HiReg;
 reg [31:0] LoReg;
@@ -35,6 +37,8 @@ reg [31:0] LoReg;
 
 always @(posedge Clk)
     begin
+	Hi_Debug <= HiReg;
+	Lo_Debug <= LoReg;
 	if (Rst)
 	begin
 		HiReg <= 32'b0;

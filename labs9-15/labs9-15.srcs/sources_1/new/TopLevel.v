@@ -24,6 +24,7 @@ module TopLevel(Clk, Reset);
     input Clk, Reset;
     //This is the instruction fetch
     (* mark_debug = "true" *) wire [31:0] PCResult;
+	(* mark_debug = "true" *) wire [31:0] Hi_Debug, Lo_Debug;
     wire [31:0] PCIn, PCAddResult, PCSrcMuxB, PCSrcMuxC, InstructionIF;
     wire AndOutput;
     wire [27:0] JumpInstruction;
@@ -76,7 +77,7 @@ module TopLevel(Clk, Reset);
     wire [63:0] ALUResult64;
     
     ALU32Bit ALU(.ALUControl(ALUOpEX), .A(ReadData1EX), .B(ALUSrcMux), .ALUResult(ALUResultEX), .Zero(ZeroEX), .ALUResult64(ALUResult64), .HiLoOutput(HiLoOutput));
-    HiLoReg HiLo(.Clk(Clk), .Rst(Reset), .ALUResult64(ALUResult64), .HiLoControl(HiLoControlEX), .HiLoOutput(HiLoOutput));
+    HiLoReg HiLo(.Clk(Clk), .Rst(Reset), .ALUResult64(ALUResult64), .HiLoControl(HiLoControlEX), .HiLoOutput(HiLoOutput), .Hi_Debug(Hi_Debug), .Lo_Debug(Lo_Debug));
     wire [31:0] ShiftOutEX, AddOutEX;
     Adder Add(.addinput1(PCAddEX), .addinput2(ShiftOutEX), .addoutput(AddOutEX));
     ShiftLeft2 Shift(.shiftinput(SignExtendEX), .shiftoutput(ShiftOutEX));
