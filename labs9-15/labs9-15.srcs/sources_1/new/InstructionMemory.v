@@ -48,9 +48,8 @@ module InstructionMemory(Address, Instruction);
 
     initial
         begin
-            //$readmemh("C:/Users/rrine/VivadoProjects/labs9-15/instruction_memory.mem", Memory);
+            $readmemh("C:/Users/rrine/VivadoProjects/labs9-15/instruction_memory.mem", Memory);
             //$readmemh("F:/ECE369AryDavidRusty/labs9-15/instruction_memory.mem", Memory);
-			$readmemh("C:/Users/aryna/ECE369AryDavidRusty/labs9-15/instruction_memory.mem", Memory);
             //for(i = 0; i < 1023; i = i + 1) begin
             //Instruction <= Memory[i];
             //end

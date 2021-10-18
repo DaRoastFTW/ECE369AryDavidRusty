@@ -2,5 +2,5 @@
 2019.2
 Nov  6 2019
 21:57:16
-C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.sim/sim_1/synth/func/xsim/TopLevel_tb_func_synth.v,1634514598,verilog,,C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v,,ALU32Bit;Adder;DataMemory;HiLoReg;InstructionMemory;Mux32Bit3to1;Mux32Bit3to1__3;PCAdder;ProgramCounter;RegEX_MEM;RegID_EX;RegIF_ID;RegMEM_WB;RegisterFile;TopLevel;WordMask;glbl,,,,,,,,
-C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v,1634509789,verilog,,,,TopLevel_tb,,,,,,,,
+C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.sim/sim_1/synth/func/xsim/TopLevel_tb_func_synth.v,1634454761,verilog,,C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v,,ALU32Bit;DataMemory;HiLoReg;InstructionMemory;Mux32Bit3to1;Mux32Bit3to1__3;PCAdder;ProgramCounter;RegEX_MEM;RegID_EX;RegIF_ID;RegMEM_WB;RegisterFile;TopLevel;glbl,,,,,,,,
+C:/Users/rrine/VivadoProjects/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v,1634274653,verilog,,,,TopLevel_tb,,,,,,,,
