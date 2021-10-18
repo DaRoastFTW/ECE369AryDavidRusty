@@ -23,6 +23,7 @@ verilog xil_defaultlib  \
 "../../../../labs9-15.srcs/sources_1/new/ShifterID.v" \
 "../../../../labs9-15.srcs/sources_1/new/SignExtension.v" \
 "../../../../labs9-15.srcs/sources_1/new/TopLevel.v" \
+"../../../../labs9-15.srcs/sources_1/new/WordMask.v" \
 "../../../../labs9-15.srcs/sources_1/new/ZeroExtention.v" \
 "../../../../labs9-15.srcs/sim_1/new/TopLevel_tb.v" \
 

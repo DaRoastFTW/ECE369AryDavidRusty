@@ -20,15 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module RegMEM_WB(Clk, Reset, RegWriteIn, RegWriteOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ALUResultIn, ALUResultOut, ReadDataMemIn, ReadDataMemOut, RegDstMuxIn, RegDstMuxOut);
+module RegMEM_WB(Clk, Reset, RegWriteIn, RegWriteOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ALUResultIn, ALUResultOut, ReadDataMemIn, ReadDataMemOut, RegDstMuxIn, RegDstMuxOut, wordhalfbyteIn, wordhalfbyteOut);
     input Clk, Reset;
     input RegWriteIn;
-    input [1:0] MemtoRegIn;
+    input [1:0] MemtoRegIn, wordhalfbyteIn;
     input [4:0] RegDstMuxIn;
     input [31:0] PCAddIn, ReadDataMemIn, ALUResultIn;
 
     output reg RegWriteOut;
-    output reg [1:0] MemtoRegOut;
+    output reg [1:0] MemtoRegOut, wordhalfbyteOut;
     output reg [4:0] RegDstMuxOut;
     output reg [31:0] PCAddOut, ReadDataMemOut, ALUResultOut;
     always@(posedge Clk)
@@ -41,6 +41,7 @@ module RegMEM_WB(Clk, Reset, RegWriteIn, RegWriteOut, MemtoRegIn, MemtoRegOut, P
             PCAddOut <= 0;
             ReadDataMemOut <= 0;
             ALUResultOut <= 0;
+			wordhalfbyteOut <= 0;
         end
     else
         begin
@@ -50,6 +51,7 @@ module RegMEM_WB(Clk, Reset, RegWriteIn, RegWriteOut, MemtoRegIn, MemtoRegOut, P
             PCAddOut <= PCAddIn;
             ReadDataMemOut <= ReadDataMemIn;
             ALUResultOut <= ALUResultIn;
+			wordhalfbyteOut <= wordhalfbyteIn;
         end
     end
 endmodule

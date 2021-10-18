@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1634455485">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1634514060">
   <File Type="PA-TCL" Name="TopLevel.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="TopLevel_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TopLevel_reports.tcl"/>
   <File Type="RDS-RDS" Name="TopLevel.vds"/>
   <File Type="RDS-UTIL" Name="TopLevel_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="TopLevel_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TopLevel.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="TopLevel_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="TopLevel_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ALU32Bit.v">
@@ -159,6 +156,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/SignExtension.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/WordMask.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
