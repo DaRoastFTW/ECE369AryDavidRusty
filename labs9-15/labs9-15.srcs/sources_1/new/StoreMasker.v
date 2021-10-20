@@ -57,15 +57,15 @@ module StoreMasker(ALUOutput, ReadData, wordhalfbyte, LSBAddress, WriteData);
 				case(LSBAddress)
 				2'b00: //First quarter (big endian land)
 					begin
-						WriteData = {ALUOutput[31:24], ReadData[23:0]};
+						WriteData = {ALUOutput[7:0], ReadData[23:0]};
 					end
 				2'b01: //Second quarter
 					begin
-						WriteData = {ReadData[31:24], ALUOutput[23:16], ReadData[15:0]};
+						WriteData = {ReadData[31:24], ALUOutput[7:0], ReadData[15:0]};
 					end
 				2'b10: //Third quarter
 					begin
-						WriteData = {ReadData[31:16], ALUOutput[15:8], ReadData[7:0]};
+						WriteData = {ReadData[31:16], ALUOutput[7:0], ReadData[7:0]};
 					end
 				2'b11: //Fourth quarter
 					begin

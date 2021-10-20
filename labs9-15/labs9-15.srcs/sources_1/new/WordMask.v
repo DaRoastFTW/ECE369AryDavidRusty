@@ -58,19 +58,24 @@ always @(*)
 			case(LSBAddress)
 				2'b00: //first quarter
 					begin
-						finalInformation = {{24{information[7]}}, information[7:0]};
+						//finalInformation = {{24{information[7]}}, information[7:0]};
+						finalInformation = {{24{information[31]}}, information[31:24]};
 					end
 				2'b01: //second quarter
 					begin
-						finalInformation = {{24{information[15]}}, information[15:8]};
+						//finalInformation = {{24{information[15]}}, information[15:8]};
+						finalInformation = {{24{information[23]}}, information[23:16]};
 					end
 				2'b10: //third quarter
 					begin
-						finalInformation = {{24{information[23]}}, information[23:16]};
+						//finalInformation = {{24{information[23]}}, information[23:16]};
+						finalInformation = {{24{information[15]}}, information[15:8]};
 					end
 				2'b11: //fourth quarter
 					begin
-						finalInformation = {{24{information[31]}}, information[31:24]};
+						//finalInformation = {{24{information[31]}}, information[31:24]};
+						finalInformation = {{24{information[7]}}, information[7:0]};
+
 					end
 				
 			endcase
