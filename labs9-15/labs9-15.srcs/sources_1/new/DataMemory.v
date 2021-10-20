@@ -47,7 +47,11 @@ module DataMemory(Address, WriteData, Clk, Rst, MemWrite, MemRead, ReadData);
 	
     output reg[31:0] ReadData; // Contents of memory location at Address
 
-    reg [31:0] Memory [0:1023];  //DataMemory with 1024 32-bit elements
+    reg [31:0] Memory [0:1023];  //DataMemory with 1024 32-bit 
+	initial
+	begin
+		$readmemh("data_memory.mem", Memory);
+	end
     // Read data that is not clocked
     always @(MemRead, Address, Memory) begin
         if(MemRead) begin
