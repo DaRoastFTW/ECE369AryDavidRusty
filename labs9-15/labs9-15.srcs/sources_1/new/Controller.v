@@ -699,7 +699,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 //RegDst <= 0;
    			 ALUSrc <= 1;
    			 Branch <= 0;
-   			 MemRead <= 0;
+   			 MemRead <= 1;
    			 MemWrite <= 1;
    			 //MemtoReg <= 0;
    			 HiLoControl <= 5'b00000;

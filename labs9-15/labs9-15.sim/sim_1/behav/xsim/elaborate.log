@@ -27,7 +27,9 @@ Compiling module xil_defaultlib.ShiftLeft2
 Compiling module xil_defaultlib.Mux32Bit2To1
 Compiling module xil_defaultlib.Mux5Bit3to1
 Compiling module xil_defaultlib.RegEX_MEM
+Compiling module xil_defaultlib.StoreMasker
 Compiling module xil_defaultlib.DataMemory
+Compiling module xil_defaultlib.WordMask
 Compiling module xil_defaultlib.AndGate
 Compiling module xil_defaultlib.Mux1Bit2To1
 Compiling module xil_defaultlib.RegMEM_WB
