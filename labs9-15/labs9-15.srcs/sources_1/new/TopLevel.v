@@ -58,11 +58,12 @@ module TopLevel(Clk, Reset);
 .ReadData1Out(ReadData1EX), .ReadData2In(ReadData2ID), .ReadData2Out(ReadData2EX), .ZeroExtendIn(ZeroExtendID), .ZeroExtendOut(ZeroExtendEX), .SignExtendIn(SignExtendID), .SignExtendOut(SignExtendEX), .JumpIn(JumpID), .JumpOut(JumpEX));
     
 	//This is the execute stage
-    wire [31:0] ALUSrcMux, ALUResultEX, HiLoOutput;
+    wire [31:0] ALUSrcMux, ALUPortAMux, ALUResultEX, HiLoOutput;
     wire ZeroEX;
     wire [63:0] ALUResult64;
     
-    ALU32Bit ALU(.ALUControl(ALUOpEX), .A(ReadData1EX), .B(ALUSrcMux), .ALUResult(ALUResultEX), .Zero(ZeroEX), .ALUResult64(ALUResult64), .HiLoOutput(HiLoOutput));
+	Mux32Bit2To1 ALUPortAMuxEx(.out(ALUPortAMux), .inA(ReadData1EX), .inB(ReadData2EX), .sel(ALUSrcEX[1]));
+    ALU32Bit ALU(.ALUControl(ALUOpEX), .A(ALUPortAMux), .B(ALUSrcMux), .ALUResult(ALUResultEX), .Zero(ZeroEX), .ALUResult64(ALUResult64), .HiLoOutput(HiLoOutput));
 	wire [31:0] ReadData2MaskEX;
     HiLoReg HiLo(.Clk(Clk), .Rst(Reset), .ALUResult64(ALUResult64), .HiLoControl(HiLoControlEX), .HiLoOutput(HiLoOutput), .Hi_Debug(Hi_Debug), .Lo_Debug(Lo_Debug));
     wire [31:0] ShiftOutEX, AddOutEX;
