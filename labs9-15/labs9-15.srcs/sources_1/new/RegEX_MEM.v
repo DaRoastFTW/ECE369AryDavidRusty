@@ -22,17 +22,17 @@
 
 module RegEX_MEM(Clk, Reset, RegWriteIn, RegWriteOut, BranchIn, BranchOut, MemWriteIn, MemWriteOut, JrMuxIn, JrMuxOut,
 MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, ZeroFlagOut, ALUResultIn, ALUResultOut,
- ReadData2In, ReadData2Out, RegDstMuxIn, RegDstMuxOut, MovIn, MovOut, wordhalfbyteIn, wordhalfbyteOut, JumpIn, JumpOut);
+ ReadData2In, ReadData2Out, RegDstMuxIn, RegDstMuxOut, MovIn, MovOut, wordhalfbyteIn, wordhalfbyteOut, JumpIn, JumpOut, JumpInst_input, JumpInst_output, JrIn, JrOut);
     input Clk, Reset, MovIn;
-    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, JumpIn;
+    input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, JumpIn, JrIn;
     input [1:0] wordhalfbyteIn, MemtoRegIn;
     input [4:0] RegDstMuxIn;
-    input [31:0] PCAddIn, ReadData2In, ALUResultIn, JrMuxIn;
+    input [31:0] PCAddIn, ReadData2In, ALUResultIn, JrMuxIn, JumpInst_input;
     
-    output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut, MovOut, JumpOut;
+    output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut, MovOut, JumpOut, JrOut;
     output reg [1:0] MemtoRegOut, wordhalfbyteOut;
     output reg [4:0] RegDstMuxOut;
-    output reg [31:0] PCAddOut, ReadData2Out, ALUResultOut, JrMuxOut;
+    output reg [31:0] PCAddOut, ReadData2Out, ALUResultOut, JrMuxOut, JumpInst_output;
     always@(posedge Clk)
     begin
     if (Reset)
@@ -51,6 +51,8 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
             wordhalfbyteOut <= 0;
             JrMuxOut <= 0;
             JumpOut <= 0;
+			JumpInst_output <= 0;
+			JrOut <= 0;
         end
     else
         begin
@@ -68,6 +70,8 @@ MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, PCAddIn, PCAddOut, ZeroFlagIn, Z
             wordhalfbyteOut <= wordhalfbyteIn;
             JrMuxOut <= JrMuxIn;
             JumpOut <= JumpIn;
+			JumpInst_output <= JumpInst_input;
+			JrOut <= JrIn;
         end
     end
 endmodule

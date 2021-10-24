@@ -144,19 +144,19 @@ module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64, HiLoOutput);
             end
         6'b010111:   //sllv
             begin
-                ALUResult = B << A;
+                ALUResult = B << A[4:0];
             end
         6'b011000:   //srlv
             begin
-                ALUResult = B >> A;
+                ALUResult = B >> A[4:0];
             end
         6'b011001:   //srav
             begin
-                ALUResult = $signed(B) >>> A;
+                ALUResult = $signed(B) >>> A[4:0];
             end
         6'b011010:   //rotrv
             begin
-                ALUResult = (B >> A) | (B << (32 - A));
+                ALUResult = (B >> A[4:0]) | (B << (32 - A[4:0]));
             end
         6'b011011:   //Set ALUResult to zero if rt != 0
             begin

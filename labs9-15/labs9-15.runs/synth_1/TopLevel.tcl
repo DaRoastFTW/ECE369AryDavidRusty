@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache C:/Users/Aryaman/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22424-DESKTOP-IQ6R3JC/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/Aryaman/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15856-DESKTOP-IQ6R3JC/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
@@ -46,8 +46,8 @@ read_verilog -library xil_defaultlib {
   F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v
   F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v
   F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v
-  F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit2To1.v
   F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v
+  F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/OrGate.v
   F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v
   F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v
   F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v

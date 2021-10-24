@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="TopLevel_tb_behav.wdb" id="1">
+      <db_ref path="TopLevel_tb_func_synth.wdb" id="1">
          <top_modules>
             <top_module name="TopLevel_tb" />
             <top_module name="glbl" />
@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="34420833fs"></ZoomStartTime>
-      <ZoomEndTime time="38715834fs"></ZoomEndTime>
-      <Cursor1Time time="35400000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="3762125fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="104"></NameColumnWidth>
-      <ValueColumnWidth column_width="68"></ValueColumnWidth>
+      <ValueColumnWidth column_width="297"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="6" />
    <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -37,44 +37,12 @@
       <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
       <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile" type="array">
-      <obj_property name="ElementShortName">RegisterFile[0:31][31:0]</obj_property>
-      <obj_property name="ObjectShortName">RegisterFile[0:31][31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/Data/Memory" type="array">
-      <obj_property name="ElementShortName">Memory[0:1023][31:0]</obj_property>
-      <obj_property name="ObjectShortName">Memory[0:1023][31:0]</obj_property>
+   <wvobject fp_name="/TopLevel_tb/CPU/WriteDataWB" type="array">
+      <obj_property name="ElementShortName">WriteDataWB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WriteDataWB[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/CPU/Hi_Debug" type="array">
       <obj_property name="ElementShortName">Hi_Debug[31:0]</obj_property>
       <obj_property name="ObjectShortName">Hi_Debug[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/Lo_Debug" type="array">
-      <obj_property name="ElementShortName">Lo_Debug[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Lo_Debug[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/WriteDataWB" type="array">
-      <obj_property name="ElementShortName">WriteDataWB[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WriteDataWB[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ALU/A" type="array">
-      <obj_property name="ElementShortName">A[31:0]</obj_property>
-      <obj_property name="ObjectShortName">A[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ALU/B" type="array">
-      <obj_property name="ElementShortName">B[31:0]</obj_property>
-      <obj_property name="ObjectShortName">B[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ALUResultEX" type="array">
-      <obj_property name="ElementShortName">ALUResultEX[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUResultEX[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/CPU/ALUOpEX" type="array">
-      <obj_property name="ElementShortName">ALUOpEX[5:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUOpEX[5:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
 </wave_config>

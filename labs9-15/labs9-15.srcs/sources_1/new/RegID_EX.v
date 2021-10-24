@@ -23,13 +23,13 @@
 module RegID_EX(Clk, Reset, InstructionIn, InstructionOut, RegWriteIn, RegWriteOut, RegDstIn,
 RegDstOut, ALUOpIn, ALUOpOut, ALUSrcIn, ALUSrcOut, BranchIn, BranchOut, MemWriteIn, MemWriteOut,
 MemReadIn, MemReadOut, MemtoRegIn, MemtoRegOut, HiLoControlIn, HiLoControlOut, JrIn, JrOut, MovIn, MovOut, wordhalfbyteIn, wordhalfbyteOut, PCAddIn, PCAddOut, ReadData1In,
-ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtendIn, SignExtendOut, JumpIn, JumpOut);
+ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtendIn, SignExtendOut, JumpIn, JumpOut, JumpInst_input, JumpInst_output);
     input Clk, Reset;
     input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn, JumpIn;
     input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn, RegDstIn;
     input [3:0] HiLoControlIn;
     input [5:0] ALUOpIn;
-    input [31:0] InstructionIn, ZeroExtendIn, SignExtendIn, PCAddIn, ReadData1In, ReadData2In;
+    input [31:0] InstructionIn, ZeroExtendIn, SignExtendIn, PCAddIn, ReadData1In, ReadData2In, JumpInst_input;
 
   
     output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut;
@@ -37,7 +37,7 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
     output reg [1:0] RegDstOut;
     output reg [3:0] HiLoControlOut;
     output reg [5:0] ALUOpOut;
-    output reg [31:0] InstructionOut, ZeroExtendOut, SignExtendOut, PCAddOut, ReadData1Out, ReadData2Out;
+    output reg [31:0] InstructionOut, ZeroExtendOut, SignExtendOut, PCAddOut, ReadData1Out, ReadData2Out, JumpInst_output;
     always@(posedge Clk)
     begin
     if (Reset)
@@ -61,6 +61,7 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
             ReadData1Out <= 32'd0;
             ReadData2Out <= 32'd0;
             JumpOut <= 1'b0;
+			JumpInst_output <= 32'd0;
         end
     else
         begin
@@ -83,6 +84,7 @@ ReadData1Out, ReadData2In, ReadData2Out, ZeroExtendIn, ZeroExtendOut, SignExtend
             ReadData1Out <= ReadData1In;
             ReadData2Out <= ReadData2In;
             JumpOut <= JumpIn;
+			JumpInst_output <= JumpInst_input;
         end
     end
 endmodule

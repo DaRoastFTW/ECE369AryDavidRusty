@@ -32,12 +32,14 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 	reg [5:0] opcode;
 	reg [5:0] funct;
 	reg rBit;
+	reg [4:0] branchCode;
 	
 	always@(*)
 	begin
 	    opcode <= Instruction[31:26];
 	    funct <= Instruction[5:0];
 		rBit <= Instruction[21];
+		branchCode <= Instruction[20:16];
 		PCSrc <= 0;
 		RegWrite <= 0;
         RegDst <= 0;
@@ -192,7 +194,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					Branch <= 0;
 					MemWrite <= 0;
 					MemRead <= 0;
-					//MemtoReg <= ;
+					MemtoReg <= 1;
 					HiLoControl <= 4'b0111;//Set rd = Hi;
 					Jr <= 0;
 					Mov <= 0;
@@ -210,7 +212,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 					Branch <= 0;
 					MemWrite <= 0;
 					MemRead <= 0;
-					//MemtoReg <= ;
+					MemtoReg <= 1;
 					HiLoControl <= 4'b1000;//Set rd = Lo;
 					Jr <= 0;
 					Mov <= 0;
@@ -791,7 +793,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
    			 end
 			6'b000001: //____ to zero
    			 begin
-   			 case(funct)
+   			 case(branchCode)
    			 5'b00001: //bgez
    				 begin
    				 RegWrite <= 0;
@@ -1051,7 +1053,7 @@ MemWrite, MemRead, MemtoReg, HiLoControl, PCSrc, Jr, Mov, wordhalfbyte, Jump);
 				MemRead <= 0;
 				MemtoReg <= 1;
 				HiLoControl <= 5'b00000;
-				ALUOp <= 6'b010011;
+				ALUOp <= 6'b000111;
 				Jr <= 0;
 			    Mov <= 0;
 			    wordhalfbyte <= 0;

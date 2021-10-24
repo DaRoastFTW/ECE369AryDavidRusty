@@ -60,7 +60,6 @@ always @(posedge Clk)
 	4'b0010: //multu
 	begin
 	{HiReg, LoReg} <= ALUResult64;
-	HiLoOutput <= LoReg;
 	end
 	
 	4'b0011: //madd
@@ -83,23 +82,32 @@ always @(posedge Clk)
 	LoReg <= ALUResult64[31:0];
 	end
 	
-	4'b0111: //mfhi
-	begin
-	HiLoOutput <= HiReg;
-	end
-	
-	4'b1000: //mflo
-	begin
-	HiLoOutput <= LoReg;
-	end
-	
-    
     default:
     begin
     end
     endcase
     end
     end
-
+always@(negedge Clk)
+	begin
+	case(HiLoControl)
+	4'b0010: //multu
+	begin
+	HiLoOutput <= LoReg;
+	end
+	4'b0111: //mfhi
+	begin
+	HiLoOutput <= HiReg;
+	end
+	4'b1000: //mflo
+	begin
+	HiLoOutput <= LoReg;
+	end
+	default
+		begin
+			HiLoOutput <= 32'b0;
+		end
+	endcase
+	end
 
 endmodule

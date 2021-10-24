@@ -9,12 +9,11 @@ Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module unisims_ver.DSP48E1(ACASCREG=0,ALUMODEREG=0,...
-Compiling module unisims_ver.DSP48E1(ALUMODEREG=0,BCASCREG=0,...
 Compiling module unisims_ver.CARRY4
 Compiling module unisims_ver.x_lut2_mux4
 Compiling module unisims_ver.LUT2
-Compiling module unisims_ver.LUT6
 Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.LUT6
 Compiling module xil_defaultlib.ALU32Bit
 Compiling module xil_defaultlib.Adder
 Compiling module unisims_ver.BUFG
@@ -27,20 +26,19 @@ Compiling module unisims_ver.MUXF7
 Compiling module unisims_ver.MUXF8
 Compiling module xil_defaultlib.DataMemory
 Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.GND
 Compiling module xil_defaultlib.RegEX_MEM
 Compiling module xil_defaultlib.HiLoReg
-Compiling module unisims_ver.x_lut1_mux2
-Compiling module unisims_ver.LUT1
 Compiling module xil_defaultlib.RegID_EX
 Compiling module xil_defaultlib.RegIF_ID
-Compiling module unisims_ver.GND
 Compiling module xil_defaultlib.InstructionMemory
 Compiling module xil_defaultlib.RegMEM_WB
 Compiling module xil_defaultlib.Mux32Bit3to1
 Compiling module unisims_ver.FDCE_default
 Compiling module xil_defaultlib.ProgramCounter
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
 Compiling module xil_defaultlib.PCAdder
-Compiling module xil_defaultlib.Mux32Bit3to1__3
 Compiling module xil_defaultlib.RegisterFile
 Compiling module xil_defaultlib.WordMask
 Compiling module xil_defaultlib.StoreMasker

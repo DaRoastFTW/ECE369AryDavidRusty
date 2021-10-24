@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Sat Oct 23 17:53:31 2021
-# Process ID: 15964
+# Start of session at: Sun Oct 24 01:25:37 2021
+# Process ID: 22028
 # Current directory: F:/ECE369AryDavidRusty/labs9-15/labs9-15.runs/synth_1
 # Command line: vivado.exe -log TopLevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TopLevel.tcl
 # Log file: F:/ECE369AryDavidRusty/labs9-15/labs9-15.runs/synth_1/TopLevel.vds
