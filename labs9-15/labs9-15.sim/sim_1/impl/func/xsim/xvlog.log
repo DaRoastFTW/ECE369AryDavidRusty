@@ -1,17 +1,20 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/ECE369AryDavidRusty/labs9-15/labs9-15.sim/sim_1/impl/func/xsim/TopLevel_tb_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.sim/sim_1/impl/func/xsim/TopLevel_tb_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU32Bit
+INFO: [VRFC 10-311] analyzing module Adder
 INFO: [VRFC 10-311] analyzing module DataMemory
 INFO: [VRFC 10-311] analyzing module HiLoReg
 INFO: [VRFC 10-311] analyzing module InstructionMemory
 INFO: [VRFC 10-311] analyzing module Mux32Bit3to1
-INFO: [VRFC 10-311] analyzing module Mux32Bit3to1__3
 INFO: [VRFC 10-311] analyzing module PCAdder
 INFO: [VRFC 10-311] analyzing module ProgramCounter
 INFO: [VRFC 10-311] analyzing module RegEX_MEM
+INFO: [VRFC 10-311] analyzing module RegID_EX
 INFO: [VRFC 10-311] analyzing module RegIF_ID
+INFO: [VRFC 10-311] analyzing module RegMEM_WB
 INFO: [VRFC 10-311] analyzing module RegisterFile
 INFO: [VRFC 10-311] analyzing module StoreMasker
 INFO: [VRFC 10-311] analyzing module TopLevel
 INFO: [VRFC 10-311] analyzing module WordMask
 INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module TopLevel_tb

@@ -3,8 +3,13 @@
 /// Rusty Rinehart- 33% Effort, Ary Nath- 33% Effort, David Mazi- 33% Effor
 ///
 
-module TopLevel(Clk, Reset);
+module TopLevel(Clk, Reset, ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo);
     input Clk, Reset;
+	output [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo;
+	assign ActualWriteDataWB = WriteDataWB;
+	assign ActualPCResult = PCResult;
+	assign ActualHi = Hi_Debug;
+	assign ActualLo = Lo_Debug;
     //This is the instruction fetch
     (* mark_debug = "true" *) wire [31:0] PCResult;
 	(* mark_debug = "true" *) wire [31:0] Hi_Debug, Lo_Debug;

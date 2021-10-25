@@ -22,43 +22,43 @@ create_project -in_memory -part xc7a100tcsg324-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.cache/wt [current_project]
-set_property parent.project_path C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.cache/wt [current_project]
+set_property parent.project_path C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.cache/ip [current_project]
+set_property ip_output_repo c:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_mem {
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/instruction_memory.mem
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/data_memory.mem
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/instruction_memory.mem
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/data_memory.mem
 }
 read_verilog -library xil_defaultlib {
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/OrGate.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v
-  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/OrGate.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v
+  C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

@@ -6,7 +6,9 @@
 
 module TopLevel_tb();
     reg Clk, Reset;
-    TopLevel CPU(.Clk(Clk), .Reset(Reset));
+	wire [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo;
+    TopLevel CPU(.Clk(Clk), .Reset(Reset), .ActualWriteDataWB(ActualWriteDataWB),
+	.ActualPCResult(ActualPCResult), .ActualHi(ActualHi), .ActualLo(ActualLo));
     initial begin
 		Clk <= 1'b1;
 		forever #100 Clk <= ~Clk;
