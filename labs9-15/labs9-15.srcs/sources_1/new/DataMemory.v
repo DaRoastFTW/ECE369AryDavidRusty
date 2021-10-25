@@ -43,13 +43,11 @@ module DataMemory(Address, WriteData, Clk, Rst, MemWrite, MemRead, ReadData);
     input MemWrite; 		// Control signal for memory write 
     input MemRead; 			// Control signal for memory read 
 
-	integer i;
 	
     output reg[31:0] ReadData; // Contents of memory location at Address
 
     reg [31:0] Memory [0:1023];  //DataMemory with 1024 32-bit 
-	initial
-	begin
+	initial begin
 		$readmemh("data_memory.mem", Memory);
 	end
     // Read data that is not clocked
@@ -63,13 +61,8 @@ module DataMemory(Address, WriteData, Clk, Rst, MemWrite, MemRead, ReadData);
     end
     // Write data (uses clock)
     always @(negedge Clk) begin
-		if (Rst) begin
-		for (i = 0; i < 1024; i = i + 1)
-		begin
-			Memory[i] = 32'b0;
-		end
-		end
-        else if(MemWrite) begin
+
+        if(MemWrite) begin
 			Memory[Address[11:2]] <= WriteData;
         end
     end

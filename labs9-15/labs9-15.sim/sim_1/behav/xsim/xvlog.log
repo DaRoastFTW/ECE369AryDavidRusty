@@ -1,0 +1,68 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU32Bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AndGate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+WARNING: [VRFC 10-634] event expressions must result in a singular type [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:54]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HiLoReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux1Bit2To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit2To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit3to1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux5Bit3to1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/OrGate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OrGate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegEX_MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegID_EX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegIF_ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegMEM_WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShiftLeft2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShifterID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignExtension
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StoreMasker
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopLevel
+INFO: [VRFC 10-2458] undeclared symbol JrMEM, assumed default net type wire [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:18]
+INFO: [VRFC 10-2458] undeclared symbol JumpInstructionMEM, assumed default net type wire [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:19]
+INFO: [VRFC 10-2458] undeclared symbol JumpMEM, assumed default net type wire [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:19]
+INFO: [VRFC 10-2458] undeclared symbol RegDstMuxWB, assumed default net type wire [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:32]
+INFO: [VRFC 10-2458] undeclared symbol RegWriteID, assumed default net type wire [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:44]
+INFO: [VRFC 10-2458] undeclared symbol BranchEX, assumed default net type wire [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:56]
+WARNING: [VRFC 10-2938] 'JumpMEM' is already implicitly declared on line 19 [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:82]
+WARNING: [VRFC 10-2938] 'JumpInstructionMEM' is already implicitly declared on line 19 [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:85]
+INFO: [VRFC 10-2458] undeclared symbol ZeroMEM, assumed default net type wire [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:89]
+INFO: [VRFC 10-2458] undeclared symbol ReadDataMEM, assumed default net type wire [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:95]
+INFO: [VRFC 10-2458] undeclared symbol MovMuxOut, assumed default net type wire [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:101]
+WARNING: [VRFC 10-2938] 'ReadDataMEM' is already implicitly declared on line 95 [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:104]
+WARNING: [VRFC 10-2938] 'RegDstMuxWB' is already implicitly declared on line 32 [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:106]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WordMask
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ZeroExtention
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopLevel_tb
