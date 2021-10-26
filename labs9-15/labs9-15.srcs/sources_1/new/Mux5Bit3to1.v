@@ -20,31 +20,30 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Mux5Bit3to1(out, inA, inB, inC, sel);
+module Mux5Bit3to1 (
+    out,
+    inA,
+    inB,
+    inC,
+    sel
+);
 
-	output reg [4:0] out;
-	
-	input [4:0] inA;
-	input [4:0] inB;
-	input [4:0] inC;
-	input [1:0] sel;
-	
-	always@(*) begin
-		if(sel == 2'b00)
-			begin
-			out <= inA;
-			end
-		else if(sel == 2'b01)
-			begin
-			out <= inB;
-			end
-		else if (sel == 2'b10)
-			begin
-			out <= inC;
-			end
-		else
-			begin
-			out <= inA;
-			end
-	end
+  output reg [4:0] out;
+
+  input [4:0] inA;
+  input [4:0] inB;
+  input [4:0] inC;
+  input [1:0] sel;
+
+  always @(*) begin
+    if (sel == 2'b00) begin
+      out <= inA;
+    end else if (sel == 2'b01) begin
+      out <= inB;
+    end else if (sel == 2'b10) begin
+      out <= inC;
+    end else begin
+      out <= inA;
+    end
+  end
 endmodule

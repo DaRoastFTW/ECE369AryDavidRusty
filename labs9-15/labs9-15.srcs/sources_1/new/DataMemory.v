@@ -35,37 +35,44 @@
 // of the "Address" input to index any of the 256 words. 
 ////////////////////////////////////////////////////////////////////////////////
 
-module DataMemory(Address, WriteData, Clk, Rst, MemWrite, MemRead, ReadData); 
+module DataMemory (
+    Address,
+    WriteData,
+    Clk,
+    Rst,
+    MemWrite,
+    MemRead,
+    ReadData
+);
 
-    input [31:0] Address; 	// Input Address 
-    input [31:0] WriteData; // Data that needs to be written into the address 
-    input Clk, Rst;
-    input MemWrite; 		// Control signal for memory write 
-    input MemRead; 			// Control signal for memory read 
+  input [31:0] Address;  // Input Address 
+  input [31:0] WriteData;  // Data that needs to be written into the address 
+  input Clk, Rst;
+  input MemWrite;  // Control signal for memory write 
+  input MemRead;  // Control signal for memory read 
 
-	
-    output reg[31:0] ReadData; // Contents of memory location at Address
 
-    reg [31:0] Memory [0:1023];  //DataMemory with 1024 32-bit 
-	initial begin
-		$readmemh("data_memory.mem", Memory);
-	end
-    // Read data that is not clocked
-    always @(MemRead, Address, Memory) begin
-        if(MemRead) begin
-			ReadData <= Memory[Address[11:2]];
-        end
-        else begin
-            ReadData <= 32'h00000000;
-        end
+  output reg [31:0] ReadData;  // Contents of memory location at Address
+
+  reg [31:0] Memory[0:1023];  //DataMemory with 1024 32-bit 
+  initial begin
+    $readmemh("data_memory.mem", Memory);
+  end
+  // Read data that is not clocked
+  always @(MemRead, Address, Memory) begin
+    if (MemRead) begin
+      ReadData <= Memory[Address[11:2]];
+    end else begin
+      ReadData <= 32'h00000000;
     end
-    // Write data (uses clock)
-    always @(negedge Clk) begin
+  end
+  // Write data (uses clock)
+  always @(negedge Clk) begin
 
-        if(MemWrite) begin
-			Memory[Address[11:2]] <= WriteData;
-        end
+    if (MemWrite) begin
+      Memory[Address[11:2]] <= WriteData;
     end
-    
+  end
+
 
 endmodule

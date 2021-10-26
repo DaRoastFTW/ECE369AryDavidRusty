@@ -20,12 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ShifterID(shiftinput, shiftoutput);
-    input [25:0] shiftinput;
-    output reg [27:0] shiftoutput;
-    
-    always @(*)
-    begin
-        shiftoutput <= shiftinput << 2;
-    end
+module ShifterID (
+    shiftinput,
+    shiftoutput
+);
+  input [25:0] shiftinput;
+  output reg [27:0] shiftoutput;
+
+  always @(*) begin
+    shiftoutput <= shiftinput << 2;
+  end
 endmodule

@@ -20,12 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module OrGate(orinput1, orinput2, oroutput);
-	input orinput1, orinput2;
-    output reg oroutput;
-    
-    always@(*)
-    begin
-        oroutput <= orinput1 | orinput2;
-    end
+module OrGate (
+    orinput1,
+    orinput2,
+    oroutput
+);
+  input orinput1, orinput2;
+  output reg oroutput;
+
+  always @(*) begin
+    oroutput <= orinput1 | orinput2;
+  end
 endmodule

@@ -4,18 +4,39 @@
 ///
 
 
-module TopTopLevel(Clk, Reset, out7, en_out);
-	input Clk, Reset;
-    
-	wire [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo;
-    
-	
-    wire ClkOut;
-    output [6:0] out7;
-    output [7:0] en_out;
-	
-	ClkDiv CD(Clk, Reset, ClkOut);
-	TopLevel CPU(.Clk(ClkOut), .Reset(Reset), .ActualWriteDataWB(ActualWriteDataWB),
-	.ActualPCResult(ActualPCResult), .ActualHi(ActualHi), .ActualLo(ActualLo));
-	Two4DigitDisplay TDD(Clk, ActualPCResult[15:0], ActualWriteDataWB[15:0], out7, en_out);
+module TopTopLevel (
+    Clk,
+    Reset,
+    out7,
+    en_out
+);
+  input Clk, Reset;
+
+  wire [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo;
+
+
+  wire ClkOut;
+  output [6:0] out7;
+  output [7:0] en_out;
+
+  ClkDiv CD (
+      Clk,
+      Reset,
+      ClkOut
+  );
+  TopLevel CPU (
+      .Clk(ClkOut),
+      .Reset(Reset),
+      .ActualWriteDataWB(ActualWriteDataWB),
+      .ActualPCResult(ActualPCResult),
+      .ActualHi(ActualHi),
+      .ActualLo(ActualLo)
+  );
+  Two4DigitDisplay TDD (
+      Clk,
+      ActualPCResult[15:0],
+      ActualWriteDataWB[15:0],
+      out7,
+      en_out
+  );
 endmodule

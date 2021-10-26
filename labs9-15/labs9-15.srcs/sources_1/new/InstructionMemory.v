@@ -36,28 +36,30 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-module InstructionMemory(Address, Instruction); 
+module InstructionMemory (
+    Address,
+    Instruction
+);
 
-    input [31:0] Address;        // Input Address 
+  input [31:0] Address;  // Input Address 
 
-    output reg [31:0] Instruction;    // Instruction at memory location Address
-    
-    /* Please fill in the implementation here */
-    integer i;
-    reg [31:0] Memory [0:1023]; // 8 bit memory with 16 entries
+  output reg [31:0] Instruction;  // Instruction at memory location Address
 
-    initial
-        begin
-            //$readmemh("C:/Users/rrine/VivadoProjects/AryDavidRusty/labs9-15/instruction_memory.mem", Memory);
-            //$readmemh("F:/ECE369AryDavidRusty/labs9-15/instruction_memory.mem", Memory);
-			//$readmemh("C:/Users/aryna/ECE369AryDavidRusty/labs9-15/instruction_memory.txt", Memory);
-			$readmemh("instruction_memory.mem", Memory);
-            //for(i = 0; i < 1023; i = i + 1) begin
-            //Instruction <= Memory[i];
-            //end
-        end  
-    always @(Address) begin
-        Instruction <= Memory[Address[11:2]];
-    end
+  /* Please fill in the implementation here */
+  integer i;
+  reg [31:0] Memory[0:1023];  // 8 bit memory with 16 entries
+
+  initial begin
+    //$readmemh("C:/Users/rrine/VivadoProjects/AryDavidRusty/labs9-15/instruction_memory.mem", Memory);
+    //$readmemh("F:/ECE369AryDavidRusty/labs9-15/instruction_memory.mem", Memory);
+    //$readmemh("C:/Users/aryna/ECE369AryDavidRusty/labs9-15/instruction_memory.txt", Memory);
+    $readmemh("instruction_memory.mem", Memory);
+    //for(i = 0; i < 1023; i = i + 1) begin
+    //Instruction <= Memory[i];
+    //end
+  end
+  always @(Address) begin
+    Instruction <= Memory[Address[11:2]];
+  end
 
 endmodule

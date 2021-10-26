@@ -20,71 +20,75 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module WordMask(information, wordhalfbyte, LSBAddress, finalInformation);
+module WordMask (
+    information,
+    wordhalfbyte,
+    LSBAddress,
+    finalInformation
+);
 
-input [31:0] information;
-input [1:0] wordhalfbyte;
-input [1:0] LSBAddress;
+  input [31:0] information;
+  input [1:0] wordhalfbyte;
+  input [1:0] LSBAddress;
 
-output reg [31:0] finalInformation;
+  output reg [31:0] finalInformation;
 
-always @(*)
-	begin
-	case(wordhalfbyte)
-		2'b00: //word
+  always @(*) begin
+    case (wordhalfbyte)
+      2'b00: //word
 			begin
-				finalInformation = information;
-			end
-		2'b01: //half
+        finalInformation = information;
+      end
+      2'b01: //half
 			begin
-				case(LSBAddress)
-					2'b00: //first half
+        case (LSBAddress)
+          2'b00: //first half
 						begin
-							finalInformation = {{16{information[31]}} , information[31:16]};
-						end
-					2'b10: //second half
+            finalInformation = {{16{information[31]}}, information[31:16]};
+          end
+          2'b10: //second half
 						begin
-							finalInformation = {{16{information[15]}}, information[15:0]};
-						end
-					default: //first half
+            finalInformation = {{16{information[15]}}, information[15:0]};
+          end
+          default: //first half
 						begin
-							finalInformation = {{16{information[31]}} , information[31:16]};
-						end
-				endcase
-			end
-		2'b10: //byte
+            finalInformation = {{16{information[31]}}, information[31:16]};
+          end
+        endcase
+      end
+      2'b10: //byte
 		begin
-			//finalInformation = {{24{informationByte[7]}}, informationByte};
-			case(LSBAddress)
-				2'b00: //first quarter
+        //finalInformation = {{24{informationByte[7]}}, informationByte};
+        case (LSBAddress)
+          2'b00: //first quarter
 					begin
-						//finalInformation = {{24{information[7]}}, information[7:0]};
-						finalInformation = {{24{information[31]}}, information[31:24]};
-					end
-				2'b01: //second quarter
+            //finalInformation = {{24{information[7]}}, information[7:0]};
+            finalInformation = {{24{information[31]}}, information[31:24]};
+          end
+          2'b01: //second quarter
 					begin
-						//finalInformation = {{24{information[15]}}, information[15:8]};
-						finalInformation = {{24{information[23]}}, information[23:16]};
-					end
-				2'b10: //third quarter
+            //finalInformation = {{24{information[15]}}, information[15:8]};
+            finalInformation = {{24{information[23]}}, information[23:16]};
+          end
+          2'b10: //third quarter
 					begin
-						//finalInformation = {{24{information[23]}}, information[23:16]};
-						finalInformation = {{24{information[15]}}, information[15:8]};
-					end
-				2'b11: //fourth quarter
+            //finalInformation = {{24{information[23]}}, information[23:16]};
+            finalInformation = {{24{information[15]}}, information[15:8]};
+          end
+          2'b11: //fourth quarter
 					begin
-						//finalInformation = {{24{information[31]}}, information[31:24]};
-						finalInformation = {{24{information[7]}}, information[7:0]};
+            //finalInformation = {{24{information[31]}}, information[31:24]};
+            finalInformation = {{24{information[7]}}, information[7:0]};
 
-					end
-				
-			endcase
-		end
-		2'b11: //word (again)
+          end
+
+        endcase
+      end
+      2'b11: //word (again)
 		begin
-			finalInformation = information;
-		end
-	endcase
-	end
+        finalInformation = information;
+      end
+    endcase
+  end
 
 endmodule

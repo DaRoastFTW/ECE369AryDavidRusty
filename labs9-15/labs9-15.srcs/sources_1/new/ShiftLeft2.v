@@ -20,12 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ShiftLeft2(shiftinput, shiftoutput);
-    input [31:0] shiftinput;
-    output reg [31:0] shiftoutput;
-    
-    always @(*)
-    begin
-        shiftoutput <= shiftinput << 2;
-    end
+module ShiftLeft2 (
+    shiftinput,
+    shiftoutput
+);
+  input [31:0] shiftinput;
+  output reg [31:0] shiftoutput;
+
+  always @(*) begin
+    shiftoutput <= shiftinput << 2;
+  end
 endmodule

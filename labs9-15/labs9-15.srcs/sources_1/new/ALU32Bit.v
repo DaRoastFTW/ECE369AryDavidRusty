@@ -26,176 +26,181 @@
 //   operations needed to support. 
 ////////////////////////////////////////////////////////////////////////////////
 
-module ALU32Bit(ALUControl, A, B, ALUResult, Zero, ALUResult64, HiLoOutput);
-    //Hi and Lo registers go into ALU
-	input [5:0] ALUControl; // control bits for ALU operation
-                                // you need to adjust the bitwidth as needed
-	input [31:0] A, B;	    // inputs
+module ALU32Bit (
+    ALUControl,
+    A,
+    B,
+    ALUResult,
+    Zero,
+    ALUResult64,
+    HiLoOutput
+);
+  //Hi and Lo registers go into ALU
+  input [5:0] ALUControl;  // control bits for ALU operation
+  // you need to adjust the bitwidth as needed
+  input [31:0] A, B;  // inputs
 
-	output reg[31:0] ALUResult;	// answer
-	output reg Zero;	    // Zero=1 if ALUResult == 0
-	
-	//For HiLoReg
-	output reg [63:0] ALUResult64;
-	input [31:0] HiLoOutput;
+  output reg [31:0] ALUResult;  // answer
+  output reg Zero;  // Zero=1 if ALUResult == 0
 
-    /* Please fill in the implementation here... */
-    always @ (A, B, ALUControl, HiLoOutput) begin
-        ALUResult = 0;
-        ALUResult64 = 0;
-        case(ALUControl)
-        6'b000000:	//add
+  //For HiLoReg
+  output reg [63:0] ALUResult64;
+  input [31:0] HiLoOutput;
+
+  /* Please fill in the implementation here... */
+  always @(A, B, ALUControl, HiLoOutput) begin
+    ALUResult   = 0;
+    ALUResult64 = 0;
+    case (ALUControl)
+      6'b000000:	//add
             begin
-                ALUResult = A + B;
-            end
-        6'b000001:	//subtract
+        ALUResult = A + B;
+      end
+      6'b000001:	//subtract
             begin
-                ALUResult = A - B;
-            end
-        6'b000010:	//multiply
+        ALUResult = A - B;
+      end
+      6'b000010:	//multiply
             begin
-                ALUResult64 = $signed(A) * $signed(B);
-				ALUResult = ALUResult64[31:0];
-            end
-        6'b000011:	//and
+        ALUResult64 = $signed(A) * $signed(B);
+        ALUResult   = ALUResult64[31:0];
+      end
+      6'b000011:	//and
             begin
-                ALUResult = A & B;           
-            end
-        6'b000100:	//or
+        ALUResult = A & B;
+      end
+      6'b000100:	//or
             begin
-                ALUResult = A | B;
-            end
-        6'b000101:   //movn
+        ALUResult = A | B;
+      end
+      6'b000101:   //movn
             begin
-                ALUResult = (B == 0);
-            end
-        6'b000110:   //Set ALUResult to 0 if branches aren't equal
+        ALUResult = (B == 0);
+      end
+      6'b000110:   //Set ALUResult to 0 if branches aren't equal
             begin
-                if(A != B) begin
-                    ALUResult = 0;
-                end
-                else begin
-                    ALUResult = 1;
-                end
-            end
-        6'b000111:   //slt
+        if (A != B) begin
+          ALUResult = 0;
+        end else begin
+          ALUResult = 1;
+        end
+      end
+      6'b000111:   //slt
             begin
-                ALUResult = ($signed(A) < $signed(B));
-            end
-		6'b001000:	//Shift left
+        ALUResult = ($signed(A) < $signed(B));
+      end
+      6'b001000:	//Shift left
             begin
-                ALUResult = A << B;
-            end
-        6'b001001:	//Shift right
+        ALUResult = A << B;
+      end
+      6'b001001:	//Shift right
             begin
-                ALUResult = A >> B;
-            end
-        6'b001010:	//sra
+        ALUResult = A >> B;
+      end
+      6'b001010:	//sra
             begin
-                ALUResult = $signed(A) >>> B;
-            end
-        6'b001011:	//nor
+        ALUResult = $signed(A) >>> B;
+      end
+      6'b001011:	//nor
             begin
-                ALUResult = ~(A | B);
-            end
-        6'b001100:    //xor
+        ALUResult = ~(A | B);
+      end
+      6'b001100:    //xor
             begin
-                ALUResult = A ^ B;
-            end
-        6'b001101:   //rotate right
+        ALUResult = A ^ B;
+      end
+      6'b001101:   //rotate right
             begin
-                ALUResult = (A >> B) | (A << (32 - B));
-            end
-        6'b001110:   //lui
+        ALUResult = (A >> B) | (A << (32 - B));
+      end
+      6'b001110:   //lui
             begin
-                ALUResult = B << 16;
-            end
-        6'b001111:   //bgez
+        ALUResult = B << 16;
+      end
+      6'b001111:   //bgez
             begin
-                ALUResult = ($signed(A) < 0);
-            end
-        6'b010000:   //bgtz
+        ALUResult = ($signed(A) < 0);
+      end
+      6'b010000:   //bgtz
             begin
-                ALUResult = ($signed(A) <= 0);
-            end
-        6'b010001:   //blez
+        ALUResult = ($signed(A) <= 0);
+      end
+      6'b010001:   //blez
             begin
-                ALUResult = ($signed(A) > 0);
-            end
-        6'b010010:   //bltz
+        ALUResult = ($signed(A) > 0);
+      end
+      6'b010010:   //bltz
             begin
-                ALUResult = ($signed(A) >= 0);
-            end
-        6'b010011:   //sltu
+        ALUResult = ($signed(A) >= 0);
+      end
+      6'b010011:   //sltu
             begin
-                ALUResult = A < B;
-            end
-        6'b010100:   //sltiu
+        ALUResult = A < B;
+      end
+      6'b010100:   //sltiu
             begin
-                ALUResult = A < {16'd0, B[15:0]};
-            end
-        6'b010101:   //seh
+        ALUResult = A < {16'd0, B[15:0]};
+      end
+      6'b010101:   //seh
             begin
-                ALUResult = {{16{B[15]}}, B[15:0]};
-            end
-        6'b010110:   //seb
+        ALUResult = {{16{B[15]}}, B[15:0]};
+      end
+      6'b010110:   //seb
             begin
-                ALUResult = {{24{B[7]}}, B[7:0]};
-            end
-        6'b010111:   //sllv
+        ALUResult = {{24{B[7]}}, B[7:0]};
+      end
+      6'b010111:   //sllv
             begin
-                ALUResult = B << A[4:0];
-            end
-        6'b011000:   //srlv
+        ALUResult = B << A[4:0];
+      end
+      6'b011000:   //srlv
             begin
-                ALUResult = B >> A[4:0];
-            end
-        6'b011001:   //srav
+        ALUResult = B >> A[4:0];
+      end
+      6'b011001:   //srav
             begin
-                ALUResult = $signed(B) >>> A[4:0];
-            end
-        6'b011010:   //rotrv
+        ALUResult = $signed(B) >>> A[4:0];
+      end
+      6'b011010:   //rotrv
             begin
-                ALUResult = (B >> A[4:0]) | (B << (32 - A[4:0]));
-            end
-        6'b011011:   //Set ALUResult to zero if rt != 0
+        ALUResult = (B >> A[4:0]) | (B << (32 - A[4:0]));
+      end
+      6'b011011:   //Set ALUResult to zero if rt != 0
             begin
-                ALUResult = ~B;
-            end
-        6'b011100:   //Set ALUResult to zero if rt == 0
+        ALUResult = ~B;
+      end
+      6'b011100:   //Set ALUResult to zero if rt == 0
             begin
-                ALUResult = B;
-            end
-		6'b011101: //mthi & mtlo
+        ALUResult = B;
+      end
+      6'b011101: //mthi & mtlo
 			begin
-			ALUResult64 = A;
-			end
-		6'b011110: //mfhi & mflo
+        ALUResult64 = A;
+      end
+      6'b011110: //mfhi & mflo
 			begin
-			ALUResult = HiLoOutput;
-			end
-		6'b011111: //movz
+        ALUResult = HiLoOutput;
+      end
+      6'b011111: //movz
 		  begin
-		      ALUResult = (B != 0);
-		  end
-		6'b100000: //multu
+        ALUResult = (B != 0);
+      end
+      6'b100000: //multu
 		  begin
-			ALUResult64 = A * B;
-			ALUResult = HiLoOutput;
-		  end
-        default:
-        begin
-            ALUResult = 32'd0;
-        end
-        endcase
+        ALUResult64 = A * B;
+        ALUResult   = HiLoOutput;
+      end
+      default: begin
+        ALUResult = 32'd0;
+      end
+    endcase
+  end
+  always @(ALUResult) begin
+    if (ALUResult == 0) begin
+      Zero = 1;
+    end else begin
+      Zero = 0;
     end
-    always @(ALUResult) begin
-        if(ALUResult == 0) begin
-            Zero = 1;
-        end
-        else begin
-            Zero = 0;
-        end
-    end
+  end
 endmodule
 

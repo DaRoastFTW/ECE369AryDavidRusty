@@ -20,12 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module AndGate(andinput1, andinput2, andoutput);
-    input andinput1, andinput2;
-    output reg andoutput;
-    
-    always@(*)
-    begin
-        andoutput <= andinput1 & andinput2;
-    end
+module AndGate (
+    andinput1,
+    andinput2,
+    andoutput
+);
+  input andinput1, andinput2;
+  output reg andoutput;
+
+  always @(*) begin
+    andoutput <= andinput1 & andinput2;
+  end
 endmodule

@@ -20,12 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Adder(addinput1, addinput2, addoutput);
-    input [31:0] addinput1, addinput2;
-    output reg [31:0] addoutput;
-    
-    always@(*)
-    begin
-        addoutput <= addinput1 + addinput2;
-    end
+module Adder (
+    addinput1,
+    addinput2,
+    addoutput
+);
+  input [31:0] addinput1, addinput2;
+  output reg [31:0] addoutput;
+
+  always @(*) begin
+    addoutput <= addinput1 + addinput2;
+  end
 endmodule

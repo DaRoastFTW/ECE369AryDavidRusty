@@ -19,16 +19,19 @@
 // 4 (i.e., PCAddResult = PCResult + 4).
 ////////////////////////////////////////////////////////////////////////////////
 
-module PCAdder(PCResult, PCAddResult);
+module PCAdder (
+    PCResult,
+    PCAddResult
+);
 
-    input [31:0] PCResult;
+  input [31:0] PCResult;
 
-    output reg [31:0] PCAddResult;
+  output reg [31:0] PCAddResult;
 
-    /* Please fill in the implementation here... */
-    always @(PCResult) begin
-        PCAddResult <= PCResult + 4;
-    end
+  /* Please fill in the implementation here... */
+  always @(PCResult) begin
+    PCAddResult <= PCResult + 4;
+  end
 
 endmodule
 
