@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 ///ECE 369: Labs 9-15
-/// Rusty Rinehart- 33% Effort, Ary Nath- 33% Effort, David Mazi- 33% Effor
+/// Rusty Rinehart- 33% Effort, Ary Nath- 33% Effort, David Mazi- 33% Effort
 ///
 
 module TopLevel(Clk, Reset, ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo);
@@ -10,6 +10,7 @@ module TopLevel(Clk, Reset, ActualWriteDataWB, ActualPCResult, ActualHi, ActualL
 	assign ActualPCResult = PCResult;
 	assign ActualHi = Hi_Debug;
 	assign ActualLo = Lo_Debug;
+	
     //This is the instruction fetch
     (* mark_debug = "true" *) wire [31:0] PCResult;
 	(* mark_debug = "true" *) wire [31:0] Hi_Debug, Lo_Debug;

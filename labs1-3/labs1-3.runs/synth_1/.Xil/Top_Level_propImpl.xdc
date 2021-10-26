@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/rrine/VivadoProjects/labs1-3/labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc rfile:../../../labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs1-3/labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc rfile:../../../labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN E3 [get_ports Clk]
 set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]

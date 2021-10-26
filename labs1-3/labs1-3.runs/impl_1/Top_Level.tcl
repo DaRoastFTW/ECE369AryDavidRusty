@@ -69,12 +69,12 @@ set rc [catch {
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/rrine/VivadoProjects/labs1-3/labs1-3.cache/wt [current_project]
-  set_property parent.project_path C:/Users/rrine/VivadoProjects/labs1-3/labs1-3.xpr [current_project]
-  set_property ip_output_repo C:/Users/rrine/VivadoProjects/labs1-3/labs1-3.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs1-3/labs1-3.cache/wt [current_project]
+  set_property parent.project_path C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs1-3/labs1-3.xpr [current_project]
+  set_property ip_output_repo C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs1-3/labs1-3.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/rrine/VivadoProjects/labs1-3/labs1-3.runs/synth_1/Top_Level.dcp
-  read_xdc C:/Users/rrine/VivadoProjects/labs1-3/labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc
+  add_files -quiet C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs1-3/labs1-3.runs/synth_1/Top_Level.dcp
+  read_xdc C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs1-3/labs1-3.srcs/constrs_1/new/Two4DigitDisplay.xdc
   link_design -top Top_Level -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
