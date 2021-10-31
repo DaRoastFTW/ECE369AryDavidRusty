@@ -6,7 +6,8 @@
 
 module TopLevel_tb();
    reg Clk, Reset;
-    TopTopLevel tl(.Clk(Clk), .Reset(Reset));
+    //TopTopLevel tl(.Clk(Clk), .Reset(Reset));
+	TopLevel tl(.Clk(Clk), .Reset(Reset));
     initial begin
 		Clk <= 1'b1;
 		forever #100 Clk <= ~Clk;

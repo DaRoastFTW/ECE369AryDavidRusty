@@ -23,22 +23,22 @@ module TopLevel (
   (* mark_debug = "true" *) wire [31:0] Hi_Debug, Lo_Debug;
   wire [31:0] PCIn, PCAddResult, PCSrcMuxB, PCSrcMuxC;
   (* mark_debug = "true" *) wire [31:0] InstructionIF;
-  wire AndOutput, OrOutput;
+  wire BranchOutput, OrOutput;
   wire [27:0] JumpInstruction;
 
   //assign PCSrcMuxC = {PCAddResult[31:28], JumpInstruction};
   wire [31:0] JrMuxOutMEM;
   OrGate JrOrGate (
-      .orinput1(AndOutput),
+      .orinput1(BranchOutput),
       .orinput2(JrMEM),
       .oroutput(OrOutput)
   );
   Mux32Bit3to1 PCSrcMux (
       .out(PCIn),
       .inA(PCAddResult),
-      .inB(JrMuxOutMEM),
-      .inC(JumpInstructionMEM),
-      .sel({JumpMEM, OrOutput})
+      .inB(JrMuxOutID),
+      .inC(JumpInstructionID),
+      .sel({JumpID, OrOutput})
   );
   ShifterID Shift_jr (
       .shiftinput (InstructionIF[25:0]),
@@ -86,6 +86,8 @@ module TopLevel (
       .ReadData1(ReadData1ID),
       .ReadData2(ReadData2ID)
   );
+  
+  BranchDetection BranchDetect(.Instruction(InstructionID), .A(ReadData1ID), .B(ReadData2ID), .BranchOut(BranchOutput));
   wire [31:0] SignExtendID;
 
   SignExtension SignExt (
@@ -96,6 +98,24 @@ module TopLevel (
   ZeroExtention ZeroExt (
       .inzero (InstructionID[10:6]),
       .outzero(ZeroExtendID)
+  );
+  wire [31:0] AddOutID, ShiftOutID;
+  Adder Add (
+      .addinput1(PCAddID),
+      .addinput2(ShiftOutID),
+      .addoutput(AddOutID)
+  );
+    ShiftLeft2 Shift (
+      .shiftinput (SignExtendID),
+      .shiftoutput(ShiftOutID)
+  );
+  wire [31:0] JrMuxOutEX;
+ 
+ Mux32Bit2To1 jrMux_EX (
+      .out(JrMuxOutID),
+      .inA(AddOutID),
+      .inB(ReadData1ID),
+      .sel(BranchOutput)
   );
   wire JrID;
 
@@ -215,23 +235,9 @@ module TopLevel (
       .Hi_Debug(Hi_Debug),
       .Lo_Debug(Lo_Debug)
   );
-  wire [31:0] ShiftOutEX, AddOutEX;
-  Adder Add (
-      .addinput1(PCAddEX),
-      .addinput2(ShiftOutEX),
-      .addoutput(AddOutEX)
-  );
-  ShiftLeft2 Shift (
-      .shiftinput (SignExtendEX),
-      .shiftoutput(ShiftOutEX)
-  );
-  wire [31:0] JrMuxOutEX;
-  Mux32Bit2To1 jrMux_EX (
-      .out(JrMuxOutEX),
-      .inA(AddOutEX),
-      .inB(ReadData1EX),
-      .sel(JrEX)
-  );
+  
+
+  
 
   Mux32Bit3to1 ALUSrcMuxEX (
       .out(ALUSrcMux),
@@ -317,12 +323,6 @@ module TopLevel (
       .finalInformation(loadTreaterOut)
   );
 
-
-  AndGate And (
-      .andinput1(BranchMEM),
-      .andinput2(ZeroMEM),
-      .andoutput(AndOutput)
-  );
   Mux1Bit2To1 movMux (
       .out(MovMuxOut),
       .inA(RegWriteMEM),
