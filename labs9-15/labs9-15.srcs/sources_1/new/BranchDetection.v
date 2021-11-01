@@ -29,7 +29,7 @@ always@(*) begin
 		6'b000001: begin
 			case(Instruction[20:16])
 				5'b00001: begin //bgez
-					BranchOut <= (A >= B);
+					BranchOut <= ($signed(A) >= 0);
 				end
 				5'b00000: begin //bltz
 					BranchOut <= ($signed(A) < 0);

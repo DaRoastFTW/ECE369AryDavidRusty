@@ -27,7 +27,7 @@ module TopLevel (
   wire [27:0] JumpInstruction;
 
   //assign PCSrcMuxC = {PCAddResult[31:28], JumpInstruction};
-  wire [31:0] JrMuxOutMEM;
+  wire [31:0] JrMuxOutID;
   OrGate JrOrGate (
       .orinput1(BranchOutput),
       .orinput2(JrMEM),
@@ -111,11 +111,11 @@ module TopLevel (
   );
   wire [31:0] JrMuxOutEX;
  
- Mux32Bit2To1 jrMux_EX (
+ Mux32Bit2To1 jrMux_ID (
       .out(JrMuxOutID),
       .inA(AddOutID),
       .inB(ReadData1ID),
-      .sel(BranchOutput)
+      .sel(JrID)
   );
   wire JrID;
 
