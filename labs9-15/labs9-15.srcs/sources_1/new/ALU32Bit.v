@@ -46,7 +46,7 @@ module ALU32Bit (
   output reg [63:0] ALUResult64;
   //input [31:0] HiLoOutput;
 
-  /* Please fill in the implementation here... */
+  //TODO: Create separate andi case statement to fix zero-extend issue
   always @(A, B, ALUControl, HiLoOutput) begin
     ALUResult   = 0;
     ALUResult64 = 0;

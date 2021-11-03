@@ -931,6 +931,7 @@ module Controller (
         wordhalfbyte <= 0;
         Jump <= 1;
       end
+      //TODO: Modify ALUOp once ALU is modified accordingly
       6'b001100:	//andi
 			begin
         RegWrite <= 1;

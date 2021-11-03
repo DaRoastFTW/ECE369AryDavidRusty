@@ -42,6 +42,7 @@ module HiLoReg (
 
   //Note: Will need to modify the multiply options to use HiLo
   //And might have to create a 64 bit reg placeholder value in the ALU for HiLo usage
+  //TODO: Fix negedge issue so that writes are properly synchronous
 
   always @(posedge Clk) begin
     Hi_Debug <= HiReg;
