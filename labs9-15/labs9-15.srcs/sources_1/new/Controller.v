@@ -35,10 +35,11 @@ module Controller (
     Jr,
     Mov,
     wordhalfbyte,
-    Jump
+    Jump,
+    HiLoOrNormal
 );
   input [31:0] Instruction;
-  output reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov, Jump;
+  output reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov, Jump, HiLoOrNormal;
   output reg [1:0] MemtoReg, wordhalfbyte, ALUSrc;
   output reg [1:0] RegDst, PCSrc;
   output reg [3:0] HiLoControl;
@@ -68,6 +69,7 @@ module Controller (
     Mov <= 0;
     wordhalfbyte <= 0;
     Jump <= 0;
+    HiLoOrNormal <= 0;
     case (opcode)
       6'b000000: begin
         case (funct)
@@ -154,6 +156,7 @@ module Controller (
             Mov <= 0;
             wordhalfbyte <= 0;
             Jump <= 0;
+            HiLoOrNormal <= 1;
           end
 
           6'b010001:  //mthi
@@ -205,6 +208,7 @@ module Controller (
             Mov <= 0;
             wordhalfbyte <= 0;
             Jump <= 0;
+            HiLoOrNormal <= 1;
           end
 
           6'b010010:  //mflo
@@ -222,6 +226,7 @@ module Controller (
             Mov <= 0;
             wordhalfbyte <= 0;
             Jump <= 0;
+            HiLoOrNormal <= 1;
           end
 
           6'b001000:  //jr

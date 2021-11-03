@@ -73,7 +73,7 @@ module TopLevel (
 
   wire [ 4:0] ReadRegister1;
   (* mark_debug = "true" *)wire [31:0] WriteDataWB;
-  wire [31:0] ReadData1ID, ReadData2ID;
+  wire [31:0] ReadData1ID, ReadData2ID, HiLoOutputWire, HiLoOrNormalMuxOut;
   wire RegWriteWB;
   RegisterFile RegFile (
       .ReadRegister1(InstructionID[25:21]),
@@ -85,6 +85,22 @@ module TopLevel (
       .Reset(Reset),
       .ReadData1(ReadData1ID),
       .ReadData2(ReadData2ID)
+  );
+
+Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut), 
+                            .inA(WriteDataWB), 
+                            .inB(HiLoOutputWire), 
+                            .sel());
+
+
+ HiLoReg HiLo (
+      .Clk(Clk),
+      .Rst(Reset),
+      .ALUResult64(ALUResult64WB),
+      .HiLoControl(HiLoControlWB),
+      .HiLoOutput(HiLoOutputWire),
+      .Hi_Debug(Hi_Debug),
+      .Lo_Debug(Lo_Debug)
   );
   
   BranchDetection BranchDetect(.Instruction(InstructionID), .A(ReadData1ID), .B(ReadData2ID), .BranchOut(BranchOutput));
@@ -119,7 +135,7 @@ module TopLevel (
   );
   wire JrID;
 
-  wire RegWrite, BranchID, MemWriteID, MemReadID, MovID, JumpID;
+  wire RegWrite, BranchID, MemWriteID, MemReadID, MovID, JumpID, HiLoOrNormalID;
   wire [5:0] ALUOpID;
   wire [1:0] ALUSrcID, MemtoRegID, PCSrcID, wordhalfbyteID, RegDstID;
   wire [3:0] HiLoControlID;
@@ -138,11 +154,12 @@ module TopLevel (
       .Jr(JrID),
       .Mov(MovID),
       .wordhalfbyte(wordhalfbyteID),
-      .Jump(JumpID)
+      .Jump(JumpID),
+      .HiLoOrNormal(HiLoOrNormalID)
   );
 
   //Pipe Reg 2
-  wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX, JumpEX;
+  wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX, JumpEX, HiLoOrNormalEX;
   wire [1:0] MemtoRegEX, wordhalfbyteEX, ALUSrcEX, RegDstEX, PCSrcEX;
   wire [3:0] HiLoControlEX;
   wire [5:0] ALUOpEX;
@@ -194,10 +211,12 @@ module TopLevel (
       .JumpInst_output(JumpInstructionEX)
   );
 
+//TODO: Complete propagation of HiLoOrNormal control signal through the pipelines
+
   //This is the execute stage
-  wire [31:0] ALUSrcMux, ALUPortAMux, ALUResultEX, HiLoOutput, ActualALUOutput;
+  wire [31:0] ALUSrcMux, ALUPortAMux, ALUResultEX, ActualALUOutput;
   wire ZeroEX, Gate2Out;
-  wire [63:0] ALUResult64;
+  wire [63:0] ALUResult64EX;
 
   Mux32Bit2To1 ALUPortAMuxEx (
       .out(ALUPortAMux),
@@ -211,8 +230,7 @@ module TopLevel (
       .B(ALUSrcMux),
       .ALUResult(ALUResultEX),
       .Zero(ZeroEX),
-      .ALUResult64(ALUResult64),
-      .HiLoOutput(HiLoOutput)
+      .ALUResult64(ALUResult64EX),
   );
   AndGate Gate2 (
       .andinput1(ZeroEX),
@@ -226,15 +244,15 @@ module TopLevel (
       .sel(Gate2Out)
   );
   wire [31:0] ReadData2MaskEX;
-  HiLoReg HiLo (
-      .Clk(Clk),
-      .Rst(Reset),
-      .ALUResult64(ALUResult64),
-      .HiLoControl(HiLoControlEX),
-      .HiLoOutput(HiLoOutput),
-      .Hi_Debug(Hi_Debug),
-      .Lo_Debug(Lo_Debug)
-  );
+//   HiLoReg HiLo (
+//       .Clk(Clk),
+//       .Rst(Reset),
+//       .ALUResult64(ALUResult64),
+//       .HiLoControl(HiLoControlEX),
+//       .HiLoOutput(HiLoOutput),
+//       .Hi_Debug(Hi_Debug),
+//       .Lo_Debug(Lo_Debug)
+//   );
   
 
   
@@ -259,6 +277,8 @@ module TopLevel (
   wire [1:0] MemtoRegMEM, wordhalfbyteMEM;
   wire [4:0] RegDstMuxMEM;
   wire [31:0] PCAddMEM, ALUResultMEM, JumpInstructionMEM;
+  wire [63:0] ALUResult64MEM;
+  wire [3:0] HiLoControlMEM;
   (* mark_debug = "true" *) wire [31:0] ReadData2MEM;
   RegEX_MEM EX_MEM (
       .Clk(Clk),
@@ -294,7 +314,11 @@ module TopLevel (
       .JumpInst_input(JumpInstructionEX),
       .JumpInst_output(JumpInstructionMEM),
       .JrIn(JrEX),
-      .JrOut(JrMEM)
+      .JrOut(JrMEM),
+      .ALUResult64In(ALUResult64EX),
+      .ALUResult64Out(ALUResult64MEM),
+      .HiLoControlIn(HiLoControlEX),
+      .HiLoControlOut(HiLoControlMEM) 
   );
 
   //This is the memory stage
@@ -334,6 +358,8 @@ module TopLevel (
   (* mark_debug = "true" *) wire [31:0] ReadDataMEM;
   wire [1:0] MemtoRegWB, wordhalfbyteWB;
   wire [4:0] RegDstMuxWB;
+  wire [63:0] ALUResult64WB;
+  wire [3:0] HiLoControlWB;
   RegMEM_WB MEM_WB (
       .Clk(Clk),
       .Reset(Reset),
@@ -348,7 +374,11 @@ module TopLevel (
       .ReadDataMemIn(loadTreaterOut),
       .ReadDataMemOut(ReadDataMemWB),
       .RegDstMuxIn(RegDstMuxMEM),
-      .RegDstMuxOut(RegDstMuxWB)
+      .RegDstMuxOut(RegDstMuxWB),
+      .ALUResult64In(ALUResult64MEM),
+      .ALUResult64Out(ALUResult64WB),
+      .HiLoControlIn(HiLoControlMEM),
+      .HiLoControlOut(HiLoControlWB)
   );
 
   //This is the write back stage
@@ -360,5 +390,4 @@ module TopLevel (
       .inC(PCAddWB),
       .sel(MemtoRegWB)
   );
-  //TODO All components with multiple instantiations will require different input variable names
 endmodule

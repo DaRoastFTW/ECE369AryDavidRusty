@@ -62,17 +62,19 @@ module RegID_EX (
     JumpIn,
     JumpOut,
     JumpInst_input,
-    JumpInst_output
+    JumpInst_output,
+    HiLoOrNormalIn,
+    HiLoOrNormalOut
 );
   input Clk, Reset;
-  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn, JumpIn;
+  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn, JumpIn, HiLoOrNormalIn;
   input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn, RegDstIn;
   input [3:0] HiLoControlIn;
   input [5:0] ALUOpIn;
   input [31:0] InstructionIn, ZeroExtendIn, SignExtendIn, PCAddIn, ReadData1In, ReadData2In, JumpInst_input;
 
 
-  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut;
+  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut, HiLoOrNormalOut;
   output reg [1:0] MemtoRegOut, wordhalfbyteOut, ALUSrcOut;
   output reg [1:0] RegDstOut;
   output reg [3:0] HiLoControlOut;
@@ -100,6 +102,7 @@ module RegID_EX (
       ReadData2Out <= 32'd0;
       JumpOut <= 1'b0;
       JumpInst_output <= 32'd0;
+      HiLoOrNormalOut <= 1'b0;
     end else begin
       RegWriteOut <= RegWriteIn;
       BranchOut <= BranchIn;
@@ -121,6 +124,7 @@ module RegID_EX (
       ReadData2Out <= ReadData2In;
       JumpOut <= JumpIn;
       JumpInst_output <= JumpInst_input;
+      HiLoOrNormalOut <= HiLoOrNormalIn;
     end
   end
 endmodule

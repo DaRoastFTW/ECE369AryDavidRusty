@@ -33,7 +33,6 @@ module ALU32Bit (
     ALUResult,
     Zero,
     ALUResult64,
-    HiLoOutput
 );
   //Hi and Lo registers go into ALU
   input [5:0] ALUControl;  // control bits for ALU operation
@@ -45,7 +44,7 @@ module ALU32Bit (
 
   //For HiLoReg
   output reg [63:0] ALUResult64;
-  input [31:0] HiLoOutput;
+  //input [31:0] HiLoOutput;
 
   /* Please fill in the implementation here... */
   always @(A, B, ALUControl, HiLoOutput) begin
@@ -179,7 +178,7 @@ module ALU32Bit (
       end
       6'b011110: //mfhi & mflo
 			begin
-        ALUResult = HiLoOutput;
+        //ALUResult = HiLoOutput;
       end
       6'b011111: //movz
 		  begin
@@ -188,7 +187,7 @@ module ALU32Bit (
       6'b100000: //multu
 		  begin
         ALUResult64 = A * B;
-        ALUResult   = HiLoOutput;
+        //ALUResult   = HiLoOutput;
       end
       default: begin
         ALUResult = 32'd0;
