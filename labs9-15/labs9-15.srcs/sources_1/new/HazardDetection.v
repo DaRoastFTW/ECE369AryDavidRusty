@@ -36,6 +36,7 @@ module HazardDetection(
     wordhalfbyteIn,
     JumpIn,
     PCEnableIn,
+    IFIDWriteIn,
     RegWriteOut,
     RegDstOut,
     ALUOpOut,
@@ -50,23 +51,49 @@ module HazardDetection(
     MovOut,
     wordhalfbyteOut,
     JumpOut,
-    PCEnableOut
+    PCEnableOut,
+    IFIDWriteOut,
+    RegWriteEX,
+    RegWriteMEM,
+    InstructionID, 
+    InstructionEX,
+    BranchOutput,
+    RegDstMuxMEM
+    
 );
-  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn, JumpIn, PCEnableIn;
+  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn, JumpIn, PCEnableIn, IFIDWriteIn, RegWriteEX, RegWriteMEM, BranchOutput;
   input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn;
   input [1:0] RegDstIn, PCSrcIn;
   input [3:0] HiLoControlIn;
+  input [4:0] RegDstMuxMEM;
   input [5:0] ALUOpIn;
+  input [31:0] InstructionID, InstructionEX;
   
-  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut, PCEnableOut;
+  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut, PCEnableOut, IFIDWriteOut;
   output reg [1:0] MemtoRegOut, wordhalfbyteOut, ALUSrcOut;
   output reg [1:0] RegDstOut, PCSrcOut;
   output reg [3:0] HiLoControlOut;
   output reg [5:0] ALUOpOut;
   
-  reg HazardDetected = 0;
+  reg HazardDetected;
+  
+  //When R-type is in EX stage and Branch in ID stage
+ 
+  
+  //When R-typeis in MEM stage and Branch in ID stage 
+ 
   
   always@(*) begin
+  if ((RegWriteEX == 1'b1 && BranchOutput == 1'b1) && (InstructionEX[15:11] == InstructionID[25:21]) || (InstructionEX[15:11] == InstructionID[20:16])) 
+  begin
+   HazardDetected <= 1'b1;
+  end
+  
+  if ((RegWriteMEM == 1'b1 && BranchOutput == 1'b1) && (RegDstMuxMEM == InstructionID[25:21]) || (RegDstMuxMEM == InstructionID[20:16]))
+  begin 
+      HazardDetected <= 1'b1;
+  end
+  
     if(HazardDetected) begin
         RegWriteOut <= 0;
         RegDstOut <= 0;
@@ -83,6 +110,7 @@ module HazardDetection(
         wordhalfbyteOut <= 0;
         JumpOut <= 0;
         PCEnableOut <= 0;
+        IF.ID.WriteOut <= 0;
     end
     else begin
         RegWriteOut <= RegWriteIn;
@@ -100,6 +128,7 @@ module HazardDetection(
         wordhalfbyteOut <= wordhalfbyteIn;
         JumpOut <= JumpIn;
         PCEnableOut <= PCEnableIn;
+        IF.ID.WriteOut <= IF.ID.WriteIn;
     end
   end
 endmodule
