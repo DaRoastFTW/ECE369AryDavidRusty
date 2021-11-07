@@ -77,18 +77,20 @@ module HazardDetection(
   
   reg HazardDetected;
   
-  //When R-type is in EX stage and Branch in ID stage
+  
  
   
-  //When R-typeis in MEM stage and Branch in ID stage 
+   
  
   
   always@(*) begin
+  //When R-type is in EX stage and Branch in ID stage
   if ((RegWriteEX == 1'b1 && BranchOutput == 1'b1) && (InstructionEX[15:11] == InstructionID[25:21]) || (InstructionEX[15:11] == InstructionID[20:16])) 
   begin
    HazardDetected <= 1'b1;
   end
   
+  //When R-typeis in MEM stage and Branch in ID stage
   if ((RegWriteMEM == 1'b1 && BranchOutput == 1'b1) && (RegDstMuxMEM == InstructionID[25:21]) || (RegDstMuxMEM == InstructionID[20:16]))
   begin 
       HazardDetected <= 1'b1;
