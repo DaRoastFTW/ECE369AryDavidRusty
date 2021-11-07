@@ -32,8 +32,7 @@ module ALU32Bit (
     B,
     ALUResult,
     Zero,
-    ALUResult64,
-);
+    ALUResult64);
   //Hi and Lo registers go into ALU
   input [5:0] ALUControl;  // control bits for ALU operation
   // you need to adjust the bitwidth as needed
@@ -46,8 +45,7 @@ module ALU32Bit (
   output reg [63:0] ALUResult64;
   //input [31:0] HiLoOutput;
 
-  //TODO: Create separate andi case statement to fix zero-extend issue
-  always @(A, B, ALUControl, HiLoOutput) begin
+  always @(A, B, ALUControl) begin
     ALUResult   = 0;
     ALUResult64 = 0;
     case (ALUControl)
@@ -188,6 +186,10 @@ module ALU32Bit (
 		  begin
         ALUResult64 = A * B;
         //ALUResult   = HiLoOutput;
+      end
+      6'b100001: //andi
+      begin
+        ALUResult = A & {16'b0, B[15:0]};
       end
       default: begin
         ALUResult = 32'd0;

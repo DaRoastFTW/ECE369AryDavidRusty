@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Oct 27 14:05:57 2021
-| Host         : DELL-TACO-2 running 64-bit major release  (build 9200)
+| Date         : Sat Nov  6 21:16:33 2021
+| Host         : DESKTOP-IQ6R3JC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopTopLevel_control_sets_placed.rpt
 | Design       : TopTopLevel
 | Device       : xc7a100t
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              52 |           21 |
+| No           | No                    | No                     |              52 |           17 |
 | No           | No                    | Yes                    |              32 |           12 |
-| No           | Yes                   | No                     |             517 |          158 |
+| No           | Yes                   | No                     |             589 |          196 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |            1088 |          428 |
+| Yes          | Yes                   | No                     |            1088 |          448 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -74,47 +74,47 @@ Table of Contents
 |  Clock Signal  |               Enable Signal              | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +----------------+------------------------------------------+------------------+------------------+----------------+
 |  Clk_IBUF_BUFG |                                          |                  |                5 |             20 |
-|  Clk_IBUF_BUFG |                                          | Reset_IBUF       |                6 |             27 |
-| ~CD/Clk_BUFG   |                                          |                  |               16 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[10][31]_i_1_n_0 | Reset_IBUF       |                9 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[11][31]_i_1_n_0 | Reset_IBUF       |               13 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile                 | Reset_IBUF       |                7 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[3][31]_i_1_n_0  | Reset_IBUF       |               12 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[31][31]_i_1_n_0 | Reset_IBUF       |               17 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[21][31]_i_1_n_0 | Reset_IBUF       |                7 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[20][31]_i_1_n_0 | Reset_IBUF       |                7 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[25][31]_i_1_n_0 | Reset_IBUF       |               12 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[4][31]_i_1_n_0  | Reset_IBUF       |               11 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[12][31]_i_1_n_0 | Reset_IBUF       |               14 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[5][31]_i_1_n_0  | Reset_IBUF       |               12 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[8][31]_i_1_n_0  | Reset_IBUF       |               18 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[19][31]_i_1_n_0 | Reset_IBUF       |               13 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[13][31]_i_1_n_0 | Reset_IBUF       |               16 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[30][31]_i_1_n_0 | Reset_IBUF       |               19 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[15][31]_i_1_n_0 | Reset_IBUF       |               13 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[16][31]_i_1_n_0 | Reset_IBUF       |                7 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[1][31]_i_1_n_0  | Reset_IBUF       |                5 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[6][31]_i_1_n_0  | Reset_IBUF       |               19 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[9][31]_i_1_n_0  | Reset_IBUF       |               18 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[7][31]_i_1_n_0  | Reset_IBUF       |               18 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[14][31]_i_1_n_0 | Reset_IBUF       |                7 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[29][31]_i_1_n_0 | Reset_IBUF       |               12 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[28][31]_i_1_n_0 | Reset_IBUF       |               15 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[2][31]_i_1_n_0  | Reset_IBUF       |                6 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[27][31]_i_1_n_0 | Reset_IBUF       |                9 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[22][31]_i_1_n_0 | Reset_IBUF       |               18 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[17][31]_i_1_n_0 | Reset_IBUF       |               11 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[23][31]_i_1_n_0 | Reset_IBUF       |               20 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[18][31]_i_1_n_0 | Reset_IBUF       |                6 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[24][31]_i_1_n_0 | Reset_IBUF       |                9 |             32 |
-|  CD/Clk_BUFG   | CPU/RegFile/RegisterFile[26][31]_i_1_n_0 | Reset_IBUF       |               16 |             32 |
-|  CD/Clk_BUFG   | CPU/HiLo/LoReg[31]_i_1_n_0               | Reset_IBUF       |                9 |             32 |
-|  CD/Clk_BUFG   | CPU/HiLo/HiReg[31]_i_1_n_0               | Reset_IBUF       |               23 |             32 |
-| ~CD/Clk_BUFG   | CPU/Data/Memory_reg_256_511_0_0_i_1_n_0  |                  |               32 |            128 |
+|  Clk_IBUF_BUFG |                                          | Reset_IBUF       |                5 |             27 |
+| ~CD/Clk_BUFG   |                                          |                  |               12 |             32 |
+|  CD/Clk_BUFG   | CPU/HiLo/HiReg[31]_i_1_n_0               | Reset_IBUF       |               17 |             32 |
+|  CD/Clk_BUFG   | CPU/HiLo/LoReg[31]_i_1_n_0               | Reset_IBUF       |               12 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/E[0]                          | Reset_IBUF       |                6 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_26[0]         | Reset_IBUF       |               14 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_5[0]          | Reset_IBUF       |               17 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_8[0]          | Reset_IBUF       |               16 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_9[0]          | Reset_IBUF       |               11 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_15[0]         | Reset_IBUF       |               11 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_21[0]         | Reset_IBUF       |               20 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_14[0]         | Reset_IBUF       |               14 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_22[0]         | Reset_IBUF       |               20 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_4[0]          | Reset_IBUF       |               11 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_6[0]          | Reset_IBUF       |               22 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_30[0]         | Reset_IBUF       |               21 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_28[0]         | Reset_IBUF       |               11 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_0[0]          | Reset_IBUF       |                7 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_17[0]         | Reset_IBUF       |               11 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_27[0]         | Reset_IBUF       |               14 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_3[0]          | Reset_IBUF       |                7 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_7[0]          | Reset_IBUF       |               17 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_16[0]         | Reset_IBUF       |               12 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_1[0]          | Reset_IBUF       |               12 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_24[0]         | Reset_IBUF       |               13 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_18[0]         | Reset_IBUF       |               10 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_29[0]         | Reset_IBUF       |               16 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_10[0]         | Reset_IBUF       |                9 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_19[0]         | Reset_IBUF       |               12 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_11[0]         | Reset_IBUF       |                9 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_12[0]         | Reset_IBUF       |               15 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_13[0]         | Reset_IBUF       |               15 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_2[0]          | Reset_IBUF       |                9 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_20[0]         | Reset_IBUF       |               13 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_23[0]         | Reset_IBUF       |               15 |             32 |
+|  CD/Clk_BUFG   | CPU/MEM_WB/RegWriteOut_reg_25[0]         | Reset_IBUF       |                9 |             32 |
 | ~CD/Clk_BUFG   | CPU/Data/Memory_reg_0_255_0_0_i_2_n_0    |                  |               32 |            128 |
-| ~CD/Clk_BUFG   | CPU/Data/Memory_reg_768_1023_0_0_i_1_n_0 |                  |               32 |            128 |
 | ~CD/Clk_BUFG   | CPU/Data/Memory_reg_512_767_0_0_i_1_n_0  |                  |               32 |            128 |
-|  CD/Clk_BUFG   |                                          | Reset_IBUF       |              164 |            522 |
+| ~CD/Clk_BUFG   | CPU/Data/Memory_reg_256_511_0_0_i_1_n_0  |                  |               32 |            128 |
+| ~CD/Clk_BUFG   | CPU/Data/Memory_reg_768_1023_0_0_i_1_n_0 |                  |               32 |            128 |
+|  CD/Clk_BUFG   |                                          | Reset_IBUF       |              203 |            594 |
 +----------------+------------------------------------------+------------------+------------------+----------------+
 
 

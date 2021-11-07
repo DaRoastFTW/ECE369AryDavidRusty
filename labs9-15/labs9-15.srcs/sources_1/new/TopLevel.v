@@ -13,7 +13,7 @@ module TopLevel (
 );
   input Clk, Reset;
   output [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo;
-  assign ActualWriteDataWB = WriteDataWB;
+  assign ActualWriteDataWB = HiLoOrNormalMuxOut;
   assign ActualPCResult = PCResult;
   assign ActualHi = Hi_Debug;
   assign ActualLo = Lo_Debug;
@@ -71,7 +71,7 @@ module TopLevel (
   );
   //This is the instruction decode
 
-  wire [ 4:0] ReadRegister1;
+  wire [4:0] ReadRegister1;
   (* mark_debug = "true" *)wire [31:0] WriteDataWB;
   wire [31:0] ReadData1ID, ReadData2ID, HiLoOutputWire, HiLoOrNormalMuxOut;
   wire RegWriteWB;
@@ -79,7 +79,7 @@ module TopLevel (
       .ReadRegister1(InstructionID[25:21]),
       .ReadRegister2(InstructionID[20:16]),
       .WriteRegister(RegDstMuxWB),
-      .WriteData(WriteDataWB),
+      .WriteData(HiLoOrNormalMuxOut),
       .RegWrite(RegWriteWB),
       .Clk(Clk),
       .Reset(Reset),
@@ -90,7 +90,7 @@ module TopLevel (
 Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut), 
                             .inA(WriteDataWB), 
                             .inB(HiLoOutputWire), 
-                            .sel());
+                            .sel(HiLoOrNormalWB));
 
 
  HiLoReg HiLo (
@@ -208,10 +208,11 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .JumpIn(JumpID),
       .JumpOut(JumpEX),
       .JumpInst_input(JumpInstructionID),
-      .JumpInst_output(JumpInstructionEX)
+      .JumpInst_output(JumpInstructionEX),
+      .HiLoOrNormalIn(HiLoOrNormalID),
+      .HiLoOrNormalOut(HiLoOrNormalEX)
   );
 
-//TODO: Complete propagation of HiLoOrNormal control signal through the pipelines
 
   //This is the execute stage
   wire [31:0] ALUSrcMux, ALUPortAMux, ALUResultEX, ActualALUOutput;
@@ -230,7 +231,7 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .B(ALUSrcMux),
       .ALUResult(ALUResultEX),
       .Zero(ZeroEX),
-      .ALUResult64(ALUResult64EX),
+      .ALUResult64(ALUResult64EX)
   );
   AndGate Gate2 (
       .andinput1(ZeroEX),
@@ -273,7 +274,7 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .sel(RegDstEX)
   );
   //Pipe Reg 3
-  wire RegWriteMEM, BranchMEM, MemWriteMEM, MemReadMEM, MovMEM, JumpMEM, JrMEM;
+  wire RegWriteMEM, BranchMEM, MemWriteMEM, MemReadMEM, MovMEM, JumpMEM, JrMEM, HiLoOrNormalMEM;
   wire [1:0] MemtoRegMEM, wordhalfbyteMEM;
   wire [4:0] RegDstMuxMEM;
   wire [31:0] PCAddMEM, ALUResultMEM, JumpInstructionMEM;
@@ -318,7 +319,9 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .ALUResult64In(ALUResult64EX),
       .ALUResult64Out(ALUResult64MEM),
       .HiLoControlIn(HiLoControlEX),
-      .HiLoControlOut(HiLoControlMEM) 
+      .HiLoControlOut(HiLoControlMEM),
+      .HiLoOrNormalIn(HiLoOrNormalEX),
+      .HiLoOrNormalOut(HiLoOrNormalMEM) 
   );
 
   //This is the memory stage
@@ -360,6 +363,7 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
   wire [4:0] RegDstMuxWB;
   wire [63:0] ALUResult64WB;
   wire [3:0] HiLoControlWB;
+  wire HiLoOrNormalWB;
   RegMEM_WB MEM_WB (
       .Clk(Clk),
       .Reset(Reset),
@@ -378,7 +382,9 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .ALUResult64In(ALUResult64MEM),
       .ALUResult64Out(ALUResult64WB),
       .HiLoControlIn(HiLoControlMEM),
-      .HiLoControlOut(HiLoControlWB)
+      .HiLoControlOut(HiLoControlWB),
+      .HiLoOrNormalIn(HiLoOrNormalMEM),
+      .HiLoOrNormalOut(HiLoOrNormalWB)
   );
 
   //This is the write back stage

@@ -58,17 +58,19 @@ module RegEX_MEM (
     ALUResult64In,
     ALUResult64Out,
     HiLoControlIn,
-    HiLoControlOut
+    HiLoControlOut,
+    HiLoOrNormalIn,
+    HiLoOrNormalOut
 );
   input Clk, Reset, MovIn;
-  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, JumpIn, JrIn;
+  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, JumpIn, JrIn, HiLoOrNormalIn;
   input [1:0] wordhalfbyteIn, MemtoRegIn;
   input [4:0] RegDstMuxIn;
   input [31:0] PCAddIn, ReadData2In, ALUResultIn, JrMuxIn, JumpInst_input;
   input [63:0] ALUResult64In;
   input [3:0] HiLoControlIn;
 
-  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut, MovOut, JumpOut, JrOut;
+  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut, MovOut, JumpOut, JrOut, HiLoOrNormalOut;
   output reg [1:0] MemtoRegOut, wordhalfbyteOut;
   output reg [4:0] RegDstMuxOut;
   output reg [31:0] PCAddOut, ReadData2Out, ALUResultOut, JrMuxOut, JumpInst_output;
@@ -94,6 +96,7 @@ module RegEX_MEM (
       JrOut <= 0;
       ALUResult64Out <= 0; 
       HiLoControlOut <= 0;
+      HiLoOrNormalOut <= 0;
     end else begin
       RegWriteOut <= RegWriteIn;
       BranchOut <= BranchIn;
@@ -113,6 +116,7 @@ module RegEX_MEM (
       JrOut <= JrIn;
       ALUResult64Out <= ALUResult64In;
       HiLoControlOut <= HiLoControlIn;
+      HiLoOrNormalOut <= HiLoOrNormalIn;
     end
   end
 endmodule

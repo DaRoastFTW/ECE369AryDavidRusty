@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Wed Oct 27 14:06:40 2021
-| Host             : DELL-TACO-2 running 64-bit major release  (build 9200)
+| Date             : Sat Nov  6 21:17:29 2021
+| Host             : DESKTOP-IQ6R3JC running 64-bit major release  (build 9200)
 | Command          : report_power -file TopTopLevel_power_routed.rpt -pb TopTopLevel_power_summary_routed.pb -rpx TopTopLevel_power_routed.rpx
 | Design           : TopTopLevel
 | Device           : xc7a100tcsg324-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.133        |
+| Total On-Chip Power (W)  | 0.181        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.036        |
+| Dynamic (W)              | 0.084        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.4         |
-| Junction Temperature (C) | 25.6         |
+| Max Ambient (C)          | 84.2         |
+| Junction Temperature (C) | 25.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.001 |        3 |       --- |             --- |
-| Slice Logic              |     0.009 |     6116 |       --- |             --- |
-|   LUT as Logic           |     0.008 |     2853 |     63400 |            4.50 |
-|   CARRY4                 |    <0.001 |      131 |     15850 |            0.83 |
-|   Register               |    <0.001 |     1689 |    126800 |            1.33 |
-|   LUT as Distributed RAM |    <0.001 |      512 |     19000 |            2.69 |
-|   F7/F8 Muxes            |    <0.001 |      677 |     63400 |            1.07 |
+| Clocks                   |    <0.001 |        3 |       --- |             --- |
+| Slice Logic              |     0.026 |     6565 |       --- |             --- |
+|   LUT as Logic           |     0.023 |     3101 |     63400 |            4.89 |
+|   LUT as Distributed RAM |     0.001 |      512 |     19000 |            2.69 |
+|   CARRY4                 |    <0.001 |      141 |     15850 |            0.89 |
+|   F7/F8 Muxes            |    <0.001 |      738 |     63400 |            1.16 |
+|   Register               |    <0.001 |     1761 |    126800 |            1.39 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
-|   Others                 |     0.000 |       19 |       --- |             --- |
-| Signals                  |     0.010 |     4684 |       --- |             --- |
-| DSPs                     |    <0.001 |        8 |       240 |            3.33 |
-| I/O                      |     0.016 |       17 |       210 |            8.10 |
+|   Others                 |     0.000 |       22 |       --- |             --- |
+| Signals                  |     0.035 |     4983 |       --- |             --- |
+| DSPs                     |     0.004 |        8 |       240 |            3.33 |
+| I/O                      |     0.019 |       17 |       210 |            8.10 |
 | Static Power             |     0.097 |          |           |                 |
-| Total                    |     0.133 |          |           |                 |
+| Total                    |     0.181 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.035 |       0.020 |      0.015 |
+| Vccint    |       1.000 |     0.080 |       0.065 |      0.015 |
 | Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |
-| Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |
+| Vcco33    |       3.300 |     0.009 |       0.005 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -141,16 +141,25 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------+-----------+
-| Name        | Power (W) |
-+-------------+-----------+
-| TopTopLevel |     0.036 |
-|   CD        |     0.001 |
-|   CPU       |     0.018 |
-|     EX_MEM  |     0.001 |
-|     HiLo    |     0.001 |
-|     ID_EX   |     0.011 |
-|   TDD       |     0.001 |
-+-------------+-----------+
++---------------------+-----------+
+| Name                | Power (W) |
++---------------------+-----------+
+| TopTopLevel         |     0.084 |
+|   CD                |     0.001 |
+|   CPU               |     0.063 |
+|     ALU             |     0.006 |
+|     ALUPortAMuxEx   |     0.003 |
+|     ALUSrcMuxEX     |     0.002 |
+|     Data            |     0.003 |
+|     EX_MEM          |     0.006 |
+|     HiLo            |     0.002 |
+|     HiLoOrNormalMux |     0.003 |
+|     ID_EX           |     0.026 |
+|     IF_ID           |     0.001 |
+|     IM              |     0.003 |
+|     PC              |     0.002 |
+|     RegFile         |     0.003 |
+|   TDD               |     0.001 |
++---------------------+-----------+
 
 
