@@ -74,6 +74,7 @@ module RegisterFile (
   reg [31:0] RegisterFile[0:31];
   initial begin
     RegisterFile[0] <= 32'd0;
+	RegisterFile[29] <= 32'd32767;
   end
 
   integer i;
@@ -87,6 +88,7 @@ module RegisterFile (
       for (i = 0; i < 32; i = i + 1) begin
         RegisterFile[i] <= 32'b0;
       end
+	  RegisterFile[29] <= 32'd32767;
     end else if (RegWrite) begin
       //@(negedge Clk);
       RegisterFile[WriteRegister] <= WriteData;

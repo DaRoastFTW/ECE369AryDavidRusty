@@ -54,14 +54,14 @@ module DataMemory (
 
   output reg [31:0] ReadData;  // Contents of memory location at Address
 
-  reg [31:0] Memory[0:1023];  //DataMemory with 1024 32-bit 
+  reg [31:0] Memory[0:32767];  //DataMemory with 1024 32-bit 
   initial begin
     $readmemh("data_memory.mem", Memory);
   end
   // Read data that is not clocked
   always @(MemRead, Address, Memory) begin
     if (MemRead) begin
-      ReadData <= Memory[Address[11:2]];
+      ReadData <= Memory[Address[16:2]];
     end else begin
       ReadData <= 32'h00000000;
     end
@@ -70,7 +70,7 @@ module DataMemory (
   always @(negedge Clk) begin
 
     if (MemWrite) begin
-      Memory[Address[11:2]] <= WriteData;
+      Memory[Address[16:2]] <= WriteData;
     end
   end
 

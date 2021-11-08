@@ -935,7 +935,7 @@ module Controller (
 			begin
         RegWrite = 1;
         RegDst = 0;
-        ALUSrc = 2;
+        ALUSrc = 1;
         Branch = 0;
         MemWrite = 0;
         MemRead = 0;
