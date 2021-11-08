@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sun Nov  7 21:11:38 2021">
+<application name="pa" timeStamp="Mon Nov  8 14:48:09 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="f54cd2b741e44cd1952f217a1b329572" type="ProjectID"/>
 <property name="ProjectIteration" value="17" type="ProjectIteration"/>
@@ -39,7 +39,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SimulationClose" value="3" type="JavaHandler"/>
 <property name="SimulationRelaunch" value="80" type="JavaHandler"/>
 <property name="SimulationRestart" value="100" type="JavaHandler"/>
-<property name="SimulationRun" value="117" type="JavaHandler"/>
+<property name="SimulationRun" value="118" type="JavaHandler"/>
 <property name="SimulationRunForTime" value="287" type="JavaHandler"/>
 <property name="TclFind" value="4" type="JavaHandler"/>
 <property name="UnselectAllCmdHandler" value="1" type="JavaHandler"/>
@@ -54,7 +54,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ZoomOut" value="63" type="JavaHandler"/>
 </item>
 <item name="Gui Handlers">
-<property name="AbstractSearchablePanel_SHOW_SEARCH" value="16" type="GuiHandlerData"/>
+<property name="AbstractSearchablePanel_SHOW_SEARCH" value="17" type="GuiHandlerData"/>
 <property name="AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES" value="1" type="GuiHandlerData"/>
 <property name="AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES" value="4" type="GuiHandlerData"/>
 <property name="BaseDialog_CANCEL" value="42" type="GuiHandlerData"/>
@@ -71,25 +71,25 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="DesignTimingSumSectionPanel_WORST_NEGATIVE_SLACK" value="1" type="GuiHandlerData"/>
 <property name="ExpReportTreePanel_EXP_REPORT_TREE_TABLE" value="1" type="GuiHandlerData"/>
 <property name="ExpRunTreePanel_EXP_RUN_TREE_TABLE" value="2" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="815" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="826" type="GuiHandlerData"/>
 <property name="FileSetPanel_MESSAGES" value="11" type="GuiHandlerData"/>
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="592" type="GuiHandlerData"/>
-<property name="GraphicalView_ZOOM_FIT" value="70" type="GuiHandlerData"/>
+<property name="GraphicalView_ZOOM_FIT" value="71" type="GuiHandlerData"/>
 <property name="GraphicalView_ZOOM_IN" value="156" type="GuiHandlerData"/>
 <property name="GraphicalView_ZOOM_OUT" value="25" type="GuiHandlerData"/>
 <property name="HCodeEditor_CLOSE" value="8" type="GuiHandlerData"/>
-<property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="31" type="GuiHandlerData"/>
+<property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="33" type="GuiHandlerData"/>
 <property name="HPopupTitle_CLOSE" value="1" type="GuiHandlerData"/>
 <property name="LogMonitor_MONITOR" value="12" type="GuiHandlerData"/>
 <property name="LogPanel_COPY" value="3" type="GuiHandlerData"/>
 <property name="LogPanel_FIND" value="6" type="GuiHandlerData"/>
 <property name="MainMenuMgr_EDIT" value="8" type="GuiHandlerData"/>
 <property name="MainMenuMgr_FLOORPLANNING" value="1" type="GuiHandlerData"/>
-<property name="MainMenuMgr_FLOW" value="114" type="GuiHandlerData"/>
+<property name="MainMenuMgr_FLOW" value="116" type="GuiHandlerData"/>
 <property name="MainMenuMgr_IO_PLANNING" value="1" type="GuiHandlerData"/>
 <property name="MainMenuMgr_OPEN" value="6" type="GuiHandlerData"/>
 <property name="MainMenuMgr_REPORTS" value="2" type="GuiHandlerData"/>
-<property name="MainMenuMgr_SETTINGS" value="46" type="GuiHandlerData"/>
+<property name="MainMenuMgr_SETTINGS" value="47" type="GuiHandlerData"/>
 <property name="MainMenuMgr_TOOLS" value="33" type="GuiHandlerData"/>
 <property name="MainMenuMgr_WINDOW" value="2" type="GuiHandlerData"/>
 <property name="MainWinMenuMgr_LAYOUT" value="6" type="GuiHandlerData"/>
@@ -118,17 +118,17 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_SIMULATION_LIVE_RESTART" value="101" type="GuiHandlerData"/>
 <property name="PACommandNames_SIMULATION_LIVE_RUN" value="289" type="GuiHandlerData"/>
 <property name="PACommandNames_SIMULATION_RELAUNCH" value="80" type="GuiHandlerData"/>
-<property name="PACommandNames_SIMULATION_RUN" value="73" type="GuiHandlerData"/>
-<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="87" type="GuiHandlerData"/>
+<property name="PACommandNames_SIMULATION_RUN" value="75" type="GuiHandlerData"/>
+<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="88" type="GuiHandlerData"/>
 <property name="PACommandNames_SIMULATION_RUN_POST_IMPLEMENTATION_FUNCTIONAL" value="6" type="GuiHandlerData"/>
 <property name="PACommandNames_SIMULATION_RUN_POST_SYNTHESIS_FUNCTIONAL" value="24" type="GuiHandlerData"/>
 <property name="PACommandNames_SRC_DISABLE" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_ZOOM_FIT" value="14" type="GuiHandlerData"/>
 <property name="PACommandNames_ZOOM_IN" value="97" type="GuiHandlerData"/>
 <property name="PACommandNames_ZOOM_OUT" value="55" type="GuiHandlerData"/>
-<property name="PAViews_CODE" value="14" type="GuiHandlerData"/>
+<property name="PAViews_CODE" value="15" type="GuiHandlerData"/>
 <property name="PAViews_DEVICE" value="39" type="GuiHandlerData"/>
-<property name="PAViews_PROJECT_SUMMARY" value="180" type="GuiHandlerData"/>
+<property name="PAViews_PROJECT_SUMMARY" value="181" type="GuiHandlerData"/>
 <property name="PAViews_SCHEMATIC" value="43" type="GuiHandlerData"/>
 <property name="PowerResultTab_REPORT_NAVIGATION_TREE" value="10" type="GuiHandlerData"/>
 <property name="ProgramDebugTab_OPEN_TARGET" value="3" type="GuiHandlerData"/>
@@ -172,14 +172,14 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="TimingItemFlatTablePanel_TABLE" value="6" type="GuiHandlerData"/>
 <property name="UtilizationHierViewTreeTablePanel_TABLE(Hierarchy)" value="11" type="GuiHandlerData"/>
 <property name="VioTreeTablePanel_VIO_TREE_TABLE" value="8" type="GuiHandlerData"/>
-<property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="1007" type="GuiHandlerData"/>
+<property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="1008" type="GuiHandlerData"/>
 <property name="WaveformView_GOTO_LAST_TIME" value="2" type="GuiHandlerData"/>
 <property name="WaveformView_GOTO_TIME_0" value="193" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="85" type="GuiMode"/>
+<property name="GuiMode" value="21" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="82" type="TclMode"/>
+<property name="TclMode" value="19" type="TclMode"/>
 </item>
 </section>
 </application>

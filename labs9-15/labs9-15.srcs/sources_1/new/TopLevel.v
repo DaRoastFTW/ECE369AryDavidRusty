@@ -73,7 +73,7 @@ module TopLevel (
 
   wire [4:0] ReadRegister1;
   (* mark_debug = "true" *)wire [31:0] WriteDataWB;
-  wire [31:0] ReadData1ID, ReadData2ID, HiLoOutputWire, HiLoOrNormalMuxOut;
+  wire [31:0] ReadData1ID, ReadData2ID, HiLoOutputWire, HiLoOrNormalMuxOut, RSForwardMuxDECOut, RTForwardMuxDECOut;
   wire RegWriteWB;
   RegisterFile RegFile (
       .ReadRegister1(InstructionID[25:21]),
@@ -85,6 +85,22 @@ module TopLevel (
       .Reset(Reset),
       .ReadData1(ReadData1ID),
       .ReadData2(ReadData2ID)
+  );
+  
+Mux32Bit3to1 RSForwardMuxDEC (
+      .out(RSForwardMuxDECOut),
+      .inA(ReadData1ID),
+      .inB(ALUResultMEM),
+      .inC(WriteDataWB),
+      .sel(ForwardC)
+  );
+  
+  Mux32Bit3to1 RTForwardMuxDEC (
+      .out(RTForwardMuxDECOut),
+      .inA(ReadData2ID),
+      .inB(ALUResultMEM),
+      .inC(WriteDataWB),
+      .sel(ForwardD)
   );
 
 Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut), 
@@ -103,7 +119,7 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .Lo_Debug(Lo_Debug)
   );
   
-  BranchDetection BranchDetect(.Instruction(InstructionID), .A(ReadData1ID), .B(ReadData2ID), .BranchOut(BranchOutput));
+  BranchDetection BranchDetect(.Instruction(InstructionID), .A(RSForwardMuxDECOut), .B(RTForwardMuxDECOut), .BranchOut(BranchOutput));
   wire [31:0] SignExtendID;
 
   SignExtension SignExt (
@@ -197,9 +213,9 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .wordhalfbyteOut(wordhalfbyteEX),
       .PCAddIn(PCAddID),
       .PCAddOut(PCAddEX),
-      .ReadData1In(ReadData1ID),
+      .ReadData1In(RSForwardMuxDECOut),
       .ReadData1Out(ReadData1EX),
-      .ReadData2In(ReadData2ID),
+      .ReadData2In(RTForwardMuxDECOut),
       .ReadData2Out(ReadData2EX),
       .ZeroExtendIn(ZeroExtendID),
       .ZeroExtendOut(ZeroExtendEX),
@@ -215,14 +231,36 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
 
 
   //This is the execute stage
-  wire [31:0] ALUSrcMux, ALUPortAMux, ALUResultEX, ActualALUOutput;
-  wire ZeroEX, Gate2Out;
+  wire [31:0] ALUSrcMux, ALUPortAMux, ALUResultEX, ActualALUOutput, RSForwardMuxEXOut, RTForwardMuxEXOut;
+  wire ZeroEX, Gate2Out, ForwardA, ForwardB, ForwardC, ForwardD;
   wire [63:0] ALUResult64EX;
+  
+  ForwardingUnit Forward(.RegWriteMEM(RegWriteMEM), .RegWriteWB(RegWriteWB), 
+  .RegDstMuxMEM(RegDstMuxMEM), 
+    .RegDstMuxWB(RegDstMuxWB), .InstructionID(InstructionID), 
+    .InstructionEX(InstructionEX), .ForwardA(ForwardA), .ForwardB(ForwardB), 
+    .ForwardC(ForwardC), .ForwardD(ForwardD));
+    
+  Mux32Bit3to1 RSForwardMuxEX (
+      .out(RSForwardMuxEXOut),
+      .inA(ReadData1EX),
+      .inB(ALUResultMEM),
+      .inC(WriteDataWB),
+      .sel(ForwardA)
+  );
+  
+  Mux32Bit3to1 RTForwardMuxEX (
+      .out(RTForwardMuxEXOut),
+      .inA(ReadData2EX),
+      .inB(ALUResultMEM),
+      .inC(WriteDataWB),
+      .sel(ForwardB)
+  );
 
   Mux32Bit2To1 ALUPortAMuxEx (
       .out(ALUPortAMux),
-      .inA(ReadData1EX),
-      .inB(ReadData2EX),
+      .inA(RSForwardMuxEXOut),
+      .inB(RTForwardMuxEXOut),
       .sel(ALUSrcEX[1])
   );
   ALU32Bit ALU (
@@ -260,7 +298,7 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
 
   Mux32Bit3to1 ALUSrcMuxEX (
       .out(ALUSrcMux),
-      .inA(ReadData2EX),
+      .inA(RTForwardMuxEXOut),
       .inB(SignExtendEX),
       .inC(ZeroExtendEX),
       .sel(ALUSrcEX)

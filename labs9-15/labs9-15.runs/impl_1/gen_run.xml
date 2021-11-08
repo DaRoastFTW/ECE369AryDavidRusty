@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1636258421">
+  <File Type="BITSTR-BMM" Name="TopTopLevel_bd.bmm"/>
   <File Type="ROUTE-PWR" Name="TopTopLevel_power_routed.rpt"/>
   <File Type="PA-TCL" Name="TopTopLevel.tcl"/>
-  <File Type="BITSTR-BMM" Name="TopTopLevel_bd.bmm"/>
+  <File Type="OPT-DCP" Name="TopTopLevel_opt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="TopTopLevel_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="TopTopLevel_reports.tcl"/>
-  <File Type="OPT-DCP" Name="TopTopLevel_opt.dcp"/>
   <File Type="OPT-DRC" Name="TopTopLevel_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="TopTopLevel.hwdef"/>
   <File Type="PWROPT-DCP" Name="TopTopLevel_pwropt.dcp"/>
@@ -24,10 +24,12 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="TopTopLevel_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="TopTopLevel_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="TopTopLevel_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="TopTopLevel.ltx"/>
   <File Type="ROUTE-DRC-RPX" Name="TopTopLevel_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="TopTopLevel_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-MMI" Name="TopTopLevel.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="TopTopLevel_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="TopTopLevel_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="TopTopLevel.sysdef"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TopTopLevel_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="TopTopLevel_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="TopTopLevel_route_status.rpt"/>
@@ -35,6 +37,7 @@
   <File Type="ROUTE-TIMINGSUMMARY" Name="TopTopLevel_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="TopTopLevel_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="TopTopLevel_timing_summary_routed.rpx"/>
+  <File Type="RDI-RDI" Name="TopTopLevel.vdi"/>
   <File Type="ROUTE-CLK" Name="TopTopLevel_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="TopTopLevel_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="TopTopLevel_bus_skew_routed.pb"/>
@@ -46,16 +49,13 @@
   <File Type="BITSTR-NKY" Name="TopTopLevel.nky"/>
   <File Type="PDI-FILE" Name="TopTopLevel.pdi"/>
   <File Type="RCFI_FILE" Name="TopTopLevel.rcfi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="CFI_FILE" Name="TopTopLevel.cfi"/>
   <File Type="RNPI_FILE" Name="TopTopLevel.rnpi"/>
   <File Type="NPI_FILE" Name="TopTopLevel.npi"/>
   <File Type="RBD_FILE" Name="TopTopLevel.rbd"/>
-  <File Type="BITSTR-LTX" Name="TopTopLevel.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="TopTopLevel.sysdef"/>
   <File Type="BG-BGN" Name="TopTopLevel.bgn"/>
   <File Type="BG-DRC" Name="TopTopLevel.drc"/>
-  <File Type="RDI-RDI" Name="TopTopLevel.vdi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ALU32Bit.v">
