@@ -45,6 +45,7 @@ module TopLevel (
       .shiftoutput(JumpInstruction)
   );
   ProgramCounter PC (
+		.PCStall(PCStall),
       .Address(PCIn),
       .PCResult(PCResult),
       .Reset(Reset),
@@ -61,13 +62,14 @@ module TopLevel (
   wire [31:0] InstructionID, PCAddID, JumpInstructionID;
   RegIF_ID IF_ID (
       .Clk(Clk),
-      .Reset(Reset),
+      .Reset(IFIDFlush),
       .PC_4Input(PCAddResult),
       .PC_4Output(PCAddID),
       .Inst_input(InstructionIF),
       .Inst_output(InstructionID),
       .JumpInst_input({PCAddResult[31:28], JumpInstruction}),
-      .JumpInst_output(JumpInstructionID)
+      .JumpInst_output(JumpInstructionID),
+	  .IFIDStall(IFIDStall)
   );
   //This is the instruction decode
 
@@ -157,7 +159,9 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .Jump(JumpID),
       .HiLoOrNormal(HiLoOrNormalID)
   );
-
+wire PCStall, IFIDStall, IFIDFlush, IDEXFlush;
+wire [31:0] InstructionMEM;
+ HazardDetection hazardDetect(.PCStall(PCStall), .IFIDStall(IFIDStall), .IFIDFlush(IFIDFlush), .IDEXFlush(IDEXFlush), .InstructionID(InstructionID), .InstructionEX(InstructionEX), .InstructionMEM(InstructionMEM), .RegWriteID(RegWriteID), .RegWriteEX(RegWriteEX), .RegWriteMEM(RegWriteMEM), .BranchOutput(BranchOutput), .RegDstMuxMEM(RegDstMuxMEM));
   //Pipe Reg 2
   wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX, JumpEX, HiLoOrNormalEX;
   wire [1:0] MemtoRegEX, wordhalfbyteEX, ALUSrcEX, RegDstEX, PCSrcEX;
@@ -168,7 +172,7 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
   //ID_EX Pipeline Register
   RegID_EX ID_EX (
       .Clk(Clk),
-      .Reset(Reset),
+      .Reset(IDEXFlush),
       .InstructionIn(InstructionID),
       .InstructionOut(InstructionEX),
       .RegWriteIn(RegWriteID),
@@ -321,7 +325,9 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .HiLoControlIn(HiLoControlEX),
       .HiLoControlOut(HiLoControlMEM),
       .HiLoOrNormalIn(HiLoOrNormalEX),
-      .HiLoOrNormalOut(HiLoOrNormalMEM) 
+      .HiLoOrNormalOut(HiLoOrNormalMEM), 
+	  .InstructionIn(InstructionEX),
+	  .InstructionOut(InstructionMEM)
   );
 
   //This is the memory stage

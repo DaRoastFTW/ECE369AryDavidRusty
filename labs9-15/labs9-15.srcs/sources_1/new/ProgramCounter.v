@@ -28,11 +28,12 @@ module ProgramCounter (
     Address,
     PCResult,
     Reset,
-    Clk
+    Clk,
+	PCStall
 );
 
   input [31:0] Address;
-  input Reset, Clk;
+  input Reset, Clk, PCStall;
 
   output reg [31:0] PCResult;
 
@@ -40,9 +41,11 @@ module ProgramCounter (
   always @(posedge Clk or posedge Reset) begin
     if (Reset == 1) begin
       PCResult <= 32'h00000000;
+    end else if (PCStall == 1) begin
+		PCResult <= PCResult;
     end else begin
-      PCResult <= Address;
-    end
+		PCResult <= Address;
+	end
   end
 
 

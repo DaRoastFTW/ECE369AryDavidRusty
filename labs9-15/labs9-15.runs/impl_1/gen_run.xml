@@ -25,10 +25,12 @@
   <File Type="ROUTE-DRC" Name="TopTopLevel_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="TopTopLevel_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="TopTopLevel_drc_routed.rpx"/>
+  <File Type="BITSTR-LTX" Name="TopTopLevel.ltx"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="TopTopLevel_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-MMI" Name="TopTopLevel.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="TopTopLevel_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TopTopLevel_methodology_drc_routed.pb"/>
+  <File Type="BITSTR-SYSDEF" Name="TopTopLevel.sysdef"/>
   <File Type="ROUTE-PWR-RPX" Name="TopTopLevel_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="TopTopLevel_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="TopTopLevel_route_status.pb"/>
@@ -36,6 +38,7 @@
   <File Type="ROUTE-TIMING-PB" Name="TopTopLevel_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="TopTopLevel_timing_summary_routed.rpx"/>
   <File Type="ROUTE-CLK" Name="TopTopLevel_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="TopTopLevel.vdi"/>
   <File Type="ROUTE-BUS-SKEW" Name="TopTopLevel_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="TopTopLevel_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="TopTopLevel_bus_skew_routed.rpx"/>
@@ -47,15 +50,12 @@
   <File Type="PDI-FILE" Name="TopTopLevel.pdi"/>
   <File Type="RCFI_FILE" Name="TopTopLevel.rcfi"/>
   <File Type="CFI_FILE" Name="TopTopLevel.cfi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="RNPI_FILE" Name="TopTopLevel.rnpi"/>
   <File Type="NPI_FILE" Name="TopTopLevel.npi"/>
   <File Type="RBD_FILE" Name="TopTopLevel.rbd"/>
-  <File Type="BITSTR-LTX" Name="TopTopLevel.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="TopTopLevel.sysdef"/>
   <File Type="BG-BGN" Name="TopTopLevel.bgn"/>
   <File Type="BG-DRC" Name="TopTopLevel.drc"/>
-  <File Type="RDI-RDI" Name="TopTopLevel.vdi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ALU32Bit.v">

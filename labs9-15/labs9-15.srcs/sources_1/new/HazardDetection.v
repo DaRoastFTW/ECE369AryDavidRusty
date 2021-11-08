@@ -20,62 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HazardDetection(
-    RegWriteIn,
-    RegDstIn,
-    ALUOpIn,
-    ALUSrcIn,
-    BranchIn,
-    MemWriteIn,
-    MemReadIn,
-    MemtoRegIn,
-    HiLoControlIn,
-    PCSrcIn,
-    JrIn,
-    MovIn,
-    wordhalfbyteIn,
-    JumpIn,
-    PCEnableIn,
-    IFIDWriteIn,
-    RegWriteOut,
-    RegDstOut,
-    ALUOpOut,
-    ALUSrcOut,
-    BranchOut,
-    MemWriteOut,
-    MemReadOut,
-    MemtoRegOut,
-    HiLoControlOut,
-    PCSrcOut,
-    JrOut,
-    MovOut,
-    wordhalfbyteOut,
-    JumpOut,
-    PCEnableOut,
-    IFIDWriteOut,
-    RegWriteEX,
-    RegWriteMEM,
-    InstructionID, 
-    InstructionEX,
-    BranchOutput,
-    RegDstMuxMEM
-    
-);
-  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn, JumpIn, PCEnableIn, IFIDWriteIn, RegWriteEX, RegWriteMEM, BranchOutput;
-  input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn;
-  input [1:0] RegDstIn, PCSrcIn;
-  input [3:0] HiLoControlIn;
+module HazardDetection(PCStall, IFIDStall, IFIDFlush, IDEXFlush, InstructionID, InstructionEX, InstructionMEM, RegWriteID, RegWriteEX, RegWriteMEM, BranchOutput, RegDstMuxMEM);
+  input [31:0] InstructionID, InstructionEX, InstructionMEM;
+  input RegWriteID, RegWriteEX, RegWriteMEM, BranchOutput;
   input [4:0] RegDstMuxMEM;
-  input [5:0] ALUOpIn;
-  input [31:0] InstructionID, InstructionEX;
   
-  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut, PCEnableOut, IFIDWriteOut;
-  output reg [1:0] MemtoRegOut, wordhalfbyteOut, ALUSrcOut;
-  output reg [1:0] RegDstOut, PCSrcOut;
-  output reg [3:0] HiLoControlOut;
-  output reg [5:0] ALUOpOut;
-  
-  reg HazardDetected;
+  output reg PCStall, IFIDStall, IFIDFlush, IDEXFlush;
   
   
  
@@ -85,18 +35,37 @@ module HazardDetection(
   
   always@(*) begin
   //When R-type is in EX stage and Branch in ID stage
+  PCStall <= 1'b0;
+  IFIDStall <= 1'b0;
+  IFIDFlush <= 1'b0;
+  IDEXFlush <= 1'b0;
   if ((RegWriteEX == 1'b1 && BranchOutput == 1'b1) && (InstructionEX[15:11] == InstructionID[25:21]) || (InstructionEX[15:11] == InstructionID[20:16])) 
   begin
-   HazardDetected <= 1'b1;
+   //HazardDetected <= 1'b1;
   end
   
   //When R-typeis in MEM stage and Branch in ID stage
   if ((RegWriteMEM == 1'b1 && BranchOutput == 1'b1) && (RegDstMuxMEM == InstructionID[25:21]) || (RegDstMuxMEM == InstructionID[20:16]))
   begin 
-      HazardDetected <= 1'b1;
+      //HazardDetected <= 1'b1;
   end
   
-    if(HazardDetected) begin
+  //When I-type is in EX stage and R-type is in ID stage
+  if ((RegWriteEX == 1'b1 && RegWriteID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]) || (InstructionEX[20:16] == InstructionID[20:16])))
+  begin 
+      PCStall <= 1'b1;
+	  IFIDStall <= 1'b1;
+	  IDEXFlush <= 1'b1;
+  end
+  
+  //When I-type is in MEM stage and R-type is in ID stage
+  if ((RegWriteMEM == 1'b1 && RegWriteID == 1'b1) && ((InstructionMEM[20:16] == InstructionID[25:21]) || (InstructionMEM[20:16] == InstructionID[20:16])))
+  begin 
+      PCStall <= 1'b1;
+	  IFIDStall <= 1'b1;
+	  IDEXFlush <= 1'b1;
+  end
+    /*if(HazardDetected) begin
         RegWriteOut <= 0;
         RegDstOut <= 0;
         ALUOpOut <= 0;
@@ -131,6 +100,6 @@ module HazardDetection(
         JumpOut <= JumpIn;
         PCEnableOut <= PCEnableIn;
         IF.ID.WriteOut <= IF.ID.WriteIn;
-    end
+    end*/
   end
 endmodule
