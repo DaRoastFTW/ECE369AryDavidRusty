@@ -28,9 +28,10 @@ module RegIF_ID (
     Inst_input,
     Inst_output,
     JumpInst_input,
-    JumpInst_output
+    JumpInst_output,
+	IFIDStall
 );
-  input Clk, Reset;
+  input Clk, Reset, IFIDStall;
   input [31:0] PC_4Input, Inst_input, JumpInst_input;
   output reg [31:0] PC_4Output, Inst_output, JumpInst_output;
 
@@ -39,10 +40,14 @@ module RegIF_ID (
       PC_4Output <= 32'd0;
       Inst_output <= 32'd0;
       JumpInst_output <= 32'd0;
+    end else if(IFIDStall == 1) begin
+      PC_4Output <= PC_4Output;
+      Inst_output <= Inst_output;
+      JumpInst_output <= JumpInst_output;
     end else begin
-      PC_4Output <= PC_4Input;
+	PC_4Output <= PC_4Input;
       Inst_output <= Inst_input;
       JumpInst_output <= JumpInst_input;
-    end
+	end
   end
 endmodule

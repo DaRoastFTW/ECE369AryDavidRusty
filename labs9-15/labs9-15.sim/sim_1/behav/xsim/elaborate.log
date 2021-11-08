@@ -4,13 +4,7 @@ Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 9c5279a65e
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ForwardA' [C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:241]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ForwardC' [C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:242]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'JrMuxOut' [C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:350]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'sel' [C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:95]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'sel' [C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:103]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'sel' [C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:249]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'sel' [C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:257]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'JrMuxOut' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:316]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -31,8 +25,8 @@ Compiling module xil_defaultlib.ZeroExtention
 Compiling module xil_defaultlib.Adder
 Compiling module xil_defaultlib.ShiftLeft2
 Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.HazardDetection
 Compiling module xil_defaultlib.RegID_EX
-Compiling module xil_defaultlib.ForwardingUnit
 Compiling module xil_defaultlib.ALU32Bit
 Compiling module xil_defaultlib.AndGate
 Compiling module xil_defaultlib.Mux5Bit3to1
