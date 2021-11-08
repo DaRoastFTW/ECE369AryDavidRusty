@@ -45,7 +45,7 @@ module TopLevel (
       .shiftoutput(JumpInstruction)
   );
   ProgramCounter PC (
-		.PCStall(PCStall),
+      .PCStall(PCStall),
       .Address(PCIn),
       .PCResult(PCResult),
       .Reset(Reset),
@@ -69,11 +69,11 @@ module TopLevel (
       .Inst_output(InstructionID),
       .JumpInst_input({PCAddResult[31:28], JumpInstruction}),
       .JumpInst_output(JumpInstructionID),
-	  .IFIDStall(IFIDStall)
+      .IFIDStall(IFIDStall)
   );
   //This is the instruction decode
 
-  wire [4:0] ReadRegister1;
+  wire [ 4:0] ReadRegister1;
   (* mark_debug = "true" *)wire [31:0] WriteDataWB;
   wire [31:0] ReadData1ID, ReadData2ID, HiLoOutputWire, HiLoOrNormalMuxOut, RSForwardMuxDECOut, RTForwardMuxDECOut;
   wire RegWriteWB;
@@ -88,15 +88,15 @@ module TopLevel (
       .ReadData1(ReadData1ID),
       .ReadData2(ReadData2ID)
   );
-  
-Mux32Bit3to1 RSForwardMuxDEC (
+
+  Mux32Bit3to1 RSForwardMuxDEC (
       .out(RSForwardMuxDECOut),
       .inA(ReadData1ID),
       .inB(ALUResultMEM),
       .inC(WriteDataWB),
       .sel(ForwardC)
   );
-  
+
   Mux32Bit3to1 RTForwardMuxDEC (
       .out(RTForwardMuxDECOut),
       .inA(ReadData2ID),
@@ -105,13 +105,15 @@ Mux32Bit3to1 RSForwardMuxDEC (
       .sel(ForwardD)
   );
 
-Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut), 
-                            .inA(WriteDataWB), 
-                            .inB(HiLoOutputWire), 
-                            .sel(HiLoOrNormalWB));
+  Mux32Bit2To1 HiLoOrNormalMux (
+      .out(HiLoOrNormalMuxOut),
+      .inA(WriteDataWB),
+      .inB(HiLoOutputWire),
+      .sel(HiLoOrNormalWB)
+  );
 
 
- HiLoReg HiLo (
+  HiLoReg HiLo (
       .Clk(Clk),
       .Rst(Reset),
       .ALUResult64(ALUResult64WB),
@@ -120,8 +122,13 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .Hi_Debug(Hi_Debug),
       .Lo_Debug(Lo_Debug)
   );
-  
-  BranchDetection BranchDetect(.Instruction(InstructionID), .A(RSForwardMuxDECOut), .B(RTForwardMuxDECOut), .BranchOut(BranchOutput));
+
+  BranchDetection BranchDetect (
+      .Instruction(InstructionID),
+      .A(RSForwardMuxDECOut),
+      .B(RTForwardMuxDECOut),
+      .BranchOut(BranchOutput)
+  );
   wire [31:0] SignExtendID;
 
   SignExtension SignExt (
@@ -139,13 +146,13 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .addinput2(ShiftOutID),
       .addoutput(AddOutID)
   );
-    ShiftLeft2 Shift (
+  ShiftLeft2 Shift (
       .shiftinput (SignExtendID),
       .shiftoutput(ShiftOutID)
   );
   wire [31:0] JrMuxOutEX;
- 
- Mux32Bit2To1 jrMux_ID (
+
+  Mux32Bit2To1 jrMux_ID (
       .out(JrMuxOutID),
       .inA(AddOutID),
       .inB(ReadData1ID),
@@ -175,9 +182,22 @@ Mux32Bit2To1 HiLoOrNormalMux(.out(HiLoOrNormalMuxOut),
       .Jump(JumpID),
       .HiLoOrNormal(HiLoOrNormalID)
   );
-wire PCStall, IFIDStall, IFIDFlush, IDEXFlush;
-wire [31:0] InstructionMEM;
- HazardDetection hazardDetect(.PCStall(PCStall), .IFIDStall(IFIDStall), .IFIDFlush(IFIDFlush), .IDEXFlush(IDEXFlush), .InstructionID(InstructionID), .InstructionEX(InstructionEX), .InstructionMEM(InstructionMEM), .RegWriteID(RegWriteID), .RegWriteEX(RegWriteEX), .RegWriteMEM(RegWriteMEM), .BranchOutput(BranchOutput), .RegDstMuxMEM(RegDstMuxMEM));
+  wire PCStall, IFIDStall, IFIDFlush, IDEXFlush;
+  wire [31:0] InstructionMEM;
+  HazardDetection hazardDetect (
+      .PCStall(PCStall),
+      .IFIDStall(IFIDStall),
+      .IFIDFlush(IFIDFlush),
+      .IDEXFlush(IDEXFlush),
+      .InstructionID(InstructionID),
+      .InstructionEX(InstructionEX),
+      .InstructionMEM(InstructionMEM),
+      .RegWriteID(RegWriteID),
+      .RegWriteEX(RegWriteEX),
+      .RegWriteMEM(RegWriteMEM),
+      .BranchOutput(BranchOutput),
+      .RegDstMuxMEM(RegDstMuxMEM)
+  );
   //Pipe Reg 2
   wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX, JumpEX, HiLoOrNormalEX;
   wire [1:0] MemtoRegEX, wordhalfbyteEX, ALUSrcEX, RegDstEX, PCSrcEX;
@@ -236,15 +256,23 @@ wire [31:0] InstructionMEM;
 
   //This is the execute stage
   wire [31:0] ALUSrcMux, ALUPortAMux, ALUResultEX, ActualALUOutput, RSForwardMuxEXOut, RTForwardMuxEXOut;
-  wire ZeroEX, Gate2Out, ForwardA, ForwardB, ForwardC, ForwardD;
+  wire ZeroEX, Gate2Out;
+  wire [1:0] ForwardA, ForwardB, ForwardC, ForwardD;
   wire [63:0] ALUResult64EX;
-  
-  ForwardingUnit Forward(.RegWriteMEM(RegWriteMEM), .RegWriteWB(RegWriteWB), 
-  .RegDstMuxMEM(RegDstMuxMEM), 
-    .RegDstMuxWB(RegDstMuxWB), .InstructionID(InstructionID), 
-    .InstructionEX(InstructionEX), .ForwardA(ForwardA), .ForwardB(ForwardB), 
-    .ForwardC(ForwardC), .ForwardD(ForwardD));
-    
+
+  ForwardingUnit Forward (
+      .RegWriteMEM(RegWriteMEM),
+      .RegWriteWB(RegWriteWB),
+      .RegDstMuxMEM(RegDstMuxMEM),
+      .RegDstMuxWB(RegDstMuxWB),
+      .InstructionID(InstructionID),
+      .InstructionEX(InstructionEX),
+      .ForwardA(ForwardA),
+      .ForwardB(ForwardB),
+      .ForwardC(ForwardC),
+      .ForwardD(ForwardD)
+  );
+
   Mux32Bit3to1 RSForwardMuxEX (
       .out(RSForwardMuxEXOut),
       .inA(ReadData1EX),
@@ -252,7 +280,7 @@ wire [31:0] InstructionMEM;
       .inC(WriteDataWB),
       .sel(ForwardA)
   );
-  
+
   Mux32Bit3to1 RTForwardMuxEX (
       .out(RTForwardMuxEXOut),
       .inA(ReadData2EX),
@@ -287,18 +315,18 @@ wire [31:0] InstructionMEM;
       .sel(Gate2Out)
   );
   wire [31:0] ReadData2MaskEX;
-//   HiLoReg HiLo (
-//       .Clk(Clk),
-//       .Rst(Reset),
-//       .ALUResult64(ALUResult64),
-//       .HiLoControl(HiLoControlEX),
-//       .HiLoOutput(HiLoOutput),
-//       .Hi_Debug(Hi_Debug),
-//       .Lo_Debug(Lo_Debug)
-//   );
-  
+  //   HiLoReg HiLo (
+  //       .Clk(Clk),
+  //       .Rst(Reset),
+  //       .ALUResult64(ALUResult64),
+  //       .HiLoControl(HiLoControlEX),
+  //       .HiLoOutput(HiLoOutput),
+  //       .Hi_Debug(Hi_Debug),
+  //       .Lo_Debug(Lo_Debug)
+  //   );
 
-  
+
+
 
   Mux32Bit3to1 ALUSrcMuxEX (
       .out(ALUSrcMux),
@@ -321,8 +349,8 @@ wire [31:0] InstructionMEM;
   wire [4:0] RegDstMuxMEM;
   wire [31:0] PCAddMEM, ALUResultMEM, JumpInstructionMEM;
   wire [63:0] ALUResult64MEM;
-  wire [3:0] HiLoControlMEM;
-  (* mark_debug = "true" *) wire [31:0] ReadData2MEM;
+  wire [ 3:0] HiLoControlMEM;
+  (* mark_debug = "true" *)wire [31:0] ReadData2MEM;
   RegEX_MEM EX_MEM (
       .Clk(Clk),
       .Reset(Reset),
@@ -363,9 +391,9 @@ wire [31:0] InstructionMEM;
       .HiLoControlIn(HiLoControlEX),
       .HiLoControlOut(HiLoControlMEM),
       .HiLoOrNormalIn(HiLoOrNormalEX),
-      .HiLoOrNormalOut(HiLoOrNormalMEM), 
-	  .InstructionIn(InstructionEX),
-	  .InstructionOut(InstructionMEM)
+      .HiLoOrNormalOut(HiLoOrNormalMEM),
+      .InstructionIn(InstructionEX),
+      .InstructionOut(InstructionMEM)
   );
 
   //This is the memory stage

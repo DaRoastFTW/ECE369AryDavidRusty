@@ -20,51 +20,64 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HazardDetection(PCStall, IFIDStall, IFIDFlush, IDEXFlush, InstructionID, InstructionEX, InstructionMEM, RegWriteID, RegWriteEX, RegWriteMEM, BranchOutput, RegDstMuxMEM);
+module HazardDetection (
+    PCStall,
+    IFIDStall,
+    IFIDFlush,
+    IDEXFlush,
+    InstructionID,
+    InstructionEX,
+    InstructionMEM,
+    RegWriteID,
+    RegWriteEX,
+    RegWriteMEM,
+    BranchOutput,
+    RegDstMuxMEM
+);
   input [31:0] InstructionID, InstructionEX, InstructionMEM;
   input RegWriteID, RegWriteEX, RegWriteMEM, BranchOutput;
   input [4:0] RegDstMuxMEM;
-  
+
   output reg PCStall, IFIDStall, IFIDFlush, IDEXFlush;
-  
-  
- 
-  
-   
- 
-  
-  always@(*) begin
-  //When R-type is in EX stage and Branch in ID stage
-  PCStall <= 1'b0;
-  IFIDStall <= 1'b0;
-  IFIDFlush <= 1'b0;
-  IDEXFlush <= 1'b0;
-  if ((RegWriteEX == 1'b1 && BranchOutput == 1'b1) && (InstructionEX[15:11] == InstructionID[25:21]) || (InstructionEX[15:11] == InstructionID[20:16])) 
+
+
+
+
+
+
+
+  always @(*) begin
+    //When R-type is in EX stage and Branch in ID stage
+    PCStall   <= 1'b0;
+    IFIDStall <= 1'b0;
+    IFIDFlush <= 1'b0;
+    IDEXFlush <= 1'b0;
+    if ((RegWriteEX == 1'b1 && BranchOutput == 1'b1) && (InstructionEX[15:11] == InstructionID[25:21]) || (InstructionEX[15:11] == InstructionID[20:16])) 
   begin
-   //HazardDetected <= 1'b1;
-  end
-  
-  //When R-typeis in MEM stage and Branch in ID stage
-  if ((RegWriteMEM == 1'b1 && BranchOutput == 1'b1) && (RegDstMuxMEM == InstructionID[25:21]) || (RegDstMuxMEM == InstructionID[20:16]))
-  begin 
       //HazardDetected <= 1'b1;
-  end
-  
-  //When I-type is in EX stage and R-type is in ID stage
-  if ((RegWriteEX == 1'b1 && RegWriteID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]) || (InstructionEX[20:16] == InstructionID[20:16])))
-  begin 
-      PCStall <= 1'b1;
-	  IFIDStall <= 1'b1;
-	  IDEXFlush <= 1'b1;
-  end
-  
-  //When I-type is in MEM stage and R-type is in ID stage
-  if ((RegWriteMEM == 1'b1 && RegWriteID == 1'b1) && ((InstructionMEM[20:16] == InstructionID[25:21]) || (InstructionMEM[20:16] == InstructionID[20:16])))
-  begin 
-      PCStall <= 1'b1;
-	  IFIDStall <= 1'b1;
-	  IDEXFlush <= 1'b1;
-  end
+    end
+
+    //When R-typeis in MEM stage and Branch in ID stage
+    if ((RegWriteMEM == 1'b1 && BranchOutput == 1'b1) && (RegDstMuxMEM == InstructionID[25:21]) || (RegDstMuxMEM == InstructionID[20:16]))
+  begin
+      //HazardDetected <= 1'b1;
+    end
+
+    //When I-type is in EX stage and R-type is in ID stage
+  //   if ((RegWriteEX == 1'b1 && RegWriteID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]) || (InstructionEX[20:16] == InstructionID[20:16])))
+  // begin
+  //     PCStall   <= 1'b1;
+  //     IFIDStall <= 1'b1;
+  //     IDEXFlush <= 1'b1;
+  //   end
+
+    //When I-type is in MEM stage and R-type is in ID stage
+  //   if ((RegWriteMEM == 1'b1 && RegWriteID == 1'b1) && ((InstructionMEM[20:16] == InstructionID[25:21]) || (InstructionMEM[20:16] == InstructionID[20:16])))
+  // begin
+  //     PCStall   <= 1'b1;
+  //     IFIDStall <= 1'b1;
+  //     IDEXFlush <= 1'b1;
+  //   end
     /*if(HazardDetected) begin
         RegWriteOut <= 0;
         RegDstOut <= 0;
