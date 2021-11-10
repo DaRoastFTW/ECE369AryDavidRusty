@@ -45,7 +45,7 @@ module ForwardingUnit (
     ForwardC <= 2'b00;
     ForwardD <= 2'b00;
 
-    //Fowarding for rs from WB Stage to EX Stage
+    /*//Fowarding for rs from WB Stage to EX Stage
     if ((RegWriteWB == 1'b1) && (RegDstMuxWB == InstructionEX[25:21])) begin
       ForwardA <= 2'b10;
     end
@@ -79,7 +79,7 @@ module ForwardingUnit (
     //Fowarding for rt from MEM Stage to DEC Stage
     if ((RegWriteMEM == 1'b1) && (RegDstMuxMEM == InstructionID[20:16])) begin
       ForwardD <= 2'b01;
-    end
+    end*/
 
   end
 endmodule

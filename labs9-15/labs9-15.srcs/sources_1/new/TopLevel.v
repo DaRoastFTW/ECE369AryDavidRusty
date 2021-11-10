@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-///ECE 369: Labs 9-15
+///ECE 369: Competition
 /// Rusty Rinehart- 33% Effort, Ary Nath- 33% Effort, David Mazi- 33% Effort
 ///
 
@@ -183,7 +183,7 @@ module TopLevel (
       .HiLoOrNormal(HiLoOrNormalID)
   );
   wire PCStall, IFIDStall, IFIDFlush, IDEXFlush;
-  wire [31:0] InstructionMEM;
+  wire [31:0] InstructionMEM, InstructionWB;
   HazardDetection hazardDetect (
       .PCStall(PCStall),
       .IFIDStall(IFIDStall),
@@ -192,11 +192,21 @@ module TopLevel (
       .InstructionID(InstructionID),
       .InstructionEX(InstructionEX),
       .InstructionMEM(InstructionMEM),
+	  .InstructionWB(InstructionWB),
       .RegWriteID(RegWriteID),
       .RegWriteEX(RegWriteEX),
       .RegWriteMEM(RegWriteMEM),
+	  .RegWriteWB(RegWriteWB),
       .BranchOutput(BranchOutput),
-      .RegDstMuxMEM(RegDstMuxMEM)
+      .RegDstMuxMEM(RegDstMuxMEM),
+	  .MemReadID(MemReadID),
+	  .MemReadEX(MemReadEX),
+	  .MemReadMEM(MemReadMEM),
+	  .MemReadWB(MemReadWB),
+	  .MemWriteID(MemWriteID),
+	  .MemWriteEX(MemWriteEX),
+	  .MemWriteMEM(MemWriteMEM),
+	  .MemWriteWB(MemWriteWB)
   );
   //Pipe Reg 2
   wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX, JumpEX, HiLoOrNormalEX;
@@ -435,7 +445,7 @@ module TopLevel (
   wire [4:0] RegDstMuxWB;
   wire [63:0] ALUResult64WB;
   wire [3:0] HiLoControlWB;
-  wire HiLoOrNormalWB;
+  wire HiLoOrNormalWB, MemReadWB, MemWriteWB;
   RegMEM_WB MEM_WB (
       .Clk(Clk),
       .Reset(Reset),
@@ -443,6 +453,10 @@ module TopLevel (
       .RegWriteOut(RegWriteWB),
       .MemtoRegIn(MemtoRegMEM),
       .MemtoRegOut(MemtoRegWB),
+	  .MemReadIn(MemReadMEM),
+	  .MemReadOut(MemReadWB),
+	  .MemWriteIn(MemWriteMEM),
+	  .MemWriteOut(MemWriteWB),
       .PCAddIn(PCAddMEM),
       .PCAddOut(PCAddWB),
       .ALUResultIn(ALUResultMEM),
@@ -456,7 +470,9 @@ module TopLevel (
       .HiLoControlIn(HiLoControlMEM),
       .HiLoControlOut(HiLoControlWB),
       .HiLoOrNormalIn(HiLoOrNormalMEM),
-      .HiLoOrNormalOut(HiLoOrNormalWB)
+      .HiLoOrNormalOut(HiLoOrNormalWB),
+	  .InstructionIn(InstructionMEM),
+	  .InstructionOut(InstructionWB)
   );
 
   //This is the write back stage

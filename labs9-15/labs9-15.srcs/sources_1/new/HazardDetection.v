@@ -28,14 +28,24 @@ module HazardDetection (
     InstructionID,
     InstructionEX,
     InstructionMEM,
+	InstructionWB,
     RegWriteID,
     RegWriteEX,
     RegWriteMEM,
+	RegWriteWB,
     BranchOutput,
-    RegDstMuxMEM
+    RegDstMuxMEM,
+	MemReadID,
+	MemReadEX,
+	MemReadMEM,
+	MemReadWB,
+	MemWriteID,
+	MemWriteEX,
+	MemWriteMEM,
+	MemWriteWB
 );
-  input [31:0] InstructionID, InstructionEX, InstructionMEM;
-  input RegWriteID, RegWriteEX, RegWriteMEM, BranchOutput;
+  input [31:0] InstructionID, InstructionEX, InstructionMEM, InstructionWB;
+  input RegWriteID, RegWriteEX, RegWriteMEM, RegWriteWB, BranchOutput, MemReadID, MemReadEX, MemReadMEM, MemReadWB, MemWriteID, MemWriteEX, MemWriteMEM, MemWriteWB;
   input [4:0] RegDstMuxMEM;
 
   output reg PCStall, IFIDStall, IFIDFlush, IDEXFlush;
@@ -52,7 +62,7 @@ module HazardDetection (
     IFIDStall <= 1'b0;
     IFIDFlush <= 1'b0;
     IDEXFlush <= 1'b0;
-    if ((RegWriteEX == 1'b1 && BranchOutput == 1'b1) && (InstructionEX[15:11] == InstructionID[25:21]) || (InstructionEX[15:11] == InstructionID[20:16])) 
+    /*if ((RegWriteEX == 1'b1 && BranchOutput == 1'b1) && (InstructionEX[15:11] == InstructionID[25:21]) || (InstructionEX[15:11] == InstructionID[20:16])) 
   begin
       //HazardDetected <= 1'b1;
     end
@@ -61,8 +71,46 @@ module HazardDetection (
     if ((RegWriteMEM == 1'b1 && BranchOutput == 1'b1) && (RegDstMuxMEM == InstructionID[25:21]) || (RegDstMuxMEM == InstructionID[20:16]))
   begin
       //HazardDetected <= 1'b1;
-    end
-
+    end*/
+	//When I-type is in EX and store is in ID
+	if ((RegWriteEX == 1'b1 && MemWriteID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
+	//When I-type is in MEM and store is in ID
+	if ((RegWriteMEM == 1'b1 && MemWriteID == 1'b1) && ((InstructionMEM[20:16] == InstructionID[25:21]))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
+	//When I-type is in WB and store is in ID
+	if ((RegWriteWB == 1'b1 && MemWriteID == 1'b1) && ((InstructionWB[20:16] == InstructionID[25:21]))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
+	if((BranchOutput == 1'b1)) begin
+		IFIDFlush <= 1'b1;
+	end
+	//When lw is in EX and R-type is in ID
+	if ((MemReadEX == 1'b1 && RegWriteID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]) || (InstructionEX[20:16] == InstructionID[20:16]))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
+	//When lw is in MEM and R-type is in ID
+	if ((MemReadMEM == 1'b1 && RegWriteID == 1'b1) && ((InstructionMEM[20:16] == InstructionID[25:21]) || (InstructionMEM[20:16] == InstructionID[20:16]))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
+		//When lw is in WB and R-type is in ID
+	if ((MemReadWB == 1'b1 && RegWriteID == 1'b1) && ((InstructionWB[20:16] == InstructionID[25:21]) || (InstructionWB[20:16] == InstructionID[20:16]))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
     //When I-type is in EX stage and R-type is in ID stage
   //   if ((RegWriteEX == 1'b1 && RegWriteID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]) || (InstructionEX[20:16] == InstructionID[20:16])))
   // begin
