@@ -198,6 +198,7 @@ module TopLevel (
       .RegWriteMEM(RegWriteMEM),
 	  .RegWriteWB(RegWriteWB),
       .BranchOutput(BranchOutput),
+	  .BranchInstruction(BranchID),
       .RegDstMuxMEM(RegDstMuxMEM),
 	  .MemReadID(MemReadID),
 	  .MemReadEX(MemReadEX),
