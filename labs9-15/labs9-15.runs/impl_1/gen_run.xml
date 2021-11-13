@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1636258421">
-  <File Type="BITSTR-BMM" Name="TopTopLevel_bd.bmm"/>
   <File Type="PA-TCL" Name="TopTopLevel.tcl"/>
-  <File Type="OPT-DCP" Name="TopTopLevel_opt.dcp"/>
+  <File Type="BITSTR-BMM" Name="TopTopLevel_bd.bmm"/>
   <File Type="REPORTS-TCL" Name="TopTopLevel_reports.tcl"/>
+  <File Type="OPT-DCP" Name="TopTopLevel_opt.dcp"/>
   <File Type="OPT-HWDEF" Name="TopTopLevel.hwdef"/>
   <File Type="PWROPT-DCP" Name="TopTopLevel_pwropt.dcp"/>
   <File Type="PLACE-DCP" Name="TopTopLevel_placed.dcp"/>
@@ -27,8 +27,8 @@
   <File Type="BITSTR-NKY" Name="TopTopLevel.nky"/>
   <File Type="PDI-FILE" Name="TopTopLevel.pdi"/>
   <File Type="RCFI_FILE" Name="TopTopLevel.rcfi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="CFI_FILE" Name="TopTopLevel.cfi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="RNPI_FILE" Name="TopTopLevel.rnpi"/>
   <File Type="NPI_FILE" Name="TopTopLevel.npi"/>
   <File Type="RBD_FILE" Name="TopTopLevel.rbd"/>

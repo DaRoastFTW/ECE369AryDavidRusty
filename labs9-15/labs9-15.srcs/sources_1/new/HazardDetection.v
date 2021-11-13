@@ -157,56 +157,69 @@ module HazardDetection (
 		IFIDStall <= 1'b1;
 		IDEXFlush <= 1'b1;
 	end
+	
+	//When I-type is in EX and lw is in ID
+	else if ((RegWriteEX == 1'b1 && MemReadID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]) || (InstructionEX[20:16] == InstructionID[20:16]))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
+	//When I-type is in MEM and lw is in ID
+	else if ((RegWriteMEM == 1'b1 && MemReadID == 1'b1) && ((InstructionMEM[20:16] == InstructionID[25:21]) || (InstructionMEM[20:16] == InstructionID[20:16]))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
+		//When I-type is in WB and lw is in ID
+	else if ((RegWriteWB == 1'b1 && MemReadID == 1'b1) && ((InstructionWB[20:16] == InstructionID[25:21]) || (InstructionWB[20:16] == InstructionID[20:16]))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
     //When I-type is in EX stage and R-type is in ID stage
-  //   if ((RegWriteEX == 1'b1 && RegWriteID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]) || (InstructionEX[20:16] == InstructionID[20:16])))
-  // begin
-  //     PCStall   <= 1'b1;
-  //     IFIDStall <= 1'b1;
-  //     IDEXFlush <= 1'b1;
-  //   end
+  else if ((RegWriteEX == 1'b1 && RegWriteID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]) || (InstructionEX[20:16] == InstructionID[20:16])))
+  begin
+       PCStall   <= 1'b1;
+       IFIDStall <= 1'b1;
+       IDEXFlush <= 1'b1;
+     end
 
-    //When I-type is in MEM stage and R-type is in ID stage
-  //   if ((RegWriteMEM == 1'b1 && RegWriteID == 1'b1) && ((InstructionMEM[20:16] == InstructionID[25:21]) || (InstructionMEM[20:16] == InstructionID[20:16])))
-  // begin
-  //     PCStall   <= 1'b1;
-  //     IFIDStall <= 1'b1;
-  //     IDEXFlush <= 1'b1;
-  //   end
-    /*if(HazardDetected) begin
-        RegWriteOut <= 0;
-        RegDstOut <= 0;
-        ALUOpOut <= 0;
-        ALUSrcOut <= 0;
-        BranchOut <= 0;//TODO I think the branch control signal has changed ask
-        MemWriteOut <= 0;
-        MemReadOut <= 0;
-        MemtoRegOut <= 0; 
-        HiLoControlOut <= 0;
-        PCSrcOut <= 0;
-        JrOut <= 0;
-        MovOut <= 0;
-        wordhalfbyteOut <= 0;
-        JumpOut <= 0;
-        PCEnableOut <= 0;
-        IF.ID.WriteOut <= 0;
-    end
-    else begin
-        RegWriteOut <= RegWriteIn;
-        RegDstOut <= RegDstIn;
-        ALUOpOut <= ALUOpIn;
-        ALUSrcOut <= ALUSrcIn;
-        BranchOut <= BranchIn;//TODO I think the branch control signal has changed ask
-        MemWriteOut <= MemWriteIn;
-        MemReadOut <= MemReadIn;
-        MemtoRegOut <= MemtoRegIn; 
-        HiLoControlOut <= HiLoControlIn;
-        PCSrcOut <= PCSrcIn;
-        JrOut <= JrIn;
-        MovOut <= MovIn;
-        wordhalfbyteOut <= wordhalfbyteIn;
-        JumpOut <= JumpIn;
-        PCEnableOut <= PCEnableIn;
-        IF.ID.WriteOut <= IF.ID.WriteIn;
-    end*/
+  //When I-type is in MEM stage and R-type is in ID stage
+     else if ((RegWriteMEM == 1'b1 && RegWriteID == 1'b1) && ((InstructionMEM[20:16] == InstructionID[25:21]) || (InstructionMEM[20:16] == InstructionID[20:16])))
+   begin
+       PCStall   <= 1'b1;
+       IFIDStall <= 1'b1;
+       IDEXFlush <= 1'b1;
+     end
+  //When I-type is in WB stage and R-type is in ID stage
+     else if ((RegWriteWB == 1'b1 && RegWriteID == 1'b1) && ((InstructionWB[20:16] == InstructionID[25:21]) || (InstructionWB[20:16] == InstructionID[20:16])))
+   begin
+       PCStall   <= 1'b1;
+       IFIDStall <= 1'b1;
+       IDEXFlush <= 1'b1;
+     end
+	 
+	     //When I-type is in EX stage and sw is in ID stage
+  else if ((RegWriteEX == 1'b1 && MemWriteID == 1'b1) && ((InstructionEX[20:16] == InstructionID[25:21]) || (InstructionEX[20:16] == InstructionID[20:16])))
+  begin
+       PCStall   <= 1'b1;
+       IFIDStall <= 1'b1;
+       IDEXFlush <= 1'b1;
+     end
+
+  //When I-type is in MEM stage and sw is in ID stage
+     else if ((RegWriteMEM == 1'b1 && MemWriteID == 1'b1) && ((InstructionMEM[20:16] == InstructionID[25:21]) || (InstructionMEM[20:16] == InstructionID[20:16])))
+   begin
+       PCStall   <= 1'b1;
+       IFIDStall <= 1'b1;
+       IDEXFlush <= 1'b1;
+     end
+  //When I-type is in WB stage and sw is in ID stage
+     else if ((RegWriteWB == 1'b1 && MemWriteID == 1'b1) && ((InstructionWB[20:16] == InstructionID[25:21]) || (InstructionWB[20:16] == InstructionID[20:16])))
+   begin
+       PCStall   <= 1'b1;
+       IFIDStall <= 1'b1;
+       IDEXFlush <= 1'b1;
+     end
   end
 endmodule
