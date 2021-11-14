@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="30209334fs"></ZoomStartTime>
-      <ZoomEndTime time="31213335fs"></ZoomEndTime>
-      <Cursor1Time time="30639334fs"></Cursor1Time>
+      <ZoomStartTime time="3475485fs"></ZoomStartTime>
+      <ZoomEndTime time="6792781fs"></ZoomEndTime>
+      <Cursor1Time time="5000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="182"></NameColumnWidth>
-      <ValueColumnWidth column_width="214"></ValueColumnWidth>
+      <ValueColumnWidth column_width="204"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="28" />
+   <WVObjectSize size="18" />
    <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -40,6 +40,7 @@
    <wvobject fp_name="/TopLevel_tb/tl/InstructionID" type="array">
       <obj_property name="ElementShortName">InstructionID[31:0]</obj_property>
       <obj_property name="ObjectShortName">InstructionID[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/InstructionEX" type="array">
       <obj_property name="ElementShortName">InstructionEX[31:0]</obj_property>
@@ -66,17 +67,14 @@
    <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile" type="array">
       <obj_property name="ElementShortName">RegisterFile[0:31][31:0]</obj_property>
       <obj_property name="ObjectShortName">RegisterFile[0:31][31:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[0]" type="array">
          <obj_property name="ElementShortName">[0][31:0]</obj_property>
          <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[1]" type="array">
          <obj_property name="ElementShortName">[1][31:0]</obj_property>
          <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[2]" type="array">
          <obj_property name="ElementShortName">[2][31:0]</obj_property>
@@ -91,52 +89,42 @@
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[4]" type="array">
          <obj_property name="ElementShortName">[4][31:0]</obj_property>
          <obj_property name="ObjectShortName">[4][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[5]" type="array">
          <obj_property name="ElementShortName">[5][31:0]</obj_property>
          <obj_property name="ObjectShortName">[5][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[6]" type="array">
          <obj_property name="ElementShortName">[6][31:0]</obj_property>
          <obj_property name="ObjectShortName">[6][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[7]" type="array">
          <obj_property name="ElementShortName">[7][31:0]</obj_property>
          <obj_property name="ObjectShortName">[7][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[8]" type="array">
          <obj_property name="ElementShortName">[8][31:0]</obj_property>
          <obj_property name="ObjectShortName">[8][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[9]" type="array">
          <obj_property name="ElementShortName">[9][31:0]</obj_property>
          <obj_property name="ObjectShortName">[9][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[10]" type="array">
          <obj_property name="ElementShortName">[10][31:0]</obj_property>
          <obj_property name="ObjectShortName">[10][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[11]" type="array">
          <obj_property name="ElementShortName">[11][31:0]</obj_property>
          <obj_property name="ObjectShortName">[11][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[12]" type="array">
          <obj_property name="ElementShortName">[12][31:0]</obj_property>
          <obj_property name="ObjectShortName">[12][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[13]" type="array">
          <obj_property name="ElementShortName">[13][31:0]</obj_property>
          <obj_property name="ObjectShortName">[13][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[14]" type="array">
          <obj_property name="ElementShortName">[14][31:0]</obj_property>
@@ -146,87 +134,71 @@
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[15]" type="array">
          <obj_property name="ElementShortName">[15][31:0]</obj_property>
          <obj_property name="ObjectShortName">[15][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[16]" type="array">
          <obj_property name="ElementShortName">[16][31:0]</obj_property>
          <obj_property name="ObjectShortName">[16][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[17]" type="array">
          <obj_property name="ElementShortName">[17][31:0]</obj_property>
          <obj_property name="ObjectShortName">[17][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[18]" type="array">
          <obj_property name="ElementShortName">[18][31:0]</obj_property>
          <obj_property name="ObjectShortName">[18][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[19]" type="array">
          <obj_property name="ElementShortName">[19][31:0]</obj_property>
          <obj_property name="ObjectShortName">[19][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[20]" type="array">
          <obj_property name="ElementShortName">[20][31:0]</obj_property>
          <obj_property name="ObjectShortName">[20][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[21]" type="array">
          <obj_property name="ElementShortName">[21][31:0]</obj_property>
          <obj_property name="ObjectShortName">[21][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[22]" type="array">
          <obj_property name="ElementShortName">[22][31:0]</obj_property>
          <obj_property name="ObjectShortName">[22][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[23]" type="array">
          <obj_property name="ElementShortName">[23][31:0]</obj_property>
          <obj_property name="ObjectShortName">[23][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[24]" type="array">
          <obj_property name="ElementShortName">[24][31:0]</obj_property>
          <obj_property name="ObjectShortName">[24][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[25]" type="array">
          <obj_property name="ElementShortName">[25][31:0]</obj_property>
          <obj_property name="ObjectShortName">[25][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[26]" type="array">
          <obj_property name="ElementShortName">[26][31:0]</obj_property>
          <obj_property name="ObjectShortName">[26][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[27]" type="array">
          <obj_property name="ElementShortName">[27][31:0]</obj_property>
          <obj_property name="ObjectShortName">[27][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[28]" type="array">
          <obj_property name="ElementShortName">[28][31:0]</obj_property>
          <obj_property name="ObjectShortName">[28][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[29]" type="array">
          <obj_property name="ElementShortName">[29][31:0]</obj_property>
          <obj_property name="ObjectShortName">[29][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[30]" type="array">
          <obj_property name="ElementShortName">[30][31:0]</obj_property>
          <obj_property name="ObjectShortName">[30][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[31]" type="array">
          <obj_property name="ElementShortName">[31][31:0]</obj_property>
          <obj_property name="ObjectShortName">[31][31:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/hazardDetect/PCStall" type="logic">
@@ -245,59 +217,16 @@
       <obj_property name="ElementShortName">IDEXFlush</obj_property>
       <obj_property name="ObjectShortName">IDEXFlush</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/MemReadWB" type="logic">
-      <obj_property name="ElementShortName">MemReadWB</obj_property>
-      <obj_property name="ObjectShortName">MemReadWB</obj_property>
+   <wvobject fp_name="/TopLevel_tb/tl/hazardDetect/RegWriteEX" type="logic">
+      <obj_property name="ElementShortName">RegWriteEX</obj_property>
+      <obj_property name="ObjectShortName">RegWriteEX</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/RegWriteID" type="logic">
-      <obj_property name="ElementShortName">RegWriteID</obj_property>
-      <obj_property name="ObjectShortName">RegWriteID</obj_property>
+   <wvobject fp_name="/TopLevel_tb/tl/hazardDetect/RegWriteMEM" type="logic">
+      <obj_property name="ElementShortName">RegWriteMEM</obj_property>
+      <obj_property name="ObjectShortName">RegWriteMEM</obj_property>
    </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/BranchDetect/BranchOut" type="logic">
-      <obj_property name="ElementShortName">BranchOut</obj_property>
-      <obj_property name="ObjectShortName">BranchOut</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[32707]" type="array">
-      <obj_property name="ElementShortName">[32707][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[32707][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/Address" type="array">
-      <obj_property name="ElementShortName">Address[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Address[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[32715]" type="array">
-      <obj_property name="ElementShortName">[32715][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[32715][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/MemWrite" type="logic">
-      <obj_property name="ElementShortName">MemWrite</obj_property>
-      <obj_property name="ObjectShortName">MemWrite</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/MemRead" type="logic">
-      <obj_property name="ElementShortName">MemRead</obj_property>
-      <obj_property name="ObjectShortName">MemRead</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[32767]" type="array">
-      <obj_property name="ElementShortName">[32767][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[32767][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[32766]" type="array">
-      <obj_property name="ElementShortName">[32766][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[32766][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[32712]" type="array">
-      <obj_property name="ElementShortName">[32712][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[32712][31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8178]" type="array">
-      <obj_property name="ElementShortName">[8178][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[8178][31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8188]" type="array">
-      <obj_property name="ElementShortName">[8188][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[8188][31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/TopLevel_tb/tl/hazardDetect/RegWriteWB" type="logic">
+      <obj_property name="ElementShortName">RegWriteWB</obj_property>
+      <obj_property name="ObjectShortName">RegWriteWB</obj_property>
    </wvobject>
 </wave_config>
