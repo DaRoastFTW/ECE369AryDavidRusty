@@ -108,5 +108,3 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/
 INFO: [VRFC 10-311] analyzing module ZeroExtention
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module TopLevel_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
