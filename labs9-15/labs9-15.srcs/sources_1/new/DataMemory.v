@@ -54,7 +54,7 @@ module DataMemory (
 
   output reg [31:0] ReadData;  // Contents of memory location at Address
 
-  reg [31:0] Memory[0:32767];  //DataMemory with 1024 32-bit 
+  reg [31:0] Memory[0:8191];  //DataMemory with 4096 32-bit 
   initial begin
     $readmemh("data_memory.mem", Memory);
   end

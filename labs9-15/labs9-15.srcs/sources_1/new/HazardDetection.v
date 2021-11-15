@@ -74,35 +74,35 @@ module HazardDetection (
     end
 
     //(rs(IR_ID)==destMEM) && use_rs(IR_ID) && RegWriteMEM
-    if ((InstructionID[25:21] != 0) && ((InstructionID[25:21] == InstructionMEM[20:16]) || ((InstructionID[25:21] == InstructionMEM[15:11]) && ((InstructionMEM[31:26] == 6'b000000) || (InstructionMEM[31:26] == 6'b011100)))) && RegWriteMEM) begin
+    else if ((InstructionID[25:21] != 0) && ((InstructionID[25:21] == InstructionMEM[20:16]) || ((InstructionID[25:21] == InstructionMEM[15:11]) && ((InstructionMEM[31:26] == 6'b000000) || (InstructionMEM[31:26] == 6'b011100)))) && RegWriteMEM) begin
       PCStall   = 1'b1;
       IFIDStall = 1'b1;
       IDEXFlush = 1'b1;
     end
 
     //(rs(IR_ID)==destWB) && use_rs(IR_ID) && RegWriteWB 
-    if ((InstructionID[25:21] != 0) && ((InstructionID[25:21] == InstructionWB[20:16]) || ((InstructionID[25:21] == InstructionWB[15:11]) && ((InstructionWB[31:26] == 6'b000000) || (InstructionWB[31:26] == 6'b011100)))) && RegWriteWB) begin
+    else if ((InstructionID[25:21] != 0) && ((InstructionID[25:21] == InstructionWB[20:16]) || ((InstructionID[25:21] == InstructionWB[15:11]) && ((InstructionWB[31:26] == 6'b000000) || (InstructionWB[31:26] == 6'b011100)))) && RegWriteWB) begin
       PCStall   = 1'b1;
       IFIDStall = 1'b1;
       IDEXFlush = 1'b1;
     end
 
     //(rt(IR_ID)==destEX) && use_rs(IR_ID) && RegWriteEX
-    if ((InstructionID[20:16] != 0) && ((InstructionID[20:16] == InstructionEX[20:16]) || ((InstructionID[20:16] == InstructionEX[15:11]) && ((InstructionEX[31:26] == 6'b000000) || (InstructionEX[31:26] == 6'b011100)))) && RegWriteEX) begin
+    else if ((InstructionID[20:16] != 0) && ((InstructionID[20:16] == InstructionEX[20:16]) || ((InstructionID[20:16] == InstructionEX[15:11]) && ((InstructionEX[31:26] == 6'b000000) || (InstructionEX[31:26] == 6'b011100)))) && RegWriteEX) begin
       PCStall   = 1'b1;
       IFIDStall = 1'b1;
       IDEXFlush = 1'b1;
     end
 
     //(rt(IR_ID)==destMEM) && use_rs(IR_ID) && RegWriteMEM
-    if ((InstructionID[20:16] != 0) && ((InstructionID[20:16] == InstructionMEM[20:16]) || ((InstructionID[20:16] == InstructionMEM[15:11]) && ((InstructionMEM[31:26] == 6'b000000) || (InstructionMEM[31:26] == 6'b011100)))) && RegWriteMEM) begin
+    else if ((InstructionID[20:16] != 0) && ((InstructionID[20:16] == InstructionMEM[20:16]) || ((InstructionID[20:16] == InstructionMEM[15:11]) && ((InstructionMEM[31:26] == 6'b000000) || (InstructionMEM[31:26] == 6'b011100)))) && RegWriteMEM) begin
       PCStall   = 1'b1;
       IFIDStall = 1'b1;
       IDEXFlush = 1'b1;
     end
 
     //(rt(IR_ID)==destWB) && use_rs(IR_ID) && RegWriteWB
-    if ((InstructionID[20:16] != 0) && ((InstructionID[20:16] == InstructionWB[20:16]) || ((InstructionID[20:16] == InstructionWB[15:11]) && ((InstructionWB[31:26] == 6'b000000) || (InstructionWB[31:26] == 6'b011100)))) && RegWriteWB) begin
+    else if ((InstructionID[20:16] != 0) && ((InstructionID[20:16] == InstructionWB[20:16]) || ((InstructionID[20:16] == InstructionWB[15:11]) && ((InstructionWB[31:26] == 6'b000000) || (InstructionWB[31:26] == 6'b011100)))) && RegWriteWB) begin
       PCStall   = 1'b1;
       IFIDStall = 1'b1;
       IDEXFlush = 1'b1;

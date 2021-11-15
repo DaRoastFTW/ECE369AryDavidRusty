@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1636258421">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1636923015">
   <File Type="PA-TCL" Name="TopTopLevel.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="TopTopLevel_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TopTopLevel_reports.tcl"/>
   <File Type="RDS-RDS" Name="TopTopLevel.vds"/>
+  <File Type="RDS-UTIL" Name="TopTopLevel_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="TopTopLevel_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TopTopLevel.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="TopTopLevel_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="TopTopLevel_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ALU32Bit.v">
@@ -49,6 +54,20 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/DataMemory.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ForwardingUnit.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/HazardDetection.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -231,28 +250,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/instruction_memory.mem">
-      <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/data_memory.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/HazardDetection.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="D:/Downloads/instruction_memory.mem">
+    <File Path="$PPRDIR/instruction_memory.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

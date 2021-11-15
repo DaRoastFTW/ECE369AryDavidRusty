@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-///ECE 369: Labs 9-15
-/// Rusty Rinehart- 33% Effort, Ary Nath- 33% Effort, David Mazi- 33% Effor
+///ECE 369: Final Project
+/// Rusty Rinehart- 33% Effort, Ary Nath- 33% Effort, David Mazi- 33% Effort
 ///
 
 module TopLevel_tb();
