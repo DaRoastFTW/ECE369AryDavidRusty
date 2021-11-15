@@ -32,7 +32,8 @@ module ALU32Bit (
     B,
     ALUResult,
     Zero,
-    ALUResult64);
+    ALUResult64
+);
   //Hi and Lo registers go into ALU
   input [5:0] ALUControl;  // control bits for ALU operation
   // you need to adjust the bitwidth as needed
@@ -190,6 +191,14 @@ module ALU32Bit (
       6'b100001: //andi
       begin
         ALUResult = A & {16'b0, B[15:0]};
+      end
+      6'b100010: //ori
+      begin
+        ALUResult = A | {16'b0, B[15:0]};
+      end
+      6'b100011: //xori
+      begin
+        ALUResult = A ^ {16'b0, B[15:0]};
       end
       default: begin
         ALUResult = 32'd0;

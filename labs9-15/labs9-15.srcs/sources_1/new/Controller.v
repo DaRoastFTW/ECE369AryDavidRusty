@@ -957,7 +957,7 @@ module Controller (
         MemRead = 0;
         MemtoReg = 1;
         HiLoControl = 4'b0000;
-        ALUOp = 6'b000100;
+        ALUOp = 6'b100010;
         Jr = 0;
         Mov = 0;
         wordhalfbyte = 0;
@@ -973,7 +973,7 @@ module Controller (
         MemRead = 0;
         MemtoReg = 1;
         HiLoControl = 4'b0000;
-        ALUOp = 6'b001100;
+        ALUOp = 6'b100011;
         Jr = 0;
         Mov = 0;
         wordhalfbyte = 0;

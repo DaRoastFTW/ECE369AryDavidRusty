@@ -15,148 +15,148 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16004 
-WARNING: [Synth 8-1958] event expressions must result in a singular type [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:62]
-WARNING: [Synth 8-992] JumpInstructionID is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:62]
-WARNING: [Synth 8-992] JrID is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:161]
-WARNING: [Synth 8-992] JumpID is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:163]
-WARNING: [Synth 8-992] PCStall is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:185]
-WARNING: [Synth 8-992] IFIDStall is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:185]
-WARNING: [Synth 8-992] IFIDFlush is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:185]
-WARNING: [Synth 8-992] RegWriteEX is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:213]
-WARNING: [Synth 8-992] MemWriteEX is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:213]
-WARNING: [Synth 8-992] MemReadEX is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:213]
-WARNING: [Synth 8-992] InstructionEX is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:217]
-WARNING: [Synth 8-992] ForwardC is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:271]
-WARNING: [Synth 8-992] ForwardD is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:271]
-WARNING: [Synth 8-992] RegWriteMEM is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:358]
-WARNING: [Synth 8-992] MemWriteMEM is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:358]
-WARNING: [Synth 8-992] MemReadMEM is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:358]
-WARNING: [Synth 8-992] JrMEM is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:358]
-WARNING: [Synth 8-992] RegDstMuxMEM is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:360]
-WARNING: [Synth 8-992] ALUResultMEM is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:361]
-WARNING: [Synth 8-992] ReadDataMEM is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:444]
-WARNING: [Synth 8-992] RegDstMuxWB is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:446]
-WARNING: [Synth 8-992] ALUResult64WB is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:447]
-WARNING: [Synth 8-992] HiLoControlWB is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:448]
-WARNING: [Synth 8-992] HiLoOrNormalWB is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:449]
-WARNING: [Synth 8-992] MemReadWB is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:449]
-WARNING: [Synth 8-992] MemWriteWB is already implicitly declared earlier [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:449]
-WARNING: [Synth 8-6901] identifier 'HiLoOrNormalMuxOut' is used before its declaration [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:16]
-WARNING: [Synth 8-6901] identifier 'PCResult' is used before its declaration [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:17]
-WARNING: [Synth 8-6901] identifier 'Hi_Debug' is used before its declaration [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:18]
-WARNING: [Synth 8-6901] identifier 'Lo_Debug' is used before its declaration [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:19]
+INFO: Helper process launched with PID 22700 
+WARNING: [Synth 8-1958] event expressions must result in a singular type [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:62]
+WARNING: [Synth 8-992] JumpInstructionID is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:62]
+WARNING: [Synth 8-992] JrID is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:161]
+WARNING: [Synth 8-992] JumpID is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:163]
+WARNING: [Synth 8-992] PCStall is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:185]
+WARNING: [Synth 8-992] IFIDStall is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:185]
+WARNING: [Synth 8-992] IFIDFlush is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:185]
+WARNING: [Synth 8-992] RegWriteEX is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:213]
+WARNING: [Synth 8-992] MemWriteEX is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:213]
+WARNING: [Synth 8-992] MemReadEX is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:213]
+WARNING: [Synth 8-992] InstructionEX is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:217]
+WARNING: [Synth 8-992] ForwardC is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:271]
+WARNING: [Synth 8-992] ForwardD is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:271]
+WARNING: [Synth 8-992] RegWriteMEM is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:358]
+WARNING: [Synth 8-992] MemWriteMEM is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:358]
+WARNING: [Synth 8-992] MemReadMEM is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:358]
+WARNING: [Synth 8-992] JrMEM is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:358]
+WARNING: [Synth 8-992] RegDstMuxMEM is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:360]
+WARNING: [Synth 8-992] ALUResultMEM is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:361]
+WARNING: [Synth 8-992] ReadDataMEM is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:444]
+WARNING: [Synth 8-992] RegDstMuxWB is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:446]
+WARNING: [Synth 8-992] ALUResult64WB is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:447]
+WARNING: [Synth 8-992] HiLoControlWB is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:448]
+WARNING: [Synth 8-992] HiLoOrNormalWB is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:449]
+WARNING: [Synth 8-992] MemReadWB is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:449]
+WARNING: [Synth 8-992] MemWriteWB is already implicitly declared earlier [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:449]
+WARNING: [Synth 8-6901] identifier 'HiLoOrNormalMuxOut' is used before its declaration [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:16]
+WARNING: [Synth 8-6901] identifier 'PCResult' is used before its declaration [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:17]
+WARNING: [Synth 8-6901] identifier 'Hi_Debug' is used before its declaration [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:18]
+WARNING: [Synth 8-6901] identifier 'Lo_Debug' is used before its declaration [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:19]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 857.371 ; gain = 238.707
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 972.008 ; gain = 238.504
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'TopTopLevel' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopTopLevel.v:7]
-INFO: [Synth 8-6157] synthesizing module 'ClkDiv' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ClkDiv.v:3]
+INFO: [Synth 8-6157] synthesizing module 'TopTopLevel' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopTopLevel.v:7]
+INFO: [Synth 8-6157] synthesizing module 'ClkDiv' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ClkDiv.v:3]
 	Parameter DivVal bound to: 50000000 - type: integer 
-INFO: [Synth 8-4471] merging register 'ClkInt_reg' into 'ClkOut_reg' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ClkDiv.v:19]
-WARNING: [Synth 8-6014] Unused sequential element ClkInt_reg was removed.  [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ClkDiv.v:19]
-INFO: [Synth 8-6155] done synthesizing module 'ClkDiv' (1#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ClkDiv.v:3]
-INFO: [Synth 8-6157] synthesizing module 'TopLevel' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:6]
-INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:22]
-INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:23]
-INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:25]
-INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:77]
-INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:364]
-INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:444]
-INFO: [Synth 8-6157] synthesizing module 'OrGate' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/OrGate.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'OrGate' (2#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/OrGate.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Mux32Bit3to1' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Mux32Bit3to1' (3#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ShifterID' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ShifterID' (4#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v:27]
-INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (5#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v:27]
-INFO: [Synth 8-6157] synthesizing module 'PCAdder' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'PCAdder' (6#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v:22]
-INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:39]
-INFO: [Synth 8-3876] $readmem data file 'instruction_memory.mem' is read successfully [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:56]
-INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (7#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:39]
-INFO: [Synth 8-6157] synthesizing module 'RegIF_ID' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'RegIF_ID' (8#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:23]
-INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v:51]
-INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (9#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v:51]
-INFO: [Synth 8-6157] synthesizing module 'Mux32Bit2To1' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'Mux32Bit2To1' (10#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v:10]
-INFO: [Synth 8-6157] synthesizing module 'HiLoReg' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'HiLoReg' (11#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v:23]
-INFO: [Synth 8-6157] synthesizing module 'BranchDetection' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/BranchDetection.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'BranchDetection' (12#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/BranchDetection.v:23]
-INFO: [Synth 8-6157] synthesizing module 'SignExtension' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'SignExtension' (13#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v:8]
-INFO: [Synth 8-6157] synthesizing module 'ZeroExtention' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ZeroExtention' (14#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Adder' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Adder' (15#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ShiftLeft2' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ShiftLeft2' (16#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Controller' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v:23]
-INFO: [Synth 8-226] default block is never used [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v:401]
-INFO: [Synth 8-6155] done synthesizing module 'Controller' (17#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v:23]
-INFO: [Synth 8-6157] synthesizing module 'HazardDetection' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HazardDetection.v:23]
-WARNING: [Synth 8-6090] variable 'IFIDFlush' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HazardDetection.v:114]
-INFO: [Synth 8-6155] done synthesizing module 'HazardDetection' (18#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HazardDetection.v:23]
-INFO: [Synth 8-6157] synthesizing module 'RegID_EX' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'RegID_EX' (19#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ForwardingUnit' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ForwardingUnit.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'ForwardingUnit' (20#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ForwardingUnit.v:23]
-INFO: [Synth 8-6157] synthesizing module 'ALU32Bit' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:29]
-INFO: [Synth 8-6155] done synthesizing module 'ALU32Bit' (21#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:29]
-INFO: [Synth 8-6157] synthesizing module 'AndGate' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'AndGate' (22#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Mux5Bit3to1' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Mux5Bit3to1' (23#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'RegEX_MEM' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'RegEX_MEM' (24#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v:23]
-WARNING: [Synth 8-689] width (1) of port connection 'JrMuxOut' does not match port width (32) of module 'RegEX_MEM' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:393]
-INFO: [Synth 8-6157] synthesizing module 'StoreMasker' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'StoreMasker' (25#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v:23]
-INFO: [Synth 8-6157] synthesizing module 'DataMemory' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:38]
-INFO: [Synth 8-3876] $readmem data file 'data_memory.mem' is read successfully [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:59]
-INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (26#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:38]
-INFO: [Synth 8-6157] synthesizing module 'WordMask' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'WordMask' (27#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v:23]
-INFO: [Synth 8-6157] synthesizing module 'Mux1Bit2To1' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'Mux1Bit2To1' (28#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v:10]
-INFO: [Synth 8-6157] synthesizing module 'RegMEM_WB' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'RegMEM_WB' (29#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v:23]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PC'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:47]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IM'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:58]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PCAdd'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:54]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'HiLo'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:116]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IF_ID'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:63]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'Shift_jr'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:43]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'MemToRegMux'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:481]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RTForwardMuxEX'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:295]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RSForwardMuxEX'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:287]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'HiLoOrNormalMux'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:108]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RTForwardMuxDEC'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:100]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RSForwardMuxDEC'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:92]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'EX_MEM'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:365]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'storeTreater'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:413]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'Data'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:420]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'loadTreater'. This will prevent further optimization [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:429]
-WARNING: [Synth 8-3848] Net JrMuxOutEX in module/entity TopLevel does not have driver. [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:153]
-INFO: [Synth 8-6155] done synthesizing module 'TopLevel' (30#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Two4DigitDisplay' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:15]
+INFO: [Synth 8-4471] merging register 'ClkInt_reg' into 'ClkOut_reg' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ClkDiv.v:19]
+WARNING: [Synth 8-6014] Unused sequential element ClkInt_reg was removed.  [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ClkDiv.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'ClkDiv' (1#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ClkDiv.v:3]
+INFO: [Synth 8-6157] synthesizing module 'TopLevel' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:6]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:22]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:23]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:25]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:77]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:364]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:444]
+INFO: [Synth 8-6157] synthesizing module 'OrGate' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/OrGate.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'OrGate' (2#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/OrGate.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Mux32Bit3to1' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Mux32Bit3to1' (3#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ShifterID' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ShifterID' (4#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (5#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v:27]
+INFO: [Synth 8-6157] synthesizing module 'PCAdder' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'PCAdder' (6#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v:22]
+INFO: [Synth 8-6157] synthesizing module 'InstructionMemory' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:39]
+INFO: [Synth 8-3876] $readmem data file 'instruction_memory.mem' is read successfully [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionMemory' (7#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:39]
+INFO: [Synth 8-6157] synthesizing module 'RegIF_ID' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegIF_ID' (8#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (9#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v:51]
+INFO: [Synth 8-6157] synthesizing module 'Mux32Bit2To1' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Mux32Bit2To1' (10#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'HiLoReg' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'HiLoReg' (11#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BranchDetection' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/BranchDetection.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BranchDetection' (12#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/BranchDetection.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SignExtension' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'SignExtension' (13#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v:8]
+INFO: [Synth 8-6157] synthesizing module 'ZeroExtention' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ZeroExtention' (14#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Adder' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Adder' (15#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ShiftLeft2' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ShiftLeft2' (16#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Controller' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v:401]
+INFO: [Synth 8-6155] done synthesizing module 'Controller' (17#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'HazardDetection' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HazardDetection.v:23]
+WARNING: [Synth 8-6090] variable 'IFIDFlush' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HazardDetection.v:114]
+INFO: [Synth 8-6155] done synthesizing module 'HazardDetection' (18#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HazardDetection.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegID_EX' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegID_EX' (19#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ForwardingUnit' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ForwardingUnit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ForwardingUnit' (20#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ForwardingUnit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU32Bit' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'ALU32Bit' (21#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:29]
+INFO: [Synth 8-6157] synthesizing module 'AndGate' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'AndGate' (22#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Mux5Bit3to1' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Mux5Bit3to1' (23#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegEX_MEM' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegEX_MEM' (24#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'JrMuxOut' does not match port width (32) of module 'RegEX_MEM' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:393]
+INFO: [Synth 8-6157] synthesizing module 'StoreMasker' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'StoreMasker' (25#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DataMemory' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:38]
+INFO: [Synth 8-3876] $readmem data file 'data_memory.mem' is read successfully [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'DataMemory' (26#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:38]
+INFO: [Synth 8-6157] synthesizing module 'WordMask' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'WordMask' (27#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Mux1Bit2To1' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Mux1Bit2To1' (28#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'RegMEM_WB' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegMEM_WB' (29#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v:23]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PC'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:47]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IM'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:58]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'PCAdd'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:54]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'HiLo'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:116]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IF_ID'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:63]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'Shift_jr'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:43]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'MemToRegMux'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:481]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RTForwardMuxEX'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:295]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RSForwardMuxEX'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:287]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'HiLoOrNormalMux'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:108]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RTForwardMuxDEC'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:100]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RSForwardMuxDEC'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:92]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'EX_MEM'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:365]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'storeTreater'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:413]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'Data'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:420]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'loadTreater'. This will prevent further optimization [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:429]
+WARNING: [Synth 8-3848] Net JrMuxOutEX in module/entity TopLevel does not have driver. [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:153]
+INFO: [Synth 8-6155] done synthesizing module 'TopLevel' (30#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Two4DigitDisplay' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:15]
 	Parameter NUM_WIDTH bound to: 16 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'SevenSegment' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SevenSegment.v:2]
-INFO: [Synth 8-226] default block is never used [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SevenSegment.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'SevenSegment' (31#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SevenSegment.v:2]
-INFO: [Synth 8-226] default block is never used [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:116]
-WARNING: [Synth 8-567] referenced signal 'firstdigitA' should be on the sensitivity list [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
-WARNING: [Synth 8-567] referenced signal 'seconddigitA' should be on the sensitivity list [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
-WARNING: [Synth 8-567] referenced signal 'thirddigitA' should be on the sensitivity list [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
-WARNING: [Synth 8-567] referenced signal 'forthdigitA' should be on the sensitivity list [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
-WARNING: [Synth 8-567] referenced signal 'firstdigitB' should be on the sensitivity list [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
-WARNING: [Synth 8-567] referenced signal 'seconddigitB' should be on the sensitivity list [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
-WARNING: [Synth 8-567] referenced signal 'thirddigitB' should be on the sensitivity list [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
-WARNING: [Synth 8-567] referenced signal 'forthdigitB' should be on the sensitivity list [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
-INFO: [Synth 8-6155] done synthesizing module 'Two4DigitDisplay' (32#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:15]
-INFO: [Synth 8-6155] done synthesizing module 'TopTopLevel' (33#1) [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopTopLevel.v:7]
+INFO: [Synth 8-6157] synthesizing module 'SevenSegment' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SevenSegment.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SevenSegment.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'SevenSegment' (31#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SevenSegment.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:116]
+WARNING: [Synth 8-567] referenced signal 'firstdigitA' should be on the sensitivity list [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
+WARNING: [Synth 8-567] referenced signal 'seconddigitA' should be on the sensitivity list [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
+WARNING: [Synth 8-567] referenced signal 'thirddigitA' should be on the sensitivity list [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
+WARNING: [Synth 8-567] referenced signal 'forthdigitA' should be on the sensitivity list [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
+WARNING: [Synth 8-567] referenced signal 'firstdigitB' should be on the sensitivity list [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
+WARNING: [Synth 8-567] referenced signal 'seconddigitB' should be on the sensitivity list [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
+WARNING: [Synth 8-567] referenced signal 'thirddigitB' should be on the sensitivity list [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
+WARNING: [Synth 8-567] referenced signal 'forthdigitB' should be on the sensitivity list [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:115]
+INFO: [Synth 8-6155] done synthesizing module 'Two4DigitDisplay' (32#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'TopTopLevel' (33#1) [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopTopLevel.v:7]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[31]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[30]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[29]
@@ -172,6 +172,8 @@ WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[20]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[19]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[18]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[17]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[16]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[15]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[1]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[0]
 WARNING: [Synth 8-3331] design DataMemory has unconnected port Rst
@@ -255,11 +257,9 @@ WARNING: [Synth 8-3331] design HazardDetection has unconnected port InstructionI
 WARNING: [Synth 8-3331] design HazardDetection has unconnected port InstructionID[30]
 WARNING: [Synth 8-3331] design HazardDetection has unconnected port InstructionID[29]
 WARNING: [Synth 8-3331] design HazardDetection has unconnected port InstructionID[28]
-WARNING: [Synth 8-3331] design HazardDetection has unconnected port InstructionID[27]
-WARNING: [Synth 8-3331] design HazardDetection has unconnected port InstructionID[26]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 934.945 ; gain = 316.281
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1033.852 ; gain = 300.348
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -272,44 +272,43 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 934.945 ; gain = 316.281
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1033.852 ; gain = 300.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 934.945 ; gain = 316.281
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1033.852 ; gain = 300.348
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 934.945 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1033.852 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/constrs_1/new/Two4DigitDisplay.xdc]
-Finished Parsing XDC File [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/constrs_1/new/Two4DigitDisplay.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/constrs_1/new/Two4DigitDisplay.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TopTopLevel_propImpl.xdc].
+Parsing XDC File [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/constrs_1/new/Two4DigitDisplay.xdc]
+Finished Parsing XDC File [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/constrs_1/new/Two4DigitDisplay.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/constrs_1/new/Two4DigitDisplay.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TopTopLevel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TopTopLevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1055.996 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1169.887 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1055.996 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1169.887 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1055.996 ; gain = 437.332
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1169.887 ; gain = 436.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1055.996 ; gain = 437.332
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1169.887 ; gain = 436.383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1055.996 ; gain = 437.332
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1169.887 ; gain = 436.383
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5546] ROM "Memory" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ALUOp" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ALUOp" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "MemWrite" won't be mapped to RAM because it is too sparse
@@ -322,9 +321,9 @@ INFO: [Synth 8-5546] ROM "Mov" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "wordhalfbyte" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Jump" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "HiLoOrNormal" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:62]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:63]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1055.996 ; gain = 437.332
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1169.887 ; gain = 436.383
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -344,7 +343,7 @@ Detailed RTL Component Info :
 	   2 Input     26 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
 +---XORs : 
-	   2 Input     32 Bit         XORs := 1     
+	   2 Input     32 Bit         XORs := 2     
 +---Registers : 
 	               64 Bit    Registers := 2     
 	               32 Bit    Registers := 58    
@@ -357,20 +356,17 @@ Detailed RTL Component Info :
 +---Multipliers : 
 	                32x32  Multipliers := 1     
 +---Muxes : 
-	  35 Input     64 Bit        Muxes := 1     
+	  37 Input     64 Bit        Muxes := 1     
 	   5 Input     32 Bit        Muxes := 7     
-	  38 Input     32 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 5     
 	   8 Input     32 Bit        Muxes := 1     
 	   4 Input     32 Bit        Muxes := 5     
-	  32 Input     32 Bit        Muxes := 1     
 	   3 Input     32 Bit        Muxes := 2     
 	   2 Input     26 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 1     
 	  25 Input      6 Bit        Muxes := 2     
 	   2 Input      5 Bit        Muxes := 3     
 	   3 Input      5 Bit        Muxes := 1     
-	  35 Input      5 Bit        Muxes := 1     
 	   4 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
 	  25 Input      4 Bit        Muxes := 2     
@@ -413,10 +409,6 @@ Module PCAdder
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
-Module InstructionMemory 
-Detailed RTL Component Info : 
-+---Muxes : 
-	  38 Input     32 Bit        Muxes := 1     
 Module RegIF_ID 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -488,13 +480,11 @@ Detailed RTL Component Info :
 	   3 Input     32 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
 +---XORs : 
-	   2 Input     32 Bit         XORs := 1     
+	   2 Input     32 Bit         XORs := 2     
 +---Multipliers : 
 	                32x32  Multipliers := 1     
 +---Muxes : 
-	  35 Input     64 Bit        Muxes := 1     
-	  32 Input     32 Bit        Muxes := 1     
-	  35 Input      5 Bit        Muxes := 1     
+	  37 Input     64 Bit        Muxes := 1     
 Module Mux5Bit3to1 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -555,7 +545,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:187]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:188]
 DSP Report: Generating DSP ALUResult0, operation Mode is: A*B.
 DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
 DSP Report: operator ALUResult0 is absorbed into DSP ALUResult0.
@@ -690,17 +680,26 @@ INFO: [Synth 8-3886] merging instance 'CPU/ID_EX/JumpInst_output_reg[16]' (FDR) 
 INFO: [Synth 8-3886] merging instance 'CPU/ID_EX/JumpInst_output_reg[17]' (FDR) to 'CPU/ID_EX/InstructionOut_reg[15]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:46 . Memory (MB): peak = 1084.738 ; gain = 466.074
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1187.512 ; gain = 454.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
+ROM:
++------------------+------------+---------------+----------------+
+|Module Name       | RTL Object | Depth x Width | Implemented As | 
++------------------+------------+---------------+----------------+
+|InstructionMemory | p_0_out    | 256x32        | LUT            | 
+|InstructionMemory | p_0_out    | 256x32        | LUT            | 
++------------------+------------+---------------+----------------+
+
+
 Distributed RAM: Preliminary Mapping	Report (see note below)
 +------------+------------+-----------+----------------------+-------------------+
 |Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives        | 
 +------------+------------+-----------+----------------------+-------------------+
-|CPU/Data    | Memory_reg | Implied   | 32 K x 32            | RAM256X1S x 4096	 | 
+|CPU/Data    | Memory_reg | Implied   | 8 K x 32             | RAM256X1S x 1024	 | 
 +------------+------------+-----------+----------------------+-------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
@@ -733,13 +732,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1084.738 ; gain = 466.074
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:52 ; elapsed = 00:02:00 . Memory (MB): peak = 1187.512 ; gain = 454.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1109.527 ; gain = 490.863
+Finished Timing Optimization : Time (s): cpu = 00:01:57 ; elapsed = 00:02:05 . Memory (MB): peak = 1209.820 ; gain = 476.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -749,7 +748,7 @@ Distributed RAM: Final Mapping	Report
 +------------+------------+-----------+----------------------+-------------------+
 |Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives        | 
 +------------+------------+-----------+----------------------+-------------------+
-|CPU/Data    | Memory_reg | Implied   | 32 K x 32            | RAM256X1S x 4096	 | 
+|CPU/Data    | Memory_reg | Implied   | 8 K x 32             | RAM256X1S x 1024	 | 
 +------------+------------+-----------+----------------------+-------------------+
 
 ---------------------------------------------------------------------------------
@@ -765,7 +764,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:00:59 . Memory (MB): peak = 1200.480 ; gain = 581.816
+Finished Technology Mapping : Time (s): cpu = 00:02:06 ; elapsed = 00:02:13 . Memory (MB): peak = 1349.723 ; gain = 616.219
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -789,13 +788,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1206.258 ; gain = 587.594
+Finished IO Insertion : Time (s): cpu = 00:02:15 ; elapsed = 00:02:22 . Memory (MB): peak = 1353.527 ; gain = 620.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1206.258 ; gain = 587.594
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:15 ; elapsed = 00:02:22 . Memory (MB): peak = 1353.527 ; gain = 620.023
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -814,25 +813,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1206.258 ; gain = 587.594
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:16 ; elapsed = 00:02:24 . Memory (MB): peak = 1353.527 ; gain = 620.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1206.258 ; gain = 587.594
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:16 ; elapsed = 00:02:24 . Memory (MB): peak = 1353.527 ; gain = 620.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1206.258 ; gain = 587.594
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:16 ; elapsed = 00:02:24 . Memory (MB): peak = 1353.527 ; gain = 620.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1206.258 ; gain = 587.594
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:16 ; elapsed = 00:02:24 . Memory (MB): peak = 1353.527 ; gain = 620.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -851,15 +850,15 @@ Report Cell Usage:
 |1     |BUFG      |     1|
 |2     |CARRY4    |   141|
 |3     |DSP48E1   |     8|
-|4     |LUT1      |    19|
-|5     |LUT2      |   319|
-|6     |LUT3      |   232|
-|7     |LUT4      |   268|
-|8     |LUT5      |   741|
-|9     |LUT6      |  2859|
-|10    |MUXF7     |   814|
-|11    |MUXF8     |   258|
-|12    |RAM256X1S |  4096|
+|4     |LUT1      |     6|
+|5     |LUT2      |   335|
+|6     |LUT3      |   194|
+|7     |LUT4      |   194|
+|8     |LUT5      |   675|
+|9     |LUT6      |  2226|
+|10    |MUXF7     |   421|
+|11    |MUXF8     |    32|
+|12    |RAM256X1S |  1024|
 |13    |FDCE      |    32|
 |14    |FDRE      |  1817|
 |15    |FDSE      |    15|
@@ -871,23 +870,23 @@ Report Instance Areas:
 +------+--------------------+------------------+------+
 |      |Instance            |Module            |Cells |
 +------+--------------------+------------------+------+
-|1     |top                 |                  | 11637|
-|2     |  CPU               |TopLevel          | 11498|
+|1     |top                 |                  |  7138|
+|2     |  CPU               |TopLevel          |  6999|
 |3     |    PC              |ProgramCounter    |    33|
 |4     |    PCAdd           |PCAdder           |     9|
-|5     |    IM              |InstructionMemory |    19|
+|5     |    IM              |InstructionMemory |   121|
 |6     |    IF_ID           |RegIF_ID          |    65|
 |7     |    HiLoOrNormalMux |Mux32Bit2To1      |    32|
 |8     |    HiLo            |HiLoReg           |   482|
-|9     |    ALU             |ALU32Bit          |   126|
+|9     |    ALU             |ALU32Bit          |   154|
 |10    |    EX_MEM          |RegEX_MEM         |   196|
 |11    |    storeTreater    |StoreMasker       |    38|
-|12    |    Data            |DataMemory        |  6143|
+|12    |    Data            |DataMemory        |  1505|
 |13    |    loadTreater     |WordMask          |    45|
 |14    |    MemToRegMux     |Mux32Bit3to1      |    32|
 |15    |    Add             |Adder             |    39|
 |16    |    BranchDetect    |BranchDetection   |     4|
-|17    |    ID_EX           |RegID_EX          |  1959|
+|17    |    ID_EX           |RegID_EX          |  1981|
 |18    |    MEM_WB          |RegMEM_WB         |   233|
 |19    |    MovMuxEx        |Mux32Bit2To1__4   |    44|
 |20    |    RegFile         |RegisterFile      |  1984|
@@ -895,29 +894,29 @@ Report Instance Areas:
 |22    |  TDD               |Two4DigitDisplay  |    53|
 +------+--------------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1206.258 ; gain = 587.594
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:16 ; elapsed = 00:02:24 . Memory (MB): peak = 1353.527 ; gain = 620.023
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 44 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 1206.258 ; gain = 466.543
-Synthesis Optimization Complete : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1206.258 ; gain = 587.594
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:05 ; elapsed = 00:02:19 . Memory (MB): peak = 1353.527 ; gain = 483.988
+Synthesis Optimization Complete : Time (s): cpu = 00:02:17 ; elapsed = 00:02:25 . Memory (MB): peak = 1353.527 ; gain = 620.023
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.152 . Memory (MB): peak = 1206.258 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 5317 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 3 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.258 . Memory (MB): peak = 1353.527 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1626 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 2 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 4096 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1206.258 ; gain = 0.000
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 1024 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1353.527 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 4096 instances were transformed.
-  RAM256X1S => RAM256X1S (inverted pins: WCLK) (MUXF7(x2), MUXF8, RAMS64E(x4)): 4096 instances
+  A total of 1024 instances were transformed.
+  RAM256X1S => RAM256X1S (inverted pins: WCLK) (MUXF7(x2), MUXF8, RAMS64E(x4)): 1024 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-231 Infos, 142 Warnings, 0 Critical Warnings and 0 Errors encountered.
+230 Infos, 142 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:13 . Memory (MB): peak = 1206.258 ; gain = 900.574
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1206.258 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:31 ; elapsed = 00:02:41 . Memory (MB): peak = 1353.527 ; gain = 929.336
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1353.527 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.runs/synth_1/TopTopLevel.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.runs/synth_1/TopTopLevel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TopTopLevel_utilization_synth.rpt -pb TopTopLevel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 14 13:51:35 2021...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 15 11:24:30 2021...
