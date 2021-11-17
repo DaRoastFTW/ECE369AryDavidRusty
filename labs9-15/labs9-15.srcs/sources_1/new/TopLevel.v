@@ -10,8 +10,8 @@ module TopLevel (
     ActualPCResult,
     ActualHi,
     ActualLo,
-	ActualV0,
-	ActualV1
+    ActualV0,
+    ActualV1
 );
   input Clk, Reset;
   output [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo, ActualV0, ActualV1;
@@ -86,8 +86,8 @@ module TopLevel (
       .Reset(Reset),
       .ReadData1(ReadData1ID),
       .ReadData2(ReadData2ID),
-	  .DataV0(DataV0),
-	  .DataV1(DataV1)
+      .DataV0(DataV0),
+      .DataV1(DataV1)
   );
 
   Mux32Bit3to1 RSForwardMuxDEC (
@@ -180,8 +180,8 @@ module TopLevel (
       .Mov(MovID),
       .wordhalfbyte(wordhalfbyteID),
       .HiLoOrNormal(HiLoOrNormalID),
-	  .Jump(JumpID),
-	  .Jr(JrID)
+      .Jump(JumpID),
+      .Jr(JrID)
   );
   wire PCStall, IFIDStall, IFIDFlush, IDEXFlush;
   wire [31:0] InstructionMEM, InstructionWB;
@@ -193,22 +193,22 @@ module TopLevel (
       .InstructionID(InstructionID),
       .InstructionEX(InstructionEX),
       .InstructionMEM(InstructionMEM),
-	  .InstructionWB(InstructionWB),
+      .InstructionWB(InstructionWB),
       .RegWriteID(RegWriteID),
       .RegWriteEX(RegWriteEX),
       .RegWriteMEM(RegWriteMEM),
-	  .RegWriteWB(RegWriteWB),
+      .RegWriteWB(RegWriteWB),
       .BranchOutput(BranchOutput),
-	  .BranchInstruction(BranchID),
+      .BranchInstruction(BranchID),
       .RegDstMuxMEM(RegDstMuxMEM),
-	  .MemReadID(MemReadID),
-	  .MemReadEX(MemReadEX),
-	  .MemReadMEM(MemReadMEM),
-	  .MemReadWB(MemReadWB),
-	  .MemWriteID(MemWriteID),
-	  .MemWriteEX(MemWriteEX),
-	  .MemWriteMEM(MemWriteMEM),
-	  .MemWriteWB(MemWriteWB)
+      .MemReadID(MemReadID),
+      .MemReadEX(MemReadEX),
+      .MemReadMEM(MemReadMEM),
+      .MemReadWB(MemReadWB),
+      .MemWriteID(MemWriteID),
+      .MemWriteEX(MemWriteEX),
+      .MemWriteMEM(MemWriteMEM),
+      .MemWriteWB(MemWriteWB)
   );
   //Pipe Reg 2
   wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX, JumpEX, HiLoOrNormalEX;
@@ -436,9 +436,9 @@ module TopLevel (
   wire [31:0] ReadDataMemWB, ALUResultWB, PCAddWB;
   (* mark_debug = "true" *) wire [31:0] ReadDataMEM;
   wire [1:0] MemtoRegWB, wordhalfbyteWB;
-  wire [4:0] RegDstMuxWB;
+  wire [ 4:0] RegDstMuxWB;
   wire [63:0] ALUResult64WB;
-  wire [3:0] HiLoControlWB;
+  wire [ 3:0] HiLoControlWB;
   wire HiLoOrNormalWB, MemReadWB, MemWriteWB;
   RegMEM_WB MEM_WB (
       .Clk(Clk),
@@ -447,10 +447,10 @@ module TopLevel (
       .RegWriteOut(RegWriteWB),
       .MemtoRegIn(MemtoRegMEM),
       .MemtoRegOut(MemtoRegWB),
-	  .MemReadIn(MemReadMEM),
-	  .MemReadOut(MemReadWB),
-	  .MemWriteIn(MemWriteMEM),
-	  .MemWriteOut(MemWriteWB),
+      .MemReadIn(MemReadMEM),
+      .MemReadOut(MemReadWB),
+      .MemWriteIn(MemWriteMEM),
+      .MemWriteOut(MemWriteWB),
       .PCAddIn(PCAddMEM),
       .PCAddOut(PCAddWB),
       .ALUResultIn(ALUResultMEM),
@@ -465,8 +465,8 @@ module TopLevel (
       .HiLoControlOut(HiLoControlWB),
       .HiLoOrNormalIn(HiLoOrNormalMEM),
       .HiLoOrNormalOut(HiLoOrNormalWB),
-	  .InstructionIn(InstructionMEM),
-	  .InstructionOut(InstructionWB)
+      .InstructionIn(InstructionMEM),
+      .InstructionOut(InstructionWB)
   );
 
   //This is the write back stage

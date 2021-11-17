@@ -48,7 +48,7 @@ module HazardDetection (
   input [31:0] InstructionID, InstructionEX, InstructionMEM, InstructionWB;
   input RegWriteID, RegWriteEX, RegWriteMEM, RegWriteWB, BranchOutput, MemReadID, MemReadEX, MemReadMEM, MemReadWB, MemWriteID, MemWriteEX, MemWriteMEM, MemWriteWB, BranchInstruction;
   input [4:0] RegDstMuxMEM;
-	reg [3:0] debugIf;
+  reg [3:0] debugIf;
   output reg PCStall, IFIDStall, IFIDFlush, IDEXFlush;
 
 
@@ -63,7 +63,7 @@ module HazardDetection (
     IFIDStall <= 1'b0;
     IFIDFlush <= 1'b0;
     IDEXFlush <= 1'b0;
-	debugIf <= 0;
+    debugIf   <= 0;
     //See slide in Discord chat
 
     //(rs(IR_ID)==destEX) && use_rs(IR_ID) && RegWriteEX 
@@ -71,7 +71,7 @@ module HazardDetection (
       PCStall   <= 1'b1;
       IFIDStall <= 1'b1;
       IDEXFlush <= 1'b1;
-	  debugIf <= 1;
+      debugIf   <= 1;
     end
 
     //(rs(IR_ID)==destMEM) && use_rs(IR_ID) && RegWriteMEM
@@ -80,7 +80,7 @@ module HazardDetection (
       PCStall   <= 1'b1;
       IFIDStall <= 1'b1;
       IDEXFlush <= 1'b1;
-	  debugIf <= 2;
+      debugIf   <= 2;
     end
 
     //(rs(IR_ID)==destWB) && use_rs(IR_ID) && RegWriteWB 
@@ -89,7 +89,7 @@ module HazardDetection (
       PCStall   <= 1'b1;
       IFIDStall <= 1'b1;
       IDEXFlush <= 1'b1;
-	  debugIf <= 3;
+      debugIf   <= 3;
     end
 
     //(rt(IR_ID)==destEX) && use_rs(IR_ID) && RegWriteEX
@@ -98,7 +98,7 @@ module HazardDetection (
       PCStall   <= 1'b1;
       IFIDStall <= 1'b1;
       IDEXFlush <= 1'b1;
-	  debugIf <= 4;
+      debugIf   <= 4;
     end
 
     //(rt(IR_ID)==destMEM) && use_rs(IR_ID) && RegWriteMEM
@@ -107,7 +107,7 @@ module HazardDetection (
       PCStall   <= 1'b1;
       IFIDStall <= 1'b1;
       IDEXFlush <= 1'b1;
-	  debugIf <= 5;
+      debugIf   <= 5;
     end
 
     //(rt(IR_ID)==destWB) && use_rs(IR_ID) && RegWriteWB
@@ -116,7 +116,7 @@ module HazardDetection (
       PCStall   <= 1'b1;
       IFIDStall <= 1'b1;
       IDEXFlush <= 1'b1;
-	  debugIf <= 6;
+      debugIf   <= 6;
     end
 
     //To resolve jal to sw dependency when jal is in execute 
@@ -125,7 +125,7 @@ module HazardDetection (
       PCStall   <= 1'b1;
       IFIDStall <= 1'b1;
       IDEXFlush <= 1'b1;
-	  debugIf <= 7;
+      debugIf   <= 7;
     end
 
     //To resolve jal to sw dependency when jal is in memory
@@ -134,7 +134,7 @@ module HazardDetection (
       PCStall   <= 1'b1;
       IFIDStall <= 1'b1;
       IDEXFlush <= 1'b1;
-	  debugIf <= 8;
+      debugIf   <= 8;
     end
     //To resolve jal to sw dependency when jal is in write-back
   else
@@ -142,13 +142,13 @@ module HazardDetection (
       PCStall   <= 1'b1;
       IFIDStall <= 1'b1;
       IDEXFlush <= 1'b1;
-	  debugIf <= 9;
+      debugIf   <= 9;
     end
 	//Branch taken
 	else
     if ((BranchOutput == 1'b1)) begin
       IFIDFlush <= 1'b1;
-	  debugIf <= 10;
+      debugIf   <= 10;
     end
   end
 

@@ -58,8 +58,8 @@ module RegisterFile (
     Reset,
     ReadData1,
     ReadData2,
-	DataV0,
-	DataV1
+    DataV0,
+    DataV1
 );
 
   input [4:0] ReadRegister1;
@@ -72,20 +72,20 @@ module RegisterFile (
 
   output reg [31:0] ReadData1;
   output reg [31:0] ReadData2;
-	output reg [31:0] DataV0;
-	output reg [31:0] DataV1;
+  output reg [31:0] DataV0;
+  output reg [31:0] DataV1;
   reg [31:0] RegisterFile[0:31];
   initial begin
-    RegisterFile[0] <= 32'd0;
-	RegisterFile[29] <= 32'd32767;
+    RegisterFile[0]  <= 32'd0;
+    RegisterFile[29] <= 32'd32767;
   end
 
   integer i;
   always @(*) begin
     ReadData1 <= RegisterFile[ReadRegister1];
     ReadData2 <= RegisterFile[ReadRegister2];
-	DataV0 <= RegisterFile[2];
-	DataV1 <= RegisterFile[3];
+    DataV0 <= RegisterFile[2];
+    DataV1 <= RegisterFile[3];
   end
 
   always @(posedge Clk) begin
@@ -93,7 +93,7 @@ module RegisterFile (
       for (i = 0; i < 32; i = i + 1) begin
         RegisterFile[i] <= 32'b0;
       end
-	  RegisterFile[29] <= 32'd32767;
+      RegisterFile[29] <= 32'd32767;
     end else if (RegWrite) begin
       //@(negedge Clk);
       RegisterFile[WriteRegister] <= WriteData;

@@ -42,8 +42,8 @@ module Mux32Bit3to1 (
       out <= inB;
     end else if (sel == 2'b10) begin
       out <= inC;
-	end else if (sel == 2'b11) begin
-		out <= inC;
+    end else if (sel == 2'b11) begin
+      out <= inC;
     end else begin
       out <= inA;
     end

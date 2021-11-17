@@ -27,10 +27,10 @@ module RegMEM_WB (
     RegWriteOut,
     MemtoRegIn,
     MemtoRegOut,
-	MemReadIn,
-	MemReadOut,
-	MemWriteIn,
-	MemWriteOut,
+    MemReadIn,
+    MemReadOut,
+    MemWriteIn,
+    MemWriteOut,
     PCAddIn,
     PCAddOut,
     ALUResultIn,
@@ -45,8 +45,8 @@ module RegMEM_WB (
     HiLoControlOut,
     HiLoOrNormalIn,
     HiLoOrNormalOut,
-	InstructionIn,
-	InstructionOut
+    InstructionIn,
+    InstructionOut
 );
   input Clk, Reset;
   input RegWriteIn, HiLoOrNormalIn, MemReadIn, MemWriteIn;
@@ -73,9 +73,9 @@ module RegMEM_WB (
       ALUResult64Out <= 0;
       HiLoControlOut <= 0;
       HiLoOrNormalOut <= 0;
-	  InstructionOut <= 0;
-	  MemReadOut <= 0;
-	  MemWriteOut <= 0;
+      InstructionOut <= 0;
+      MemReadOut <= 0;
+      MemWriteOut <= 0;
     end else begin
       RegWriteOut <= RegWriteIn;
       MemtoRegOut <= MemtoRegIn;
@@ -86,9 +86,9 @@ module RegMEM_WB (
       ALUResult64Out <= ALUResult64In;
       HiLoControlOut <= HiLoControlIn;
       HiLoOrNormalOut <= HiLoOrNormalIn;
-	  InstructionOut <= InstructionIn;
-	  MemReadOut <= MemReadIn;
-	  MemWriteOut <= MemWriteIn;
+      InstructionOut <= InstructionIn;
+      MemReadOut <= MemReadIn;
+      MemWriteOut <= MemWriteIn;
     end
   end
 endmodule

@@ -20,55 +20,59 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module BranchDetection(Instruction, A, B, BranchOut);
-input [31:0] Instruction, A, B;
-output reg BranchOut;
+module BranchDetection (
+    Instruction,
+    A,
+    B,
+    BranchOut
+);
+  input [31:0] Instruction, A, B;
+  output reg BranchOut;
 
-always@(*) begin
-	case(Instruction[31:26])
-		6'b000001: begin
-			case(Instruction[20:16])
-				5'b00001: begin //bgez
-					BranchOut <= ($signed(A) >= 0);
-				end
-				5'b00000: begin //bltz
-					BranchOut <= ($signed(A) < 0);
-				end
-				default:
-					BranchOut <= 0;
-			endcase
-		end
-		6'b000100: begin //beq
-			BranchOut <= (A == B);
-		end
-		6'b000101: begin //bne
-			BranchOut <= (A != B);
-		end
-		6'b000111: begin //bgtz
-			BranchOut <= ($signed(A) > 0);
-		end
-		6'b000110: begin //blez
-			BranchOut <= ($signed(A) <= 0);
-		end
-		6'b000010: begin //j
-			BranchOut <= 1;
-		end
-		6'b000011: begin //jal
-			BranchOut <= 1;
-		end
-		6'b000000: begin
-			case(Instruction[5:0])
-				6'b001000:	begin	//jr
-					BranchOut <= 1;
-				end
-				default begin
-					BranchOut <= 0;
-				end
-			endcase
-		end
-		default: begin
-			BranchOut <= 0;
-		end
-	endcase
-end
+  always @(*) begin
+    case (Instruction[31:26])
+      6'b000001: begin
+        case (Instruction[20:16])
+          5'b00001: begin  //bgez
+            BranchOut <= ($signed(A) >= 0);
+          end
+          5'b00000: begin  //bltz
+            BranchOut <= ($signed(A) < 0);
+          end
+          default: BranchOut <= 0;
+        endcase
+      end
+      6'b000100: begin  //beq
+        BranchOut <= (A == B);
+      end
+      6'b000101: begin  //bne
+        BranchOut <= (A != B);
+      end
+      6'b000111: begin  //bgtz
+        BranchOut <= ($signed(A) > 0);
+      end
+      6'b000110: begin  //blez
+        BranchOut <= ($signed(A) <= 0);
+      end
+      6'b000010: begin  //j
+        BranchOut <= 1;
+      end
+      6'b000011: begin  //jal
+        BranchOut <= 1;
+      end
+      6'b000000: begin
+        case (Instruction[5:0])
+          6'b001000: begin  //jr
+            BranchOut <= 1;
+          end
+          default begin
+            BranchOut <= 0;
+          end
+        endcase
+      end
+      default: begin
+        BranchOut <= 0;
+      end
+    endcase
+  end
 endmodule

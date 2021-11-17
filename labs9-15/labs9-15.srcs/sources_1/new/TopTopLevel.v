@@ -31,8 +31,8 @@ module TopTopLevel (
       .ActualPCResult(ActualPCResult),
       .ActualHi(ActualHi),
       .ActualLo(ActualLo),
-	  .ActualV0(ActualV0),
-	  .ActualV1(ActualV1)
+      .ActualV0(ActualV0),
+      .ActualV1(ActualV1)
   );
   Two4DigitDisplay TDD (
       Clk,
