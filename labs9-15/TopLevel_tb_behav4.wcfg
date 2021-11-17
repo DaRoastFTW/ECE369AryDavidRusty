@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="33156666fs"></ZoomStartTime>
-      <ZoomEndTime time="34648667fs"></ZoomEndTime>
-      <Cursor1Time time="34400000fs"></Cursor1Time>
+      <ZoomStartTime time="1122911505000fs"></ZoomStartTime>
+      <ZoomEndTime time="1122912177001fs"></ZoomEndTime>
+      <Cursor1Time time="1122914000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="182"></NameColumnWidth>
-      <ValueColumnWidth column_width="194"></ValueColumnWidth>
+      <ValueColumnWidth column_width="189"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="40" />
+   <WVObjectSize size="47" />
    <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -68,6 +68,7 @@
       <obj_property name="ElementShortName">RegisterFile[0:31][31:0]</obj_property>
       <obj_property name="ObjectShortName">RegisterFile[0:31][31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/TopLevel_tb/tl/RegFile/RegisterFile[0]" type="array">
          <obj_property name="ElementShortName">[0][31:0]</obj_property>
          <obj_property name="ObjectShortName">[0][31:0]</obj_property>
@@ -267,29 +268,69 @@
       <obj_property name="ElementShortName">RegWriteWB</obj_property>
       <obj_property name="ObjectShortName">RegWriteWB</obj_property>
    </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/PC/Address" type="array">
+      <obj_property name="ElementShortName">Address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Address[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/PCSrcMux/out" type="array">
+      <obj_property name="ElementShortName">out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/PCSrcMux/inA" type="array">
+      <obj_property name="ElementShortName">inA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inA[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/PCSrcMux/inB" type="array">
+      <obj_property name="ElementShortName">inB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inB[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/PCSrcMux/inC" type="array">
+      <obj_property name="ElementShortName">inC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inC[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/PCSrcMux/sel" type="array">
+      <obj_property name="ElementShortName">sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">sel[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/Control/Jump" type="logic">
+      <obj_property name="ElementShortName">Jump</obj_property>
+      <obj_property name="ObjectShortName">Jump</obj_property>
+   </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8172]" type="array">
       <obj_property name="ElementShortName">[8172][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8172][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8173]" type="array">
       <obj_property name="ElementShortName">[8173][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8173][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8174]" type="array">
       <obj_property name="ElementShortName">[8174][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8174][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8175]" type="array">
       <obj_property name="ElementShortName">[8175][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8175][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8176]" type="array">
       <obj_property name="ElementShortName">[8176][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8176][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8177]" type="array">
       <obj_property name="ElementShortName">[8177][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8177][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8178]" type="array">
       <obj_property name="ElementShortName">[8178][31:0]</obj_property>
@@ -304,38 +345,47 @@
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8180]" type="array">
       <obj_property name="ElementShortName">[8180][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8180][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8181]" type="array">
       <obj_property name="ElementShortName">[8181][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8181][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8182]" type="array">
       <obj_property name="ElementShortName">[8182][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8182][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8183]" type="array">
       <obj_property name="ElementShortName">[8183][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8183][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8184]" type="array">
       <obj_property name="ElementShortName">[8184][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8184][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8185]" type="array">
       <obj_property name="ElementShortName">[8185][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8185][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8186]" type="array">
       <obj_property name="ElementShortName">[8186][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8186][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8187]" type="array">
       <obj_property name="ElementShortName">[8187][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8187][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8188]" type="array">
       <obj_property name="ElementShortName">[8188][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8188][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8189]" type="array">
       <obj_property name="ElementShortName">[8189][31:0]</obj_property>
@@ -345,9 +395,11 @@
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8190]" type="array">
       <obj_property name="ElementShortName">[8190][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8190][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/Data/Memory[8191]" type="array">
       <obj_property name="ElementShortName">[8191][31:0]</obj_property>
       <obj_property name="ObjectShortName">[8191][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

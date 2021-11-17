@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date                      : Mon Nov 15 11:26:48 2021
-| Host                      : DESKTOP-LH83A4C running 64-bit major release  (build 9200)
+| Date                      : Tue Nov 16 16:25:43 2021
+| Host                      : DELL-TACO-2 running 64-bit major release  (build 9200)
 | Command                   : report_io -file TopTopLevel_io_placed.rpt
 | Design                    : TopTopLevel
 | Device                    : xc7a100t

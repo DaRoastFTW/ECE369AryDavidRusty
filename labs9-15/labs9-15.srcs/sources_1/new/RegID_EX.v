@@ -43,8 +43,6 @@ module RegID_EX (
     MemtoRegOut,
     HiLoControlIn,
     HiLoControlOut,
-    JrIn,
-    JrOut,
     MovIn,
     MovOut,
     wordhalfbyteIn,
@@ -59,22 +57,20 @@ module RegID_EX (
     ZeroExtendOut,
     SignExtendIn,
     SignExtendOut,
-    JumpIn,
-    JumpOut,
     JumpInst_input,
     JumpInst_output,
     HiLoOrNormalIn,
     HiLoOrNormalOut
 );
   input Clk, Reset;
-  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, JrIn, MovIn, JumpIn, HiLoOrNormalIn;
+  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, MovIn, HiLoOrNormalIn;
   input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn, RegDstIn;
   input [3:0] HiLoControlIn;
   input [5:0] ALUOpIn;
   input [31:0] InstructionIn, ZeroExtendIn, SignExtendIn, PCAddIn, ReadData1In, ReadData2In, JumpInst_input;
 
 
-  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, JrOut, MovOut, JumpOut, HiLoOrNormalOut;
+  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, MovOut, HiLoOrNormalOut;
   output reg [1:0] MemtoRegOut, wordhalfbyteOut, ALUSrcOut;
   output reg [1:0] RegDstOut;
   output reg [3:0] HiLoControlOut;
@@ -86,7 +82,6 @@ module RegID_EX (
       BranchOut <= 1'b0;
       MemWriteOut <= 1'b0;
       MemReadOut <= 1'b0;
-      JrOut <= 1'b0;
       MovOut <= 1'b0;
       MemtoRegOut <= 2'b00;
       wordhalfbyteOut <= 2'b00;
@@ -100,7 +95,6 @@ module RegID_EX (
       PCAddOut <= 32'd0;
       ReadData1Out <= 32'd0;
       ReadData2Out <= 32'd0;
-      JumpOut <= 1'b0;
       JumpInst_output <= 32'd0;
       HiLoOrNormalOut <= 1'b0;
     end else begin
@@ -108,7 +102,6 @@ module RegID_EX (
       BranchOut <= BranchIn;
       MemWriteOut <= MemWriteIn;
       MemReadOut <= MemReadIn;
-      JrOut <= JrIn;
       MovOut <= MovIn;
       MemtoRegOut <= MemtoRegIn;
       wordhalfbyteOut <= wordhalfbyteIn;
@@ -122,7 +115,6 @@ module RegID_EX (
       PCAddOut <= PCAddIn;
       ReadData1Out <= ReadData1In;
       ReadData2Out <= ReadData2In;
-      JumpOut <= JumpIn;
       JumpInst_output <= JumpInst_input;
       HiLoOrNormalOut <= HiLoOrNormalIn;
     end

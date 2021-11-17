@@ -1,15 +1,15 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 9c5279a65e9a4669a1fad790fe8f278f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TopLevel_tb_behav xil_defaultlib.TopLevel_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 9c5279a65e9a4669a1fad790fe8f278f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TopTopLevel_behav xil_defaultlib.TopTopLevel xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'JrMuxOut' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:393]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'JrMuxOut' [C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:390]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.OrGate
+Compiling module xil_defaultlib.ClkDiv
 Compiling module xil_defaultlib.Mux32Bit3to1
 Compiling module xil_defaultlib.ShifterID
 Compiling module xil_defaultlib.ProgramCounter
@@ -38,6 +38,8 @@ Compiling module xil_defaultlib.WordMask
 Compiling module xil_defaultlib.Mux1Bit2To1
 Compiling module xil_defaultlib.RegMEM_WB
 Compiling module xil_defaultlib.TopLevel
-Compiling module xil_defaultlib.TopLevel_tb
+Compiling module xil_defaultlib.SevenSegment
+Compiling module xil_defaultlib.Two4DigitDisplay
+Compiling module xil_defaultlib.TopTopLevel
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot TopLevel_tb_behav
+Built simulation snapshot TopTopLevel_behav

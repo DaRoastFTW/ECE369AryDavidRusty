@@ -490,7 +490,8 @@ after_absolute:
 red:
    lw $v1, 0($sp)
    lw $v0, 4($sp)
-	bgt $t6, $s7, end
+   slt $s7, $s7, $t6
+   bne $s7, $0, end
 	add $s7, $t6, $0
 	add $v0, $t0, $0
 	add $v1, $t1, $0

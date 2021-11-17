@@ -32,7 +32,7 @@
 #  If any of the tests  7 through 12 fails then search pattern is not correct.
 # test 1 
 # The result should be
-#0,27 RIGHT up corner, odd row, odd column
+#0,27 RIGHT up corner, odd row, odd column (0, 1b)
 asize0:	.word 39, 31, 8, 4
 frame0:	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,
 	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,
@@ -84,7 +84,7 @@ window0:	.word 1, 1, 1, 1,
 
 # test 2
 # The result should be
-#42,0 Left bottom corner, even row odd column
+#42,0 Left bottom corner, even row odd column (2A, 0)
 asize1:	.word 50, 31, 8, 4
 frame1:	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -148,7 +148,7 @@ window1:	.word 1, 1, 1, 1,
 
 # test 3
 # The result should be
-#0,0 Left up corner even column odd Row
+#0,0 Left up corner even column odd Row (0, 0)
 asize2:	.word 19, 32, 4, 4
 frame2:	.word 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	.word 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -177,7 +177,7 @@ window2:	.word 1, 1, 1, 1,
 
 # test 4
 # The result should be
-#0,1 First Move
+#0,1 First Move (0, 1)
 asize3:	.word 32, 32, 4, 4
 frame3:	.word 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	.word 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -218,7 +218,7 @@ window3:	.word 1, 1, 1, 1,
 
 # test 5
 # The result should be
-#42, 28 Right bottom corner even row even column
+#42, 28 Right bottom corner even row even column (2A, 1C)
 asize4:	.word 50, 32, 8, 4
 frame4:	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -357,7 +357,8 @@ main:
      
     lw      $ra, 0($sp)         # Restore return address
     addi    $sp, $sp, 4         # Restore stack pointer
-    jr      $ra                 # Return
+    #jr      $ra                 # Return
+	j end_program
 
 ################### Print Result ####################################
 #print_result:
@@ -528,11 +529,11 @@ blue:
 	jal numberGenerator
 	lw $ra, 0($sp)
 	addi $sp, $sp, 4
-	sub $t5, $v0, $v1 #Reg1 and Reg2 are provided by Ary
+	sub $t5, $26, $27 #Reg1 and Reg2 are provided by Ary
 	#abs $t5, $t5
-	slt $t7, $v0, $v1
+	slt $t7, $26, $27
 	beq $t7, $zero, after_absolute
-	sub $t5, $v1, $v0
+	sub $t5, $27, $26
 after_absolute:
 	add $t6, $t6, $t5
 	lw $t4, 12($a0)
@@ -545,7 +546,8 @@ after_absolute:
 red:
    lw $v1, 0($sp)
    lw $v0, 4($sp)
-	bgt $t6, $s7, end
+	slt $s7, $s7, $t6
+	bne $s7, $0, end
 	add $s7, $t6, $0
 	add $v0, $t0, $0
 	add $v1, $t1, $0
@@ -580,10 +582,10 @@ numberGenerator:
 	sll $t4, $t4, 2 # address of asize[3] * row + col
 	
 	add $t3, $t3, $a1 # address of frame[asize[1] * row + col]
-	lw $v0, 0($t3) # load in above to v0
+	lw $26, 0($t3) # load in above to v0
 	
 	add $t4, $t4, $a2 # address of window[asize[3] * row + col]
-	lw $v1, 0($t4) # load in above to v1
+	lw $27, 0($t4) # load in above to v1
 	lw $t3, 4($sp)	# Restore t3
 	lw $t4, 0($sp)	# Restore t4
 	addi $sp, $sp, 8	# Restore stack pointer

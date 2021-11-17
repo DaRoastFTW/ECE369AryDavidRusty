@@ -9,18 +9,21 @@ module TopLevel (
     ActualWriteDataWB,
     ActualPCResult,
     ActualHi,
-    ActualLo
+    ActualLo,
+	ActualV0,
+	ActualV1
 );
   input Clk, Reset;
-  output [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo;
+  output [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo, ActualV0, ActualV1;
   assign ActualWriteDataWB = HiLoOrNormalMuxOut;
   assign ActualPCResult = PCResult;
   assign ActualHi = Hi_Debug;
   assign ActualLo = Lo_Debug;
-
+  assign ActualV0 = DataV0;
+  assign ActualV1 = DataV1;
   //This is the instruction fetch
   (* mark_debug = "true" *) wire [31:0] PCResult;
-  (* mark_debug = "true" *) wire [31:0] Hi_Debug, Lo_Debug;
+  (* mark_debug = "true" *) wire [31:0] Hi_Debug, Lo_Debug, DataV0, DataV1;
   wire [31:0] PCIn, PCAddResult, PCSrcMuxB, PCSrcMuxC;
   (* mark_debug = "true" *) wire [31:0] InstructionIF;
   wire BranchOutput, OrOutput;
@@ -28,17 +31,13 @@ module TopLevel (
 
   //assign PCSrcMuxC = {PCAddResult[31:28], JumpInstruction};
   wire [31:0] JrMuxOutID;
-  OrGate JrOrGate (
-      .orinput1(BranchOutput),
-      .orinput2(JrMEM),
-      .oroutput(OrOutput)
-  );
+
   Mux32Bit3to1 PCSrcMux (
       .out(PCIn),
       .inA(PCAddResult),
       .inB(JrMuxOutID),
       .inC(JumpInstructionID),
-      .sel({JumpID, OrOutput})
+      .sel({JumpID, BranchOutput})
   );
   ShifterID Shift_jr (
       .shiftinput (InstructionIF[25:0]),
@@ -86,7 +85,9 @@ module TopLevel (
       .Clk(Clk),
       .Reset(Reset),
       .ReadData1(ReadData1ID),
-      .ReadData2(ReadData2ID)
+      .ReadData2(ReadData2ID),
+	  .DataV0(DataV0),
+	  .DataV1(DataV1)
   );
 
   Mux32Bit3to1 RSForwardMuxDEC (
@@ -176,11 +177,11 @@ module TopLevel (
       .MemtoReg(MemtoRegID),
       .HiLoControl(HiLoControlID),
       .PCSrc(PCSrcID),
-      .Jr(JrID),
       .Mov(MovID),
       .wordhalfbyte(wordhalfbyteID),
-      .Jump(JumpID),
-      .HiLoOrNormal(HiLoOrNormalID)
+      .HiLoOrNormal(HiLoOrNormalID),
+	  .Jump(JumpID),
+	  .Jr(JrID)
   );
   wire PCStall, IFIDStall, IFIDFlush, IDEXFlush;
   wire [31:0] InstructionMEM, InstructionWB;
@@ -240,8 +241,6 @@ module TopLevel (
       .MemtoRegOut(MemtoRegEX),
       .HiLoControlIn(HiLoControlID),
       .HiLoControlOut(HiLoControlEX),
-      .JrIn(JrID),
-      .JrOut(JrEX),
       .MovIn(MovID),
       .MovOut(MovEX),
       .wordhalfbyteIn(wordhalfbyteID),
@@ -256,8 +255,6 @@ module TopLevel (
       .ZeroExtendOut(ZeroExtendEX),
       .SignExtendIn(SignExtendID),
       .SignExtendOut(SignExtendEX),
-      .JumpIn(JumpID),
-      .JumpOut(JumpEX),
       .JumpInst_input(JumpInstructionID),
       .JumpInst_output(JumpInstructionEX),
       .HiLoOrNormalIn(HiLoOrNormalID),
@@ -391,12 +388,8 @@ module TopLevel (
       .RegDstMuxOut(RegDstMuxMEM),
       .JrMuxIn(JrMuxOutEX),
       .JrMuxOut(JrMuxOutMEM),
-      .JumpIn(JumpEX),
-      .JumpOut(JumpMEM),
       .JumpInst_input(JumpInstructionEX),
       .JumpInst_output(JumpInstructionMEM),
-      .JrIn(JrEX),
-      .JrOut(JrMEM),
       .ALUResult64In(ALUResult64EX),
       .ALUResult64Out(ALUResult64MEM),
       .HiLoControlIn(HiLoControlEX),

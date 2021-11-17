@@ -12,7 +12,7 @@ module TopTopLevel (
 );
   input Clk, Reset;
 
-  wire [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo;
+  wire [31:0] ActualWriteDataWB, ActualPCResult, ActualHi, ActualLo, ActualV0, ActualV1;
 
 
   wire ClkOut;
@@ -30,12 +30,14 @@ module TopTopLevel (
       .ActualWriteDataWB(ActualWriteDataWB),
       .ActualPCResult(ActualPCResult),
       .ActualHi(ActualHi),
-      .ActualLo(ActualLo)
+      .ActualLo(ActualLo),
+	  .ActualV0(ActualV0),
+	  .ActualV1(ActualV1)
   );
   Two4DigitDisplay TDD (
       Clk,
-      ActualPCResult[15:0],
-      ActualWriteDataWB[15:0],
+      ActualV1[15:0],
+      ActualV0[15:0],
       out7,
       en_out
   );

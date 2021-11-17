@@ -57,7 +57,9 @@ module RegisterFile (
     Clk,
     Reset,
     ReadData1,
-    ReadData2
+    ReadData2,
+	DataV0,
+	DataV1
 );
 
   input [4:0] ReadRegister1;
@@ -70,7 +72,8 @@ module RegisterFile (
 
   output reg [31:0] ReadData1;
   output reg [31:0] ReadData2;
-
+	output reg [31:0] DataV0;
+	output reg [31:0] DataV1;
   reg [31:0] RegisterFile[0:31];
   initial begin
     RegisterFile[0] <= 32'd0;
@@ -81,6 +84,8 @@ module RegisterFile (
   always @(*) begin
     ReadData1 <= RegisterFile[ReadRegister1];
     ReadData2 <= RegisterFile[ReadRegister2];
+	DataV0 <= RegisterFile[2];
+	DataV1 <= RegisterFile[3];
   end
 
   always @(posedge Clk) begin
