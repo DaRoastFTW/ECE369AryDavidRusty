@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TopLevel_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TopLevel_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="9147750fs"></ZoomStartTime>
+      <ZoomEndTime time="9461251fs"></ZoomEndTime>
+      <Cursor1Time time="9425750fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="129"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
+      <obj_property name="ElementShortName">Clk</obj_property>
+      <obj_property name="ObjectShortName">Clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/IM/Memory" type="array">
+      <obj_property name="ElementShortName">Memory[0:504][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Memory[0:504][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/PC/PCResult" type="array">
+      <obj_property name="ElementShortName">PCResult[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PCResult[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/IM/Instruction" type="array">
+      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[8]" type="array">
+      <obj_property name="ElementShortName">[8][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[9]" type="array">
+      <obj_property name="ElementShortName">[9][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[10]" type="array">
+      <obj_property name="ElementShortName">[10][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[11]" type="array">
+      <obj_property name="ElementShortName">[11][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/RegFile/RegisterFile[12]" type="array">
+      <obj_property name="ElementShortName">[12][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/A" type="array">
+      <obj_property name="ElementShortName">A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">A[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/B" type="array">
+      <obj_property name="ElementShortName">B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/ALUResult" type="array">
+      <obj_property name="ElementShortName">ALUResult[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUResult[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/ALUResult64" type="array">
+      <obj_property name="ElementShortName">ALUResult64[63:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUResult64[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/ALU/ALUControl" type="array">
+      <obj_property name="ElementShortName">ALUControl[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUControl[4:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/HiLo/HiReg" type="array">
+      <obj_property name="ElementShortName">HiReg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HiReg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/HiLo/LoReg" type="array">
+      <obj_property name="ElementShortName">LoReg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">LoReg[31:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TopLevel_tb_func_synth.wdb" id="1">
+         <top_modules>
+            <top_module name="TopLevel_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="803001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="109"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
+      <obj_property name="ElementShortName">Clk</obj_property>
+      <obj_property name="ObjectShortName">Clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/PCResult" type="array">
+      <obj_property name="ElementShortName">PCResult[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PCResult[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/WriteDataWB" type="array">
+      <obj_property name="ElementShortName">WriteDataWB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WriteDataWB[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/Hi_Debug" type="array">
+      <obj_property name="ElementShortName">Hi_Debug[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Hi_Debug[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/Lo_Debug" type="array">
+      <obj_property name="ElementShortName">Lo_Debug[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Lo_Debug[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/CPU/IM/Instruction" type="array">
+      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,152 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.sim/sim_1/impl/func/xsim/TopLevel_tb_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU32Bit
+INFO: [VRFC 10-311] analyzing module Adder
+INFO: [VRFC 10-311] analyzing module BranchDetection
+INFO: [VRFC 10-311] analyzing module ClkDiv
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-311] analyzing module HiLoReg
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+INFO: [VRFC 10-311] analyzing module Mux32Bit2To1
+INFO: [VRFC 10-311] analyzing module Mux32Bit2To1__4
+INFO: [VRFC 10-311] analyzing module Mux32Bit3to1
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-311] analyzing module RegEX_MEM
+INFO: [VRFC 10-311] analyzing module RegID_EX
+INFO: [VRFC 10-311] analyzing module RegIF_ID
+INFO: [VRFC 10-311] analyzing module RegMEM_WB
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-311] analyzing module StoreMasker
+INFO: [VRFC 10-311] analyzing module TopLevel
+INFO: [VRFC 10-311] analyzing module TopTopLevel
+INFO: [VRFC 10-311] analyzing module Two4DigitDisplay
+INFO: [VRFC 10-311] analyzing module WordMask
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU32Bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ALU32Bit' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v:29]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Adder
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Adder' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Adder.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AndGate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/BranchDetection.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BranchDetection
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'BranchDetection' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/BranchDetection.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+WARNING: [VRFC 10-634] event expressions must result in a singular type [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:62]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'DataMemory' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/DataMemory.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ForwardingUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ForwardingUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HazardDetection.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardDetection
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HiLoReg
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'HiLoReg' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'InstructionMemory' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v:39]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux1Bit2To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit2To1
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Mux32Bit2To1' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v:10]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit3to1
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'Mux32Bit3to1' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux5Bit3to1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/OrGate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OrGate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'PCAdder' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v:22]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'ProgramCounter' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v:27]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegEX_MEM
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'RegEX_MEM' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegEX_MEM.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegID_EX
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'RegID_EX' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegID_EX.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegIF_ID
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'RegIF_ID' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegMEM_WB
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'RegMEM_WB' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'RegisterFile' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v:51]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShiftLeft2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShifterID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/SignExtension.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignExtension
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StoreMasker
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'StoreMasker' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopLevel
+INFO: [VRFC 10-2458] undeclared symbol JrMEM, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:33]
+INFO: [VRFC 10-2458] undeclared symbol JumpInstructionID, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:40]
+INFO: [VRFC 10-2458] undeclared symbol JumpID, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:41]
+INFO: [VRFC 10-2458] undeclared symbol PCStall, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:48]
+WARNING: [VRFC 10-2938] 'JumpInstructionID' is already implicitly declared on line 40 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:62]
+INFO: [VRFC 10-2458] undeclared symbol IFIDFlush, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:65]
+INFO: [VRFC 10-2458] undeclared symbol IFIDStall, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:72]
+INFO: [VRFC 10-2458] undeclared symbol RegDstMuxWB, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:83]
+INFO: [VRFC 10-2458] undeclared symbol ALUResultMEM, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:95]
+INFO: [VRFC 10-2458] undeclared symbol ForwardC, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:97]
+INFO: [VRFC 10-2458] undeclared symbol ForwardD, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:105]
+INFO: [VRFC 10-2458] undeclared symbol HiLoOrNormalWB, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:112]
+INFO: [VRFC 10-2458] undeclared symbol ALUResult64WB, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:119]
+INFO: [VRFC 10-2458] undeclared symbol HiLoControlWB, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:120]
+INFO: [VRFC 10-2458] undeclared symbol JrID, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:159]
+WARNING: [VRFC 10-2938] 'JrID' is already implicitly declared on line 159 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:161]
+WARNING: [VRFC 10-2938] 'JumpID' is already implicitly declared on line 41 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:163]
+INFO: [VRFC 10-2458] undeclared symbol RegWriteID, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:169]
+WARNING: [VRFC 10-2938] 'PCStall' is already implicitly declared on line 48 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:185]
+INFO: [VRFC 10-2458] undeclared symbol InstructionEX, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:193]
+INFO: [VRFC 10-2458] undeclared symbol RegWriteEX, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:197]
+INFO: [VRFC 10-2458] undeclared symbol RegWriteMEM, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:198]
+INFO: [VRFC 10-2458] undeclared symbol RegDstMuxMEM, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:202]
+INFO: [VRFC 10-2458] undeclared symbol MemReadEX, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:204]
+INFO: [VRFC 10-2458] undeclared symbol MemReadMEM, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:205]
+INFO: [VRFC 10-2458] undeclared symbol MemReadWB, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:206]
+INFO: [VRFC 10-2458] undeclared symbol MemWriteEX, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:208]
+INFO: [VRFC 10-2458] undeclared symbol MemWriteMEM, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:209]
+INFO: [VRFC 10-2458] undeclared symbol MemWriteWB, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:210]
+WARNING: [VRFC 10-2938] 'RegWriteEX' is already implicitly declared on line 197 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:213]
+WARNING: [VRFC 10-2938] 'InstructionEX' is already implicitly declared on line 193 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:217]
+INFO: [VRFC 10-2458] undeclared symbol BranchEX, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:234]
+WARNING: [VRFC 10-2938] 'ForwardC' is already implicitly declared on line 97 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:271]
+WARNING: [VRFC 10-2938] 'RegWriteMEM' is already implicitly declared on line 198 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:358]
+WARNING: [VRFC 10-2938] 'RegDstMuxMEM' is already implicitly declared on line 202 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:360]
+WARNING: [VRFC 10-2938] 'ALUResultMEM' is already implicitly declared on line 95 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:361]
+INFO: [VRFC 10-2458] undeclared symbol ZeroMEM, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:387]
+INFO: [VRFC 10-2458] undeclared symbol JrMuxOutMEM, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:393]
+INFO: [VRFC 10-2458] undeclared symbol ReadDataMEM, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:415]
+INFO: [VRFC 10-2458] undeclared symbol MovMuxOut, assumed default net type wire [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:437]
+WARNING: [VRFC 10-2938] 'ReadDataMEM' is already implicitly declared on line 415 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:444]
+WARNING: [VRFC 10-2938] 'RegDstMuxWB' is already implicitly declared on line 83 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:446]
+WARNING: [VRFC 10-2938] 'ALUResult64WB' is already implicitly declared on line 119 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:447]
+WARNING: [VRFC 10-2938] 'HiLoControlWB' is already implicitly declared on line 120 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:448]
+WARNING: [VRFC 10-2938] 'HiLoOrNormalWB' is already implicitly declared on line 112 [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:449]
+WARNING: [VRFC 10-3380] identifier 'HiLoOrNormalMuxOut' is used before its declaration [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:16]
+WARNING: [VRFC 10-3380] identifier 'PCResult' is used before its declaration [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:17]
+WARNING: [VRFC 10-3380] identifier 'Hi_Debug' is used before its declaration [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:18]
+WARNING: [VRFC 10-3380] identifier 'Lo_Debug' is used before its declaration [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:19]
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'TopLevel' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WordMask
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'WordMask' [C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ZeroExtention
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/aryna/ECE369AryDavidRusty/labs9-15/labs9-15.srcs/sim_1/new/TopLevel_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopLevel_tb

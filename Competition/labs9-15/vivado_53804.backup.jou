@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Mon Nov  8 13:25:28 2021
+# Process ID: 53804
+# Current directory: C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent57404 C:\Users\kingd\Documents\GitHub\ECE369AryDavidRusty\labs9-15\labs9-15.xpr
+# Log file: C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/vivado.log
+# Journal file: C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/labs9-15.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/labs9-15/TopLevel_tb_behav2.wcfg
+source TopLevel_tb.tcl
+close_sim
