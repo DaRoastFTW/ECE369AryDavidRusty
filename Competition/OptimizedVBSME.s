@@ -1,3 +1,6 @@
+.text
+
+.globl main
 vbsme:
 	addi $s0, $zero, 32767	#current minimum = 32767
 	addi $t0, $zero, 1	#dir = 1
@@ -21,6 +24,12 @@ diagonal_loop1:
 	addi $t6, $t1, -1	#a = line - 1
 	sub $s1, $t6, $t3	#row = a - startPos
 	add $s2, $t2, $t3	#col = start_col + startPos
+	
+	sll $s3, $s1, 6				#memLoc = 64 * row + col + 4
+	addi $t9, $s2, 4
+	add $s3, $s3, $t9
+	#lwf $s3
+	
 	add $t3, $t3, $t5	#startPos = startPos + iterPos
 	j diagonal_loop1
 end_diagonal1:
@@ -48,6 +57,10 @@ diagonal_loop2:
 	addi $t7, $zero, 60
 	sub $s1, $t7, $t3	#row = 60 - startPos
 	add $s2, $t2, $t3	#col = start_col + startPos
+	sll $s3, $s1, 6				#memLoc = 64 * row + col + 4
+	addi $t9, $s2, 4
+	add $s3, $s3, $t9
+	#lwf $s3
 	add $t3, $t3, $t5	#startPos = startPos + iterPos
 	j diagonal_loop2
 end_diagonal2:
