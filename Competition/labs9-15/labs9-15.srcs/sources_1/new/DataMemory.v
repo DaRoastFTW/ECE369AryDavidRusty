@@ -36,41 +36,46 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module DataMemory (
-    Address,
+    Address1,
+	Address2,
     WriteData,
+	WriteAddress,
     Clk,
     Rst,
     MemWrite,
     MemRead,
-    ReadData
+    ReadData1,
+	ReadData2
 );
 
-  input [31:0] Address;  // Input Address 
+  input [31:0] Address1, Address2, WriteAddress;  // Input Address 
   input [31:0] WriteData;  // Data that needs to be written into the address 
   input Clk, Rst;
   input MemWrite;  // Control signal for memory write 
   input MemRead;  // Control signal for memory read 
 
 
-  output reg [31:0] ReadData;  // Contents of memory location at Address
+  output reg [31:0] ReadData1, ReadData2;  // Contents of memory location at Address
 
   reg [31:0] Memory[0:8191];  //DataMemory with 4096 32-bit 
   initial begin
     $readmemh("data_memory.mem", Memory);
   end
   // Read data that is not clocked
-  always @(MemRead, Address, Memory) begin
+  always @(*) begin
     if (MemRead) begin
-      ReadData <= Memory[Address[16:2]];
+      ReadData1 <= Memory[Address1[16:2]];
+	  ReadData2 <= Memory[Address2[16:2]];
     end else begin
-      ReadData <= 32'h00000000;
+      ReadData1 <= 32'h00000000;
+	  ReadData2 <= 32'h00000000;
     end
   end
   // Write data (uses clock)
   always @(negedge Clk) begin
 
     if (MemWrite) begin
-      Memory[Address[16:2]] <= WriteData;
+      Memory[WriteAddress[16:2]] <= WriteData;
     end
   end
 

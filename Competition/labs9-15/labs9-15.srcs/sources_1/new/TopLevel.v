@@ -410,14 +410,101 @@ module TopLevel (
       .LSBAddress(ALUResultMEM[1:0]),
       .WriteData(storeTreaterOut)
   );
-  DataMemory Data (
-      .Address(ALUResultMEM),
+  wire [31:0] B0Address1, B0Address2;
+  Adder B0Add0 (
+	.addinput1(ALUResultMEM),
+	.addinput2(32'd0),
+	.addoutput(B0Address1)
+  );
+    Adder B0Add1 (
+	.addinput1(ALUResultMEM),
+	.addinput2(32'd4),
+	.addoutput(B0Address2)
+  );
+    wire [31:0] B1Address1, B1Address2;
+  Adder B1Add0 (
+	.addinput1(ALUResultMEM),
+	.addinput2(32'd64),
+	.addoutput(B1Address1)
+  );
+    Adder B1Add1 (
+	.addinput1(ALUResultMEM),
+	.addinput2(32'd68),
+	.addoutput(B1Address2)
+  );
+    wire [31:0] B2Address1, B2Address2;
+  Adder B2Add0 (
+	.addinput1(ALUResultMEM),
+	.addinput2(32'd128),
+	.addoutput(B2Address1)
+  );
+    Adder B2Add1 (
+	.addinput1(ALUResultMEM),
+	.addinput2(32'd132),
+	.addoutput(B2Address2)
+  );
+    wire [31:0] B3Address1, B3Address2;
+  Adder B3Add0 (
+	.addinput1(ALUResultMEM),
+	.addinput2(32'd192),
+	.addoutput(B3Address1)
+  );
+    Adder B3Add1 (
+	.addinput1(ALUResultMEM),
+	.addinput2(32'd196),
+	.addoutput(B3Address2)
+  );
+  wire [31:0] B0ReadData2;
+  DataMemory DataB0 (
+      .Address1(B0Address1),
+	  .Address2(B0Address2),
+	  .WriteAddress(ALUResultMEM),
       .WriteData(storeTreaterOut),
       .Clk(Clk),
       .Rst(Reset),
       .MemWrite(MemWriteMEM),
       .MemRead(MemReadMEM),
-      .ReadData(ReadDataMEM)
+      .ReadData1(ReadDataMEM),
+	  .ReadData2(B0ReadData2)
+  );
+  wire [31:0] B1ReadData1, B1ReadData2;
+  DataMemory DataB1 (
+      .Address1(B1Address1),
+	  .Address2(B1Address2),
+	  .WriteAddress(ALUResultMEM),
+      .WriteData(storeTreaterOut),
+      .Clk(Clk),
+      .Rst(Reset),
+      .MemWrite(MemWriteMEM),
+      .MemRead(MemReadMEM),
+      .ReadData1(B1ReadData1),
+	  .ReadData2(B1ReadData2)
+  );
+   wire [31:0] B2ReadData1, B2ReadData2;
+  DataMemory DataB2 (
+      .Address1(B2Address1),
+	  .Address2(B2Address2),
+	  .WriteAddress(ALUResultMEM),
+      .WriteData(storeTreaterOut),
+      .Clk(Clk),
+      .Rst(Reset),
+      .MemWrite(MemWriteMEM),
+      .MemRead(MemReadMEM),
+      .ReadData1(B2ReadData1),
+	  .ReadData2(B2ReadData2)
+  );
+   wire [31:0] B3ReadData1, B3ReadData2;
+  DataMemory DataB3 (
+      .Address1(B3Address1),
+	  .Address2(B3Address2),
+	  .WriteAddress(ALUResultMEM),
+      .WriteData(storeTreaterOut),
+      .Clk(Clk),
+      .Rst(Reset),
+      .MemWrite(MemWriteMEM),
+      .MemRead(MemReadMEM),
+      .ReadData1(B3ReadData1),
+	  .ReadData2(B3ReadData2)
   );
   WordMask loadTreater (
       .information(ReadDataMEM),

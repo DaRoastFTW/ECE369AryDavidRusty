@@ -31,7 +31,6 @@ input RegWrite;
 input Reset;
 input Clk;
 input [31:0] WriteData;
-input
 
 
 //Needs a ton of work
