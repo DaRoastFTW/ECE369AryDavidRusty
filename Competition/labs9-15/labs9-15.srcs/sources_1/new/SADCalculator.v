@@ -53,7 +53,7 @@ module SADCalculator(
     frameInput15,
     windowInput16,
     frameInput16,
-    SADOutput
+    SADOutputFinal
     );
     
     input [15:0] windowInput1,
@@ -89,7 +89,9 @@ module SADCalculator(
     windowInput16,
     frameInput16;
     
-    output reg [15:0] SADOutput;
+    output reg [31:0] SADOutputFinal;
+    integer i;
+    reg [15:0] SADOutput;
     always @ (*) begin
         //Initialise SADOutput to Zero
         SADOutput = 0;
@@ -221,5 +223,18 @@ module SADCalculator(
             SADOutput = SADOutput + (frameInput16-windowInput16);
         end
         
+        //ZeroExtend SADOutput
+        for (i = 16; i < 32; i = i + 1) begin
+            SADOutputFinal[i] <= 1'b0;
+        end
+        
+        /*SignExtend SADOutput In case we need to SignExtend for some reason
+        for (i = 0; i < 32; i = i + 1) begin
+            if (i < 16) begin
+                SADOutputFinal[i] <= SADOutput[i];
+            end else begin
+                SADOutputFinal[i] <= SADOutput[15];
+            end
+        end*/
     end
 endmodule
