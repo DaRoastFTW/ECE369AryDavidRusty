@@ -211,23 +211,24 @@ module Controller (
             HiLoOrNormal = 1;
           end
 
-          6'b010010:  //mflo
-          begin
-            RegWrite = 1;
-            RegDst = 1;
-            ALUOp = 6'b011110;
-            //ALUSrc = ;
-            Branch = 0;
-            MemWrite = 0;
-            MemRead = 0;
-            MemtoReg = 1;
-            HiLoControl = 4'b1000;  //Set rd = Lo;
-            Jr = 0;
-            Mov = 0;
-            wordhalfbyte = 0;
-            Jump = 0;
-            HiLoOrNormal = 1;
-          end
+          6'b010010: //mflo
+			begin
+				RegWrite = 1;
+				RegDst = 1;
+				ALUOp = 6'b011110;
+				//ALUSrc = ;
+				Branch = 0;
+				MemWrite = 0;
+				MemRead = 0;
+				MemtoReg = 1;
+				HiLoControl = 4'b1000;  //Set rd = Lo;
+				Jr = 0;
+				Mov = 0;
+				wordhalfbyte = 0;
+				Jump = 0;
+				HiLoOrNormal = 1;
+
+			end
 
           6'b001000:  //jr
           begin
@@ -1063,6 +1064,22 @@ module Controller (
         wordhalfbyte = 0;
         Jump = 0;
       end
+	  6'b010010:	//lwf
+	  begin
+		RegWrite = 1;
+		RegDst = 0;
+		ALUSrc = 1;
+		Branch = 0;
+		MemRead = 1;
+		MemWrite = 0;
+		MemtoReg = 0;
+		HiLoControl = 4'b0000;
+		ALUOp = 6'b000000;
+		Jr = 0;
+		Mov = 0;
+		wordhalfbyte = 0;
+		Jump = 0;
+	  end
       default: begin
         RegWrite = 0;
         RegDst = 0;
