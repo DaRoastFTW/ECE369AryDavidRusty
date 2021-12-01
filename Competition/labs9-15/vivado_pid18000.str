@@ -1,0 +1,505 @@
+/*
+
+Xilinx Vivado v2019.2.1 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2729669 on Thu Dec  5 04:49:17 MST 2019
+IP Build: 2729494 on Thu Dec  5 07:38:25 MST 2019
+
+Process ID (PID): 18000
+License: Customer
+
+Current time: 	Wed Dec 01 14:01:44 MST 2021
+Time zone: 	Mountain Standard Time (America/Phoenix)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Available disk space: 187 GB
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	kingd
+User home directory: C:/Users/kingd
+User working directory: C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/Competition/labs9-15
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/kingd/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/kingd/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/kingd/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/Competition/labs9-15/vivado.log
+Vivado journal file location: 	C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/Competition/labs9-15/vivado.jou
+Engine tmp dir: 	C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/Competition/labs9-15/.Xil/Vivado-18000-DESKTOP-G2E3EEF
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	129 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 689 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 83 MB (+84937kb) [00:00:06]
+// [Engine Memory]: 615 MB (+492927kb) [00:00:06]
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\kingd\Documents\GitHub\ECE369AryDavidRusty\Competition\labs9-15\labs9-15.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 752 MB. GUI used memory: 52 MB. Current time: 12/1/21, 2:01:46 PM MST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 794 MB (+156206kb) [00:00:16]
+// [GUI Memory]: 88 MB (+930kb) [00:00:17]
+// [GUI Memory]: 107 MB (+14737kb) [00:00:18]
+// [Engine Memory]: 835 MB (+552kb) [00:00:20]
+// WARNING: HEventQueue.dispatchEvent() is taking  5995 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:14 . Memory (MB): peak = 875.676 ; gain = 227.195 
+// Project name: labs9-15; location: C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/Competition/labs9-15; part: xc7a100tcsg324-1
+// [Engine Memory]: 877 MB (+231kb) [00:00:23]
+dismissDialog("Open Project"); // bB (cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 878 MB. GUI used memory: 57 MB. Current time: 12/1/21, 2:02:01 PM MST
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 75 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopTopLevel (TopTopLevel.v)]", 1); // B (F, cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopTopLevel (TopTopLevel.v)]", 1); // B (F, cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopTopLevel (TopTopLevel.v), CPU : TopLevel (TopLevel.v)]", 3); // B (F, cr)
+// PAPropertyPanels.initPanels (AndGate.v) elapsed time: 0.2s
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopTopLevel (TopTopLevel.v), CPU : TopLevel (TopLevel.v), Gate2 : AndGate (AndGate.v)]", 29, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopTopLevel (TopTopLevel.v), CPU : TopLevel (TopLevel.v), Gate2 : AndGate (AndGate.v)]", 29, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (E, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 30 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "SADCalculator"); // ac (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 44 seconds
+dismissDialog("Add Sources"); // c (cr)
+// Tcl Message: close [ open C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/SADCalculator.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/kingd/Documents/GitHub/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/SADCalculator.v 
+// I (cr): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 24 seconds
+selectButton("OptionPane.button", "Yes"); // JButton (A, H)
+dismissDialog("Define Module"); // I (cr)
+// [GUI Memory]: 113 MB (+421kb) [00:03:12]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopTopLevel (TopTopLevel.v), CPU : TopLevel (TopLevel.v)]", 3); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SADCalculator (SADCalculator.v)]", 7, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SADCalculator (SADCalculator.v)]", 7, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AndGate.v", 1); // i (h, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 900 MB. GUI used memory: 60 MB. Current time: 12/1/21, 2:05:06 PM MST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SADCalculator.v", 2); // i (h, cr)
+selectCodeEditor("SADCalculator.v", 127, 323); // ch (w, cr)
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AndGate.v", 1); // i (h, cr)
+// [GUI Memory]: 120 MB (+1464kb) [00:03:57]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SADCalculator.v", 2); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AndGate.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SADCalculator.v", 2); // i (h, cr)
+selectCodeEditor("SADCalculator.v", 35, 327); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 156, 347); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+// Elapsed time: 50 seconds
+selectCodeEditor("SADCalculator.v", 63, 79); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 162, 392); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 62, 73); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 38, 72); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 149, 94); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+// Elapsed time: 14 seconds
+selectCodeEditor("SADCalculator.v", 40, 322); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 136, 279); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 127, 304); // ch (w, cr)
+// Elapsed time: 37 seconds
+selectCodeEditor("SADCalculator.v", 137, 282); // ch (w, cr)
+// Elapsed time: 66 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AndGate.v", 1); // i (h, cr)
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SecondRegister (SecondRegister.v)]", 8, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SecondRegister (SecondRegister.v)]", 8, false, false, false, false, false, true); // B (F, cr) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 928 MB. GUI used memory: 61 MB. Current time: 12/1/21, 2:09:36 PM MST
+// [Engine Memory]: 928 MB (+8483kb) [00:08:09]
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SADCalculator.v", 2); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AndGate.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SADCalculator.v", 2); // i (h, cr)
+// Elapsed time: 14 seconds
+selectCodeEditor("SADCalculator.v", 35, 162); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 145, 346); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AndGate.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SecondRegister.v", 3); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SADCalculator.v", 2); // i (h, cr)
+selectCodeEditor("SADCalculator.v", 117, 258); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 204, 340); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "AndGate.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SADCalculator.v", 2); // i (h, cr)
+selectCodeEditor("SADCalculator.v", 103, 360); // ch (w, cr)
+// Elapsed time: 26 seconds
+selectCodeEditor("SADCalculator.v", 102, 373); // ch (w, cr)
+// Elapsed time: 73 seconds
+selectCodeEditor("SADCalculator.v", 150, 142); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 240, 144); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 124, 286); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 153, 79); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("SADCalculator.v", 130, 329); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 98, 326); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 223, 323); // ch (w, cr)
+// Elapsed time: 19 seconds
+selectCodeEditor("SADCalculator.v", 389, 323); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 389, 323); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 353, 325); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 427, 335); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 441, 331); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("SADCalculator.v", 250, 282); // ch (w, cr)
+// Elapsed time: 58 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopTopLevel (TopTopLevel.v), CPU : TopLevel (TopLevel.v)]", 3); // B (F, cr)
+// Elapsed time: 20 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopTopLevel (TopTopLevel.v), CPU : TopLevel (TopLevel.v), ALU : ALU32Bit (ALU32Bit.v)]", 28, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopTopLevel (TopTopLevel.v), CPU : TopLevel (TopLevel.v), ALU : ALU32Bit (ALU32Bit.v)]", 28, false, false, false, false, false, true); // B (F, cr) - Double Click
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SADCalculator.v", 2); // i (h, cr)
+selectCodeEditor("SADCalculator.v", 132, 242); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 157, 246); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("SADCalculator.v", 218, 221); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 191, 226); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 196, 226); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 196, 226); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 32, 246); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 28, 246); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 130, 234); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 33, 246); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 207, 289); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 32, 313); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 145, 310); // ch (w, cr)
+// Elapsed time: 49 seconds
+selectCodeEditor("SADCalculator.v", 105, 286); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 101, 288); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 334, 313); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+// Elapsed time: 99 seconds
+selectCodeEditor("SADCalculator.v", 351, 287); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 305, 309); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 265, 319); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 105, 308); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 129, 371); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 207, 252); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 216, 249); // ch (w, cr)
+// Elapsed time: 16 seconds
+selectCodeEditor("SADCalculator.v", 216, 285); // ch (w, cr)
+// Elapsed time: 281 seconds
+selectCodeEditor("SADCalculator.v", 450, 302); // ch (w, cr)
+typeControlKey(null, null, 'z');
+// Elapsed time: 11 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("SADCalculator.v", 433, 310); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 73, 219); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 110, 323); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 70, 200); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 115, 315); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("SADCalculator.v", 73, 238); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 375, 247); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 73, 252); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 72, 242); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 138, 360); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 194, 282); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 193, 348); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU32Bit.v", 4); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SADCalculator.v", 2); // i (h, cr)
+selectCodeEditor("SADCalculator.v", 207, 280); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 203, 350); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 69, 243); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 106, 362); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 263, 293); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 262, 301); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 216, 323); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 326, 333); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 443, 348); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 543, 345); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 431, 412); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 549, 391); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 216, 281); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 325, 287); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 325, 287); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 440, 305); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 551, 310); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 428, 369); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 548, 370); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("SADCalculator.v", 323, 269); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 215, 265); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 439, 283); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 549, 286); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 432, 344); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 548, 345); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 217, 249); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 324, 238); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 444, 262); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 548, 263); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 433, 322); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 551, 325); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 217, 278); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 321, 285); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 438, 300); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 549, 308); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 430, 371); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 547, 369); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 217, 263); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 322, 268); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 440, 283); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 547, 286); // ch (w, cr)
+// Elapsed time: 11 seconds
+selectCodeEditor("SADCalculator.v", 431, 347); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 550, 352); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 320, 244); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 217, 237); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 444, 262); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 548, 263); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 436, 332); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 550, 324); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 218, 286); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 265, 266); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 265, 233); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 260, 222); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 260, 256); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 258, 177); // ch (w, cr)
+// Elapsed time: 25 seconds
+selectCodeEditor("SADCalculator.v", 137, 394); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 259, 267); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 258, 305); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 264, 281); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 264, 322); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 262, 304); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 262, 227); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 216, 245); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 323, 246); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 438, 265); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 549, 260); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 431, 321); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 547, 330); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 262, 207); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 213, 225); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 323, 223); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 441, 244); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 550, 247); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 430, 307); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 549, 308); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 261, 371); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 213, 393); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 332, 393); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 441, 218); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 557, 222); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 428, 285); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 554, 282); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 259, 224); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 207, 242); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 333, 245); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 428, 264); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 554, 260); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 419, 331); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 555, 325); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 255, 195); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 214, 219); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 335, 222); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 442, 248); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 557, 242); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 431, 310); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 561, 308); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 263, 244); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 320, 268); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 212, 265); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 440, 287); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 559, 285); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 431, 351); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 558, 352); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 265, 284); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 326, 308); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 212, 311); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 440, 327); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 560, 326); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 430, 391); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 555, 391); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 216, 220); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 340, 223); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 443, 239); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 557, 243); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 429, 306); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 556, 305); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 264, 206); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 73, 181); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'c'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 127, 297); // ch (w, cr)
+typeControlKey((HResource) null, "SADCalculator.v", 'v'); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 268, 183); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 222, 202); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 343, 200); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 447, 213); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 569, 226); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 441, 279); // ch (w, cr)
+selectCodeEditor("SADCalculator.v", 569, 284); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
