@@ -490,34 +490,34 @@ module TopLevel (
     wire [31:0] B1Address1, B1Address2;
   Adder B1Add0 (
 	.addinput1(ALUResultMEM),
-	.addinput2(32'd256),
+	.addinput2(32'd128),
 	.addoutput(B1Address1)
   );
     Adder B1Add1 (
 	.addinput1(ALUResultMEM),
-	.addinput2(32'd260),
+	.addinput2(32'd132),
 	.addoutput(B1Address2)
   );
     wire [31:0] B2Address1, B2Address2;
   Adder B2Add0 (
 	.addinput1(ALUResultMEM),
-	.addinput2(32'd512),
+	.addinput2(32'd256),
 	.addoutput(B2Address1)
   );
     Adder B2Add1 (
 	.addinput1(ALUResultMEM),
-	.addinput2(32'd516),
+	.addinput2(32'd260),
 	.addoutput(B2Address2)
   );
     wire [31:0] B3Address1, B3Address2;
   Adder B3Add0 (
 	.addinput1(ALUResultMEM),
-	.addinput2(32'd768),
+	.addinput2(32'd384),
 	.addoutput(B3Address1)
   );
     Adder B3Add1 (
 	.addinput1(ALUResultMEM),
-	.addinput2(32'd772),
+	.addinput2(32'd388),
 	.addoutput(B3Address2)
   );
   wire [31:0] B0ReadData2;

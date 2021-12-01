@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="973343fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomStartTime time="7631560fs"></ZoomStartTime>
+      <ZoomEndTime time="9333688fs"></ZoomEndTime>
+      <Cursor1Time time="8800000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="174"></NameColumnWidth>
-      <ValueColumnWidth column_width="305"></ValueColumnWidth>
+      <ValueColumnWidth column_width="300"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="50" />
+   <WVObjectSize size="64" />
    <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -170,6 +170,7 @@
    <wvobject fp_name="/TopLevel_tb/tl/EX_MEM/ALUResultOut" type="array">
       <obj_property name="ElementShortName">ALUResultOut[31:0]</obj_property>
       <obj_property name="ObjectShortName">ALUResultOut[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider1003">
       <obj_property name="label">Data Blocks</obj_property>
@@ -183,7 +184,7 @@
    <wvobject fp_name="/TopLevel_tb/tl/DataB0/ReadData1" type="array">
       <obj_property name="ElementShortName">ReadData1[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData1[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB0/Address2" type="array">
       <obj_property name="ElementShortName">Address2[31:0]</obj_property>
@@ -193,7 +194,7 @@
    <wvobject fp_name="/TopLevel_tb/tl/DataB0/ReadData2" type="array">
       <obj_property name="ElementShortName">ReadData2[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData2[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB1/Address1" type="array">
       <obj_property name="ElementShortName">Address1[31:0]</obj_property>
@@ -203,7 +204,7 @@
    <wvobject fp_name="/TopLevel_tb/tl/DataB1/ReadData1" type="array">
       <obj_property name="ElementShortName">ReadData1[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData1[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB1/Address2" type="array">
       <obj_property name="ElementShortName">Address2[31:0]</obj_property>
@@ -213,7 +214,7 @@
    <wvobject fp_name="/TopLevel_tb/tl/DataB1/ReadData2" type="array">
       <obj_property name="ElementShortName">ReadData2[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData2[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB2/Address1" type="array">
       <obj_property name="ElementShortName">Address1[31:0]</obj_property>
@@ -223,7 +224,7 @@
    <wvobject fp_name="/TopLevel_tb/tl/DataB2/ReadData1" type="array">
       <obj_property name="ElementShortName">ReadData1[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData1[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB2/Address2" type="array">
       <obj_property name="ElementShortName">Address2[31:0]</obj_property>
@@ -233,7 +234,7 @@
    <wvobject fp_name="/TopLevel_tb/tl/DataB2/ReadData2" type="array">
       <obj_property name="ElementShortName">ReadData2[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData2[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB3/Address1" type="array">
       <obj_property name="ElementShortName">Address1[31:0]</obj_property>
@@ -243,7 +244,7 @@
    <wvobject fp_name="/TopLevel_tb/tl/DataB3/ReadData1" type="array">
       <obj_property name="ElementShortName">ReadData1[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData1[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB3/Address2" type="array">
       <obj_property name="ElementShortName">Address2[31:0]</obj_property>
@@ -253,6 +254,63 @@
    <wvobject fp_name="/TopLevel_tb/tl/DataB3/ReadData2" type="array">
       <obj_property name="ElementShortName">ReadData2[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData2[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider259">
+      <obj_property name="label">Data Values</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#FFA500</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[0]" type="array">
+      <obj_property name="ElementShortName">[0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[1]" type="array">
+      <obj_property name="ElementShortName">[1][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[2]" type="array">
+      <obj_property name="ElementShortName">[2][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[3]" type="array">
+      <obj_property name="ElementShortName">[3][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[3][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[4]" type="array">
+      <obj_property name="ElementShortName">[4][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[4][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[5]" type="array">
+      <obj_property name="ElementShortName">[5][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[5][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[6]" type="array">
+      <obj_property name="ElementShortName">[6][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[6][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[7]" type="array">
+      <obj_property name="ElementShortName">[7][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[7][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[8]" type="array">
+      <obj_property name="ElementShortName">[8][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[8][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[9]" type="array">
+      <obj_property name="ElementShortName">[9][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[9][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[10]" type="array">
+      <obj_property name="ElementShortName">[10][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[10][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[11]" type="array">
+      <obj_property name="ElementShortName">[11][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[11][15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/DataB0/Memory[12]" type="array">
+      <obj_property name="ElementShortName">[12][15:0]</obj_property>
+      <obj_property name="ObjectShortName">[12][15:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -57,15 +57,15 @@ module DataMemory (
 
   output reg [31:0] ReadData1, ReadData2;  // Contents of memory location at Address
 
-  reg [31:0] Memory[0:8191];  //DataMemory with 4096 32-bit 
+  reg [15:0] Memory[0:8191];  //DataMemory with 4096 32-bit 
   initial begin
     $readmemh("data_memory.mem", Memory);
   end
   // Read data that is not clocked
   always @(*) begin
     if (MemRead) begin
-      ReadData1 <= Memory[Address1[16:2]];
-	  ReadData2 <= Memory[Address2[16:2]];
+      ReadData1 <= {Memory[Address1[16:1]], Memory[Address1[16:1] + 1]};
+	  ReadData2 <= {Memory[Address2[16:1]], Memory[Address2[16:1] + 1]};
     end else begin
       ReadData1 <= 32'h00000000;
 	  ReadData2 <= 32'h00000000;
@@ -75,7 +75,7 @@ module DataMemory (
   always @(negedge Clk) begin
 
     if (MemWrite) begin
-      Memory[WriteAddress[16:2]] <= WriteData;
+      Memory[WriteAddress[16:1]] <= WriteData;
     end
   end
 

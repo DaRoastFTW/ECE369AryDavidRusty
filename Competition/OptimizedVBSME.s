@@ -5,7 +5,7 @@ vbsme:
 	addi $s0, $zero, 32767	#current minimum = 32767
 	addi $t0, $zero, 1	#dir = 1
 	addi $t1, $zero, 1	#line = 1
-	
+	#lww $s3, rs=8200
 Loop1:
 	slti $t2, $t1, 62	#Check if line < 62
 	beq $t2, $zero, Loop2	#End Loop 1 if line >= 62
@@ -25,8 +25,8 @@ diagonal_loop1:
 	sub $s1, $t6, $t3	#row = a - startPos
 	add $s2, $t2, $t3	#col = start_col + startPos
 	
-	sll $s3, $s1, 8				#memLoc = 256 * row + col + 16
-	addi $t9, $s2, 16
+	sll $s3, $s1, 7				#memLoc = 128 * row + col + 8
+	addi $t9, $s2, 8
 	add $s3, $s3, $t9
 	#lwf $s3
 	
@@ -57,8 +57,8 @@ diagonal_loop2:
 	addi $t7, $zero, 60
 	sub $s1, $t7, $t3	#row = 60 - startPos
 	add $s2, $t2, $t3	#col = start_col + startPos
-	sll $s3, $s1, 8				#memLoc = 256 * row + col + 16
-	addi $t9, $s2, 16
+	sll $s3, $s1, 7				#memLoc = 128 * row + col + 8
+	addi $t9, $s2, 8
 	add $s3, $s3, $t9
 	#lwf $s3
 	add $t3, $t3, $t5	#startPos = startPos + iterPos

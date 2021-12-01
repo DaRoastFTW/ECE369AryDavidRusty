@@ -3,8 +3,6 @@
   <File Type="PA-TCL" Name="TopTopLevel.tcl"/>
   <File Type="REPORTS-TCL" Name="TopTopLevel_reports.tcl"/>
   <File Type="RDS-RDS" Name="TopTopLevel.vds"/>
-  <File Type="RDS-UTIL" Name="TopTopLevel_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="TopTopLevel_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TopTopLevel.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
