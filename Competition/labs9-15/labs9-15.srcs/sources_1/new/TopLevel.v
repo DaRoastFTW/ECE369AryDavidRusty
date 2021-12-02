@@ -161,7 +161,7 @@ module TopLevel (
   );
   wire JrID;
 
-  wire RegWrite, BranchID, MemWriteID, MemReadID, MovID, JumpID, HiLoOrNormalID;
+  wire RegWrite, BranchID, MemWriteID, MemReadID, MovID, JumpID, HiLoOrNormalID, frameWindowID;
   wire [5:0] ALUOpID;
   wire [1:0] ALUSrcID, MemtoRegID, PCSrcID, wordhalfbyteID, RegDstID;
   wire [3:0] HiLoControlID;
@@ -181,7 +181,8 @@ module TopLevel (
       .wordhalfbyte(wordhalfbyteID),
       .HiLoOrNormal(HiLoOrNormalID),
       .Jump(JumpID),
-      .Jr(JrID)
+      .Jr(JrID),
+      .frameWindow(frameWindowID)
   );
   wire PCStall, IFIDStall, IFIDFlush, IDEXFlush;
   wire [31:0] InstructionMEM, InstructionWB;
@@ -211,7 +212,7 @@ module TopLevel (
       .MemWriteWB(MemWriteWB)
   );
   //Pipe Reg 2
-  wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX, JumpEX, HiLoOrNormalEX;
+  wire RegWriteEX, BranchOutEX, MemWriteEX, MemReadEX, JrEX, MovEX, JumpEX, HiLoOrNormalEX, frameWindowEX;
   wire [1:0] MemtoRegEX, wordhalfbyteEX, ALUSrcEX, RegDstEX, PCSrcEX;
   wire [3:0] HiLoControlEX;
   wire [5:0] ALUOpEX;
@@ -219,6 +220,113 @@ module TopLevel (
 
   wire [15:0] f0EX, f1EX, f2EX, f3EX, f4EX, f5EX, f6EX, f7EX, f8EX, f9EX, f10EX, f11EX, f12EX, f13EX, f14EX, f15EX;
   //ID_EX Pipeline Register
+
+  wire [15:0] w0MuxOut, w1MuxOut, w2MuxOut, w3MuxOut, w4MuxOut,
+  w5MuxOut, w6MuxOut, w7MuxOut, w8MuxOut, w9MuxOut, w10MuxOut,
+  w11MuxOut, w12MuxOut, w13MuxOut, w14MuxOut, w15MuxOut;
+
+  wire [15:0] w0EX, w1EX, w2EX, w3EX, w4EX, w5EX, w6EX, w7EX, w8EX, w9EX, w10EX, w11EX, w12EX, w13EX, w14EX, w15EX;
+
+
+  Mux16Bit2to1 w0Mux (
+      .out(w0MuxOut),
+      .inA(w0EX),
+      .inB(ReadDataMEM[31:16]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w1Mux (
+      .out(w1MuxOut),
+      .inA(w1EX),
+      .inB(ReadDataMEM[15:0]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w2Mux (
+      .out(w2MuxOut),
+      .inA(w2EX),
+      .inB(B0ReadData2[31:16]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w3Mux (
+      .out(w3MuxOut),
+      .inA(w3EX),
+      .inB(B0ReadData2[15:0]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w4Mux (
+      .out(w4MuxOut),
+      .inA(w4EX),
+      .inB(B1ReadData1[31:16]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w5Mux (
+      .out(w5MuxOut),
+      .inA(w5EX),
+      .inB(B1ReadData1[15:0]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w6Mux (
+      .out(w6MuxOut),
+      .inA(w6EX),
+      .inB(B1ReadData2[31:16]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w7Mux (
+      .out(w7MuxOut),
+      .inA(w7EX),
+      .inB(B1ReadData2[15:0]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w8Mux (
+      .out(w8MuxOut),
+      .inA(w8EX),
+      .inB(B2ReadData1[31:16]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w9Mux (
+      .out(w9MuxOut),
+      .inA(w9EX),
+      .inB(B2ReadData1[15:0]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w10Mux (
+      .out(w10MuxOut),
+      .inA(w10EX),
+      .inB(B2ReadData2[31:16]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w11Mux (
+      .out(w11MuxOut),
+      .inA(w11EX),
+      .inB(B2ReadData2[15:0]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w12Mux (
+      .out(w12MuxOut),
+      .inA(w12EX),
+      .inB(B3ReadData1[31:16]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w13Mux (
+      .out(w13MuxOut),
+      .inA(w13EX),
+      .inB(B3ReadData1[15:0]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w14Mux (
+      .out(w14MuxOut),
+      .inA(w14EX),
+      .inB(B3ReadData2[31:16]),
+      .sel(frameWindowMEM)
+  );
+  Mux16Bit2to1 w15Mux (
+      .out(w15MuxOut),
+      .inA(w15EX),
+      .inB(B3ReadData2[15:0]),
+      .sel(frameWindowMEM)
+  );
+
+
+
   RegID_EX ID_EX (
       .Clk(Clk),
       .Reset(IDEXFlush),
@@ -260,71 +368,73 @@ module TopLevel (
       .JumpInst_output(JumpInstructionEX),
       .HiLoOrNormalIn(HiLoOrNormalID),
       .HiLoOrNormalOut(HiLoOrNormalEX),
-	  
-	    .f0In(ReadDataMEM[31:16]),
-		.f0Out(f0EX),
-		.f1In(ReadDataMEM[15:0]),
-		.f1Out(f1EX),
-		.f2In(B0ReadData2[31:16]),
-		.f2Out(f2EX),
-		.f3In(B0ReadData2[15:0]),
-		.f3Out(f3EX),
-		.f4In(B1ReadData1[31:16]),
-		.f4Out(f4EX),
-		.f5In(B1ReadData1[15:0]),
-		.f5Out(f5EX),
-		.f6In(B1ReadData2[31:16]),
-		.f6Out(f6EX),
-		.f7In(B1ReadData2[15:0]),
-		.f7Out(f7EX),
-		.f8In(B2ReadData1[31:16]),
-		.f8Out(f8EX),
-		.f9In(B2ReadData1[15:0]),
-		.f9Out(f9EX),
-		.f10In(B2ReadData2[31:16]),
-		.f10Out(f10EX),
-		.f11In(B2ReadData2[15:0]),
-		.f11Out(f11EX),
-		.f12In(B3ReadData1[31:16]),
-		.f12Out(f12EX),
-		.f13In(B3ReadData1[15:0]),
-		.f13Out(f13EX),
-		.f14In(B3ReadData2[31:16]),
-		.f14Out(f14EX),
-		.f15In(B3ReadData2[15:0]),
-		.f15Out(f15EX)
-		/*.w0In,
-		.w0Out,
-		.w1In,
-		.w1Out,
-		.w2In,
-		.w2Out,
-		.w3In,
-		.w3Out,
-		.w4In,
-		.w4Out,
-		.w5In,
-		.w5Out,
-		.w6In,
-		.w6Out,
-		.w7In,
-		.w7Out,
-		.w8In,
-		.w8Out,
-		.w9In,
-		.w9Out,
-		.w10In,
-		.w10Out,
-		.w11In,
-		.w11Out,
-		.w12In,
-		.w12Out,
-		.w13In,
-		.w13Out,
-		.w14In,
-		.w14Out,
-		.w15In,
-		.w15Out*/
+
+      .f0In(ReadDataMEM[31:16]),
+      .f0Out(f0EX),
+      .f1In(ReadDataMEM[15:0]),
+      .f1Out(f1EX),
+      .f2In(B0ReadData2[31:16]),
+      .f2Out(f2EX),
+      .f3In(B0ReadData2[15:0]),
+      .f3Out(f3EX),
+      .f4In(B1ReadData1[31:16]),
+      .f4Out(f4EX),
+      .f5In(B1ReadData1[15:0]),
+      .f5Out(f5EX),
+      .f6In(B1ReadData2[31:16]),
+      .f6Out(f6EX),
+      .f7In(B1ReadData2[15:0]),
+      .f7Out(f7EX),
+      .f8In(B2ReadData1[31:16]),
+      .f8Out(f8EX),
+      .f9In(B2ReadData1[15:0]),
+      .f9Out(f9EX),
+      .f10In(B2ReadData2[31:16]),
+      .f10Out(f10EX),
+      .f11In(B2ReadData2[15:0]),
+      .f11Out(f11EX),
+      .f12In(B3ReadData1[31:16]),
+      .f12Out(f12EX),
+      .f13In(B3ReadData1[15:0]),
+      .f13Out(f13EX),
+      .f14In(B3ReadData2[31:16]),
+      .f14Out(f14EX),
+      .f15In(B3ReadData2[15:0]),
+      .f15Out(f15EX),
+      .w0In(w0MuxOut),
+      .w0Out(w0EX),
+      .w1In(w1MuxOut),
+      .w1Out(w1EX),
+      .w2In(w2MuxOut),
+      .w2Out(w2EX),
+      .w3In(w3MuxOut),
+      .w3Out(w3EX),
+      .w4In(w4MuxOut),
+      .w4Out(w4EX),
+      .w5In(w5MuxOut),
+      .w5Out(w5EX),
+      .w6In(w6MuxOut),
+      .w6Out(w6EX),
+      .w7In(w7MuxOut),
+      .w7Out(w7EX),
+      .w8In(w8MuxOut),
+      .w8Out(w8EX),
+      .w9In(w9MuxOut),
+      .w9Out(w9EX),
+      .w10In(w10MuxOut),
+      .w10Out(w10EX),
+      .w11In(w11MuxOut),
+      .w11Out(w11EX),
+      .w12In(w12MuxOut),
+      .w12Out(w12EX),
+      .w13In(w13MuxOut),
+      .w13Out(w13EX),
+      .w14In(w14MuxOut),
+      .w14Out(w14EX),
+      .w15In(w15MuxOut),
+      .w15Out(w15EX),
+      .frameWindowIn(frameWindowID),
+      .frameWindowOut(frameWindowEX)
   );
 
 
@@ -423,8 +533,9 @@ module TopLevel (
   wire [4:0] RegDstMuxMEM;
   wire [31:0] PCAddMEM, ALUResultMEM, JumpInstructionMEM;
   wire [63:0] ALUResult64MEM;
-  wire [ 3:0] HiLoControlMEM;
-  (* mark_debug = "true" *)wire [31:0] ReadData2MEM;
+  wire [3:0] HiLoControlMEM;
+  wire frameWindowMEM;
+  (* mark_debug = "true" *) wire [31:0] ReadData2MEM;
   RegEX_MEM EX_MEM (
       .Clk(Clk),
       .Reset(Reset),
@@ -463,7 +574,9 @@ module TopLevel (
       .HiLoOrNormalIn(HiLoOrNormalEX),
       .HiLoOrNormalOut(HiLoOrNormalMEM),
       .InstructionIn(InstructionEX),
-      .InstructionOut(InstructionMEM)
+      .InstructionOut(InstructionMEM),
+      .frameWindowIn(frameWindowEX),
+      .frameWindowOut(frameWindowMEM)
   );
 
   //This is the memory stage
@@ -477,100 +590,143 @@ module TopLevel (
       .WriteData(storeTreaterOut)
   );
   wire [31:0] B0Address1, B0Address2;
+
+
   Adder B0Add0 (
-	.addinput1(ALUResultMEM),
-	.addinput2(32'd0),
-	.addoutput(B0Address1)
+      .addinput1(ALUResultMEM),
+      .addinput2(32'd0),
+      .addoutput(B0Address1)
   );
-    Adder B0Add1 (
-	.addinput1(ALUResultMEM),
-	.addinput2(32'd4),
-	.addoutput(B0Address2)
+
+  Adder B0Add1 (
+      .addinput1(ALUResultMEM),
+      .addinput2(32'd4),
+      .addoutput(B0Address2)
   );
-    wire [31:0] B1Address1, B1Address2;
+  wire [31:0] B1Address1, B1Address2;
+  wire [31:0] B1Add0MuxOut, B1Add1MuxOut;
+
+  Mux32Bit2To1 B1Add0Mux (
+      .out(B1Add0MuxOut),
+      .inA(32'd128),
+      .inB(32'd8),
+      .sel(frameWindowMEM)
+  );
   Adder B1Add0 (
-	.addinput1(ALUResultMEM),
-	.addinput2(32'd128),
-	.addoutput(B1Address1)
+      .addinput1(ALUResultMEM),
+      .addinput2(B1Add0MuxOut),
+      .addoutput(B1Address1)
   );
-    Adder B1Add1 (
-	.addinput1(ALUResultMEM),
-	.addinput2(32'd132),
-	.addoutput(B1Address2)
+  Mux32Bit2To1 B1Add1Mux (
+      .out(B1Add1MuxOut),
+      .inA(32'd132),
+      .inB(32'd12),
+      .sel(frameWindowMEM)
   );
-    wire [31:0] B2Address1, B2Address2;
+  Adder B1Add1 (
+      .addinput1(ALUResultMEM),
+      .addinput2(B1Add1MuxOut),
+      .addoutput(B1Address2)
+  );
+  wire [31:0] B2Address1, B2Address2;
+  wire [31:0] B2Add0MuxOut, B2Add1MuxOut;
+  Mux32Bit2To1 B2Add0Mux (
+      .out(B2Add0MuxOut),
+      .inA(32'd256),
+      .inB(32'd16),
+      .sel(frameWindowMEM)
+  );
   Adder B2Add0 (
-	.addinput1(ALUResultMEM),
-	.addinput2(32'd256),
-	.addoutput(B2Address1)
+      .addinput1(ALUResultMEM),
+      .addinput2(B2Add0MuxOut),
+      .addoutput(B2Address1)
   );
-    Adder B2Add1 (
-	.addinput1(ALUResultMEM),
-	.addinput2(32'd260),
-	.addoutput(B2Address2)
+  Mux32Bit2To1 B2Add1Mux (
+      .out(B2Add1MuxOut),
+      .inA(32'd260),
+      .inB(32'd20),
+      .sel(frameWindowMEM)
   );
-    wire [31:0] B3Address1, B3Address2;
+  Adder B2Add1 (
+      .addinput1(ALUResultMEM),
+      .addinput2(B2Add1MuxOut),
+      .addoutput(B2Address2)
+  );
+  wire [31:0] B3Address1, B3Address2;
+  wire [31:0] B3Add0MuxOut, B3Add1MuxOut;
+  Mux32Bit2To1 B3Add0Mux (
+      .out(B3Add0MuxOut),
+      .inA(32'd384),
+      .inB(32'd24),
+      .sel(frameWindowMEM)
+  );
   Adder B3Add0 (
-	.addinput1(ALUResultMEM),
-	.addinput2(32'd384),
-	.addoutput(B3Address1)
+      .addinput1(ALUResultMEM),
+      .addinput2(B3Add0MuxOut),
+      .addoutput(B3Address1)
   );
-    Adder B3Add1 (
-	.addinput1(ALUResultMEM),
-	.addinput2(32'd388),
-	.addoutput(B3Address2)
+  Mux32Bit2To1 B3Add1Mux (
+      .out(B3Add1MuxOut),
+      .inA(32'd388),
+      .inB(32'd28),
+      .sel(frameWindowMEM)
+  );
+  Adder B3Add1 (
+      .addinput1(ALUResultMEM),
+      .addinput2(B3Add1MuxOut),
+      .addoutput(B3Address2)
   );
   wire [31:0] B0ReadData2;
   DataMemory DataB0 (
       .Address1(B0Address1),
-	  .Address2(B0Address2),
-	  .WriteAddress(ALUResultMEM),
+      .Address2(B0Address2),
+      .WriteAddress(ALUResultMEM),
       .WriteData(storeTreaterOut),
       .Clk(Clk),
       .Rst(Reset),
       .MemWrite(MemWriteMEM),
       .MemRead(MemReadMEM),
       .ReadData1(ReadDataMEM),
-	  .ReadData2(B0ReadData2)
+      .ReadData2(B0ReadData2)
   );
   wire [31:0] B1ReadData1, B1ReadData2;
   DataMemory DataB1 (
       .Address1(B1Address1),
-	  .Address2(B1Address2),
-	  .WriteAddress(ALUResultMEM),
+      .Address2(B1Address2),
+      .WriteAddress(ALUResultMEM),
       .WriteData(storeTreaterOut),
       .Clk(Clk),
       .Rst(Reset),
       .MemWrite(MemWriteMEM),
       .MemRead(MemReadMEM),
       .ReadData1(B1ReadData1),
-	  .ReadData2(B1ReadData2)
+      .ReadData2(B1ReadData2)
   );
-   wire [31:0] B2ReadData1, B2ReadData2;
+  wire [31:0] B2ReadData1, B2ReadData2;
   DataMemory DataB2 (
       .Address1(B2Address1),
-	  .Address2(B2Address2),
-	  .WriteAddress(ALUResultMEM),
+      .Address2(B2Address2),
+      .WriteAddress(ALUResultMEM),
       .WriteData(storeTreaterOut),
       .Clk(Clk),
       .Rst(Reset),
       .MemWrite(MemWriteMEM),
       .MemRead(MemReadMEM),
       .ReadData1(B2ReadData1),
-	  .ReadData2(B2ReadData2)
+      .ReadData2(B2ReadData2)
   );
-   wire [31:0] B3ReadData1, B3ReadData2;
+  wire [31:0] B3ReadData1, B3ReadData2;
   DataMemory DataB3 (
       .Address1(B3Address1),
-	  .Address2(B3Address2),
-	  .WriteAddress(ALUResultMEM),
+      .Address2(B3Address2),
+      .WriteAddress(ALUResultMEM),
       .WriteData(storeTreaterOut),
       .Clk(Clk),
       .Rst(Reset),
       .MemWrite(MemWriteMEM),
       .MemRead(MemReadMEM),
       .ReadData1(B3ReadData1),
-	  .ReadData2(B3ReadData2)
+      .ReadData2(B3ReadData2)
   );
   WordMask loadTreater (
       .information(ReadDataMEM),

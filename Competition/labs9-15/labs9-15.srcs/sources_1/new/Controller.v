@@ -36,10 +36,11 @@ module Controller (
     Mov,
     wordhalfbyte,
     Jump,
-    HiLoOrNormal
+    HiLoOrNormal,
+    frameWindow
 );
   input [31:0] Instruction;
-  output reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov, Jump, HiLoOrNormal;
+  output reg RegWrite, Branch, MemWrite, MemRead, Jr, Mov, Jump, HiLoOrNormal, frameWindow;
   output reg [1:0] MemtoReg, wordhalfbyte, ALUSrc;
   output reg [1:0] RegDst, PCSrc;
   output reg [3:0] HiLoControl;
@@ -70,6 +71,7 @@ module Controller (
     wordhalfbyte = 0;
     Jump = 0;
     HiLoOrNormal = 0;
+    frameWindow = 0;
     case (opcode)
       6'b000000: begin
         case (funct)
@@ -1080,6 +1082,23 @@ module Controller (
 		wordhalfbyte = 0;
 		Jump = 0;
 	  end
+    6'b010011:
+    begin
+    RegWrite = 1;
+		RegDst = 0;
+		ALUSrc = 1;
+		Branch = 0;
+		MemRead = 1;
+		MemWrite = 0;
+		MemtoReg = 0;
+		HiLoControl = 4'b0000;
+		ALUOp = 6'b000000;
+		Jr = 0;
+		Mov = 0;
+		wordhalfbyte = 0;
+		Jump = 0;
+    frameWindow = 1;  
+    end
       default: begin
         RegWrite = 0;
         RegDst = 0;

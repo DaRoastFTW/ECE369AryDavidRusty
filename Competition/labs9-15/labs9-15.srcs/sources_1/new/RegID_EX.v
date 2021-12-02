@@ -124,10 +124,12 @@ module RegID_EX (
 	w14In,
 	w14Out,
 	w15In,
-	w15Out
+	w15Out,
+	frameWindowIn,
+	frameWindowOut
 );
   input Clk, Reset;
-  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, MovIn, HiLoOrNormalIn;
+  input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, MovIn, HiLoOrNormalIn, frameWindowIn;
   input [1:0] MemtoRegIn, wordhalfbyteIn, ALUSrcIn, RegDstIn;
   input [3:0] HiLoControlIn;
   input [5:0] ALUOpIn;
@@ -166,7 +168,7 @@ module RegID_EX (
 	w14In,
 	w15In;
 
-  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, MovOut, HiLoOrNormalOut;
+  output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, MovOut, HiLoOrNormalOut, frameWindowOut;
   output reg [1:0] MemtoRegOut, wordhalfbyteOut, ALUSrcOut;
   output reg [1:0] RegDstOut;
   output reg [3:0] HiLoControlOut;
@@ -259,6 +261,7 @@ module RegID_EX (
 		w13Out <= 16'd0;
 		w14Out <= 16'd0;
 		w15Out <= 16'd0;
+		frameWindowOut <= 1'b0;
     end else begin
       RegWriteOut <= RegWriteIn;
       BranchOut <= BranchIn;
@@ -311,6 +314,7 @@ module RegID_EX (
 		w13Out <= w13In;
 		w14Out <= w14In;
 		w15Out <= w15In;
+		frameWindowOut <= frameWindowIn;
     end
   end
 endmodule
