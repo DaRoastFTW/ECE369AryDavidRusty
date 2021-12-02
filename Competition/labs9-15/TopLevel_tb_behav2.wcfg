@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="7631560fs"></ZoomStartTime>
-      <ZoomEndTime time="9333688fs"></ZoomEndTime>
-      <Cursor1Time time="8800000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1535337fs"></ZoomEndTime>
+      <Cursor1Time time="2000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="174"></NameColumnWidth>
-      <ValueColumnWidth column_width="300"></ValueColumnWidth>
+      <ValueColumnWidth column_width="295"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="64" />
+   <WVObjectSize size="72" />
    <wvobject fp_name="/TopLevel_tb/Clk" type="logic">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -196,10 +196,29 @@
       <obj_property name="ObjectShortName">ReadData2[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
+   <wvobject type="divider" fp_name="divider65">
+      <obj_property name="label">Block 1 Checks</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#800080</obj_property>
+   </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB1/Address1" type="array">
       <obj_property name="ElementShortName">Address1[31:0]</obj_property>
       <obj_property name="ObjectShortName">Address1[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/B1Add0Mux/inA" type="array">
+      <obj_property name="ElementShortName">inA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inA[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/B1Add0Mux/inB" type="array">
+      <obj_property name="ElementShortName">inB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inB[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/B1Add0Mux/sel" type="logic">
+      <obj_property name="ElementShortName">sel</obj_property>
+      <obj_property name="ObjectShortName">sel</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB1/ReadData1" type="array">
       <obj_property name="ElementShortName">ReadData1[31:0]</obj_property>
@@ -211,10 +230,29 @@
       <obj_property name="ObjectShortName">Address2[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/B1Add1Mux/inA" type="array">
+      <obj_property name="ElementShortName">inA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inA[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/B1Add1Mux/inB" type="array">
+      <obj_property name="ElementShortName">inB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inB[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TopLevel_tb/tl/B1Add1Mux/sel" type="logic">
+      <obj_property name="ElementShortName">sel</obj_property>
+      <obj_property name="ObjectShortName">sel</obj_property>
+   </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB1/ReadData2" type="array">
       <obj_property name="ElementShortName">ReadData2[31:0]</obj_property>
       <obj_property name="ObjectShortName">ReadData2[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider66">
+      <obj_property name="label">New Divider 3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#FF0080</obj_property>
    </wvobject>
    <wvobject fp_name="/TopLevel_tb/tl/DataB2/Address1" type="array">
       <obj_property name="ElementShortName">Address1[31:0]</obj_property>
