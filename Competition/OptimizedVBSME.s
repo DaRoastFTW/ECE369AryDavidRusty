@@ -29,8 +29,13 @@ diagonal_loop1:
 	addi $t9, $s2, 8
 	add $s3, $s3, $t9
 	#lwf $s3
-	
 	add $t3, $t3, $t5	#startPos = startPos + iterPos
+	#sad $s4
+	slt $s5, $s0, $s4	#if new min is <= old min
+	movz $s0, $s4, $s5	#Update min
+	movz $v0, $s1, $s5	#Update minrow
+	movz $v1, $s1, $s5	#Update mincol
+	
 	j diagonal_loop1
 end_diagonal1:
 	xori $t0, $t0, 1
@@ -61,6 +66,11 @@ diagonal_loop2:
 	addi $t9, $s2, 8
 	add $s3, $s3, $t9
 	#lwf $s3
+	sad $s4
+	slt $s5, $s0, $s4	#if new min is <= old min
+	movz $s0, $s4, $s5	#Update min
+	movz $v0, $s1, $s5	#Update minrow
+	movz $v1, $s1, $s5	#Update mincol
 	add $t3, $t3, $t5	#startPos = startPos + iterPos
 	j diagonal_loop2
 end_diagonal2:
