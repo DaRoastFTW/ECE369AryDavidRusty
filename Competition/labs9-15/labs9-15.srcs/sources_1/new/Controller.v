@@ -1068,7 +1068,7 @@ module Controller (
       end
 	  6'b010010:	//lwf
 	  begin
-		RegWrite = 1;
+		RegWrite = 0;
 		RegDst = 0;
 		ALUSrc = 1;
 		Branch = 0;
@@ -1082,9 +1082,9 @@ module Controller (
 		wordhalfbyte = 0;
 		Jump = 0;
 	  end
-    6'b010011:
+    6'b010011:	//lww
     begin
-    RegWrite = 1;
+    RegWrite = 0;
 		RegDst = 0;
 		ALUSrc = 1;
 		Branch = 0;
