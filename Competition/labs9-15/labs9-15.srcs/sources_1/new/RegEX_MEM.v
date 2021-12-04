@@ -60,20 +60,22 @@ module RegEX_MEM (
     InstructionIn,
     InstructionOut,
     frameWindowIn,
-    frameWindowOut
+    frameWindowOut,
+	SADOutIn,
+	SADOutOut
 );
   input Clk, Reset, MovIn;
   input RegWriteIn, BranchIn, MemWriteIn, MemReadIn, ZeroFlagIn, HiLoOrNormalIn, frameWindowIn;
   input [1:0] wordhalfbyteIn, MemtoRegIn;
   input [4:0] RegDstMuxIn;
-  input [31:0] PCAddIn, ReadData2In, ALUResultIn, JrMuxIn, JumpInst_input, InstructionIn;
+  input [31:0] PCAddIn, ReadData2In, ALUResultIn, JrMuxIn, JumpInst_input, InstructionIn, SADOutIn;
   input [63:0] ALUResult64In;
   input [3:0] HiLoControlIn;
 
   output reg RegWriteOut, BranchOut, MemWriteOut, MemReadOut, ZeroFlagOut, MovOut, HiLoOrNormalOut, frameWindowOut;
   output reg [1:0] MemtoRegOut, wordhalfbyteOut;
   output reg [4:0] RegDstMuxOut;
-  output reg [31:0] PCAddOut, ReadData2Out, ALUResultOut, JrMuxOut, JumpInst_output, InstructionOut;
+  output reg [31:0] PCAddOut, ReadData2Out, ALUResultOut, JrMuxOut, JumpInst_output, InstructionOut, SADOutOut;
   output reg [63:0] ALUResult64Out;
   output reg [3:0] HiLoControlOut;
   always @(posedge Clk) begin
@@ -97,6 +99,7 @@ module RegEX_MEM (
       HiLoOrNormalOut <= 0;
       InstructionOut <= 0;
       frameWindowOut <= 0;
+	  SADOutOut <= 0;
     end else begin
       RegWriteOut <= RegWriteIn;
       BranchOut <= BranchIn;
@@ -117,6 +120,7 @@ module RegEX_MEM (
       HiLoOrNormalOut <= HiLoOrNormalIn;
       InstructionOut <= InstructionIn;
       frameWindowOut <= frameWindowIn;
+	  SADOutOut <= SADOutIn;
     end
   end
 endmodule

@@ -491,6 +491,42 @@ module TopLevel (
       .Zero(ZeroEX),
       .ALUResult64(ALUResult64EX)
   );
+  wire [31:0] SADOutEX, SADOutMEM, SADOutWB;
+  SADCalculator SAD (
+	.windowInput1(w0EX),
+    .frameInput1(f0EX),
+    .windowInput2(w1EX),
+    .frameInput2(f1EX),
+    .windowInput3(w2EX),
+    .frameInput3(f2EX),
+    .windowInput4(w3EX),
+    .frameInput4(f3EX),
+    .windowInput5(w4EX),
+    .frameInput5(f4EX),
+    .windowInput6(w5EX),
+    .frameInput6(f5EX),
+    .windowInput7(w6EX),
+    .frameInput7(f6EX),
+    .windowInput8(w7EX),
+    .frameInput8(f7EX),
+    .windowInput9(w8EX),
+    .frameInput9(f8EX),
+    .windowInput10(w9EX),
+    .frameInput10(f9EX),
+    .windowInput11(w10EX),
+    .frameInput11(f10EX),
+    .windowInput12(w11EX),
+    .frameInput12(f11EX),
+    .windowInput13(w12EX),
+    .frameInput13(f12EX),
+    .windowInput14(w13EX),
+    .frameInput14(f13EX),
+    .windowInput15(w14EX),
+    .frameInput15(f14EX),
+    .windowInput16(w15EX),
+    .frameInput16(f15EX),
+    .SADOutputFinal(SADOutEX)
+  );
   AndGate Gate2 (
       .andinput1(ZeroEX),
       .andinput2(MovEX),
@@ -580,7 +616,9 @@ module TopLevel (
       .InstructionIn(InstructionEX),
       .InstructionOut(InstructionMEM),
       .frameWindowIn(frameWindowEX),
-      .frameWindowOut(frameWindowMEM)
+      .frameWindowOut(frameWindowMEM),
+	  .SADOutIn(SADOutEX),
+	  .SADOutOut(SADOutMEM)
   );
 
   //This is the memory stage
@@ -694,7 +732,30 @@ module TopLevel (
       .ReadData2(B0ReadData2)
   );
   wire [31:0] B1ReadData1, B1ReadData2;
-  DataMemory DataB1 (
+  BlockMemory BlockB1(
+	.Address1(B1Address1),
+      .Address2(B1Address2),
+      .MemRead(MemReadMEM),
+      .ReadData1(B1ReadData1),
+      .ReadData2(B1ReadData2)
+  );
+  wire [31:0] B2ReadData1, B2ReadData2;
+  BlockMemory BlockB2(
+	.Address1(B2Address1),
+      .Address2(B2Address2),
+      .MemRead(MemReadMEM),
+      .ReadData1(B2ReadData1),
+      .ReadData2(B2ReadData2)
+  );
+  wire [31:0] B3ReadData1, B3ReadData2;
+  BlockMemory BlockB3(
+	.Address1(B3Address1),
+      .Address2(B3Address2),
+      .MemRead(MemReadMEM),
+      .ReadData1(B3ReadData1),
+      .ReadData2(B3ReadData2)
+  );
+  /*DataMemory DataB1 (
       .Address1(B1Address1),
       .Address2(B1Address2),
       .WriteAddress(ALUResultMEM),
@@ -731,7 +792,7 @@ module TopLevel (
       .MemRead(MemReadMEM),
       .ReadData1(B3ReadData1),
       .ReadData2(B3ReadData2)
-  );
+  );*/
   WordMask loadTreater (
       .information(ReadDataMEM),
       .wordhalfbyte(wordhalfbyteMEM),
@@ -779,16 +840,19 @@ module TopLevel (
       .HiLoOrNormalIn(HiLoOrNormalMEM),
       .HiLoOrNormalOut(HiLoOrNormalWB),
       .InstructionIn(InstructionMEM),
-      .InstructionOut(InstructionWB)
+      .InstructionOut(InstructionWB),
+	  .SADOutIn(SADOutMEM),
+	  .SADOutOut(SADOutWB)
   );
 
   //This is the write back stage
 
-  Mux32Bit3to1 MemToRegMux (
+  Mux32Bit4to1 MemToRegMux (
       .out(WriteDataWB),
       .inA(ReadDataMemWB),
       .inB(ALUResultWB),
       .inC(PCAddWB),
+	  .inD(SADOutWB),
       .sel(MemtoRegWB)
   );
 endmodule

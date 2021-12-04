@@ -17,7 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/.Xil/Vivado-8276-DELL-TACO-2/incrSyn
+set_param chipscope.maxJobs 4
+set_param synth.incrementalSynthesisCache C:/Users/rrine/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-50508-DELL-TACO-2/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
@@ -39,6 +40,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/ALU32Bit.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/Adder.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/AndGate.v
+  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/BlockMemory.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/BranchDetection.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/ClkDiv.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/Controller.v
@@ -47,9 +49,11 @@ read_verilog -library xil_defaultlib {
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/HazardDetection.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/HiLoReg.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/InstructionMemory.v
+  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/Mux16Bit2to1.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/Mux1Bit2To1.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit2To1.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit3to1.v
+  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/Mux32Bit4to1.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/Mux5Bit3to1.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/PCAdder.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/ProgramCounter.v
@@ -58,6 +62,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/RegIF_ID.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/RegMEM_WB.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/RegisterFile.v
+  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/SADCalculator.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/SevenSegment.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/ShiftLeft2.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/ShifterID.v
@@ -65,6 +70,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/StoreMasker.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/TopLevel.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/Two4DigitDisplay.v
+  C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/VectorCache.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/WordMask.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/ZeroExtention.v
   C:/Users/rrine/VivadoProjects/ECE369AryDavidRusty/Competition/labs9-15/labs9-15.srcs/sources_1/new/TopTopLevel.v

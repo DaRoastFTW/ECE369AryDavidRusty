@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1638245250">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1638652964">
   <File Type="PA-TCL" Name="TopTopLevel.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="TopTopLevel_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TopTopLevel_reports.tcl"/>
   <File Type="RDS-RDS" Name="TopTopLevel.vds"/>
+  <File Type="RDS-UTIL" Name="TopTopLevel_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="TopTopLevel_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TopTopLevel.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="TopTopLevel_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="TopTopLevel_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ALU32Bit.v">
@@ -21,6 +26,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/AndGate.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/BlockMemory.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -83,6 +95,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Mux16Bit2to1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Mux1Bit2To1.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -98,6 +117,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Mux32Bit3to1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Mux32Bit4to1.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -160,6 +186,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/SADCalculator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/SevenSegment.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -203,6 +236,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Two4DigitDisplay.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/VectorCache.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

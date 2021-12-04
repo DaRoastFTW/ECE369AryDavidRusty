@@ -1099,6 +1099,23 @@ module Controller (
 		Jump = 0;
     frameWindow = 1;  
     end
+	6'b010001:	//sad
+	begin
+    RegWrite = 1;
+		RegDst = 1;
+		ALUSrc = 0;
+		Branch = 0;
+		MemRead = 0;
+		MemWrite = 0;
+		MemtoReg = 3;
+		HiLoControl = 4'b0000;
+		ALUOp = 6'b000000;
+		Jr = 0;
+		Mov = 0;
+		wordhalfbyte = 0;
+		Jump = 0;
+		frameWindow = 0;  
+    end
       default: begin
         RegWrite = 0;
         RegDst = 0;

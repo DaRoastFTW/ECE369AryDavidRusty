@@ -5,6 +5,7 @@ vbsme:
 	addi $s0, $zero, 32767	#current minimum = 32767
 	addi $t0, $zero, 1	#dir = 1
 	addi $t1, $zero, 1	#line = 1
+	nop
 	#lww $s3, rs=8200
 Loop1:
 	slti $t2, $t1, 62	#Check if line < 62
@@ -25,16 +26,19 @@ diagonal_loop1:
 	sub $s1, $t6, $t3	#row = a - startPos
 	add $s2, $t2, $t3	#col = start_col + startPos
 	
-	sll $s3, $s1, 7				#memLoc = 128 * row + col + 8
-	addi $t9, $s2, 8
+	sll $s3, $s1, 7				#memLoc = 128 * row + 2 * col + 8
+	add $t9, $s2, $s2
 	add $s3, $s3, $t9
+	addi $s3, $s3, 8
+	nop
 	#lwf $s3
 	add $t3, $t3, $t5	#startPos = startPos + iterPos
+	nop
 	#sad $s4
 	slt $s5, $s0, $s4	#if new min is <= old min
 	movz $s0, $s4, $s5	#Update min
 	movz $v0, $s1, $s5	#Update minrow
-	movz $v1, $s1, $s5	#Update mincol
+	movz $v1, $s2, $s5	#Update mincol
 	
 	j diagonal_loop1
 end_diagonal1:
@@ -62,16 +66,19 @@ diagonal_loop2:
 	addi $t7, $zero, 60
 	sub $s1, $t7, $t3	#row = 60 - startPos
 	add $s2, $t2, $t3	#col = start_col + startPos
-	sll $s3, $s1, 7				#memLoc = 128 * row + col + 8
-	addi $t9, $s2, 8
+	sll $s3, $s1, 7				#memLoc = 128 * row + 2 * col + 8
+	add $t9, $s2, $s2
 	add $s3, $s3, $t9
+	addi $s3, $s3, 8
+	nop
 	#lwf #$s3
 	add $t3, $t3, $t5	#startPos = startPos + iterPos
+	nop
 	#sad $s4
 	slt $s5, $s0, $s4	#if new min is <= old min
 	movz $s0, $s4, $s5	#Update min
 	movz $v0, $s1, $s5	#Update minrow
-	movz $v1, $s1, $s5	#Update mincol
+	movz $v1, $s2, $s5	#Update mincol
 	
 	j diagonal_loop2
 end_diagonal2:
@@ -79,3 +86,4 @@ end_diagonal2:
 	addi $t1, $t1, 1
 	j Loop2
 End_Loop2:
+	j End_Loop2

@@ -73,8 +73,12 @@ module HazardDetection (
       IDEXFlush <= 1'b1;
       debugIf   <= 1;
     end
-
-    //(rs(IR_ID)==destMEM) && use_rs(IR_ID) && RegWriteMEM
+	else if((InstructionID[25:21] != 0) && (((InstructionEX[31:26] == 6'b010001) && ((InstructionID[20:16] == InstructionEX[15:11]))) || ((InstructionMEM[31:26] == 6'b010001) && ((InstructionID[20:16] == InstructionMEM[15:11]))) || ((InstructionWB[31:26] == 6'b010001) && ((InstructionID[20:16] == InstructionWB[15:11]))))) begin
+		PCStall   <= 1'b1;
+		IFIDStall <= 1'b1;
+		IDEXFlush <= 1'b1;
+	end
+	//(rs(IR_ID)==destMEM) && use_rs(IR_ID) && RegWriteMEM
     else
     if ((InstructionID[25:21] != 0) && ((InstructionID[25:21] == InstructionMEM[20:16]) || ((InstructionID[25:21] == InstructionMEM[15:11]) && ((InstructionMEM[31:26] == 6'b000000) || (InstructionMEM[31:26] == 6'b011100)))) && RegWriteMEM) begin
       PCStall   <= 1'b1;

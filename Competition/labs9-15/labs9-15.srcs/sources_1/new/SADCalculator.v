@@ -90,151 +90,155 @@ module SADCalculator(
     frameInput16;
     
     output reg [31:0] SADOutputFinal;
-    integer i;
     reg [15:0] SADOutput;
+	reg [15:0] difference;
     always @ (*) begin
         //Initialise SADOutput to Zero
         SADOutput = 0;
         //Add SAD of Inputs 1 to SADOutput
-        if((windowInput1-frameInput1) >= 0) begin
-            SADOutput = SADOutput + (windowInput1-frameInput1);
+        difference = frameInput1-windowInput1;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
         else begin
-            SADOutput = SADOutput + (frameInput1-windowInput1);
+            SADOutput = SADOutput + difference;
         end
         
-        //Add SAD of Inputs 2 to SADOutput
-        if((windowInput2-frameInput2) >= 0) begin
-            SADOutput = SADOutput + (windowInput2-frameInput2);
+		//Add SAD of Inputs 2 to SADOutput
+        difference = frameInput2-windowInput2;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
         else begin
-            SADOutput = SADOutput + (frameInput2-windowInput2);
+            SADOutput = SADOutput + difference;
         end
-        
-        //Add SAD of Inputs 3 to SADOutput
-        if((windowInput3-frameInput3) >= 0) begin
-            SADOutput = SADOutput + (windowInput3-frameInput3);
-        end
-        else begin
-            SADOutput = SADOutput + (frameInput3-windowInput3);
-        end
-        
-        //Add SAD of Inputs 4 to SADOutput
-        if((windowInput4-frameInput4) >= 0) begin
-            SADOutput = SADOutput + (windowInput4-frameInput4);
+		
+		//Add SAD of Inputs 3 to SADOutput
+        difference = frameInput3-windowInput3;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
         else begin
-            SADOutput = SADOutput + (frameInput4-windowInput4);
+            SADOutput = SADOutput + difference;
         end
-        
-        //Add SAD of Inputs 4 to SADOutput
-        if((windowInput5-frameInput5) >= 0) begin
-            SADOutput = SADOutput + (windowInput5-frameInput5);
-        end
-        else begin
-            SADOutput = SADOutput + (frameInput5-windowInput5);
-        end
-        
-        //Add SAD of Inputs 6 to SADOutput
-        if((windowInput6-frameInput6) >= 0) begin
-            SADOutput = SADOutput + (windowInput6-frameInput6);
+		
+		//Add SAD of Inputs 4 to SADOutput
+        difference = frameInput4-windowInput4;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
         else begin
-            SADOutput = SADOutput + (frameInput6-windowInput6);
+            SADOutput = SADOutput + difference;
         end
-        
-        //Add SAD of Inputs 7 to SADOutput
-        if((windowInput7-frameInput7) >= 0) begin
-            SADOutput = SADOutput + (windowInput7-frameInput7);
-        end
-        else begin
-            SADOutput = SADOutput + (frameInput7-windowInput7);
-        end
-        
-        //Add SAD of Inputs 8 to SADOutput
-        if((windowInput8-frameInput8) >= 0) begin
-            SADOutput = SADOutput + (windowInput8-frameInput8);
+		
+		//Add SAD of Inputs 5 to SADOutput
+        difference = frameInput5-windowInput5;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
         else begin
-            SADOutput = SADOutput + (frameInput8-windowInput8);
+            SADOutput = SADOutput + difference;
         end
-        
-        //Add SAD of Inputs 9 to SADOutput
-        if((windowInput9-frameInput9) >= 0) begin
-            SADOutput = SADOutput + (windowInput9-frameInput9);
-        end
-        else begin
-            SADOutput = SADOutput + (frameInput9-windowInput9);
-        end
-        
-        //Add SAD of Inputs 10 to SADOutput
-        if((windowInput10-frameInput10) >= 0) begin
-            SADOutput = SADOutput + (windowInput10-frameInput10);
+		
+		//Add SAD of Inputs 6 to SADOutput
+        difference = frameInput6-windowInput6;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
         else begin
-            SADOutput = SADOutput + (frameInput10-windowInput10);
+            SADOutput = SADOutput + difference;
         end
-        
-        //Add SAD of Inputs 11 to SADOutput
-        if((windowInput11-frameInput11) >= 0) begin
-            SADOutput = SADOutput + (windowInput11-frameInput11);
-        end
-        else begin
-            SADOutput = SADOutput + (frameInput11-windowInput11);
-        end
-        
-        //Add SAD of Inputs 12 to SADOutput
-        if((windowInput12-frameInput12) >= 0) begin
-            SADOutput = SADOutput + (windowInput12-frameInput12);
+		
+		//Add SAD of Inputs 7 to SADOutput
+        difference = frameInput7-windowInput7;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
         else begin
-            SADOutput = SADOutput + (frameInput12-windowInput12);
+            SADOutput = SADOutput + difference;
         end
-        
-        //Add SAD of Inputs 13 to SADOutput
-        if((windowInput13-frameInput13) >= 0) begin
-            SADOutput = SADOutput + (windowInput13-frameInput13);
-        end
-        else begin
-            SADOutput = SADOutput + (frameInput13-windowInput13);
-        end
-        
-        //Add SAD of Inputs 14 to SADOutput
-        if((windowInput14-frameInput14) >= 0) begin
-            SADOutput = SADOutput + (windowInput14-frameInput14);
+		
+		//Add SAD of Inputs 8 to SADOutput
+        difference = frameInput8-windowInput8;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
         else begin
-            SADOutput = SADOutput + (frameInput14-windowInput14);
+            SADOutput = SADOutput + difference;
         end
-        
-        //Add SAD of Inputs 15 to SADOutput
-        if((windowInput15-frameInput15) >= 0) begin
-            SADOutput = SADOutput + (windowInput15-frameInput15);
-        end
-        else begin
-            SADOutput = SADOutput + (frameInput15-windowInput15);
-        end
-        
-        //Add SAD of Inputs 16 to SADOutput
-        if((windowInput16-frameInput16) >= 0) begin
-            SADOutput = SADOutput + (windowInput16-frameInput16);
+		
+		//Add SAD of Inputs 9 to SADOutput
+        difference = frameInput9-windowInput9;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
         else begin
-            SADOutput = SADOutput + (frameInput16-windowInput16);
+            SADOutput = SADOutput + difference;
         end
-        
-        //ZeroExtend SADOutput
-        for (i = 16; i < 32; i = i + 1) begin
-            SADOutputFinal[i] <= 1'b0;
+		
+		//Add SAD of Inputs 10 to SADOutput
+        difference = frameInput10-windowInput10;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
         end
-        
-        /*SignExtend SADOutput In case we need to SignExtend for some reason
-        for (i = 0; i < 32; i = i + 1) begin
-            if (i < 16) begin
-                SADOutputFinal[i] <= SADOutput[i];
-            end else begin
-                SADOutputFinal[i] <= SADOutput[15];
-            end
-        end*/
+        else begin
+            SADOutput = SADOutput + difference;
+        end
+		
+		//Add SAD of Inputs 11 to SADOutput
+        difference = frameInput11-windowInput11;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
+        end
+        else begin
+            SADOutput = SADOutput + difference;
+        end
+		
+		//Add SAD of Inputs 12 to SADOutput
+        difference = frameInput12-windowInput12;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
+        end
+        else begin
+            SADOutput = SADOutput + difference;
+        end
+		
+		//Add SAD of Inputs 13 to SADOutput
+        difference = frameInput13-windowInput13;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
+        end
+        else begin
+            SADOutput = SADOutput + difference;
+        end
+		
+		//Add SAD of Inputs 14 to SADOutput
+        difference = frameInput14-windowInput14;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
+        end
+        else begin
+            SADOutput = SADOutput + difference;
+        end
+		
+		//Add SAD of Inputs 15 to SADOutput
+        difference = frameInput15-windowInput15;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
+        end
+        else begin
+            SADOutput = SADOutput + difference;
+        end
+		
+		//Add SAD of Inputs 16 to SADOutput
+        difference = frameInput16-windowInput16;
+		if(difference[15] == 1'b1) begin
+            SADOutput = SADOutput - difference;
+        end
+        else begin
+            SADOutput = SADOutput + difference;
+        end
+       
+		SADOutputFinal = {16'b0000000000000000, SADOutput};
     end
 endmodule
